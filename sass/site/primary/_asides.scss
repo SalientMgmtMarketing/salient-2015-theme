@@ -1,0 +1,15 @@
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+aside#left-sidebar {
+	margin-top:2em;
+	
+	ul.menu > li {
+		font-weight: 700;
+		margin-bottom: 1.25em;
+		line-height: 1em;
+		font-weight:400;
+		font-size:.8em;
+	}
+}

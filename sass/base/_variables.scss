@@ -1,0 +1,58 @@
+// Typography
+$base-font-family: "Trade Gothic W01";
+$header-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 19px;
+$h1-font-size: $base-font-size * 3;
+$h2-font-size: $base-font-size * 2;
+$h3-font-size: $base-font-size * 1.75;
+$h4-font-size: $base-font-size * 1.5;
+$h5-font-size: $base-font-size * 1.25;
+$h6-font-size: $base-font-size;
+
+// Line height
+$base-line-height: 1.5;
+$header-line-height: 1.25;
+
+// Other Sizes
+$base-border-radius: .75em;
+$base-spacing: $base-line-height * 1em;
+$base-z-index: 0;
+
+// Colors
+$blue: #004280;
+$light-blue:#0077e6;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #E9EBED;
+$white: #FFF;
+$orange: #F37706;
+
+
+// Background Color
+$base-background-color: $light-gray;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $blue;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: $light-blue;
+$base-button-color: $light-blue;
+$hover-button-color: $base-accent-color;
+
+// Border color
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Forms
+$form-border-color: $base-border-color;
+$form-border-color-hover: darken($base-border-color, 10);
+$form-border-color-focus: $base-accent-color;
+$form-border-radius: $base-border-radius;
+$form-box-shadow: inset 0 1px 3px rgba(black,0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-font-size: $base-font-size;
+$form-font-family: $base-font-family;

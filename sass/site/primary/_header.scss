@@ -1,0 +1,159 @@
+/* Scss Document */
+
+header#masthead {
+  width: 100%;
+  background: $blue;
+  position: relative;
+  height: 70px;
+  z-index: 9999;
+  @include box-shadow(0 0 18px rgba(68, 69, 71, 0.19));
+  top: 0;
+  transition: 200ms;
+  @include media(min-width $second-breakpoint-value) {
+    @include transparent-background($blue,.8);
+    height: 110px;
+    position: fixed;
+  }
+  @include media(max-height em(479px) orientation landscape) {
+    position: absolute;
+  }
+  &.narrow-header {
+    height: 67px;
+    @include media(max-width $nav-breakpoint-value) {
+ 
+      #site-navigation button.menu-toggle {
+        transform: translateY(-13px);
+      }
+      .menu-main-navigation-container {
+        transform: translateY(-33px);
+      }
+    }
+    .main-navigation #menu-main-navigation > li > a {
+      padding: 20px 22px;
+    }
+    h1.site-title,h2.site-description {
+      transform: translateY(-13px);
+    }
+  }
+  .wrap {
+    @include outer-container;
+    position: relative;
+    @include media(max-width $second-breakpoint-value) {
+      padding: 0;
+      width: 100%;
+    }
+    .site-branding {
+      @include span-columns(2);
+      @media screen and (max-width: $second-breakpoint-value) {
+        width: 90%;
+        margin: 0;
+      }
+      h1 {
+        transition: 200ms;
+        margin-top: 0;
+        @include media(max-width $second-breakpoint-value) {
+          width: 80%;
+        }
+        @include media(min-width 900px max-width 1275px) {
+          margin-left:.2em;
+        } 
+        a {
+          background-image: url("./images/salient-logo-white.png");
+          display: block;
+          position: relative;
+          background-repeat: no-repeat;
+          padding: 0;
+          background-size: contain;
+          height: 70px;
+          font-size: 0;
+          width: 100%;
+          transition: 200ms;
+          background-size: contain;
+          background-position: left top;
+          @include hidpi(2) {
+            background-image: url("./images/salient-logo-white@2x.png");
+          }
+          @include media(max-width $second-breakpoint-value) {
+            margin-top:15px;
+            margin-left:15px;
+            height:39px;
+          }
+          @include media(min-width $second-breakpoint-value) {
+            margin-top: 10px;
+            background-position: center center;
+          }
+        }
+      }
+      h2 {
+        font-size: .7em;
+        color: $white;
+        text-align: center;
+        transition: 200ms;
+        @include media(max-width $second-breakpoint-value) {
+          position: absolute;
+          left: 10px;
+          br {
+            display: none;
+          }
+        }
+        @include media(min-width $second-breakpoint-value) {
+          position: absolute;
+          left: 184px;
+          top: 23px;
+          color:$blue;
+        }
+      }
+    }
+    nav#site-navigation {
+      float: right;
+      
+      @include omega();
+      @include media(max-width $nav-breakpoint-value) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        height: 2px;
+      }
+      .menu-main-navigation-container {
+        float: right;
+        @include media(max-width $nav-breakpoint-value) {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+        }
+        @include media(max width $second-breakpoint-value) {
+          float: none;
+          position: relative;
+          top: 70px;
+          left: 0;
+          display: inline-block;
+          width: 100%;
+        }
+        & > ul {
+          @include fill-parent;
+        }
+      }
+    }
+  }
+}
+/*
+.menu-main-navigation-container {
+  @include media($small-screen) {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 300ms;
+  }
+}
+.toggled .menu-main-navigation-container {
+  transform: scaleY(1);
+}
+*/
+
+body.admin-bar header#masthead {
+  @include media(min-width $first-breakpoint-value){
+    top: 28px;
+  }
+}

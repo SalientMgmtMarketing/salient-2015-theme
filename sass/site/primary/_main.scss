@@ -1,0 +1,27 @@
+/* Scss Document */
+
+div#content {
+  z-index: 800;
+  position: relative;
+  @include media(min-width $first-breakpoint-value) {
+  }
+}
+
+.wrap {
+  @include outer-container;
+  @include fill-parent;
+}
+
+.fixed {
+  background-attachment: fixed !important;
+}
+.above-fixed {
+  z-index: 10;
+  transform: translateZ(0);
+}
+.cover {
+  background-size: cover !important;
+}
+.spacer {
+  margin:1em 0;
+}

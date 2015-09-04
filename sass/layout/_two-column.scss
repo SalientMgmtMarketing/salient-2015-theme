@@ -1,0 +1,53 @@
+/*  Two Columns 50-50  */
+.two-column-5050 {
+  .sub-section0 {
+    @include one-half-nom;
+    
+    &.boxed {
+      display:table;
+    }
+  }
+  .sub-section1 {
+    @include one-half-nom;
+    
+    &.boxed {
+      display:table;
+    }
+  }
+}
+
+/*  Two Columns 67-33  */
+.two-column-6733 {
+  .sub-section0 {
+    @include two-thirds-nom;
+    
+    &.boxed {
+      display:table;
+    }
+  }
+  .sub-section1 {
+    @include one-third-nom;
+    
+    &.boxed {
+      display:table;
+    }
+  }
+}
+
+/*  Two Columns 75-25  */
+.two-column-6733 {
+  .sub-section0 {
+    @include three-quarters-nom;
+    
+    &.boxed {
+      display:table;
+    }
+  }
+  .sub-section1 {
+    @include one-quarter-nom;
+    
+    &.boxed {
+      display:table;
+    }
+  }
+}

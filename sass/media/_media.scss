@@ -1,0 +1,84 @@
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+.fancybox-overlay.fancybox-overlay-fixed {
+	position: fixed;
+	z-index: 9999;
+	bottom: 0;
+	right: 0;
+}
+
+.centered {
+	margin: auto;
+  	position: absolute;
+  	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.boxed .boxed{
+  background:rgba($blue,.8);
+  padding:3em 1em;
+
+  @include media(max-width $nav-breakpoint-value) {
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    @include clearfix;
+  }
+}
+
+
+.fade {
+  opacity: 0;
+  transition: opacity .15s linear;
+
+  &.in {
+    opacity: 1;
+  }
+}
+
+.collapse {
+  @include media(max-width $nav-breakpoint-value) {
+    display: none;
+
+    &.in {
+      display: block;
+    }
+    // tr&.in    { display: table-row; }
+    // tbody&.in { display: table-row-group; }
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition-timing-function: ease;
+  transition-duration: .35s;
+  transition-property: height;
+}
+
+
+/*--------------------------------------------------------------
+12.1 Captions
+--------------------------------------------------------------*/
+@import "captions";
+
+/*--------------------------------------------------------------
+12.2 Galleries
+--------------------------------------------------------------*/
+@import "galleries";
