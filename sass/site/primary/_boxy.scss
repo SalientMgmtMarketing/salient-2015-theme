@@ -4,7 +4,6 @@
   }
   section.row {
     clear: both;
-    display: block;
     position: relative;
     width: 100%;
     @include clearfix;
@@ -13,6 +12,7 @@
     @include media(max-width 800px) {
       @include outer-container();
     }
+
     &:before {}
     .gallery-cell {
       height: 200px;

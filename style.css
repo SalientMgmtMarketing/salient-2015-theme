@@ -2104,6 +2104,14 @@ section.section-a {
     max-width: 905px;
     margin-top: 1em; }
 
+section#improve-overall-population {
+  background-position: center top; }
+
+section#monitor .sub-section1 p, section#fair-share .sub-section1 p {
+  text-align: center; }
+  section#monitor .sub-section1 p img, section#fair-share .sub-section1 p img {
+    width: 70%; }
+
 @media screen and (min-width: 800px) {
   section#improve-population-health .sub-section0 {
     width: 35%; } }
@@ -2118,12 +2126,13 @@ section#features {
     margin-bottom: 0; }
     section#features h4:first-child {
       margin-top: 0; }
+  section#features__security {
+    background-position: center top; }
 
 .page article {
   margin: 0; }
 .page section.row {
   clear: both;
-  display: block;
   position: relative;
   width: 100%;
   content: "";

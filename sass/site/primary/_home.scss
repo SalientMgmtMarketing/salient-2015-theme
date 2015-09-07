@@ -107,6 +107,18 @@ section.section-a {
     margin-top: 1em;
   }
 }
+section#improve-overall-population {
+  background-position: center top;
+}
+section#monitor, section#fair-share {
+  .sub-section1 p {
+    text-align: center;
+    
+    img {
+      width:70%;
+    }
+  }
+}
 section#improve-population-health .sub-section0 {
   @include media(min-width $nav-breakpoint-value){
     width:35%
@@ -124,5 +136,8 @@ section#features {
     &:first-child {
       margin-top: 0;
     }
+  }
+  &__security {
+    background-position: center top;
   }
 }
