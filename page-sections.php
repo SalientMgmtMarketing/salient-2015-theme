@@ -151,4 +151,4 @@ get_header('boxy'); ?>
     <!-- #main -->
   </div>
   <!-- #primary -->
-  <?php get_footer('boxy'); ?>
+  <?php get_footer(); ?>

@@ -12,12 +12,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info wrap">
-		<?php
-		/* A sidebar in the footer? Yep. You can can customize
-		 * your footer with four columns of widgets.
-		 */
-		get_sidebar( 'footer' ); ?>
-		</div>
+		<?php get_sidebar( 'footer' ); ?>
 	</footer>
 	
 <?php wp_footer(); ?>

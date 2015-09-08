@@ -103,8 +103,8 @@ function salient_2015_widgets_init() {
 		'name' => __( 'First Footer Widget Area', 'salient-2015' ),
 		'id' => 'first-footer-widget-area',
 		'description' => __( 'The first footer widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
@@ -114,8 +114,8 @@ function salient_2015_widgets_init() {
 		'name' => __( 'Second Footer Widget Area', 'salient-2015' ),
 		'id' => 'second-footer-widget-area',
 		'description' => __( 'The second footer widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
@@ -125,8 +125,8 @@ function salient_2015_widgets_init() {
 		'name' => __( 'Third Footer Widget Area', 'salient-2015' ),
 		'id' => 'third-footer-widget-area',
 		'description' => __( 'The third footer widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
@@ -136,69 +136,8 @@ function salient_2015_widgets_init() {
 		'name' => __( 'Fourth Footer Widget Area', 'salient-2015' ),
 		'id' => 'fourth-footer-widget-area',
 		'description' => __( 'The fourth footer widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-	
-	// Area 7, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Fith Footer Widget Area', 'salient-2015' ),
-		'id' => 'fith-footer-widget-area',
-		'description' => __( 'The fith footer widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Layout 1', 'salient-2015' ),
-		'id' => 'layout-1-sidebar',
-		'description' => __( 'The first layout widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Layout 2', 'salient-2015' ),
-		'id' => 'layout-2-sidebar',
-		'description' => __( 'The second layout widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Layout 3', 'salient-2015' ),
-		'id' => 'layout-3-sidebar',
-		'description' => __( 'The third layout widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Layout 4', 'salient-2015' ),
-		'id' => 'layout-4-sidebar',
-		'description' => __( 'The fourth layout widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Layout 5', 'salient-2015' ),
-		'id' => 'layout-5-sidebar',
-		'description' => __( 'The fourth layout widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );

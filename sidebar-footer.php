@@ -23,26 +23,78 @@
 	// If we get this far, we have widgets. Let do this.
 ?>
 
-<?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
-					<ul id="col-1" class="xoxo">
-						<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
-					</ul>
+<?php
+	if (    is_active_sidebar( 'first-footer-widget-area'  )
+		&& ! is_active_sidebar( 'second-footer-widget-area' )
+		&& ! is_active_sidebar( 'third-footer-widget-area'  )
+		&& ! is_active_sidebar( 'fourth-footer-widget-area' )
+	):
+?>
+
+  <aside class="footer-block single">
+	<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
+  </aside>
+
 <?php endif; ?>
 
-<?php if ( is_active_sidebar( 'second-footer-widget-area' ) ) : ?>
-					<ul id="col-2" class="xoxo">
-						<?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
-					</ul>
+<?php
+	if (    is_active_sidebar( 'first-footer-widget-area'  )
+		&&  is_active_sidebar( 'second-footer-widget-area' )
+		&& ! is_active_sidebar( 'third-footer-widget-area'  )
+		&& ! is_active_sidebar( 'fourth-footer-widget-area' )
+	):
+?>
+
+  <aside class="footer-block double">
+	<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
+  </aside>
+  <aside class="footer-block double">
+	<?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
+  </aside>
+
 <?php endif; ?>
 
-<?php if ( is_active_sidebar( 'third-footer-widget-area' ) ) : ?>
-					<ul id="col-3" class="xoxo">
-						<?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
-					</ul>
+<?php
+	if (    is_active_sidebar( 'first-footer-widget-area'  )
+		&&  is_active_sidebar( 'second-footer-widget-area' )
+		&&  is_active_sidebar( 'third-footer-widget-area'  )
+		&& ! is_active_sidebar( 'fourth-footer-widget-area' )
+	):
+?>
+
+  <aside class="footer-block double">
+	<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
+  </aside>
+  <aside class="footer-block single">
+	<?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
+  </aside>
+  <aside class="footer-block single">
+	<?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
+  </aside>
+
 <?php endif; ?>
 
-<?php if ( is_active_sidebar( 'fourth-footer-widget-area' ) ) : ?>
-					<ul id="col-4" class="xoxo">
-						<?php dynamic_sidebar( 'fourth-footer-widget-area' ); ?>
-					</ul>
+<?php
+	if (    is_active_sidebar( 'first-footer-widget-area'  )
+		&&  is_active_sidebar( 'second-footer-widget-area' )
+		&&  is_active_sidebar( 'third-footer-widget-area'  )
+		&&  is_active_sidebar( 'fourth-footer-widget-area' )
+	):
+?>
+
+  <aside class="footer-block single">
+	<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
+  </aside>
+  <aside class="footer-block single">
+	<?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
+  </aside>
+  <aside class="footer-block single">
+	<?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
+  </aside>
+  <aside class="footer-block single">
+	<?php dynamic_sidebar( 'fourth-footer-widget-area' ); ?>
+  </aside>
+
 <?php endif; ?>
+
+

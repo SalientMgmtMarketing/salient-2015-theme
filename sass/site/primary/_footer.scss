@@ -4,9 +4,16 @@ footer#colophon {
 	background: $blue;
 	color:$white;	
 	
-	a {
-		color:$white;	
-	}
+  a {
+    color:$white;	
+  }
+  
+  .footer-block.single {
+    @include one-quarter-nom;
+  }
+  .footer-block.double {
+    @include one-half-nom;
+  }
 }
 img[src*=trackalyze] {
 	position:fixed;

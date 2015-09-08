@@ -2107,10 +2107,12 @@ section.section-a {
 section#improve-overall-population {
   background-position: center top; }
 
-section#monitor .sub-section1 p, section#fair-share .sub-section1 p {
-  text-align: center; }
-  section#monitor .sub-section1 p img, section#fair-share .sub-section1 p img {
-    width: 70%; }
+section#monitor, section#fair-share {
+  height: 40vh; }
+  section#monitor .sub-section1 p, section#fair-share .sub-section1 p {
+    text-align: center; }
+    section#monitor .sub-section1 p img, section#fair-share .sub-section1 p img {
+      width: 70%; }
 
 @media screen and (min-width: 800px) {
   section#improve-population-health .sub-section0 {
@@ -2434,6 +2436,70 @@ footer#colophon {
   color: #FFF; }
   footer#colophon a {
     color: #FFF; }
+  @media screen and (max-width: 24.9375em) {
+    footer#colophon .footer-block.single {
+      float: left;
+      display: block;
+      margin-right: 14.28571%;
+      width: 100%; }
+      footer#colophon .footer-block.single:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 25em) and (max-width: 50em) {
+    footer#colophon .footer-block.single {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 46.66667%; }
+      footer#colophon .footer-block.single:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 50.0625em) and (max-width: 68.6875em) {
+    footer#colophon .footer-block.single {
+      float: left;
+      display: block;
+      margin-right: 3.22581%;
+      width: 22.58065%; }
+      footer#colophon .footer-block.single:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 68.75em) {
+    footer#colophon .footer-block.single {
+      float: left;
+      display: block;
+      margin-right: 2.12766%;
+      width: 23.40426%; }
+      footer#colophon .footer-block.single:last-child {
+        margin-right: 0; } }
+  @media screen and (max-width: 24.9375em) {
+    footer#colophon .footer-block.double {
+      float: left;
+      display: block;
+      margin-right: 14.28571%;
+      width: 100%; }
+      footer#colophon .footer-block.double:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 25em) and (max-width: 50em) {
+    footer#colophon .footer-block.double {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 100%; }
+      footer#colophon .footer-block.double:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 50.0625em) and (max-width: 68.6875em) {
+    footer#colophon .footer-block.double {
+      float: left;
+      display: block;
+      margin-right: 3.22581%;
+      width: 48.3871%; }
+      footer#colophon .footer-block.double:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 68.75em) {
+    footer#colophon .footer-block.double {
+      float: left;
+      display: block;
+      margin-right: 2.12766%;
+      width: 48.93617%; }
+      footer#colophon .footer-block.double:last-child {
+        margin-right: 0; } }
 
 img[src*=trackalyze] {
   position: fixed; }
