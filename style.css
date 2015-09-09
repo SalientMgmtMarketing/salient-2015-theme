@@ -2722,61 +2722,62 @@ section#about__title {
       /* line 108, sass/site/primary/_boxy.scss */
       .page section.row h2 {
         font-size: 2em; } }
-    /* line 117, sass/site/primary/_boxy.scss */
-    .page section.row h2.section-title {
-      text-align: center; }
-  /* line 121, sass/site/primary/_boxy.scss */
+    @media screen and (min-width: 800px) {
+      /* line 117, sass/site/primary/_boxy.scss */
+      .page section.row h2.section-title {
+        text-align: center; } }
+  /* line 123, sass/site/primary/_boxy.scss */
   .page section.row h3 {
     font-size: .64em;
     font-weight: 700; }
     @media screen and (min-width: 400px) {
-      /* line 121, sass/site/primary/_boxy.scss */
+      /* line 123, sass/site/primary/_boxy.scss */
       .page section.row h3 {
         font-size: .8em; } }
     @media screen and (min-width: 480px) {
-      /* line 121, sass/site/primary/_boxy.scss */
+      /* line 123, sass/site/primary/_boxy.scss */
       .page section.row h3 {
         font-size: 1em; } }
-  /* line 131, sass/site/primary/_boxy.scss */
+  /* line 133, sass/site/primary/_boxy.scss */
   .page section.row p {
     max-width: 800px;
     margin: 0px auto; }
-  /* line 135, sass/site/primary/_boxy.scss */
+  /* line 137, sass/site/primary/_boxy.scss */
   .page section.row ul li {
     font-size: .64em; }
     @media screen and (min-width: 400px) {
-      /* line 135, sass/site/primary/_boxy.scss */
+      /* line 137, sass/site/primary/_boxy.scss */
       .page section.row ul li {
         font-size: .8em; } }
     @media screen and (min-width: 480px) {
-      /* line 135, sass/site/primary/_boxy.scss */
+      /* line 137, sass/site/primary/_boxy.scss */
       .page section.row ul li {
         font-size: 1em; } }
-  /* line 144, sass/site/primary/_boxy.scss */
+  /* line 146, sass/site/primary/_boxy.scss */
   .page section.row #requestDemo {
     padding-top: 1em;
     padding-bottom: 8em; }
-    /* line 147, sass/site/primary/_boxy.scss */
+    /* line 149, sass/site/primary/_boxy.scss */
     .page section.row #requestDemo h3 {
       padding-bottom: 20px; }
-    /* line 150, sass/site/primary/_boxy.scss */
+    /* line 152, sass/site/primary/_boxy.scss */
     .page section.row #requestDemo .button {
       background: #004280;
       border-radius: 1em;
       border: 1px solid #FFF;
       padding: .6em 1.2em; }
-      /* line 155, sass/site/primary/_boxy.scss */
+      /* line 157, sass/site/primary/_boxy.scss */
       .page section.row #requestDemo .button:hover {
         background: #074290;
         color: #EBEFFF;
         text-decoration: none; }
-/* line 163, sass/site/primary/_boxy.scss */
+/* line 165, sass/site/primary/_boxy.scss */
 .page section.row .left-block {
   display: block;
   clear: both;
   padding: 3% 4%; }
   @media screen and (max-width: 24.9375em) {
-    /* line 163, sass/site/primary/_boxy.scss */
+    /* line 165, sass/site/primary/_boxy.scss */
     .page section.row .left-block {
       float: left;
       display: block;
@@ -2786,7 +2787,7 @@ section#about__title {
       .page section.row .left-block:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 25em) and (max-width: 50em) {
-    /* line 163, sass/site/primary/_boxy.scss */
+    /* line 165, sass/site/primary/_boxy.scss */
     .page section.row .left-block {
       float: left;
       display: block;
@@ -2796,7 +2797,7 @@ section#about__title {
       .page section.row .left-block:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 50.0625em) and (max-width: 68.6875em) {
-    /* line 163, sass/site/primary/_boxy.scss */
+    /* line 165, sass/site/primary/_boxy.scss */
     .page section.row .left-block {
       float: left;
       display: block;
@@ -2806,7 +2807,7 @@ section#about__title {
       .page section.row .left-block:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 68.75em) {
-    /* line 163, sass/site/primary/_boxy.scss */
+    /* line 165, sass/site/primary/_boxy.scss */
     .page section.row .left-block {
       float: left;
       display: block;
@@ -2816,22 +2817,22 @@ section#about__title {
       .page section.row .left-block:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 600px) {
-    /* line 169, sass/site/primary/_boxy.scss */
+    /* line 171, sass/site/primary/_boxy.scss */
     .page section.row .left-block img {
       float: right; } }
   @media screen and (max-width: 24.9375em) {
-    /* line 163, sass/site/primary/_boxy.scss */
+    /* line 165, sass/site/primary/_boxy.scss */
     .page section.row .left-block {
       padding-bottom: 0;
       margin-bottom: .2em; } }
-/* line 178, sass/site/primary/_boxy.scss */
+/* line 180, sass/site/primary/_boxy.scss */
 .page section.row .right-block {
   display: block;
   overflow: hidden;
   padding: 3% 4%;
   margin-right: 0 !important; }
   @media screen and (max-width: 24.9375em) {
-    /* line 178, sass/site/primary/_boxy.scss */
+    /* line 180, sass/site/primary/_boxy.scss */
     .page section.row .right-block {
       float: left;
       display: block;
@@ -2841,7 +2842,7 @@ section#about__title {
       .page section.row .right-block:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 25em) and (max-width: 50em) {
-    /* line 178, sass/site/primary/_boxy.scss */
+    /* line 180, sass/site/primary/_boxy.scss */
     .page section.row .right-block {
       float: left;
       display: block;
@@ -2851,7 +2852,7 @@ section#about__title {
       .page section.row .right-block:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 50.0625em) and (max-width: 68.6875em) {
-    /* line 178, sass/site/primary/_boxy.scss */
+    /* line 180, sass/site/primary/_boxy.scss */
     .page section.row .right-block {
       float: left;
       display: block;
@@ -2861,7 +2862,7 @@ section#about__title {
       .page section.row .right-block:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 68.75em) {
-    /* line 178, sass/site/primary/_boxy.scss */
+    /* line 180, sass/site/primary/_boxy.scss */
     .page section.row .right-block {
       float: left;
       display: block;
@@ -2871,22 +2872,22 @@ section#about__title {
       .page section.row .right-block:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 600px) {
-    /* line 185, sass/site/primary/_boxy.scss */
+    /* line 187, sass/site/primary/_boxy.scss */
     .page section.row .right-block img {
       float: left; } }
   @media screen and (min-width: 800px) {
-    /* line 178, sass/site/primary/_boxy.scss */
+    /* line 180, sass/site/primary/_boxy.scss */
     .page section.row .right-block {
       padding-top: 0; } }
-/* line 193, sass/site/primary/_boxy.scss */
+/* line 195, sass/site/primary/_boxy.scss */
 .page section.row:nth-child(odd) {
   background-color: #004280;
   color: #FFF; }
-/* line 197, sass/site/primary/_boxy.scss */
+/* line 199, sass/site/primary/_boxy.scss */
 .page section.row:nth-child(even) {
   background-color: #0077e6;
   color: #FFF; }
-  /* line 200, sass/site/primary/_boxy.scss */
+  /* line 202, sass/site/primary/_boxy.scss */
   .page section.row:nth-child(even):before {
     content: '';
     position: absolute;

@@ -115,7 +115,9 @@
         font-size: 2em;
       }
       &.section-title {
-        text-align: center;
+        @include media(min-width $nav-breakpoint-value) {
+          text-align: center;
+        }
       }
     }
     h3 {
