@@ -820,6 +820,10 @@ select {
 body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label .gfield_required {
   color: #fff; }
 
+/* line 84, sass/base/_forms.scss */
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
+  margin: 10px 0; }
+
 /* line 1, sass/base/_tables.scss */
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
@@ -3366,5 +3370,4 @@ object {
 /* line 44, sass/media/_galleries.scss */
 .gallery-caption {
   display: block; }
-
 /*# sourceMappingURL=style.css.map */
