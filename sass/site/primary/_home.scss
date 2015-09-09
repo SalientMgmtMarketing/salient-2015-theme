@@ -130,6 +130,7 @@ section#features {
   background-size: cover;
   background-position: center center;
   padding: 4em 0 4em;
+  
   @include media(min-width 500px) {}
   h4 {
     margin-top: 2em;
@@ -138,7 +139,16 @@ section#features {
       margin-top: 0;
     }
   }
+  &__title {
+    max-height:300px;
+  }
+  &__turnkey, &__scale, &__dashboards, &__realtime, &__mobile {
+    height:40vh;
+  }
   &__security {
     background-position: center top;
   }
+}
+section#about__title {
+  max-height: 500px;
 }

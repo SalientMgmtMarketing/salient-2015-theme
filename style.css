@@ -2128,8 +2128,15 @@ section#features {
     margin-bottom: 0; }
     section#features h4:first-child {
       margin-top: 0; }
+  section#features__title {
+    max-height: 300px; }
+  section#features__turnkey, section#features__scale, section#features__dashboards, section#features__realtime, section#features__mobile {
+    height: 40vh; }
   section#features__security {
     background-position: center top; }
+
+section#about__title {
+  max-height: 500px; }
 
 .page article {
   margin: 0; }
@@ -2434,6 +2441,8 @@ div#content {
 footer#colophon {
   background: #004280;
   color: #FFF; }
+  footer#colophon .wrap {
+    padding: 0 1em; }
   footer#colophon a {
     color: #FFF; }
   @media screen and (max-width: 24.9375em) {

@@ -11,8 +11,9 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info wrap">
+      <div class="site-info wrap">
 		<?php get_sidebar( 'footer' ); ?>
+      </div>
 	</footer>
 	
 <?php wp_footer(); ?>

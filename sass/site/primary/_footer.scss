@@ -1,9 +1,13 @@
 /* Footer */
 
 footer#colophon {
-	background: $blue;
-	color:$white;	
-	
+  background: $blue;
+  color:$white;	
+  
+  .wrap {
+    padding: 0 1em;
+  }
+  
   a {
     color:$white;	
   }
