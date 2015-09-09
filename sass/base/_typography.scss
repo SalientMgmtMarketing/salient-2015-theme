@@ -117,6 +117,9 @@ blockquote {
 cite {
   font-style: italic;
   font-size: .75em;
+  line-height: 1.5em;
+  display: block;
+  margin-top: 1em;
   &:before {
     content: "\2014 \00A0";
   }

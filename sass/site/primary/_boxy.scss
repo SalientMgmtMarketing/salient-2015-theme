@@ -114,6 +114,11 @@
       @include media($xl-screen) {
         font-size: 2em;
       }
+      &.section-title {
+        @include media(min-width $nav-breakpoint-value) {
+          text-align: center;
+        }
+      }
     }
     h3 {
       font-size: .64em;
