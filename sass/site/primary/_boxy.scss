@@ -114,6 +114,9 @@
       @include media($xl-screen) {
         font-size: 2em;
       }
+      &.site-title {
+        text-align: center;
+      }
     }
     h3 {
       font-size: .64em;

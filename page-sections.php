@@ -38,7 +38,7 @@ get_header('boxy'); ?>
               
               <div class="wrap above-fixed">
                 <?php if( get_sub_field('section_title') ): ?>
-                  <h1><?php the_sub_field('section_title'); ?></h1>
+                  <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
                 <?php endif; ?>
                 
                   <div class="sub-section0<?php 
