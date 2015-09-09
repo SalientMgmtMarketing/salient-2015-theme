@@ -2300,7 +2300,7 @@ section.section-a {
   @media screen and (min-width: 1600px) {
     /* line 6, sass/site/primary/_home.scss */
     section.section-a {
-      height: 80vh; } }
+      height: 60vh; } }
   /* line 25, sass/site/primary/_home.scss */
   section.section-a p {
     font-size: 1.2em; }
@@ -2723,7 +2723,7 @@ section#about__title {
       .page section.row h2 {
         font-size: 2em; } }
     /* line 117, sass/site/primary/_boxy.scss */
-    .page section.row h2.site-title {
+    .page section.row h2.section-title {
       text-align: center; }
   /* line 121, sass/site/primary/_boxy.scss */
   .page section.row h3 {

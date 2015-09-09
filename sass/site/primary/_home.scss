@@ -20,7 +20,7 @@ section.section-a {
     height: 60vh;
   }
   @include media(min-width 1600px) {
-    height: 80vh;
+    height: 60vh;
   }
   p {
     font-size: 1.2em;
