@@ -48,6 +48,9 @@ header#masthead {
         width: 90%;
         margin: 0;
       }
+      @include media(min-width $second-breakpoint-value) {
+        @include span-columns(3);
+      }
       h1 {
         transition: 200ms;
         margin-top: 0;
