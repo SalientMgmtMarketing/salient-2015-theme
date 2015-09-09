@@ -148,14 +148,10 @@ and Blueprint http://www.blueprintcss.org/
  * MIT License */
 /* line 2, sass/extend/grid/_box-sizing.scss */
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 /* line 7, sass/extend/grid/_box-sizing.scss */
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
 /**
@@ -495,7 +491,7 @@ html {
 /*--------------------------------------------------------------
 1.0 Reset
 --------------------------------------------------------------*/
-/* line 5, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../Program Files (x86)/Koala/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -516,38 +512,38 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-/* line 22, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../Program Files (x86)/Koala/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1; }
 
-/* line 24, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../Program Files (x86)/Koala/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none; }
 
-/* line 26, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../Program Files (x86)/Koala/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 28, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../Program Files (x86)/Koala/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 30, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../Program Files (x86)/Koala/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none; }
-  /* line 103, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+  /* line 103, ../../../../Program Files (x86)/Koala/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
   q:before, q:after, blockquote:before, blockquote:after {
     content: "";
     content: none; }
 
-/* line 32, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../Program Files (x86)/Koala/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none; }
 
-/* line 116, ../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../Program Files (x86)/Koala/rubygems/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
@@ -569,7 +565,8 @@ input[type="submit"], a.btn {
   line-height: 1;
   padding: 0.75em 1em;
   text-decoration: none;
-  transition: 250ms; }
+  -webkit-transition: 250ms;
+          transition: 250ms; }
   /* line 15, sass/base/extends/_button.scss */
   button:hover,
   input[type="submit"]:hover, a.btn:hover {
@@ -665,7 +662,6 @@ p {
 /* line 55, sass/base/_typography.scss */
 a {
   -webkit-transition: color 0.1s linear;
-  -moz-transition: color 0.1s linear;
   transition: color 0.1s linear;
   color: #004280;
   text-decoration: none; }
@@ -763,11 +759,8 @@ label {
 textarea,
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 select[multiple=multiple] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: border-color;
-  -moz-transition: border-color;
   transition: border-color;
   background-color: white;
   border-radius: 0.75em;
@@ -891,7 +884,10 @@ input[type="submit"], a.btn {
   -o-appearance: none;
   appearance: none;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: middle;
   white-space: nowrap; }
 
@@ -963,7 +959,8 @@ a {
       width: 100%; } }
   /* line 45, sass/navigation/_menus.scss */
   .main-navigation li > a {
-    transition: 200ms;
+    -webkit-transition: 200ms;
+            transition: 200ms;
     text-align: center;
     color: #FFF; }
     @media screen and (max-width: 800px) {
@@ -982,7 +979,8 @@ a {
   text-decoration: none;
   padding: 26px 22px;
   margin-left: 3px;
-  transition: 0.2s;
+  -webkit-transition: 0.2s;
+          transition: 0.2s;
   font-size: .8em; }
   @media screen and (max-width: 800px) {
     /* line 60, sass/navigation/_menus.scss */
@@ -1060,7 +1058,8 @@ a {
   .menu-toggle span,
   .menu-toggle span:before,
   .menu-toggle span:after {
-    transition: all 500ms ease-in-out; }
+    -webkit-transition: all 500ms ease-in-out;
+            transition: all 500ms ease-in-out; }
 
   /* line 138, sass/navigation/_menus.scss */
   .menu-toggle.active span {
@@ -1073,11 +1072,15 @@ a {
 
   /* line 145, sass/navigation/_menus.scss */
   .menu-toggle.active span:before {
-    transform: rotate(45deg); }
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
 
   /* line 148, sass/navigation/_menus.scss */
   .menu-toggle.active span:after {
-    transform: rotate(-45deg); } }
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg); } }
 /* line 159, sass/navigation/_menus.scss */
 .site-main .comment-navigation,
 .site-main .paging-navigation,
@@ -1128,7 +1131,7 @@ a {
     text-decoration: none;
     top: 5px;
     width: auto;
-    z-index: 100000;
+    z-index: 100000
     /* Above WP toolbar */ }
 
 /*--------------------------------------------------------------
@@ -2060,7 +2063,7 @@ a {
 --------------------------------------------------------------*/
 /* line 1, sass/site/secondary/_widgets.scss */
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0 0 1.5em
   /* Make sure select elements fit in widgets */ }
   /* line 5, sass/site/secondary/_widgets.scss */
   .widget select {
@@ -2082,11 +2085,10 @@ header#masthead {
   position: relative;
   height: 70px;
   z-index: 9999;
-  -moz-box-shadow: 0 0 18px rgba(68, 69, 71, 0.19);
-  -webkit-box-shadow: 0 0 18px rgba(68, 69, 71, 0.19);
   box-shadow: 0 0 18px rgba(68, 69, 71, 0.19);
   top: 0;
-  transition: 200ms; }
+  -webkit-transition: 200ms;
+          transition: 200ms; }
   @media screen and (min-width: 800px) {
     /* line 3, sass/site/primary/_header.scss */
     header#masthead {
@@ -2105,16 +2107,22 @@ header#masthead {
     @media screen and (max-width: 800px) {
       /* line 24, sass/site/primary/_header.scss */
       header#masthead.narrow-header #site-navigation button.menu-toggle {
-        transform: translateY(-13px); }
+        -webkit-transform: translateY(-13px);
+            -ms-transform: translateY(-13px);
+                transform: translateY(-13px); }
       /* line 27, sass/site/primary/_header.scss */
       header#masthead.narrow-header .menu-main-navigation-container {
-        transform: translateY(-33px); } }
+        -webkit-transform: translateY(-33px);
+            -ms-transform: translateY(-33px);
+                transform: translateY(-33px); } }
     /* line 31, sass/site/primary/_header.scss */
     header#masthead.narrow-header .main-navigation #menu-main-navigation > li > a {
       padding: 20px 22px; }
     /* line 34, sass/site/primary/_header.scss */
     header#masthead.narrow-header h1.site-title, header#masthead.narrow-header h2.site-description {
-      transform: translateY(-13px); }
+      -webkit-transform: translateY(-13px);
+          -ms-transform: translateY(-13px);
+              transform: translateY(-13px); }
   /* line 38, sass/site/primary/_header.scss */
   header#masthead .wrap {
     content: "";
@@ -2144,7 +2152,8 @@ header#masthead {
           margin: 0; } }
       /* line 51, sass/site/primary/_header.scss */
       header#masthead .wrap .site-branding h1 {
-        transition: 200ms;
+        -webkit-transition: 200ms;
+                transition: 200ms;
         margin-top: 0; }
         @media screen and (max-width: 800px) {
           /* line 51, sass/site/primary/_header.scss */
@@ -2165,7 +2174,8 @@ header#masthead {
           height: 70px;
           font-size: 0;
           width: 100%;
-          transition: 200ms;
+          -webkit-transition: 200ms;
+                  transition: 200ms;
           background-size: contain;
           background-position: left top; }
           @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
@@ -2188,7 +2198,8 @@ header#masthead {
         font-size: .7em;
         color: #FFF;
         text-align: center;
-        transition: 200ms; }
+        -webkit-transition: 200ms;
+                transition: 200ms; }
         @media screen and (max-width: 800px) {
           /* line 87, sass/site/primary/_header.scss */
           header#masthead .wrap .site-branding h2 {
@@ -2895,7 +2906,8 @@ div#content {
 /* line 18, sass/site/primary/_main.scss */
 .above-fixed {
   z-index: 10;
-  transform: translateZ(0); }
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
 
 /* line 22, sass/site/primary/_main.scss */
 .cover {
@@ -3045,6 +3057,7 @@ img[src*=trackalyze] {
     right: 0;
     bottom: 0;
     left: 0;
+    background-image: -webkit-linear-gradient(top left, rgba(6, 75, 224, 0.69), #002556);
     background-image: linear-gradient(to bottom right, rgba(6, 75, 224, 0.69), #002556);
     opacity: 1;
     z-index: 0; }
@@ -3242,7 +3255,8 @@ object {
 /* line 45, sass/media/_media.scss */
 .fade {
   opacity: 0;
-  transition: opacity .15s linear; }
+  -webkit-transition: opacity .15s linear;
+          transition: opacity .15s linear; }
   /* line 49, sass/media/_media.scss */
   .fade.in {
     opacity: 1; }
@@ -3260,9 +3274,12 @@ object {
   position: relative;
   height: 0;
   overflow: hidden;
-  transition-timing-function: ease;
-  transition-duration: .35s;
-  transition-property: height; }
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: .35s;
+          transition-duration: .35s;
+  -webkit-transition-property: height;
+          transition-property: height; }
 
 /*--------------------------------------------------------------
 12.1 Captions
@@ -3332,3 +3349,5 @@ object {
 /* line 44, sass/media/_galleries.scss */
 .gallery-caption {
   display: block; }
+
+/*# sourceMappingURL=style.css.map */
