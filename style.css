@@ -824,6 +824,10 @@ body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label .gfield_requ
 body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
   margin: 5px 0; }
 
+/* line 88, sass/base/_forms.scss */
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text] {
+  margin-bottom: 5px; }
+
 /* line 1, sass/base/_tables.scss */
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
