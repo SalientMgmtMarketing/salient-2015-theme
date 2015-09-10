@@ -78,13 +78,13 @@ select {
 }
 
 body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label .gfield_required {
-    color:#fff
+  color:#fff
 }
 
 body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
-    margin: 0px 5px 0;
+  margin: 0;
 }
 
-body .gform_wrapper .gform_body .gform_fields .gfield input[type=text] {
-    margin-bottom: 5px;
+body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
+  margin-bottom: 1em;
 }
