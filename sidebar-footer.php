@@ -62,13 +62,13 @@
 	):
 ?>
 
-  <aside class="footer-block double">
+  <aside class="footer-block single">
 	<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
   </aside>
   <aside class="footer-block single">
 	<?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
   </aside>
-  <aside class="footer-block single">
+  <aside class="footer-block double">
 	<?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
   </aside>
 

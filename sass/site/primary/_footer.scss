@@ -9,7 +9,10 @@ footer#colophon {
   }
   
   a {
-    color:$white;	
+    color:$white;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   
   .footer-block.single {

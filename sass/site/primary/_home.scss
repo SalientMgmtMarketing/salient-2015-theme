@@ -20,7 +20,7 @@ section.section-a {
     height: 60vh;
   }
   @include media(min-width 1600px) {
-    height: 60vh;
+    height: 70vh;
   }
   p {
     font-size: 1.2em;
@@ -123,6 +123,11 @@ section#monitor, section#fair-share {
 section#improve-population-health .sub-section0 {
   @include media(min-width $nav-breakpoint-value){
     width:35%
+  }
+}
+section#turnkey-solution {
+  @include media(min-width 1600px) {
+    height:60vh;
   }
 }
 section#features {

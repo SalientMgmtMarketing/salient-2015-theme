@@ -2303,7 +2303,7 @@ section.section-a {
   @media screen and (min-width: 1600px) {
     /* line 6, sass/site/primary/_home.scss */
     section.section-a {
-      height: 60vh; } }
+      height: 70vh; } }
   /* line 25, sass/site/primary/_home.scss */
   section.section-a p {
     font-size: 1.2em; }
@@ -2526,30 +2526,35 @@ section#monitor, section#fair-share {
   section#improve-population-health .sub-section0 {
     width: 35%; } }
 
-/* line 128, sass/site/primary/_home.scss */
+@media screen and (min-width: 1600px) {
+  /* line 128, sass/site/primary/_home.scss */
+  section#turnkey-solution {
+    height: 60vh; } }
+
+/* line 133, sass/site/primary/_home.scss */
 section#features {
   text-shadow: 1px 1px 3px #333;
   background-size: cover;
   background-position: center center;
   padding: 4em 0 4em; }
-  /* line 135, sass/site/primary/_home.scss */
+  /* line 140, sass/site/primary/_home.scss */
   section#features h4 {
     margin-top: 2em;
     margin-bottom: 0; }
-    /* line 138, sass/site/primary/_home.scss */
+    /* line 143, sass/site/primary/_home.scss */
     section#features h4:first-child {
       margin-top: 0; }
-  /* line 142, sass/site/primary/_home.scss */
+  /* line 147, sass/site/primary/_home.scss */
   section#features__title {
     max-height: 300px; }
-  /* line 145, sass/site/primary/_home.scss */
+  /* line 150, sass/site/primary/_home.scss */
   section#features__turnkey, section#features__scale, section#features__dashboards, section#features__realtime, section#features__mobile {
     height: 40vh; }
-  /* line 148, sass/site/primary/_home.scss */
+  /* line 153, sass/site/primary/_home.scss */
   section#features__security {
     background-position: center top; }
 
-/* line 152, sass/site/primary/_home.scss */
+/* line 157, sass/site/primary/_home.scss */
 section#about__title {
   max-height: 500px; }
 
@@ -2945,8 +2950,11 @@ footer#colophon {
   /* line 11, sass/site/primary/_footer.scss */
   footer#colophon a {
     color: #FFF; }
+    /* line 13, sass/site/primary/_footer.scss */
+    footer#colophon a:hover {
+      text-decoration: underline; }
   @media screen and (max-width: 24.9375em) {
-    /* line 15, sass/site/primary/_footer.scss */
+    /* line 18, sass/site/primary/_footer.scss */
     footer#colophon .footer-block.single {
       float: left;
       display: block;
@@ -2956,7 +2964,7 @@ footer#colophon {
       footer#colophon .footer-block.single:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 25em) and (max-width: 50em) {
-    /* line 15, sass/site/primary/_footer.scss */
+    /* line 18, sass/site/primary/_footer.scss */
     footer#colophon .footer-block.single {
       float: left;
       display: block;
@@ -2966,7 +2974,7 @@ footer#colophon {
       footer#colophon .footer-block.single:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 50.0625em) and (max-width: 68.6875em) {
-    /* line 15, sass/site/primary/_footer.scss */
+    /* line 18, sass/site/primary/_footer.scss */
     footer#colophon .footer-block.single {
       float: left;
       display: block;
@@ -2976,7 +2984,7 @@ footer#colophon {
       footer#colophon .footer-block.single:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 68.75em) {
-    /* line 15, sass/site/primary/_footer.scss */
+    /* line 18, sass/site/primary/_footer.scss */
     footer#colophon .footer-block.single {
       float: left;
       display: block;
@@ -2986,7 +2994,7 @@ footer#colophon {
       footer#colophon .footer-block.single:last-child {
         margin-right: 0; } }
   @media screen and (max-width: 24.9375em) {
-    /* line 18, sass/site/primary/_footer.scss */
+    /* line 21, sass/site/primary/_footer.scss */
     footer#colophon .footer-block.double {
       float: left;
       display: block;
@@ -2996,7 +3004,7 @@ footer#colophon {
       footer#colophon .footer-block.double:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 25em) and (max-width: 50em) {
-    /* line 18, sass/site/primary/_footer.scss */
+    /* line 21, sass/site/primary/_footer.scss */
     footer#colophon .footer-block.double {
       float: left;
       display: block;
@@ -3006,7 +3014,7 @@ footer#colophon {
       footer#colophon .footer-block.double:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 50.0625em) and (max-width: 68.6875em) {
-    /* line 18, sass/site/primary/_footer.scss */
+    /* line 21, sass/site/primary/_footer.scss */
     footer#colophon .footer-block.double {
       float: left;
       display: block;
@@ -3016,7 +3024,7 @@ footer#colophon {
       footer#colophon .footer-block.double:last-child {
         margin-right: 0; } }
   @media screen and (min-width: 68.75em) {
-    /* line 18, sass/site/primary/_footer.scss */
+    /* line 21, sass/site/primary/_footer.scss */
     footer#colophon .footer-block.double {
       float: left;
       display: block;
@@ -3026,7 +3034,7 @@ footer#colophon {
       footer#colophon .footer-block.double:last-child {
         margin-right: 0; } }
 
-/* line 22, sass/site/primary/_footer.scss */
+/* line 25, sass/site/primary/_footer.scss */
 img[src*=trackalyze] {
   position: fixed; }
 
@@ -3366,4 +3374,5 @@ object {
 /* line 44, sass/media/_galleries.scss */
 .gallery-caption {
   display: block; }
+
 /*# sourceMappingURL=style.css.map */
