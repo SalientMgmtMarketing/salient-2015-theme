@@ -147,8 +147,15 @@ section#features {
   &__title {
     max-height:300px;
   }
-  &__turnkey, &__scale, &__dashboards, &__realtime, &__mobile {
+  &__turnkey, &__dashboards, &__realtime, &__mobile {
     height:40vh;
+  }
+  &__turnkey {
+    background-position-y: 73%;
+  }
+  &__scale {
+    background-position: center top;
+    height: 65vh;
   }
   &__security {
     background-position: center top;
