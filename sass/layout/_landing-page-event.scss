@@ -1,0 +1,110 @@
+.single-event {
+  header {
+    &#masthead {
+      position: absolute;
+    }
+    &.entry-header {
+      text-align: left;
+      background: none;
+      padding: 135px 0 14px;
+
+      &:before {
+        background-image: none;
+      }
+
+      @include media($small-screen) {
+        padding: 2em 1em;
+        
+        h1 {
+          font-size: 1em;
+        }
+      }
+    }
+    &.has-sub-headline h1 {
+      margin-top: 0;
+    }
+    h2.sub-headline {
+      font-weight: 700;
+      font-size: 1.25em;
+      margin-bottom: 0;
+    }
+  }
+  section.landing-page-hero {
+    background-color: $white;
+  }
+  .entry-content {
+    @include two-thirds-nom;
+    @include shift(0);
+    margin-top:0;
+    margin-bottom: 2em;
+    
+    background: lighten($blue,70);
+    color: $dark-gray;
+    border: none;
+    @include media(min-width $first-breakpoint-value) {
+      padding:2em 3em;
+    }
+      
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  .form-block {
+    @include one-third-nom;
+    background: lighten($blue,10);
+    color: $white;
+    padding: 2em;
+    
+    .em-booking-form label {
+      display: inline-block;
+      width: 100%;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      margin-top:0;
+    }
+    
+    .gform_wrapper {
+      margin: 0;
+    
+      .gform_footer {
+        padding: 1em 0 0;
+      
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+  section.row {
+    &.boxed .boxed {
+      padding: 2em;
+    }
+    ul {
+      margin-left: 1em;
+      margin-bottom: 1em;
+
+
+      li {
+        list-style: disc;
+        margin-bottom: 1em;
+
+        li{
+          list-style: none;
+
+          &:before {
+            content: "–";
+          }
+        }
+      }
+    }
+  }
+}

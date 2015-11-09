@@ -37,6 +37,11 @@ section.section-a {
         padding:1em;
       }
     }
+    .trial-header {
+      @include media(min-width $nav-breakpoint-value) {
+        margin-top: 2em; 
+      }
+    }
   }
   &.boxed .wrap {
     @include media(max-width $nav-breakpoint-value) {

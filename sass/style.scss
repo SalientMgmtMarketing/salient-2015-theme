@@ -45,8 +45,8 @@ and Blueprint http://www.blueprintcss.org/
 12.0 Media
 	12.1 Captions
 	12.2 Galleries
+13.0 Style Guide
 --------------------------------------------------------------*/
-@import "compass";
 @import "extend/bourbon";
 @import "base/grid-settings";
 @import "extend/neat";
@@ -55,7 +55,7 @@ and Blueprint http://www.blueprintcss.org/
 /*--------------------------------------------------------------
 1.0 Reset
 --------------------------------------------------------------*/
-@import "compass/reset";
+@import "normalize";
 @import "base/base";
 
 /*--------------------------------------------------------------
@@ -85,6 +85,8 @@ and Blueprint http://www.blueprintcss.org/
 @import "modules/alignments";
 @import "layout/two-column";
 @import "layout/three-column";
+@import "layout/landing-page";
+@import "layout/landing-page-event";
 
 /*--------------------------------------------------------------
 8.0 Clearings
@@ -110,3 +112,8 @@ and Blueprint http://www.blueprintcss.org/
 12.0 Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+13.0 Style Guide
+--------------------------------------------------------------*/
+@import "modules/styleguide";

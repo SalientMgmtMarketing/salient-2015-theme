@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: landing page
+Template Name: Landing Page
 */
 
 get_header('no-menu'); ?>
@@ -18,4 +18,4 @@ get_header('no-menu'); ?>
 	</div><!-- #primary -->
 
 
-<?php get_footer('boxy'); ?>
+<?php get_footer(); ?>

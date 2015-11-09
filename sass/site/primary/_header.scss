@@ -6,7 +6,7 @@ header#masthead {
   position: relative;
   height: 70px;
   z-index: 9999;
-  @include box-shadow(0 0 18px rgba(68, 69, 71, 0.19));
+  box-shadow:0 0 18px rgba(68, 69, 71, 0.19);
   top: 0;
   transition: 200ms;
   @include media(min-width $second-breakpoint-value) {

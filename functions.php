@@ -207,3 +207,14 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+add_action('admin_head', 'acf_custom_admin_styles');
+
+function acf_custom_admin_styles() {
+  echo '<style>
+    .column-block {
+      display: table-cell;
+    }
+</style>';
+}

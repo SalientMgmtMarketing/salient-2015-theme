@@ -1,4 +1,4 @@
-.page {
+.page, .single-event {
   article {
     margin: 0;
   }
@@ -9,8 +9,21 @@
     @include clearfix;
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 3.5em 0;
+    @include media($small-screen) {
+      padding: 0;
+    }
     @include media(max-width 800px) {
       @include outer-container();
+    }
+    
+    h2.section-title {
+      margin-top:0;
+      margin-bottom:1em;
+    }
+    
+    &.gallery .description {
+      margin-top:1em;
     }
 
     &:before {}

@@ -1,6 +1,7 @@
 // Typography
-$base-font-family: "Trade Gothic W01";
+$base-font-family: "Trade Gothic W01", Arial, sans-serif;
 $header-font-family: $base-font-family;
+$secondary-font-family: Adobe Garamond Pro, Garamond, serif;
 
 // Font Sizes
 $base-font-size: 19px;
@@ -29,16 +30,20 @@ $light-gray: #E9EBED;
 $white: #FFF;
 $orange: #F37706;
 
+$base-color-dark: $blue;
+$base-accent-color: $light-blue;
+$base-color-light: $white;
+
 
 // Background Color
 $base-background-color: $light-gray;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$base-accent-color: $blue;
+
 
 // Link Colors
-$base-link-color: $base-accent-color;
+$base-link-color: $base-color-dark;
 $hover-link-color: $light-blue;
 $base-button-color: $light-blue;
 $hover-button-color: $base-accent-color;

@@ -1,0 +1,243 @@
+@media (min-width: 30em) {
+  html.pl {
+    .sg-colors li {
+      width: 9em;
+      min-height: 163px;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.sg-patterns {
+  background-color: $base-background-color;
+  //background-image: url('../assets/images/bg.png');
+}
+
+.sg-colors li {
+  background: rgba($white, .8);
+  width: 300px;
+}
+
+html.pl body {
+  //background-image: url('../../../assets/images/bg.png');
+  background-size: contain;
+}
+
+.animate-fade {
+  @include transition(background, 250ms, ease-in-out);
+  &:hover {
+    background: darken($base-color-dark, 11);
+    color: $base-color-light;
+  }
+}
+
+.animate-move {
+  > .demo-shape {
+    @include transition(all, 0.8s, ease-in-out);
+  }
+}
+
+.wrap {
+  @include outer-container;
+  @include fill-parent;
+}
+
+.full-width {
+  @include full-width;
+}
+
+.one-third {
+  @include one-third;
+}
+
+.one-half {
+  @include one-half;
+}
+
+.one-quarter {
+  @include one-quarter;
+}
+
+.demo div > div {
+  //background: rgba($base-accent-color,.7);
+}
+
+html.pl fieldset {
+  background-color: transparent;
+  border: none;
+}
+
+
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+//Colors
+$gray: #808080;
+$gray-light: #f9f9f9;
+$gray-light-2: #eee;
+$gray-light-3: #ddd;
+$gray-med: #666;
+$gray-dark: #333;
+$gray-dark-2: #131313;
+$white: #fff;
+$black: #000;
+$dim: rgba(0, 0, 0, 0.5);
+$error: #f00;
+$valid: #089e00;
+$warning: #fff664;
+$information: #000db5;
+//Typography
+
+$font-size-small: 0.75em;
+$font-size-small-2: 0.875em;
+$font-size-med: 1em;
+$font-size-med-2: 1.0625em;
+$font-size-large: 1.4375em;
+//Layout
+$max-width: 72em;
+//Defaults
+$space: 1em;
+$space-and-half: $space*1.5;
+$space-double: $space*2;
+$space-quad: $space*4;
+$space-half: $space/2;
+$pad: 1em;
+$pad-and-half: $pad*1.5;
+$pad-double: $pad*2;
+$pad-half: $pad/2;
+$pad-quarter:$pad/4;
+//Borders
+$border-med: 3px;
+$border-thick: 7px;
+//Breakpoints
+$bp-small: 24em;
+$bp-small-2: 29.75em;
+$bp-small-3: 39.8em;
+$bp-med: 46.8em;
+$bp-med-2: 48em;
+$bp-large: 50em;
+$bp-large-2: 66em;
+$bp-xl: 73em;
+$bp-xxl: 89em;
+$bp-xxxl: 93em;
+//
+
+/*------------------------------------*\
+    $GLOBAL CLASSES
+\*------------------------------------*/
+
+
+/* Clearfix */
+
+.cf {
+  *zoom: 1;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+
+/* Completely remove from the flow and screen readers. */
+
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+/* Completely remove from the flow but leave available to screen readers. */
+
+.is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+/* Floats */
+
+.right {
+  float: right;
+  padding: 0 0 $pad $pad;
+}
+
+.right-search {
+  float: right;
+  padding: 0 0 $pad 0;
+}
+
+.left {
+  float: left;
+  padding: 0 $pad $pad 0;
+}
+
+
+/* Text-Align */
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+
+/* Display Classes */
+
+.hide-small {
+  @media all and (max-width: $bp-med) {
+    display: none;
+  }
+}
+
+.hide-med {
+  @media all and (min-width: $bp-med) and (max-width: $bp-large) {
+    display: none;
+  }
+}
+
+.hide-large {
+  @media all and (min-width: $bp-large) {
+    display: none;
+  }
+}
+
+//States
+.valid {
+  color: $valid;
+}
+
+.error {
+  color: $error;
+}
+
+.warning {
+  color: $warning;
+}
+
+.information {
+  color: $information;
+}
+
+.font-secondary {
+  font-family: $secondary-font-family;
+}

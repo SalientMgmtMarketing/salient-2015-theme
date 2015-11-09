@@ -1,0 +1,8 @@
+#wpfc-calendar-wrapper {
+  @include media($small-screen) {
+    display:none;
+  }
+}
+.ui-tooltip-content {
+  font-size: .75em;
+}
