@@ -61,7 +61,7 @@ header#masthead {
           margin-left:.2em;
         } 
         a {
-          background-image: url("./images/salient-logo-white.png");
+          background-image: url("./assets/images/salient-healthcare.png");
           display: block;
           position: relative;
           background-repeat: no-repeat;
@@ -74,7 +74,7 @@ header#masthead {
           background-size: contain;
           background-position: left top;
           @include hidpi(2) {
-            background-image: url("./images/salient-logo-white@2x.png");
+            background-image: url("./assets/images/salient-healthcare.png");
           }
           @include media(max-width $second-breakpoint-value) {
             margin-top:15px;

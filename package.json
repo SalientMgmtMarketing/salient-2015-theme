@@ -1,22 +1,22 @@
 {
-  "name": "rapid-springs",
+  "name": "salient-brand",
   "version": "1.0.0",
-  "description": "WordPress Starter Kit for Rapid Springs",
+  "description": "WordPress Starter Kit for Salient",
   "main": "index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://pstonier@bitbucket.org/rapidsprings/rapid-springs-site.git"
+    "url": "git+https://pstonier@bitbucket.org/pstonier/salient-brand.git"
   },
   "keywords": [
     "wordpress",
     "php"
   ],
-  "author": "Rapid Springs Interactive",
+  "author": "Paul Stonier",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/rapidsprings/rapid-springs-site#readme",
+  "homepage": "https://pstonier@bitbucket.org/pstonier/salient-brand.git#readme",
   "devDependencies": {
     "bourbon": "^4.2.5",
     "bourbon-neat": "^1.7.2",
@@ -24,9 +24,7 @@
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",
-    "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.0",
-    "gulp-livereload": "^3.8.1",
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",

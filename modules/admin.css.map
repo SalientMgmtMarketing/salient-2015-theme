@@ -1,1 +1,0 @@
-{"version":3,"sources":["admin.css"],"names":[],"mappings":"AAAA;EACE,oBAAoB,EAAE","file":"modules/admin.css","sourcesContent":[".column-block {\n  display: table-cell; }\n"],"sourceRoot":"/source/"}

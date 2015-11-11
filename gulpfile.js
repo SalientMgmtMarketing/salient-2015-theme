@@ -5,9 +5,9 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
-var compass = require('gulp-compass');
+var browserSync = require('browser-sync');
+var reload      = browserSync.reload;
 var maps = require('gulp-sourcemaps');
-var livereload = require('gulp-livereload');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('concatScripts', function(){
@@ -26,6 +26,17 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
             .pipe(gulp.dest('./assets/js'));
 });
 
+gulp.task('browser-sync', function() {
+    var files = [
+      './style.css',
+      './*.php',
+      './patternlab/*.mustache'
+    ];
+    browserSync.init({
+        proxy: "salienthealthcare.local/"
+    });
+});
+
 gulp.task('compileSass', function(){
     return gulp.src('./sass/**/*.scss')
             .pipe(maps.init())
@@ -33,17 +44,16 @@ gulp.task('compileSass', function(){
             .pipe(autoprefixer())
             .pipe(maps.write('./'))
             .pipe(gulp.dest('./'))
-            .pipe(livereload());
+            .pipe(reload({stream:true}));
 });
 
 gulp.task('watchFiles', function(){
-    livereload.listen();
     gulp.watch(['./sass/**/*.scss','./scss/*.scss'],['compileSass']);
-    gulp.watch(['./js/**.js','./inc/**/*.js','./assets/**.js'], ['concatScripts']);
+        gulp.watch(['./js/**.js','./inc/**/*.js','./assets/**.js'], ['concatScripts']);
 });
 
 gulp.task('build', ['minifyScripts', 'compileSass']);
 
-gulp.task('watch', ['watchFiles']);
+gulp.task('watch', ['watchFiles', 'browser-sync']);
 
 gulp.task('default', ['concatScripts', 'compileSass']);

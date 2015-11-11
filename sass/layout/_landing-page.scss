@@ -1,4 +1,5 @@
-.page.page-template-page-landing-page, .single-event {
+.page.page-template-page-landing-page,
+.single-event {
   header {
     &#masthead {
       position: absolute;
@@ -12,7 +13,6 @@
       }
       @include media($small-screen) {
         padding: 2em 1em;
-        
         h1 {
           font-size: 1em;
         }
@@ -33,16 +33,14 @@
   .entry-content {
     @include two-thirds-nom;
     @include shift(0);
-    margin-top:0;
+    margin-top: 0;
     margin-bottom: 2em;
-    
     background: rgba(0, 66, 128, 0.92);
     color: $white;
     border: none;
     @include media(min-width $first-breakpoint-value) {
-      padding:2em 3em;
+      padding: 2em 3em;
     }
-      
     h1,
     h2,
     h3,
@@ -54,50 +52,54 @@
     a:hover {
       text-decoration: underline;
     }
-  }
-  .form-block {
-    @include one-third-nom;
-    background: $blue;
-    color: $white;
-    padding: 2em;
-    
-    h1, h2, h3, h4, h5 {
-      margin-top:0;
+    img.alignright {
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.41);
+      border: 1px solid rgba(255, 255, 255, .4);
     }
-    
-    .gform_wrapper {
-      margin: 0;
-    
-      .gform_footer {
-        padding: 1em 0 0;
-      
-        input {
-          width: 100%;
-        }
+  }
+}
+
+.form-block {
+  @include one-third-nom;
+  background: $blue;
+  color: $white;
+  padding: 2em;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-top: 0;
+  }
+  .gform_wrapper {
+    margin: 0;
+    .gform_footer {
+      padding: 1em 0 0;
+      input {
+        width: 100%;
       }
     }
   }
-  section.row {
-    &.boxed .boxed {
-      padding: 2em;
-    }
-    ul {
-      margin-left: 1em;
+}
+
+section.row {
+  &.boxed .boxed {
+    padding: 2em;
+  }
+  ul {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    li {
+      list-style: disc;
       margin-bottom: 1em;
-
-
       li {
-        list-style: disc;
-        margin-bottom: 1em;
-
-        li{
-          list-style: none;
-
-          &:before {
-            content: "–";
-          }
+        list-style: none;
+        &:before {
+          content: "–";
         }
       }
     }
   }
 }
+
+
