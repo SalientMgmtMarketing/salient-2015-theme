@@ -15,42 +15,9 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		
-		<div class="ones">
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-			<div class="one-wide"></div>
-		</div>
-		<div class="twos">
-			<div class="two-wide"></div>
-			<div class="two-wide"></div>
-		</div>
-		<div class="fours">
-			<div class="four-wide"></div>
-			<div class="four-wide"></div>
-			<div class="four-wide"></div>
-		</div>
-		
-		<div class="threes">
-			<div class="three-wide"></div>
-			<div class="three-wide"></div>
-			<div class="three-wide"></div>
-			<div class="three-wide"></div>
-		</div>
-		
-		<div class="split-gf">
-			<div class="two-thirds"></div>
-			<div class="one-third"></div>
-		</div>
+		<header class="hero">
+          <div class="wrap"><h1><?php echo the_title(); ?></h1></div>
+        </header><!--.hero-->
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

@@ -1,0 +1,10 @@
+div.l-main {
+  @include span-columns(7);
+}
+footer.post-nav {
+  @include fill-parent;
+}
+div#sidebar {
+  @include span-columns(4);
+  @include shift(1);
+}

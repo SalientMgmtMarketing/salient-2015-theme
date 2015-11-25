@@ -102,6 +102,8 @@ and Blueprint http://www.blueprintcss.org/
 10.0 Content
 --------------------------------------------------------------*/
 @import "site/site";
+@import "modules/blog";
+@import "modules/hero";
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll

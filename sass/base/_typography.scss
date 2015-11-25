@@ -123,3 +123,15 @@ cite, .quote figcaption {
   display: block;
   margin-top: 1em;
 }
+
+pre {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  max-width: 100%;
+  overflow: auto;
+  padding: 12px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
