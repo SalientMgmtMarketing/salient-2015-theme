@@ -30,8 +30,8 @@
 			</div><!-- .site-branding -->
 	
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'salient-2015' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<button class="menu-toggle" aria-controls="menu" aria-expanded="false" data-toggle="collapse" data-target="#menu-testing-menu"><span></span></button>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'collapse' ) ); ?>
 			</nav><!-- #site-navigation -->
 		</div><!--.wrap-->
 	</header><!-- #masthead -->

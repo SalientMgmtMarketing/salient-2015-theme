@@ -1,0 +1,6 @@
+.cards > .card {
+	background: lighten($base-background-color,30);
+	border: 1px solid darken($base-background-color,30);
+	padding: 1em;
+	color: $base-font-color;
+}

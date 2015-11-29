@@ -10,21 +10,27 @@
 @media (min-width: 30em) {
   html.pl {
     .sg-colors li {
-      width: 9em;
+      @include one-quarter;
       min-height: 163px;
       margin-bottom: 1em;
     }
   }
 }
 
-.sg-patterns {
+#sg-patterns {
   background-color: $base-background-color;
   //background-image: url('../assets/images/bg.png');
+	@include outer-container;
 }
 
 .sg-colors li {
   background: rgba($white, .8);
-  width: 300px;
+
+	.sg-swatch {
+		width: 100%;
+		min-height: 3em;
+	}
+
 }
 
 html.pl body {

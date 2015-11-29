@@ -1,4 +1,4 @@
-.main-navigation {
+#site-navigation {
   ul {
     list-style: none;
     margin: 0;
@@ -84,16 +84,14 @@
 
 @media screen and (max-width: $nav-breakpoint-value) {
   .menu-toggle,
-  .main-navigation.toggled .nav-menu {
+  #site-navigation .nav-menu {
     display: block;
   }
-  .toggled .menu-main-navigation-container ul {
-    height: auto;
-  }
-  .menu-main-navigation-container ul {
+  
+  #site-naviatigon > div ul {
     overflow: hidden;
   }
-  .main-navigation ul {
+  #site-navigation ul {
     //display: none;
   }
   .menu-toggle {

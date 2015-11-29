@@ -3,25 +3,35 @@
 div#content {
   z-index: 800;
   position: relative;
-  @include media(min-width $first-breakpoint-value) {
-  }
+  @include media(min-width $first-breakpoint-value) {}
 }
 
 .wrap {
   @include outer-container;
   @include fill-parent;
+  
+  @include media(max-width $max-width) {
+    padding: 0 1em;
+  }
 }
 
 .fixed {
   background-attachment: fixed !important;
 }
+
 .above-fixed {
   z-index: 10;
   transform: translateZ(0);
 }
+
 .cover {
   background-size: cover !important;
 }
+
 .spacer {
-  margin:1em 0;
+  margin: 1em 0;
+}
+.boxed {
+  @include transparent-background(rgba($base-color-dark, .3));
+  padding: 2em;
 }

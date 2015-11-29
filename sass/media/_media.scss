@@ -14,6 +14,11 @@ object {
 	max-width: 100%;
 }
 
+video {
+    width: 100%;
+    height: auto;
+}
+
 
 .fancybox-overlay.fancybox-overlay-fixed {
 	position: fixed;
@@ -53,10 +58,10 @@ object {
 
 .collapse {
   @include media(max-width $nav-breakpoint-value) {
-    display: none;
+    opacity: 0;
 
     &.in {
-      display: block;
+      opacity: 1;
     }
     // tr&.in    { display: table-row; }
     // tbody&.in { display: table-row-group; }
@@ -68,7 +73,7 @@ object {
   height: 0;
   overflow: hidden;
   transition-timing-function: ease;
-  transition-duration: .35s;
+  transition-duration: .95s;
   transition-property: height;
 }
 
@@ -82,3 +87,8 @@ object {
 12.2 Galleries
 --------------------------------------------------------------*/
 @import "galleries";
+
+/*--------------------------------------------------------------
+12.3 Cards
+--------------------------------------------------------------*/
+@import "cards";

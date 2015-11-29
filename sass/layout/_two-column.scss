@@ -6,16 +6,9 @@
       @include omega;
     }
     
-    &.boxed {
-      display:table;
-    }
   }
   .sub-section1 {
     @include one-half-nom;
-    
-    &.boxed {
-      display:table;
-    }
   }
 }
 
@@ -25,9 +18,6 @@
     @include one-third-nom;
     @include media($small-screen) {
       @include omega;
-    }
-    &.boxed {
-      display:table;
     }
   }
   .sub-section1 {
@@ -45,16 +35,9 @@
     @include media($small-screen) {
       @include omega;
     }
-    &.boxed {
-      display:table;
-    }
   }
   .sub-section1 {
     @include one-third-nom;
-    
-    &.boxed {
-      display:table;
-    }
   }
 }
 
@@ -64,17 +47,11 @@
     @include media($small-screen) {
       @include omega;
     }
-    &.boxed {
-      display:table;
-    }
   }
   .sub-section1 {
     @include three-quarters-nom;
     @include media($small-screen) {
       @include omega;
-    }
-    &.boxed {
-      display:table;
     }
   }
 }
@@ -87,16 +64,8 @@
     @include media($small-screen) {
       @include omega;
     }
-    
-    &.boxed {
-      display:table;
-    }
   }
   .sub-section1 {
     @include one-quarter-nom;
-    
-    &.boxed {
-      display:table;
-    }
   }
 }

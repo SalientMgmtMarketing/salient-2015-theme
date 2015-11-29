@@ -27,13 +27,8 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
 });
 
 gulp.task('browser-sync', function() {
-    var files = [
-      './style.css',
-      './*.php',
-      './patternlab/*.mustache'
-    ];
     browserSync.init({
-        proxy: "salienthealthcare.local/"
+        proxy: "salienthealthcare.local/", notify: false
     });
 });
 
