@@ -1,0 +1,25 @@
+<div class="breadcrumbs wrap">
+  <p id="breadcrumbs">
+    <span xmlns:v="http://rdf.data-vocabulary.org/#">
+      <span typeof="v:Breadcrumb">
+        <a href="{{ url }}" rel="v:url" property="v:title">Grandparent</a>  » 
+
+        <span rel="v:child" typeof="v:Breadcrumb">
+          <a href="{{ url }}" rel="v:url" property="v:title">Parent</a>  » 
+
+          <span rel="v:child" typeof="v:Breadcrumb">
+            <a href="{{ url }}" rel="v:url" property="v:title">Child</a>  »
+
+            <span rel="v:child" typeof="v:Breadcrumb">
+              <a href="{{ url }}" rel="v:url" property="v:title">Grandchild</a>  »
+
+              <span class="breadcrumb_last">
+               Great Grandchild
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>
+    </span>
+  </p>
+</div>

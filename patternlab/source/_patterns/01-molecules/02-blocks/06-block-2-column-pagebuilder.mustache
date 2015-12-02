@@ -1,0 +1,41 @@
+<section class="row {{ layout }}" style="background-image:url('{{ backgroundImage }}'); background-color: {{ backgroundColor }};">
+
+	<div class="wrap{{# cards }} cards{{/ cards }}">
+		{{# hasHeadline }}<h2 class="section-title">{{ headline.short }}</h2>{{/ hasHeadline }}
+
+		<div class="sub-section0{{# cards }} card{{/ cards }} {{ attributeClasses }}">
+			{{# text-col1 }}
+                <h3>{{ headline.short }}</h3>
+				{{> atoms-paragraph }}
+			{{/ text-col1 }}
+			
+			{{# image-col1 }}
+				{{> atoms-square }}
+			{{/ image-col1 }}
+			
+			{{# video-col1 }}
+				{{> atoms-video }}
+			{{/ video-col1 }}
+		</div>
+		<!--.sub-section0-->
+
+		<div class="sub-section1{{# cards }} card{{/ cards }}">
+			{{# text-col2 }}
+                <h3>{{ headline.short }}</h3>
+				{{> atoms-paragraph }}
+			{{/ text-col2  }}
+			
+			{{# image-col2  }}
+				{{> atoms-square }}
+			{{/ image-col2  }}
+			
+			{{# video-col2  }}
+				{{> atoms-video }}
+			{{/ video-col2  }}
+		</div>
+		<!--.sub-section1-->
+
+	</div>
+	<!--.wrap-->
+
+</section>

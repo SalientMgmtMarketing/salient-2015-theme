@@ -1,0 +1,28 @@
+<div class="page" id="page">
+	{{> organisms-header }}
+  <div id="content" class="site-conent">  
+    <div id="primary" class="content-area">
+      <main class="site-main" role="main">
+         <article>
+          <header class="hero">
+            <div class="wrap">
+              {{> molecules-breadcrumbs }}
+              <h1 class="section-title">Salient Today</h1>
+            </div><!--.wrap-->
+          </header><!--.hero-->
+          <div class="wrap">
+			<div class="l-main">
+				{{> organisms-latest-posts }}
+				{{> molecules-pagination }}
+			</div><!--end l-main-->
+
+			<div id="sidebar">
+				{{> organisms-recent-tweets }}
+			</div><!--end l-sidebar-->
+          </div><!--.wrap-->
+        </article>
+      </main><!--End role=main-->
+    </div><!--#primary-->
+  </div><!--#content-->
+	{{> organisms-footer }}
+</div>

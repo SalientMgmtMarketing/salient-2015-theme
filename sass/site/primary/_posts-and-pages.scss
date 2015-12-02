@@ -44,12 +44,6 @@
     }
     .wrap {
       position: relative;
-      h1.entry-title {
-        z-index: 10;
-        position: relative;
-        margin-top: 0;
-        z-index: 20;
-      }
     }
   }
   #left-sidebar {
@@ -105,6 +99,13 @@
   }
 }
 
+h1.entry-title {
+  z-index: 10;
+  position: relative;
+  font-size: 2.5em;
+}
+
+
 /*
 Section Rows
 */
@@ -147,6 +148,18 @@ Single Post
       @include omega;
       @include clearfix;
     }
+    .image-block {
+      display: table;
+      @include span-columns(12);
+      
+      img {
+        width: 100%;
+      }
+      .text {
+        display: table-cell;
+        vertical-align: center;
+      }
+    }
   }
 }
 
@@ -159,11 +172,11 @@ footer.entry-footer {
   background: white;
   padding: 1em;
   border: 1px solid #D2D2D2;
-    
   span {
     display: inline-block;
     margin-right: 1em;
-    
-    &:last-child { margin-right:0; }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

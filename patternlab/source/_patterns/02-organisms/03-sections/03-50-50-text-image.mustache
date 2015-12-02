@@ -1,0 +1,27 @@
+<section class="row 
+  {{# layout }}
+    two-column-5050          
+  {{/ layout }}" style="
+  {{# background-image }}
+    background-image:url('{{ img.landscape-16x9.src }}');
+  {{/ background-image }}
+  
+  {{# background-color }}
+    background-color:#00103d;
+  {{/ background-color }}
+  "> 
+              
+  <div class="wrap">
+    <h2 class="section-title">{{ headline.short }}</h2>
+
+    <div class="sub-section0">
+      {{> atoms-paragraph }}
+    </div><!--.sub-section0-->
+
+    <div class="sub-section1">
+      {{> atoms-landscape}}
+    </div><!--.sub-section1-->
+
+  </div><!--.wrap-->
+
+</section>
