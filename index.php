@@ -16,7 +16,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<header class="hero">
-          <div class="wrap"><h1><?php echo the_title(); ?></h1></div>
+          <div class="wrap"><h1>Salient Today</h1></div>
         </header><!--.hero-->
 		<?php if ( have_posts() ) : ?>
 

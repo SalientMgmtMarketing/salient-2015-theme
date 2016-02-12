@@ -1,9 +1,14 @@
 button,
-input[type="submit"], a.btn {
+input[type="submit"], a.btn, a.button {
   @extend %button;
   @include appearance(none);
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  color: $white;
+
+  &:visited, &:hover, &:link, &:active {
+    color: $white;
+  }
 }

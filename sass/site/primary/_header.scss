@@ -38,6 +38,7 @@ header#masthead {
   .wrap {
     @include outer-container;
     position: relative;
+    padding-top: .5em;
     @include media(max-width $second-breakpoint-value) {
       padding: 0;
       width: 100%;
@@ -142,21 +143,9 @@ header#masthead {
     }
   }
 }
-/*
-.menu-main-navigation-container {
-  @include media($small-screen) {
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: 300ms;
-  }
-}
-.toggled .menu-main-navigation-container {
-  transform: scaleY(1);
-}
-*/
 
 body.admin-bar header#masthead {
-  @include media(min-width $first-breakpoint-value){
+  @include media(min-width $nav-breakpoint-value){
     top: 28px;
   }
 }

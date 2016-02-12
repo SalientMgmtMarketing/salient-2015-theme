@@ -1,0 +1,10 @@
+/*  Four Columns 25-25-25-25  */
+.cols-four {
+  .sub-section0, .sub-section1, .sub-section2, .sub-section3 {
+    @include one-quarter;
+    @include media($small-screen) {
+      @include omega;
+    } 
+  }
+}
+

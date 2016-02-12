@@ -2,19 +2,16 @@
 
 footer#colophon {
   background: $blue;
-  color:$white;	
-  
+  color: $white;
   .wrap {
     padding: 0 1em;
   }
-  
   a {
-    color:$white;
+    color: $white;
     &:hover {
       text-decoration: underline;
     }
   }
-  
   .footer-block.single {
     @include one-quarter-nom;
   }
@@ -22,6 +19,14 @@ footer#colophon {
     @include one-half-nom;
   }
 }
+
 img[src*=trackalyze] {
-	position:fixed;
+  position: fixed;
+}
+
+.widget_nav_menu ul ul {
+  margin-left: 1em;
+  li {
+    list-style-type: disc;
+  }
 }

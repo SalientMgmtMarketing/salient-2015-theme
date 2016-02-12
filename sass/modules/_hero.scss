@@ -3,49 +3,48 @@ Article Hero
 */
 
 .hero {
-	background: #004280;
-	background-size: cover;
-	color: white;
-	padding: 6em 0 2em;
-	&.light {
-		color: $base-color-dark;
-	}
-	
-	.breadcrumbs {
-		font-size: .75em;
-		a {
-			color: white;
-			font-weight: 700;
-		}
-	}
-	a {
-		color: $base-color-light;
-	}
-	.block {
-		@include one-half;
-		&.shift-right {
-			@include media($medium-screen) {
-				@include shift(2 of 4);
-			}
-			@include media($large-screen) {
-				@include shift(4 of 8);
-			}
-			@include media($xl-screen) {
-				@include shift(6 of 12);
-			}
-		}
-		&.boxed {
-			background: rgba($base-font-color, .7);
-			padding:2em;
-		}
-	}
-	h2.b-title {
-		margin-top: 0;
-		font-size: 1.8em;
-		line-height: 100%;
-	}
-	p {
-		line-height: 1.2em;
-		
-	}
+  background: #004280;
+  background-size: cover;
+  color: white;
+  padding: 5em 0 1em;
+  &.light {
+    color: $base-color-dark;
+  }
+  #breadcrumbs {
+    font-size: .7em;
+    padding-bottom: 1em;
+    a {
+      color: white;
+      font-weight: 700;
+    }
+  }
+  a {
+    color: $base-color-light;
+  }
+  .block {
+    @include one-half;
+    &.shift-right {
+      @include media($medium-screen) {
+        @include shift(2 of 4);
+      }
+      @include media($large-screen) {
+        @include shift(4 of 8);
+      }
+      @include media($xl-screen) {
+        @include shift(6 of 12);
+      }
+    }
+    &.boxed {
+      background: rgba($base-font-color, .7);
+      padding: 2em;
+    }
+  }
+  h2.b-title {
+    margin-top: 0;
+    font-size: 1.8em;
+    line-height: 100%;
+  }
+  p {
+    line-height: 1.2em;
+  }
 }

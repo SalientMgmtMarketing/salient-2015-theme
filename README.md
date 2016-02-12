@@ -1,7 +1,8 @@
 Salient Healthcare WordPress Theme
 ===
 
-This is a WordPress Theme based from the `_s starter theme`([http://underscores.me](http://underscores.me)). 
+This is a WordPress Theme based from the `_s starter theme`([http://underscores.me](http://underscores.me)).
+ 
 Pattern Lab has been worked in to the theme to provide a useful style guide and establish a modular system to be the codebase for all Salient websites.
 
 To use Pattern Lab:

@@ -77,6 +77,10 @@ function salient_2015_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+	
+	// Custom Image Sizes
+	add_image_size( 'cards-5x2', 624, 250, true );
+	add_image_size( 'cards-4x3', 420, 250, true );
 }
 endif; // salient_2015_setup
 add_action( 'after_setup_theme', 'salient_2015_setup' );
@@ -169,7 +173,7 @@ function salient_2015_scripts() {
 
 	wp_enqueue_script( 'salient-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	
-	wp_enqueue_script( 'salient-2015-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '', true );
+	wp_enqueue_script( 'salient-2015-custom', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '', true );
 	
 	wp_enqueue_script( 'salient-2015-fancybox-js', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.pack.js', array('jquery'), '', true );
     wp_enqueue_script( 'salient-2015-collapse-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '', true );
@@ -207,6 +211,46 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+// Add Shortcode
+function buttonSC( $atts , $content = null ) {
+
+	// Attributes
+	extract( shortcode_atts(
+		array(
+			'color' => 'lt-blue',
+			'href' => '#'
+		), $atts )
+	);
+	return '<a href="'.$href.'" class="button '.$color.'">'.$content.'</a>';
+}
+add_shortcode( 'button', 'buttonSC' );
+
+
+
+// Hooks button shortcode into TinyMCE
+add_action('init', 'add_button');
+
+// Checks if user has appropriate rights
+function add_button() {
+   if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') )
+   {
+     add_filter('mce_external_plugins', 'add_plugin');
+     add_filter('mce_buttons', 'register_button');
+   }
+}
+
+// Registers the button shortcode button
+function register_button($buttons) {
+	array_push($buttons, "buttonlink");
+	return $buttons;
+}
+function add_plugin($plugin_array) {
+   $plugin_array['buttonlink'] = get_bloginfo('template_url').'/assets/js/tinymce.js';
+   return $plugin_array;
+}
 
 
 add_action('admin_head', 'acf_custom_admin_styles');

@@ -1,3 +1,11 @@
+section#hero {
+  padding: 8em 0 7em;
+}
+
+section#value-line {
+  padding: 3em 0;
+}
+
 section.section-a {
   background-color: #004280;
   background-repeat: no-repeat;
@@ -106,61 +114,4 @@ section.section-a {
     max-width: 905px;
     margin-top: 1em;
   }
-}
-section#improve-overall-population {
-  background-position: center top;
-}
-section#monitor, section#fair-share {
-  height: 40vh;
-  .sub-section1 p {
-    text-align: center;
-    
-    img {
-      width:70%;
-    }
-  }
-}
-section#improve-population-health .sub-section0 {
-  @include media(min-width $nav-breakpoint-value){
-    width:35%
-  }
-}
-section#turnkey-solution {
-  @include media(min-width 1600px) {
-    height:60vh;
-  }
-}
-section#features {
-  text-shadow: 1px 1px 3px $dark-gray;
-  background-size: cover;
-  background-position: center center;
-  padding: 4em 0 4em;
-  
-  @include media(min-width 500px) {}
-  h4 {
-    margin-top: 2em;
-    margin-bottom: 0;
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-  &__title {
-    max-height:300px;
-  }
-  &__turnkey, &__dashboards, &__realtime, &__mobile {
-    height:40vh;
-  }
-  &__turnkey {
-    background-position-y: 73%;
-  }
-  &__scale {
-    background-position: center top;
-    height: 65vh;
-  }
-  &__security {
-    background-position: center top;
-  }
-}
-section#about__title {
-  max-height: 500px;
 }

@@ -2,9 +2,6 @@
   display: block;
 }
 
-.hentry {
-  margin: 0 0 1.5em;
-}
 
 .byline,
 .updated:not(.published) {
@@ -21,82 +18,10 @@
   margin: 0 0 1.5em;
 }
 
-.page article {
-  header.entry-header {
-    background: rgb(0, 66, 128);
-    padding: 85px 0px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    z-index: 10;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: linear-gradient(to bottom right, rgba(6, 75, 224, 0.69), #002556);
-      opacity: 1;
-      z-index: 0;
-    }
-    .wrap {
-      position: relative;
-    }
-  }
-  #left-sidebar {
-    @include media($small-screen) {
-      display: none;
-    }
-    @include media($medium-screen) {
-      display: none;
-    }
-    @include media($large-screen) {
-      display: none;
-    }
-    @include media($xl-screen) {
-      @include span-columns(2);
-    }
-  }
-  .entry-content {
-    background: $white;
-    border: 1px solid #CBCBCB;
-    padding: 2em 5em;
-    margin-top: -2em;
-    position: relative;
-    z-index: 30;
-    @include media($small-screen) {
-      @include span-columns(2);
-      @include omega;
-      padding: 1em;
-    }
-    @include media($medium-screen) {
-      @include span-columns(4);
-      @include omega;
-      padding: 1em;
-    }
-    @include media($large-screen) {
-      @include span-columns(8);
-      @include omega;
-    }
-    @include media($xl-screen) {
-      @include span-columns(8);
-      @include shift(2);
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-weight: 700;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  }
+
+/* Pages */
+.page article .entry-content {
+	padding: 1.5em 0;
 }
 
 h1.entry-title {
@@ -104,6 +29,7 @@ h1.entry-title {
   position: relative;
   font-size: 2.5em;
 }
+
 
 
 /*
@@ -117,24 +43,25 @@ Section Rows
 }
 
 
+/* Blog Feed */
+.blog, .archive {
+  article {
+    padding: 1em;
+    
+    &:nth-child(even) {
+      background: lighten($base-background-color, 5);
+      border-bottom: 1px solid darken($base-background-color,10);
+      border-top: 1px solid darken($base-background-color,10);
+    }
+  }
+}
+
+
 /*
 Single Post
 */
 
 .single-post {
-  .hero {
-    h1 {
-      font-size: 2.5em;
-      padding: 2em;
-    }
-    h1,
-    .byline {
-      text-align: center;
-      @include fill-parent;
-      margin: 0 auto;
-      display: block;
-    }
-  }
   .entry-content {
     padding: 2em 0;
   }

@@ -17,6 +17,6 @@ $large-screen: new-breakpoint(min-width em($second-breakpoint-value + 1) max-wid
 $xl-screen: new-breakpoint(min-width em($third-breakpoint-value));
 
 
-$visual-grid: true;
+$visual-grid: false;
 $visual-grid-index: front;
 $visual-grid-color: rgba(15,16,76,.2);

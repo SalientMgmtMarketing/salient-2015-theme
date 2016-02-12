@@ -28,7 +28,14 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #E9EBED;
 $white: #FFF;
+
 $orange: #F37706;
+$dark-orange: #DF6631;
+$light-orange: #E88939;
+
+$teal: #0396AD;
+$pink: #D26094;
+$purple: #5B24B5;
 
 $base-color-dark: $blue;
 $base-accent-color: $light-blue;
@@ -46,7 +53,7 @@ $base-font-color: $dark-gray;
 $base-link-color: $base-color-dark;
 $hover-link-color: $light-blue;
 $base-button-color: $light-blue;
-$hover-button-color: $base-accent-color;
+$hover-button-color: darken($base-accent-color,20);
 
 // Border color
 $base-border-color: $light-gray;

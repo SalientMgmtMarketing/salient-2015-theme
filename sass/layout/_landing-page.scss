@@ -84,7 +84,11 @@
 
 section.row {
   &.boxed .boxed {
-    padding: 2em;
+    padding: 1em 2em;
+    
+    h3 {
+      margin: 0;
+    }
   }
   ul {
     margin-left: 1em;

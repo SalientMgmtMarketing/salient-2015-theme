@@ -2,6 +2,7 @@
 .archive .format-aside .entry-title {
 	display: none;
 }
+
 aside#left-sidebar {
 	margin-top:2em;
 	
@@ -12,4 +13,12 @@ aside#left-sidebar {
 		font-weight:400;
 		font-size:.8em;
 	}
+}
+
+.widget_nav_menu ul ul {
+  margin-left: 1em;
+  
+  li {
+    list-style-type: disc;
+  }
 }

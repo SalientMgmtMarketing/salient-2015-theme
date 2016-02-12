@@ -13,7 +13,7 @@ var autoprefixer = require('gulp-autoprefixer');
 gulp.task('concatScripts', function(){
     return gulp.src([
             './inc/**.js',
-            './js/**.js'])
+            './js/**.js', '!./js/customizer.js'])
             .pipe(maps.init())
             .pipe(concat('scripts.js'))
             .pipe(maps.write('./'))
@@ -28,7 +28,7 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "salienthealthcare.local/", notify: false
+        proxy: "salienthealthcare.dev/", notify: false
     });
 });
 
@@ -49,6 +49,8 @@ gulp.task('watchFiles', function(){
 
 gulp.task('build', ['minifyScripts', 'compileSass']);
 
-gulp.task('watch', ['watchFiles', 'browser-sync']);
+gulp.task('watch', ['watchFiles']);
+
+gulp.task('watch-sync', ['watchFiles', 'browser-sync']);
 
 gulp.task('default', ['concatScripts', 'compileSass']);

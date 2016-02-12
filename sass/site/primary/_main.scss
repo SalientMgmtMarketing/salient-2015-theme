@@ -1,5 +1,9 @@
 /* Scss Document */
 
+main section:first-child {
+    padding-top: 110px;
+}
+
 div#content {
   z-index: 800;
   position: relative;
