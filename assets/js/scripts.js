@@ -326,11 +326,12 @@ var t=x.length;if(t){x.sort(c);for(var e,r=1,u=x[0],i=[u];t>r;++r)e=x[r],l(e[0],
  *
  * Handles toggling the navigation menu for small screens.
  */
-( function() {
+( function () {
+    'use strict';
 	var container, button, menu;
 
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container ) {
+	container = document.getElementById( 'site-navigation');
+	if (!container) {
 		return;
 	}
 
@@ -365,6 +366,38 @@ var t=x.length;if(t){x.sort(c);for(var e,r=1,u=x[0],i=[u];t>r;++r)e=x[r],l(e[0],
 		}
 	};
 } )();
+
+
+jQuery(function( $ ){
+    var $body, $window, $sidebar, adminbarOffset, top = false,
+	    bottom = false, windowWidth, windowHeight, lastWindowPos = 0,
+	    topOffset = 0, bodyHeight, sidebarHeight, resizeTimer,
+		secondary, button;
+
+	// Add dropdown toggle that display child menu items.
+	$( '.main-navigation .menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+
+	// Toggle buttons and submenu items with active children menu items.
+	$( '.main-navigation .current-menu-ancestor > button' ).addClass( 'toggle-on' );
+	//$( '.main-navigation .current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
+
+	$( '.dropdown-toggle' ).click( function( e ) {
+		var _this = $( this );
+		e.preventDefault();
+		_this.toggleClass( 'toggle-on' );
+		_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+		_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+		_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+	} );
+
+	secondary = $( '#secondary' );
+	button = $( '.site-branding' ).find( '.secondary-toggle' );
+    
+    
+	$('button.menu-toggle').click(function(){
+		$('#page').toggleClass('toggled');	
+	});
+});
 
 ( function() {
 	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,

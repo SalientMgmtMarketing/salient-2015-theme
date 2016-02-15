@@ -1,50 +1,54 @@
 section.row.cards { 
-		.card {
-			background: darken($base-background-color,70);
-			border: 1px solid darken($base-background-color,30);
-			color: $base-color-light;
-			font-size: .75em;
-			border-radius: 5px;
-			box-shadow: 0 0 1px rgba($dark-gray,.9);
-			transition: 500ms;
+  .card {
+    background: darken($base-background-color, 70);
+    border: 1px solid darken($base-background-color, 30);
+    color: $base-color-light;
+    border-radius: 5px;
+    box-shadow: 0 0 1px rgba($dark-gray, .9);
+    transition: 500ms;
+    padding: 0;
+    margin: .5em 0;
+    
+    @include media(min-width $first-breakpoint-value) {
+      font-size: .75em;
+    }
+    &:hover {
+      box-shadow: 0 0 34px rgba(51, 51, 51, 0.3);
+    }
+    
+    img {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      width: 100%;
+    }
 
-			&:hover {
-				box-shadow: 0 0 55px rgba($dark-gray,.9);
-			}
+    .card-content {
+      padding: 0 1em 1em;
+      min-height: 180px;
 
-		img	{
-			border-top-right-radius: 5px;
-			border-top-left-radius: 5px;
-			width: 100%;
-		}
+      @include media($xl-screen) {
+        padding: 0 2em 1em;
+      }
 
-		.card-content {
-			padding: 0 1em 1em;
-			min-height: 180px;
+      h3 {
+        font-size: 2em;
+      }
+      a.button {
+        font-size: 1.2em;
+        margin-top: .5em;
+        color: $white;
 
-			@include media($xl-screen) {
-				padding: 0 2em 1em;
-			}
+        &:visited, &:hover, &:link, &:active {
+            color: $white;
+        }
+      }
+    }
+  }
+  &.cols-four .card {
+    min-height: 425px;
 
-			h3 {
-				font-size: 2em;
-			}
-			a.button {
-				font-size: 1.2em;
-				margin-top: .5em;
-				color: $white;
-
-				&:visited, &:hover, &:link, &:active {
-					color: $white;
-				}
-			}
-		}
-	}
-	&.cols-four .card {
-		min-height: 425px;
-		
-		h3 {
-			font-size: 1.5em;
-		}
-	}
+    h3 {
+      font-size: 1.5em;
+    }
+  }
 }

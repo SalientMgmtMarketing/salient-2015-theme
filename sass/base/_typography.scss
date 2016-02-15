@@ -7,6 +7,10 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
+  
+  @include media(screen and min-width $first-breakpoint-value) {
+    font-size: ($base-font-size * 1.2);
+  }
 }
 body#tinymce {
   padding:1em !important;

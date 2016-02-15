@@ -1,117 +1,28 @@
 section#hero {
-  padding: 8em 0 7em;
+  padding: 0;
+  
+  h1 {
+    font-size: 1.35em;
+  }
+  
+  @media screen and (min-width: $first-breakpoint-value) {
+    padding: 1em 0 1em;
+  }
+  
+  @media screen and (min-width: $second-breakpoint-value) {
+    padding: 5em 0 2em;
+  }
+  
+  @media screen and (min-width: $third-breakpoint-value) {
+    padding: 8em 0 7em;
+  }
 }
 
 section#value-line {
   padding: 3em 0;
-}
-
-section.section-a {
-  background-color: #004280;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  display: block;
-  position: relative;
-  width: 100%;
-  color: $white;
-  @include media(min-width $nav-breakpoint-value) {
-    padding-top: 35px;
-    padding-bottom: 50px;
-  }
-  @include media($xl-screen) {
-    height: 60vh;
-  }
-  @include media(min-width 1600px) {
-    height: 70vh;
-  }
-  p {
-    font-size: 1.2em;
-  }
-  .wrap {
-    opacity: 1;
-    @include media(max-width $nav-breakpoint-value) {
-      padding: 3em 1em;
-    }
-    @include media(min-width $nav-breakpoint-value) {
-      .sub-section0,
-      .sub-section1,
-      .sub-section2 {
-        padding:1em;
-      }
-    }
-    .trial-header {
-      @include media(min-width $nav-breakpoint-value) {
-        margin-top: 2em; 
-      }
-    }
-  }
-  &.boxed .wrap {
-    @include media(max-width $nav-breakpoint-value) {
-      padding:0;
-    }
-  }
-  .left-block {
-    @include one-half;
-    h2 {
-      font-size: 1.25em;
-      position: relative;
-      z-index: 99;
-      span {
-        font-weight: 700;
-      }
-    }
-  }
-  .right-block {
-    @include one-half;
-  }
-  .video {
-    position: fixed !important;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    z-index: 0 !important;
-  }
-  .video video {
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: 0 !important;
-    display: block;
-    opacity: 0.14;
-    z-index: 0;
-    position: relative;
-  }
-  h3 {
-    clear: both;
-    text-align: center;
-    position: absolute;
-    z-index: 100;
-    font-weight: 700;
-    font-size: 1.25em;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    margin: 0;
-  }
-  h1,
-  h2,
-  h3,
-  li {}
-  ul {
-    max-width: 474px;
-    text-align: left;
-    margin: 1em auto;
-    @include media($xl-screen) {
-      max-width: 630px;
-      li {
-        font-size: 1.1em;
-      }
-    }
-  }
-  #intro h2 {
-    max-width: 905px;
-    margin-top: 1em;
+  text-align: center;
+  
+  .sub-section0 {
+    padding: 0;
   }
 }

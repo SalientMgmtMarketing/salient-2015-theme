@@ -13,7 +13,7 @@ var autoprefixer = require('gulp-autoprefixer');
 gulp.task('concatScripts', function(){
     return gulp.src([
             './inc/**.js',
-            './js/**.js', '!./js/customizer.js'])
+            './js/**.js', '!./js/customizer.js', '!.js/navigation.js'])
             .pipe(maps.init())
             .pipe(concat('scripts.js'))
             .pipe(maps.write('./'))

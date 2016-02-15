@@ -184,6 +184,10 @@ function salient_2015_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+    wp_localize_script( 'salient-2015-navigation', 'screenReaderText', array(
+      'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'sscl' ) . '</span>',
+      'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'sscl' ) . '</span>',
+	) );
 }
 add_action( 'wp_enqueue_scripts', 'salient_2015_scripts' );
 

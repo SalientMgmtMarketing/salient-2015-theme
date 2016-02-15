@@ -6,7 +6,11 @@ Article Hero
   background: #004280;
   background-size: cover;
   color: white;
-  padding: 5em 0 1em;
+  padding: 1em 0;
+  
+  @include media(min-width $nav-breakpoint-value) {
+    padding: 5em 0 1em;
+  }
   &.light {
     color: $base-color-dark;
   }
