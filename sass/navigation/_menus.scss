@@ -5,60 +5,106 @@
     padding-left: 0;
     ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
       top: 100%;
-      left: -999em;
       z-index: 99999;
+      width: 100%;
+      left: -999em;
+      position: absolute;
+      &.toggled-on {
+        left: 0;
+        position: relative;
+        float: left;
+      }
+      
+      @include media(min-width $nav-breakpoint-value) {
+        float: left;
+      }
+      
       ul {
         left: -999em;
         top: 0;
       }
-      li {
-        &:hover > ul {
-          left: 100%;
-          margin-left: -2px;
+
+      li { 
+        @include media(min-width $nav-breakpoint-value) {
+          &:hover > ul {
+            left: 100%;
+            margin-left: -2px;
+          }
+        }
+        li {
+          button {
+            color: $base-button-color;
+          }
+          a {
+            background: $base-color-light;
+            color: $base-color-dark;
+            @include media(max-width $nav-breakpoint-value) {
+              padding-left: 2em;
+            }
+          }
         }
       }
       a {
-        width: 250px;
-        padding: 10px;
+        padding: 1em 4em 1em 1.5em;
         font-size: .7em;
-        background: $white;
-        color: $blue;
+        background: lighten($base-color-dark, 20);
+        color: $base-color-light;
+        @include media(min-width $nav-breakpoint-value) {
+          width: 250px;
+          padding: 10px;
+          background: $base-color-light;
+          color: $base-color-dark;
+        }
       }
-      :hover > a {}
-      a:hover {}
     }
-    li:hover > ul {
-      left: 50%;
-      text-align: center;
-      margin-left: -125px;
+    @include media(min-width $nav-breakpoint-value) {
+      li:hover > ul {
+        left: 50%;
+        text-align: center;
+        margin-left: -125px;
+      }
     }
   }
   li {
-    float: left;
     position: relative;
     font-size: 1.15em;
+    @include media(min-width $nav-breakpoint-value) {
+      float: left;
+    }
     @include media(max-width $nav-breakpoint-value) {
       width: 100%;
+      clear: both;
+      font-weight: 700;
+      a { 
+        padding: 1em 4em 1em 1em;
+      }
+      li {
+        font-weight: 400;
+      }
     }
     li {
       font-size: 1em;
     }
     > a {
       transition: 200ms;
-      text-align: center;
-      color:$white;
+      text-align: left;
+      color:$base-color-light;
       @include media(max-width $nav-breakpoint-value) {
         background: #F9F9F9;
         width: 100%;
-        color:$blue;
+        color:$base-color-light;
+        background: lighten($base-color-dark,5);
+      }
+      @include media(min-width $nav-breakpoint-value) {
+        text-align: center;
       }
     }
-    &:hover > a {
-      background: #6C8ECD;
-      color: $white;
+    @include media(min-width $nav-breakpoint-value){
+      &:hover > a {
+        background: $base-accent-color;
+        color: $base-color-light;
+      }
     }
   }
   a {
@@ -71,15 +117,50 @@
     @include media(max-width $nav-breakpoint-value) {
       padding: 25px 12px;
       border-top: 1px solid #D7D7D7;
+      padding-right: 4em;
     }
   }
   .current_page_item > a,
   .current-menu-item > a,
   .current_page_ancestor > a {
-    background: #EFEFEF;
-    color: $blue;
+    @include media(min-width $nav-breakpoint-value) {
+      background: #EFEFEF;
+      color: $blue;
+    }
   }
 }
+
+button.dropdown-toggle {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.3);
+  color: $base-color-light;
+  border: none;
+
+  @include media(min-width $nav-breakpoint-value) {
+    display: none;
+  }
+  
+   &:before {
+    content:'+';
+    width: 1em;
+    display: block;
+    font-size: 1.5em;
+    
+    @include media(min-width $nav-breakpoint-value) {
+      content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17.1" height="9.2" viewBox="0 0 17.1 9.2"><path class="st0" d="M8.5 9.2L0 0h17.1"/></svg>'); 
+    }
+  }
+  &.toggle-on:before {
+    @include media(max-width $nav-breakpoint-value) {
+      content:'-';
+    }
+  }
+}
+
 /* Small menu */
 
 .menu-toggle {

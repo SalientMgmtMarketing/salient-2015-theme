@@ -1,0 +1,36 @@
+#pcmh- {
+  &outreach {
+    background-position: 50% 16%;
+    
+    h3 {
+      font-size: 1.5em;
+    }
+    .wrap {
+      padding-top: 4em;
+      padding-bottom: 8em;
+    }
+  }
+  &coordinate {
+    background-position: 50% 76%;
+    
+    .wrap {
+      padding-top: 20em;
+      padding-bottom: 5em;
+    }
+  }
+  &control-costs {
+    background-position: 50% 43%;
+    
+    .wrap {
+      padding: 2em 0 10em 0;
+    }
+  }
+  &continuous {
+    background-position: 50% 5%;
+    
+    .wrap {
+      padding: 3em 0;
+    }
+  }
+
+}

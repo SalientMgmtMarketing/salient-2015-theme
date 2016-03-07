@@ -50,90 +50,92 @@
     
             <section <?php if( get_sub_field( 'section_id') ) { ?> id="
               <?php the_sub_field('section_id'); ?>"
-                <?php } ?> class="row
-                  <?php   
+              <?php } ?> class="row
+
+              <?php   
+
+                //adds the class for the selection type
+                $value = get_sub_field('columns');
+                echo "cols-" . $value;
+
+                //adds class for background-attachment:fixed
+                if( get_sub_field('fixed') ) { echo " fixed"; }
+
+                //adds class for box
+                if( get_sub_field('boxed_content')) { echo " boxed"; }
+
+                //adds class for column layout
+                if( get_sub_field( '2_column_layout' )) { echo " "; the_sub_field('2_column_layout'); }
+                if( get_sub_field( '3_column_layout' )) { echo " "; the_sub_field('3_column_layout'); }
+
+              ?>" style="<?php if (get_sub_field('background_image')) { ?> background-image:url('<?php the_sub_field('background_image'); ?>'); <?php } ?>
+
+              <?php if (get_sub_field('background_color')) { ?>background-color:<?php the_sub_field('background_color'); } ?>
+            ">
 
 
-                    //adds the class for the selection type
-                    $value = get_sub_field('columns');
-                    echo "cols-" . $value;
+            <div class="wrap above-fixed">
 
-                    //adds class for background-attachment:fixed
-                    if( get_sub_field('fixed') ) { echo " fixed"; }
+              <?php if( get_sub_field('section_title') ): ?>
+                <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+              <?php endif; ?>
 
-                    //adds class for box
-                    if( get_sub_field('boxed_content')) { echo " boxed"; }
+              <div class="sub-section0<?php 
 
-                    //adds class for column layout
-                    if( get_sub_field( '2_column_layout' )) { echo " "; the_sub_field('2_column_layout'); }
-                    if( get_sub_field( '3_column_layout' )) { echo " "; the_sub_field('3_column_layout'); }
+                  //adds class for box
+                  $selected = get_sub_field('boxed_content');
+                  if( in_array('col-1', $selected) ) {
 
-                     ?>" style="
-                      <?php if (get_sub_field('background_image')) { ?> background-image:url('<?php the_sub_field('background_image'); ?>'); <?php } ?>
+                      echo " boxed ";
 
-                      <?php if (get_sub_field('background_color')) { ?>background-color:<?php the_sub_field('background_color'); } ?>">
+                  } ?>">
 
+                  <?php the_sub_field('column_1'); ?>
 
-                        <div class="wrap above-fixed">
-
-                          <?php if( get_sub_field('section_title') ): ?>
-                            <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
-                          <?php endif; ?>
-
-                          <div class="sub-section0<?php 
-
-                            //adds class for box
-                            $selected = get_sub_field('boxed_content');
-                            if( in_array('col-1', $selected) ) {
-
-                                echo " boxed ";
-
-                            } ?>">
-
-                            <?php the_sub_field('column_1'); ?>
-
-                          </div>
-                          <!--.sub-section0-->
-
-
-                          <?php if ( get_sub_field ('columns') !== 'one') { ?>
-
-                            <div class="sub-section1<?php 
-
-                            //adds class for box
-                            $selected = get_sub_field('boxed_content');
-                            if( in_array('col-2', $selected) ) {
-
-                                echo " boxed ";
-
-                            } ?>">
-
-                              <?php the_sub_field('column_2'); ?>
-                            </div>
-                            <!--.sub-section1-->
-                          <?php } ?>
-
-                          <?php if ( get_sub_field ('columns') == 'three') { ?>
-
-                            <div class="sub-section2<?php 
-
-                            //adds class for box
-                            $selected = get_sub_field('boxed_content');
-                            if( in_array('col-3', $selected) ) {
-
-                                echo " boxed ";
-
-                            } ?>">
-
-                              <?php the_sub_field('column_3'); ?>
-                            </div>
-                            <!--.sub-section2-->
-                          <?php } ?>
               </div>
-              <!--.wrap-->
+              <!--.sub-section0-->
 
-            </section>
-            <!-- #intro -->
+
+              <?php if ( get_sub_field ('columns') !== 'one') { ?>
+
+                <div class="sub-section1<?php 
+
+                  //adds class for box
+                  $selected = get_sub_field('boxed_content');
+                  if( in_array('col-2', $selected) ) {
+
+                    echo " boxed ";
+
+                  } ?>">
+
+                  <?php the_sub_field('column_2'); ?>
+                </div>
+                <!--.sub-section1-->
+              <?php } ?>
+
+
+              <?php if ( get_sub_field ('columns') == 'three') { ?>
+
+                <div class="sub-section2<?php 
+
+                  //adds class for box
+                  $selected = get_sub_field('boxed_content');
+                  if( in_array('col-3', $selected) ) {
+
+                      echo " boxed ";
+
+                  } ?>">
+
+                  <?php the_sub_field('column_3'); ?>
+                </div>
+                <!--.sub-section2-->
+              <?php } ?>
+
+            </div>
+            <!--.wrap-->
+
+          </section>
+          <!-- #intro -->
           <?php endif; ?>
     
           <?php 

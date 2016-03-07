@@ -7,6 +7,7 @@ Article Hero
   background-size: cover;
   color: white;
   padding: 1em 0;
+  background-position: 50% 50%;
   
   @include media(min-width $nav-breakpoint-value) {
     padding: 5em 0 1em;
@@ -27,17 +28,7 @@ Article Hero
   }
   .block {
     @include one-half;
-    &.shift-right {
-      @include media($medium-screen) {
-        @include shift(2 of 4);
-      }
-      @include media($large-screen) {
-        @include shift(4 of 8);
-      }
-      @include media($xl-screen) {
-        @include shift(6 of 12);
-      }
-    }
+    
     &.boxed {
       background: rgba($base-font-color, .7);
       padding: 2em;
@@ -50,5 +41,8 @@ Article Hero
   }
   p {
     line-height: 1.2em;
+  }
+  .cols-one .sub-section0 {
+    @include two-thirds-nom;
   }
 }

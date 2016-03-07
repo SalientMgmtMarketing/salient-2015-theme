@@ -1,26 +1,36 @@
 #pm- {
-  &identify, &discover, &transparency {  
+  &identify, &transparency {  
     h3 {
-      float: right;
       font-size: 2em;
       font-weight: 400;
-      margin: 2em 0;
       width: 80%;
     }
   }
-  &monitor, &align {
+  &monitor, &discover, &align {
     h3 {
       font-size: 2em;
       font-weight: 400;
       margin: 2em 0;
     }    
   }
-  &monitor {
-    .sub-section0 {
-      width: 50%;
+
+  &transparency {
+    background-position: 29% 41%;
+  }
+  
+  &align {
+    background-position: 50% 33%;
+    
+    .wrap {
+      padding-top: 15em;
+      padding-bottom: 0em;
+      text-align: right;
     }
   }
   &transparency {
-    background-position: 29% 41%;
+    background-position: 50% 15%;
+    .wrap {
+      padding-bottom: 20em;
+    }
   }
 }

@@ -1,0 +1,32 @@
+#aco- {
+  &reduce {
+    .wrap {
+      padding-top: 19em;
+      padding-bottom: 4em;
+    }
+  }
+  &infrastructure {
+    background-position: 50% 30%;
+    
+    .wrap {
+      padding: 5em; 
+    }
+  }
+  &maintain {
+    background-position: 50% 27%;
+    .wrap {
+      padding: 10em 0;
+    }
+  }
+  &grant {
+    background-position: 50% 67%;
+    .wrap {
+      padding: 5em 0 15em;
+    }
+  }
+  &provide {
+    .wrap {
+      padding: 8em 0 20em;
+    }
+  }
+}

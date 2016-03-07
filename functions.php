@@ -169,24 +169,21 @@ function salient_2015_scripts() {
     wp_enqueue_style( 'salient-2015-flickity-style', get_template_directory_uri() . '/css/flickity.min.css' );   
 	wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_script( 'salient-2015-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	//wp_enqueue_script( 'salient-2015-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'salient-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	
 	wp_enqueue_script( 'salient-2015-custom', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '', true );
-	
-	wp_enqueue_script( 'salient-2015-fancybox-js', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.pack.js', array('jquery'), '', true );
-    wp_enqueue_script( 'salient-2015-collapse-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '', true );
-    wp_enqueue_script( 'salient-2015-flickity-js', get_template_directory_uri() . '/js/flickity.pkgd.min.js', array('jquery'), '', true );
+
     
 	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-    wp_localize_script( 'salient-2015-navigation', 'screenReaderText', array(
-      'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'sscl' ) . '</span>',
-      'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'sscl' ) . '</span>',
+    wp_localize_script( 'salient-2015-custom', 'screenReaderText', array(
+      'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'salient-2015' ) . '</span>',
+      'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'salient-2015' ) . '</span>',
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'salient_2015_scripts' );
@@ -195,6 +192,7 @@ add_action( 'wp_enqueue_scripts', 'salient_2015_scripts' );
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header-styles.php';
 
 /**
  * Custom template tags for this theme.

@@ -146,10 +146,10 @@ section.row {
     font-size: .64em;
     font-weight: 700;
     @include media(min-width 400px) {
-      font-size: .8em;
+      font-size: 1.2em;
     }
     @include media(min-width 480px) {
-      font-size: 1em;
+      font-size: 1.8em;
     }
   }
   p {

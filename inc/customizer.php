@@ -14,6 +14,54 @@ function salient_2015_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+	$wp_customize->add_panel('custom_logo', 
+		array(
+			'priority' => 10,
+			'theme_supports' => '',
+			'title' => __( 'Custom Logo', 'salient-2015' ),
+			'description' => __( 'Provides a place for you to upload custom logo files.', 'salient-2015' )
+		)
+	);
+
+	// Add Logo Section
+	$wp_customize->add_section( 'logo' , array(
+		'title'		=> __('Upload your logo','salient-2015'),
+		'panel'		=> 'custom_logo',
+		'priority' 	=> 20
+	) );
+	$wp_customize->add_setting( 'logo_svg', array(
+		'default'	=> '',
+		'transport'	=> 'postMessage'
+	) );
+	$wp_customize->add_setting( 'logo_raster', array(
+		'default'	=> '',
+		'transport'	=> 'postMessage'
+	) );
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'custom_logo_svg',
+			array(
+				'label'	=> __('Upload SVG Logo','salient-2015'),
+				'section'	=> 'logo',
+				'settings'	=> 'logo_svg',
+				'context'	=> 'wpt-custom-logo-svg'
+			)		
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'custom_logo_raster',
+			array(
+				'label'	=> __('Upload Raster Logo','salient-2015'),
+				'section'	=> 'logo',
+				'settings'	=> 'logo_raster',
+				'context'	=> 'wpt-custom-logo-raster'
+			)		
+		)
+	);	
 }
 add_action( 'customize_register', 'salient_2015_customize_register' );
 

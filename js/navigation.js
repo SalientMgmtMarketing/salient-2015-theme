@@ -42,10 +42,11 @@
       menu.setAttribute('aria-expanded', 'true');
     }
   };
-})();
+}());
 
 
 jQuery(function ($) {
+  'use strict';
   var $body, $window, $sidebar, adminbarOffset, top = false,
     bottom = false,
     windowWidth, windowHeight, lastWindowPos = 0,
@@ -57,7 +58,7 @@ jQuery(function ($) {
   $('.main-navigation .menu-item-has-children > a').after('<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>');
 
   // Toggle buttons and submenu items with active children menu items.
-  $('.main-navigation .current-menu-ancestor > button').addClass('toggle-on');
+  //$('.main-navigation .current-menu-ancestor > button').addClass('toggle-on');
   //$( '.main-navigation .current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
 
   $('.dropdown-toggle').click(function (e) {

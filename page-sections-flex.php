@@ -37,10 +37,7 @@ get_header('boxy'); ?>
                   <?php   
 
 
-                    //adds the class for the selection type
-                    $value = get_sub_field('columns_header');
-                    echo "cols-" . $value;
-
+                    
                     //adds the class for the text color
                     $color = get_sub_field('text_color');
                     echo $color;
@@ -64,12 +61,17 @@ get_header('boxy'); ?>
 
                       <?php if (get_sub_field('background_color')) { ?>background-color:<?php the_sub_field('background_color'); } ?>">
 
+                        <?php if( get_sub_field('section_title') ): ?>
+                          <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+                        <?php endif; ?>
 
-                        <div class="wrap above-fixed">
-                          <?php if( get_sub_field('section_title') ): ?>
-                            <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
-                          <?php endif; ?>
 
+                        <div class="wrap <?php 
+                          //adds the class for the selection type
+                          $value = get_sub_field('columns_header');
+                          echo "cols-" . $value; ?>
+						">
+                          
                           <div class="sub-section0<?php 
 
 							//adds class for box
@@ -264,11 +266,6 @@ get_header('boxy'); ?>
                 <?php } ?> class="row
                   <?php   
 
-
-                    //adds the class for the selection type
-                    $value = get_sub_field('columns');
-                    echo "cols-" . $value;
-
                     //adds the class for the text color
                     $color = get_sub_field('text_color');
                     echo " " . $color;
@@ -282,21 +279,27 @@ get_header('boxy'); ?>
                     //adds class for cards
                     if( get_sub_field('cards')) { echo " cards"; }
  
-                    //adds class for column layout
-                    if( $value=='two') { echo " "; the_sub_field('2_column_layout'); }
-                    if( $value=='three') { echo " "; the_sub_field('3_column_layout'); }
+                    
 
                      ?>" style="
                       <?php if (get_sub_field('background_image')) { ?> background-image:url('<?php the_sub_field('background_image'); ?>'); <?php } ?>
 
                       <?php if (get_sub_field('background_color')) { ?>background-color:<?php the_sub_field('background_color'); } ?>">
 
-
-                        <div class="wrap above-fixed">
-
                           <?php if( get_sub_field('section_title') ): ?>
-                            <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+                            <h2 class="section-title wrap"><?php the_sub_field('section_title'); ?></h2>
                           <?php endif; ?>
+
+                        <div class="wrap <?php 
+                          //adds the class for the selection type
+                          $value = get_sub_field('columns');
+                          echo "cols-" . $value; 
+                          
+                          //adds class for column layout
+                          if( $value=='two') { echo " "; the_sub_field('2_column_layout'); }
+                          if( $value=='three') { echo " "; the_sub_field('3_column_layout'); }
+                        ?>">
+
 
                           <div class="sub-section0<?php 
 

@@ -12,12 +12,15 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('concatScripts', function(){
     return gulp.src([
+            './js/navigation.js',
+            './js/**.js',
             './inc/**.js',
-            './js/**.js', '!./js/customizer.js', '!.js/navigation.js'])
-            .pipe(maps.init())
-            .pipe(concat('scripts.js'))
-            .pipe(maps.write('./'))
-            .pipe(gulp.dest('./assets/js'));
+            '!./js/customizer.js'
+    ])
+    .pipe(maps.init())
+    .pipe(concat('scripts.js'))
+    .pipe(maps.write('./'))
+    .pipe(gulp.dest('./assets/js'));
 });
 
 gulp.task('minifyScripts', ['concatScripts'], function(){

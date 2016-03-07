@@ -1,0 +1,28 @@
+#saco- {
+  &hcc-scores {
+    background-position: 50% 50%;
+    
+    .wrap {
+      @include media(min-width $second-breakpoint-value) {
+      padding-bottom: 25em;
+      padding-top: 2em;
+      }
+    }
+    .sub-section0 {
+      @include media($medium-screen) {
+        width: 67%
+      }
+      @include media($xl-screen) {
+        width: 39%;
+      }
+    }
+  }
+  evaluate {
+    background-position: 50% 81%;
+    
+    .wrap {
+      padding-bottom: 20em;
+      padding-top: 4em;
+    }
+  }
+}
