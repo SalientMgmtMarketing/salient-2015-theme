@@ -1190,7 +1190,8 @@ input[type="submit"], a.btn, a.button {
           user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  color: #FFF; }
+  color: #FFF;
+  position: relative; }
   button:visited, button:hover, button:link, button:active,
   input[type="submit"]:visited,
   input[type="submit"]:hover,
@@ -2819,7 +2820,7 @@ section.row ul {
   margin-bottom: 1em; }
   section.row ul li {
     list-style: disc;
-    margin-bottom: 1em; }
+    margin-bottom: .5em; }
     section.row ul li li {
       list-style: none; }
       section.row ul li li:before {
@@ -3099,6 +3100,63 @@ section.row ul {
   background-position: 50% 50%; }
   #hh-segment .wrap {
     padding: 10em 0; }
+
+#consulting-hero {
+  background-position: top center; }
+
+#consulting-tailored {
+  background-position: 50% 18%; }
+  #consulting-tailored .wrap {
+    padding: 20em 0 3em; }
+
+#consulting-expertise {
+  background-position: 50% 46%; }
+  #consulting-expertise .wrap {
+    padding: 2em 0 12em; }
+
+#consulting-CPI {
+  background-position: 50% 23%; }
+  #consulting-CPI .wrap {
+    padding: 5em 0 15em; }
+
+#outcome-training {
+  background-position: 50% 14%; }
+  #outcome-training .wrap {
+    padding: 1em 0 17em; }
+
+#outcome-material {
+  background-position: 50% 95%; }
+  #outcome-material .wrap {
+    padding: 2em 0 17em; }
+
+#outcome-contact {
+  background-position: 50% 50%; }
+  #outcome-contact .wrap {
+    padding: 5em 0 26em; }
+
+#outcome-assessment .wrap {
+  padding: 0 0 20em; }
+
+#outcome-skills .wrap {
+  padding: 6em 0; }
+
+#ms-support {
+  background-position: 50% 79%; }
+  #ms-support .wrap {
+    padding: 1em 0 5em; }
+
+#ms-managed-services {
+  background-position: 50% 84%; }
+  #ms-managed-services .wrap {
+    padding: 1em 0 3em; }
+
+#ms-hosting .wrap {
+  padding: 1em 0 3em; }
+
+#ms-administration {
+  background-position: 50% 84%; }
+  #ms-administration .wrap {
+    padding: 1em 0 3em; }
 
 /*--------------------------------------------------------------
 8.0 Clearings
@@ -3896,11 +3954,13 @@ Article Hero
   background: #004280;
   background-size: cover;
   color: white;
-  padding: 1em 0;
-  background-position: 50% 50%; }
+  padding: 1em 0; }
   @media screen and (min-width: 930px) {
     .hero {
       padding: 5em 0 1em; } }
+  @media screen and (min-width: 68.75em) {
+    .hero {
+      padding: 6em 0 3em; } }
   .hero.light {
     color: #004280; }
   .hero #breadcrumbs {

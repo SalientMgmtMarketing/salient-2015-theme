@@ -1,0 +1,29 @@
+#outcome- {
+  &training {
+    background-position: 50% 14%;
+    
+    .wrap {
+      padding: 1em 0 17em;
+    }
+  }
+  &material {
+    background-position: 50% 95%;
+    
+    .wrap {
+      padding: 2em 0 17em;
+    }
+  }
+  &contact {
+    background-position: 50% 50%;
+    
+    .wrap {
+      padding: 5em 0 26em;
+    }
+  }
+  &assessment .wrap {
+    padding: 0 0 20em;
+  }
+  &skills .wrap {
+    padding: 6em 0;
+  }
+}

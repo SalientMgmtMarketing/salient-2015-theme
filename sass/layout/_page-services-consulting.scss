@@ -1,0 +1,26 @@
+#consulting- {
+  &hero {
+    background-position: top center;
+  }
+  &tailored {
+    background-position: 50% 18%;
+    
+    .wrap {
+      padding: 20em 0 3em;
+    }
+  }
+  &expertise {
+    background-position: 50% 46%;
+    
+    .wrap {
+      padding: 2em 0 12em;
+    }
+  }
+  &CPI {
+    background-position: 50% 23%;
+    
+    .wrap {
+      padding: 5em 0 15em;
+    }
+  }
+}
