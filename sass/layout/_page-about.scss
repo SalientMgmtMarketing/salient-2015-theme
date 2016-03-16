@@ -1,0 +1,35 @@
+#about- {
+  &facts {
+    .wrap div {
+      text-align: center;
+      background: $base-accent-color;
+      color: $base-color-light;
+      
+      h3 {
+        margin: 0;
+        font-size: 1em;
+      }
+      
+      &.sub-section0, &.sub-section2 {
+        
+        .large-text {
+          font-size: 2em;
+        }
+        
+      }
+      &.sub-section1 {
+        font-size: 1.25em;
+      }
+    }
+  }
+  &hhs {
+    padding: 1em 0 2em;
+}
+}
+.page-id-40 header.entry-header.hero {
+  background-position: 50% 46%;
+  
+  .boxed {
+    background: transparent;
+  }
+}

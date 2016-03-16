@@ -1123,6 +1123,13 @@ body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
 body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   margin-bottom: 1em; }
 
+.gform_body span input {
+  margin-bottom: 0 !important; }
+
+.gform_body span label {
+  font-size: .7em !important;
+  font-weight: 300; }
+
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
   -ms-font-feature-settings: "kern", "liga", "tnum";
@@ -1427,6 +1434,13 @@ body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
 
 body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   margin-bottom: 1em; }
+
+.gform_body span input {
+  margin-bottom: 0 !important; }
+
+.gform_body span label {
+  font-size: .7em !important;
+  font-weight: 300; }
 
 /*--------------------------------------------------------------
 5.0 Navigation
@@ -2966,15 +2980,11 @@ section.row ul {
       .single-event section.row ul li li:before {
         content: "–"; }
 
-#pm-identify h3, #pm-transparency h3 {
-  font-size: 2em;
-  font-weight: 400;
-  width: 80%; }
-
-#pm-monitor h3, #pm-discover h3, #pm-align h3 {
-  font-size: 2em;
-  font-weight: 400;
-  margin: 2em 0; }
+#pm-identify {
+  background-position: 50% 50%; }
+  @media screen and (min-width: 930px) {
+    #pm-identify .sub-section0 {
+      margin-top: 5em; } }
 
 #pm-transparency {
   background-position: 29% 41%; }
@@ -2990,12 +3000,16 @@ section.row ul {
   background-position: 50% 15%; }
   #pm-transparency .wrap {
     padding-bottom: 20em; }
+  #pm-transparency .sub-section0 {
+    float: left; }
 
 #pi-entire-picture {
   background-position: 50% 24%; }
-  #pi-entire-picture .wrap {
-    padding-bottom: 10em;
-    padding-top: 14em; }
+  #pi-entire-picture img {
+    border: 4px solid #004280; }
+  @media screen and (min-width: 800px) {
+    #pi-entire-picture .sub-section1 {
+      margin-top: 4em; } }
 
 #pi-empower {
   background-position: 50% 63%; }
@@ -3026,14 +3040,17 @@ section.row ul {
     #saco-hcc-scores .sub-section0 {
       width: 39%; } }
 
-#saco- evaluate {
+#saco-evaluate {
   background-position: 50% 81%; }
-  #saco- evaluate .wrap {
+  #saco-evaluate .wrap {
     padding-bottom: 20em;
     padding-top: 4em; }
 
 #pcmh-outreach {
   background-position: 50% 16%; }
+  @media screen and (min-width: 930px) {
+    #pcmh-outreach .sub-section0 {
+      margin-top: 5em; } }
   #pcmh-outreach h3 {
     font-size: 1.5em; }
   #pcmh-outreach .wrap {
@@ -3089,7 +3106,7 @@ section.row ul {
 #hh-monitor {
   background-position: 50% 50%; }
   #hh-monitor .wrap {
-    padding: 10em 0 14em; }
+    padding: 20em 0 6em; }
 
 #hh-detect {
   background-position: 50% 50%; }
@@ -3118,6 +3135,9 @@ section.row ul {
   background-position: 50% 23%; }
   #consulting-CPI .wrap {
     padding: 5em 0 15em; }
+
+#consulting-team h2.section-title.wrap {
+  margin-bottom: 0; }
 
 #outcome-training {
   background-position: 50% 14%; }
@@ -3157,6 +3177,53 @@ section.row ul {
   background-position: 50% 84%; }
   #ms-administration .wrap {
     padding: 1em 0 3em; }
+
+#about-facts .wrap div {
+  text-align: center;
+  background: #0077e6;
+  color: #FFF; }
+  #about-facts .wrap div h3 {
+    margin: 0;
+    font-size: 1em; }
+  #about-facts .wrap div.sub-section0 .large-text, #about-facts .wrap div.sub-section2 .large-text {
+    font-size: 2em; }
+  #about-facts .wrap div.sub-section1 {
+    font-size: 1.25em; }
+
+#about-hhs {
+  padding: 1em 0 2em; }
+
+.page-id-40 header.entry-header.hero {
+  background-position: 50% 46%; }
+  .page-id-40 header.entry-header.hero .boxed {
+    background: transparent; }
+
+#tech-data-mart {
+  font-size: 1.3em; }
+  @media screen and (min-width: 800px) {
+    #tech-data-mart {
+      padding: 5em 10em; } }
+  #tech-data-mart.boxed .boxed {
+    background: rgba(0, 66, 128, 0.92);
+    padding: 2em 2em; }
+    #tech-data-mart.boxed .boxed p {
+      margin: 0; }
+
+#tech-content-engine {
+  font-size: 1.3em; }
+  #tech-content-engine p {
+    margin: 1.5em auto; }
+
+#tech-vdm {
+  padding-top: 6em; }
+
+#tech-cpm {
+  padding: 10em 0; }
+
+#tech-how {
+  font-size: 1.3em; }
+  #tech-how h2.section-title.wrap {
+    margin-bottom: 0; }
 
 /*--------------------------------------------------------------
 8.0 Clearings
@@ -3369,6 +3436,8 @@ header#masthead {
 
 section#hero {
   padding: 0; }
+  section#hero a.button.blue {
+    font-size: 1em; }
   section#hero h1 {
     font-size: 1.35em; }
   @media screen and (min-width: 400px) {
@@ -3383,7 +3452,7 @@ section#hero {
       font-size: 1.2em; } }
 
 section#value-line {
-  padding: 3em 0;
+  padding: 3em 0 0;
   text-align: center; }
   section#value-line .sub-section0 {
     padding: 0; }
@@ -3578,7 +3647,8 @@ section.row {
         color: #EBEFFF;
         text-decoration: none; }
   section.row .sub-section0, section.row .sub-section1, section.row .sub-section2, section.row .sub-section3 {
-    padding: 1em 0; }
+    padding: 1em 0;
+    position: relative; }
 
 section.row .left-block {
   display: block;
@@ -3673,6 +3743,10 @@ section.row:nth-child(odd) {
 
 section.row:nth-child(even) {
   background-color: #0077e6; }
+  section.row:nth-child(even) a.btn, section.row:nth-child(even) a.button {
+    background: #004280; }
+    section.row:nth-child(even) a.btn:hover, section.row:nth-child(even) a.button:hover {
+      background: #005fb8; }
   section.row:nth-child(even):before {
     content: '';
     position: absolute;
@@ -4151,6 +4225,10 @@ video {
   -webkit-transition-property: height;
   transition-property: height; }
 
+.attachment.page .entry-content .attachment {
+  float: left;
+  margin-right: 1em; }
+
 /*--------------------------------------------------------------
 12.1 Captions
 --------------------------------------------------------------*/
@@ -4161,10 +4239,15 @@ video {
     display: block;
     margin: 0 auto; }
   .wp-caption .wp-caption-text {
-    margin: 0.8075em 0; }
+    margin: 0.8075em 0;
+    font-size: .8em; }
 
 .wp-caption-text {
   text-align: center; }
+
+#content figure.wp-caption {
+  width: 100% !important;
+  margin: 0; }
 
 /*--------------------------------------------------------------
 12.2 Galleries
@@ -4274,6 +4357,16 @@ video {
 /*--------------------------------------------------------------
 12.3 Cards
 --------------------------------------------------------------*/
+section.row.cards .wrap {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
 section.row.cards .card {
   background: #33383e;
   border: 1px solid #959ea8;
@@ -4282,7 +4375,11 @@ section.row.cards .card {
   box-shadow: 0 0 1px rgba(51, 51, 51, 0.9);
   -webkit-transition: 500ms;
   transition: 500ms;
-  padding: 0; }
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
   @media screen and (max-width: 930px) {
     section.row.cards .card {
       margin: .5em 0; } }
@@ -4291,6 +4388,9 @@ section.row.cards .card {
       font-size: .75em; } }
   section.row.cards .card:hover {
     box-shadow: 0 0 34px rgba(51, 51, 51, 0.3); }
+  section.row.cards .card div.card-thumb {
+    display: block;
+    width: 100%; }
   section.row.cards .card img {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -4305,7 +4405,7 @@ section.row.cards .card {
       font-size: 2em; }
     section.row.cards .card .card-content a.button {
       font-size: 1.2em;
-      margin-top: .5em;
+      margin: 1em 0;
       color: #FFF; }
       section.row.cards .card .card-content a.button:visited, section.row.cards .card .card-content a.button:hover, section.row.cards .card .card-content a.button:link, section.row.cards .card .card-content a.button:active {
         color: #FFF; }

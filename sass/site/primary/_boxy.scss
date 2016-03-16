@@ -188,6 +188,7 @@ section.row {
   }
   .sub-section0, .sub-section1, .sub-section2, .sub-section3 {
     padding: 1em 0;
+    position: relative;
   }
 }
 section.row .left-block {
@@ -225,6 +226,13 @@ section.row:nth-child(odd) {
 }
 section.row:nth-child(even) {
   background-color: $light-blue;
+  a.btn, a.button {
+    background: $blue;
+      
+    &:hover {
+      background: shade($light-blue,20);
+    }
+  }
 
   &:before {
     content: '';

@@ -1,0 +1,35 @@
+#tech- {
+  &data-mart {
+    font-size: 1.3em;
+    @include media(min-width $second-breakpoint-value) {
+      padding: 5em 10em; 
+    }
+    &.boxed .boxed {
+      background: rgba(0, 66, 128, 0.92);
+      padding: 2em 2em;
+      p {
+        margin: 0;
+      }
+    }
+  }
+  &content-engine {
+    font-size: 1.3em;
+    
+    p {
+      margin: 1.5em auto;
+    }
+  }
+  &vdm {
+    padding-top: 6em;
+  }
+  &cpm {
+    padding: 10em 0;
+  }
+  &how {
+    font-size: 1.3em;
+    
+    h2.section-title.wrap {
+      margin-bottom: 0;
+    }
+  }
+}

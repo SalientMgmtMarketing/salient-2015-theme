@@ -81,6 +81,7 @@ function salient_2015_setup() {
 	// Custom Image Sizes
 	add_image_size( 'cards-5x2', 624, 250, true );
 	add_image_size( 'cards-4x3', 420, 250, true );
+  	add_image_size( 'portraits', 200, 300, true );
 }
 endif; // salient_2015_setup
 add_action( 'after_setup_theme', 'salient_2015_setup' );

@@ -1,17 +1,17 @@
 #pm- {
   &identify, &transparency {  
-    h3 {
-      font-size: 2em;
-      font-weight: 400;
-      width: 80%;
+
+  }
+  &identify {
+    background-position: 50% 50%;
+    .sub-section0 {
+      @include media(min-width $nav-breakpoint-value) { 
+        margin-top: 5em; 
+      }
     }
   }
   &monitor, &discover, &align {
-    h3 {
-      font-size: 2em;
-      font-weight: 400;
-      margin: 2em 0;
-    }    
+
   }
 
   &transparency {
@@ -31,6 +31,9 @@
     background-position: 50% 15%;
     .wrap {
       padding-bottom: 20em;
+    }
+    .sub-section0 {
+      float: left;
     }
   }
 }

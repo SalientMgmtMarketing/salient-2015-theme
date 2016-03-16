@@ -2,6 +2,12 @@
   &outreach {
     background-position: 50% 16%;
     
+    .sub-section0 {
+      @include media(min-width $nav-breakpoint-value) {
+        margin-top:5em;
+      }
+    }
+    
     h3 {
       font-size: 1.5em;
     }

@@ -1,6 +1,10 @@
 section#hero {
   padding: 0;
   
+  a.button.blue {
+    font-size: 1em;
+  }
+  
   h1 {
     font-size: 1.35em;
   }
@@ -20,7 +24,7 @@ section#hero {
 }
 
 section#value-line {
-  padding: 3em 0;
+  padding: 3em 0 0;
   text-align: center;
   
   .sub-section0 {

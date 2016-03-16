@@ -62,7 +62,7 @@ get_header('boxy'); ?>
                       <?php if (get_sub_field('background_color')) { ?>background-color:<?php the_sub_field('background_color'); } ?>">
 
                         <?php if( get_sub_field('section_title') ): ?>
-                          <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+                          <h2 class="section-title wrap"><?php the_sub_field('section_title'); ?></h2>
                         <?php endif; ?>
 
 
@@ -85,11 +85,12 @@ get_header('boxy'); ?>
 
 							<?php 
 							$image = get_sub_field('column_1_photo');
+							$size = 'cards-5x2';
 							if( $value=='two') { $size = 'cards-5x2'; }
 							if( $value=='three') { $size = 'cards-4x3'; }
 							$thumb = $image['sizes'][ $size ];
 
-							if( get_sub_field('cards')) { ?><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
+                                     if( get_sub_field('cards')) { ?><div class="card-thumb"><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
 
 							if( get_sub_field('cards')) { ?><div class="card-content"><?php } ?>
 	
@@ -97,7 +98,7 @@ get_header('boxy'); ?>
 
 							<?php  
 
-							if( get_sub_field('cards')) { ?></div><?php } ?>
+							if( get_sub_field('cards')) { ?></div></div><?php } ?>
 
 							</div><!--.sub-section0-->
 
@@ -120,7 +121,7 @@ get_header('boxy'); ?>
                             <?php 
                             $image = get_sub_field('column_2_photo');
                             
-                            if( get_sub_field('cards')) { ?><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
+                              if( get_sub_field('cards')) { ?><div class="card-thumb"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
 							 
 							//adds class for cards
                     		if( get_sub_field('cards')) { ?><div class="card-content"><?php } ?>
@@ -129,7 +130,7 @@ get_header('boxy'); ?>
 							
 							<?php  
 						 	//adds class for cards
-							if( get_sub_field('cards')) { ?></div><?php } ?>
+							if( get_sub_field('cards')) { ?></div></div><?php } ?>
                           
 							</div><!--.sub-section1-->
                           <?php } ?>
@@ -151,7 +152,7 @@ get_header('boxy'); ?>
                             <?php 
                             $image = get_sub_field('column_3_photo');
                             
-                            if( get_sub_field('cards')) { ?><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
+                              if( get_sub_field('cards')) { ?><div class="card-thumb"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
 							 
 							//adds class for cards
                     		if( get_sub_field('cards')) { ?><div class="card-content"><?php } ?>
@@ -160,7 +161,7 @@ get_header('boxy'); ?>
 							
 							<?php  
 						 	//adds class for cards
-							if( get_sub_field('cards')) { ?></div><?php } ?>
+							if( get_sub_field('cards')) { ?></div></div><?php } ?>
                           
 							</div><!--.sub-section2-->
                           <?php } ?>
@@ -182,7 +183,7 @@ get_header('boxy'); ?>
                             <?php 
                             $image = get_sub_field('column_4_photo');
                             
-                            if( get_sub_field('cards')) { ?><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
+                              if( get_sub_field('cards')) { ?><div class="card-thumb"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
 							 
 							//adds class for cards
                     		if( get_sub_field('cards')) { ?><div class="card-content"><?php } ?>
@@ -191,7 +192,7 @@ get_header('boxy'); ?>
 							
 							<?php  
 						 	//adds class for cards
-							if( get_sub_field('cards')) { ?></div><?php } ?>
+							if( get_sub_field('cards')) { ?></div></div><?php } ?>
                           
 							</div><!--.sub-section3-->
                           <?php } ?>
@@ -212,14 +213,16 @@ get_header('boxy'); ?>
                           <div class="wrap above-fixed">
 
                             <?php if( get_sub_field('title') ): ?>
-                              <h2 class="section-title"><?php the_sub_field('title'); ?></h2>
+                              <h2 class="section-title wrap"><?php the_sub_field('title'); ?></h2>
                             <?php endif; ?>
 
                             <?php 
 
                             $image_ids = get_sub_field('gallery', false, false);
-
-                            $shortcode = '[gallery ids="' . implode(',', $image_ids) . '" . captiontag="figcaption"]';
+                                     
+                            $gallery_columns = get_sub_field('gallery_columns');
+                                     
+                            $shortcode = '[gallery ids="' . implode(',', $image_ids) . '" . captiontag="figcaption" . columns="0"]';
 
                             echo do_shortcode( $shortcode );
 
@@ -319,7 +322,7 @@ get_header('boxy'); ?>
 							if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
 							$thumb = $image['sizes'][ $size ];
 
-							if( get_sub_field('cards')) { ?><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
+                            if( get_sub_field('cards')) { ?><div class="card-thumb"><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
 
 							if( get_sub_field('cards')) { ?><div class="card-content"><?php } ?>
 	
@@ -327,7 +330,7 @@ get_header('boxy'); ?>
 
 							<?php  
 
-							if( get_sub_field('cards')) { ?></div><?php } ?>
+							if( get_sub_field('cards')) { ?></div></div><?php } ?>
 
 							</div><!--.sub-section0-->
 
@@ -353,7 +356,7 @@ get_header('boxy'); ?>
 							if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
 							$thumb = $image['sizes'][ $size ];
 
-							if( get_sub_field('cards')) { ?><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
+                              if( get_sub_field('cards')) { ?><div class="card-thumb"><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
 							 
 							//adds class for cards
                     		if( get_sub_field('cards')) { ?><div class="card-content"><?php } ?>
@@ -362,7 +365,7 @@ get_header('boxy'); ?>
 							
 							<?php  
 						 	//adds class for cards
-							if( get_sub_field('cards')) { ?></div><?php } ?>
+							if( get_sub_field('cards')) { ?></div></div><?php } ?>
                           
 							</div><!--.sub-section1-->
                           <?php } ?>
@@ -389,7 +392,7 @@ get_header('boxy'); ?>
 							if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
 							$thumb = $image['sizes'][ $size ];
 
-							if( get_sub_field('cards')) { ?><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  }  
+                              if( get_sub_field('cards')) { ?><div class="card-thumb"><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  }  
 
 							//adds class for cards
 							if( get_sub_field('cards')) { ?><div class="card-content"><?php } ?>
@@ -398,7 +401,7 @@ get_header('boxy'); ?>
 
 							<?php  
 							//adds class for cards
-							if( get_sub_field('cards')) { ?></div><?php } ?>
+							if( get_sub_field('cards')) { ?></div></div><?php } ?>
 
 							</div><!--.sub-section2-->
                           <?php } ?>
@@ -423,7 +426,7 @@ get_header('boxy'); ?>
 							if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
 							$thumb = $image['sizes'][ $size ];
 
-							if( get_sub_field('cards')) { ?><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
+                              if( get_sub_field('cards')) { ?><div class="card-thumb"><img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" /><?php  } 
 							 
 							//adds class for cards
                     		if( get_sub_field('cards')) { ?><div class="card-content"><?php } ?>
@@ -432,7 +435,7 @@ get_header('boxy'); ?>
 							
 							<?php  
 						 	//adds class for cards
-							if( get_sub_field('cards')) { ?></div><?php } ?>
+							if( get_sub_field('cards')) { ?></div></div><?php } ?>
                           
 							</div><!--.sub-section3-->
                           <?php } ?>
@@ -453,14 +456,14 @@ get_header('boxy'); ?>
                 <div class="wrap above-fixed">
 
                   <?php if( get_sub_field('title') ): ?>
-                    <h2 class="section-title"><?php the_sub_field('title'); ?></h2>
+                    <h2 class="section-title wrap"><?php the_sub_field('title'); ?></h2>
                   <?php endif; ?>
 
                   <?php 
                     
                   $image_ids = get_sub_field('gallery', false, false);
 
-                  $shortcode = '[gallery ids="' . implode(',', $image_ids) . '" . captiontag="figcaption"]';
+                  $shortcode = '[gallery ids="' . implode(',', $image_ids) . '" . captiontag="figcaption" . columns="0" size="portraits"]';
 
                   echo do_shortcode( $shortcode );
 
@@ -489,7 +492,7 @@ get_header('boxy'); ?>
                 <div class="wrap above-fixed">
                   
                   <?php if( get_sub_field('title') ): ?>
-                    <h2 class="section-title"><?php the_sub_field('title'); ?></h2>
+                    <h2 class="section-title wrap"><?php the_sub_field('title'); ?></h2>
                   <?php endif; ?>
                   
                   <figure class="quote">
@@ -515,7 +518,7 @@ get_header('boxy'); ?>
                 <div class="wrap above-fixed">
 
                   <?php if( get_sub_field('title') ): ?>
-                    <h2 class="section-title"><?php the_sub_field('title'); ?></h2>
+                    <h2 class="section-title wrap"><?php the_sub_field('title'); ?></h2>
                   <?php endif; ?>
                     
                 </div>

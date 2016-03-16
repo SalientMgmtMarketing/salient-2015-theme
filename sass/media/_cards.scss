@@ -1,4 +1,9 @@
-section.row.cards { 
+section.row.cards {
+  .wrap {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+  }
   .card {
     background: darken($base-background-color, 70);
     border: 1px solid darken($base-background-color, 30);
@@ -7,6 +12,9 @@ section.row.cards {
     box-shadow: 0 0 1px rgba($dark-gray, .9);
     transition: 500ms;
     padding: 0;
+    
+    display: flex;
+    
     @include media(max-width $nav-breakpoint-value) {
       margin: .5em 0;
     }
@@ -16,7 +24,11 @@ section.row.cards {
     &:hover {
       box-shadow: 0 0 34px rgba(51, 51, 51, 0.3);
     }
-    
+    div.card-thumb {
+      display: block;
+      width: 100%;
+      
+    }
     img {
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
@@ -36,7 +48,7 @@ section.row.cards {
       }
       a.button {
         font-size: 1.2em;
-        margin-top: .5em;
+        margin: 1em 0;
         color: $white;
 
         &:visited, &:hover, &:link, &:active {
