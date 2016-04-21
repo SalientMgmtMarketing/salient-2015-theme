@@ -1668,6 +1668,17 @@ button.dropdown-toggle {
   text-align: right;
   width: 50%; }
 
+.secondary-navigation-container {
+  position: absolute;
+  top: 0;
+  background: white;
+  width: 100%;
+  height: 40px; }
+  .secondary-navigation-container ul {
+    float: right; }
+    .secondary-navigation-container ul li {
+      float: left; }
+
 /*--------------------------------------------------------------
 6.0 Accessibility
 --------------------------------------------------------------*/
@@ -3464,6 +3475,7 @@ section.row {
   clear: both;
   position: relative;
   width: 100%;
+  height: 86vh;
   content: "";
   display: table;
   background-size: cover;
@@ -3486,7 +3498,10 @@ section.row {
     color: #004280; }
   section.row h2.section-title {
     margin-top: 0;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: left; }
   section.row.gallery .description {
     margin-top: 1em; }
   section.row .gallery-cell {
@@ -3608,9 +3623,6 @@ section.row {
     @media screen and (min-width: 68.75em) {
       section.row h2 {
         font-size: 2em; } }
-    @media screen and (min-width: 930px) {
-      section.row h2.section-title {
-        text-align: center; } }
   section.row h3 {
     font-size: .64em;
     font-weight: 700; }
@@ -3913,12 +3925,28 @@ Section Rows
   padding: 2em 0; }
 
 /* Blog Feed */
+.blog main > .wrap, .archive main > .wrap {
+  margin-top: 2em; }
+
 .blog article, .archive article {
-  padding: 1em; }
-  .blog article:nth-child(even), .archive article:nth-child(even) {
-    background: #f7f8f8;
-    border-bottom: 1px solid #cdd1d6;
-    border-top: 1px solid #cdd1d6; }
+  float: left;
+  width: 48%;
+  font-size: 1em;
+  border: 1px solid #000;
+  margin-right: 2%;
+  padding: 2em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  background: #FFF;
+  /*&:nth-child(even) {
+      background: lighten($base-background-color, 5);
+      border-bottom: 1px solid darken($base-background-color,10);
+      border-top: 1px solid darken($base-background-color,10);
+    } */ }
+  .blog article h1, .archive article h1 {
+    font-size: 1.5em; }
+  .blog article .entry-footer, .archive article .entry-footer {
+    font-size: .75em; }
 
 /*
 Single Post

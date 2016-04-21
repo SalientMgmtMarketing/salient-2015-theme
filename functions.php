@@ -43,6 +43,7 @@ function salient_2015_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'salient-2015' ),
+		'secondary' => __( 'Secondary Menu', 'salient-2015' ),
 	) );
 
 	/*
@@ -82,9 +83,23 @@ function salient_2015_setup() {
 	add_image_size( 'cards-5x2', 624, 250, true );
 	add_image_size( 'cards-4x3', 420, 250, true );
   	add_image_size( 'portraits', 200, 300, true );
+	add_image_size( 'blog_feed', 527, 210, true, array( 'center', 'top' ) ); // Hard crop left top
 }
 endif; // salient_2015_setup
 add_action( 'after_setup_theme', 'salient_2015_setup' );
+
+
+/**
+ * Filter the except length to 20 characters.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
 
 /**
  * Register widget area.

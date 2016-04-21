@@ -45,16 +45,35 @@ Section Rows
 
 /* Blog Feed */
 .blog, .archive {
+  main > .wrap {
+    margin-top: 2em;
+  }
   article {
-    padding: 1em;
+    float: left;
+    width: 48%;
+    font-size: 1em;
+    border: 1px solid #000;
+    margin-right: 2%;
+    padding: 2em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    background: $white;
     
-    &:nth-child(even) {
+    /*&:nth-child(even) {
       background: lighten($base-background-color, 5);
       border-bottom: 1px solid darken($base-background-color,10);
       border-top: 1px solid darken($base-background-color,10);
+    } */
+    h1 {
+      font-size: 1.5em;
+	}
+    
+    .entry-footer {
+      font-size: .75em;
     }
   }
 }
+
 
 
 /*

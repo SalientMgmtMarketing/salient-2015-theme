@@ -24,6 +24,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'salient-2015' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+		
 		<div class="wrap">
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -34,6 +35,18 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'collapse' ) ); ?>
 			</nav><!-- #site-navigation -->
 		</div><!--.wrap-->
+		
+		<?php
+		if ( has_nav_menu( 'secondary' ) ) { ?>
+		
+			<div class="secondary-navigation-container">
+				<nav class="wrap secondary-navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'collapse' ) ); ?>
+				</nav><!--.secondary-navigation-->
+			</div><!--.secondary-navigation-container-->
+		
+		<?php } // has_nav_menu('secondary') ?>
+		
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

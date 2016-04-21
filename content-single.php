@@ -5,16 +5,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header hero" <?php if ( has_post_thumbnail())  {  
-			echo "style=\"background-image:url('"; 
-			$thumb_id = get_post_thumbnail_id();
-			$thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);
-			echo $thumb_url[0]; 
-			echo "')";}
+	<header class="entry-header hero" 
+			<?php if ( has_post_thumbnail()) {  
+				echo "style=\"background-image:url('"; 
+				$thumb_id = get_post_thumbnail_id();
+				$thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);
+				echo $thumb_url[0]; 
+				echo "')";
+			}
 		?>">
       <div class="wrap">
-        <?php if ( function_exists('yoast_breadcrumb') ) 
-{yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
+        <?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta byline">
