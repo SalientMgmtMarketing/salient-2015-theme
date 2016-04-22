@@ -16,7 +16,18 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
           <header class="hero">
-            <div class="wrap"><h1>Salient Today</h1></div>
+            <div class="wrap">
+              
+              <h1><?php 
+				if( is_home() && get_option( 'page_for_posts' ) ) {
+				$posts_page = get_post( get_option( 'page_for_posts' ) ); 
+				echo apply_filters( 'the_title', $posts_page->post_title );
+				}
+				else {
+					the_title();
+				}
+				?></h1>
+            </div>
           </header><!--.hero-->
           <div class="wrap">
             <?php if ( have_posts() ) : ?>

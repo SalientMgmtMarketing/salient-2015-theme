@@ -3955,6 +3955,7 @@ Single Post
   padding: 2em 0; }
 
 .single-post article .text-block,
+.single-post article .featured-image,
 .single-post article .social-share,
 .single-post article footer,
 .single-post article .comments {
@@ -3967,6 +3968,7 @@ Single Post
   content: "";
   display: table; }
   .single-post article .text-block:last-child,
+  .single-post article .featured-image:last-child,
   .single-post article .social-share:last-child,
   .single-post article footer:last-child,
   .single-post article .comments:last-child {
@@ -3985,6 +3987,11 @@ Single Post
   .single-post article .image-block .text {
     display: table-cell;
     vertical-align: center; }
+
+.single-post table td {
+  border: 1px solid;
+  padding: .5em;
+  background: rgba(255, 255, 255, 0.63); }
 
 /* 
 Article Footer

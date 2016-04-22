@@ -14,7 +14,17 @@
       } ?>
     </div>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+      
+      <div class="category-link">
+        <?php 
+        $categories = get_the_category();
+        if ( ! empty( $categories ) ) {
+          echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+        } ?> 
+      </div><!--.category-link-->
+      
+      <?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+      
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

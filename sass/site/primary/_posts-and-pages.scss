@@ -86,6 +86,7 @@ Single Post
   }
   article {
     .text-block,
+    .featured-image,
     .social-share,
     footer,
     .comments {
@@ -106,6 +107,11 @@ Single Post
         vertical-align: center;
       }
     }
+  }	
+  table td {
+    border: 1px solid;
+    padding: .5em;
+    background: rgba(255, 255, 255, 0.63);
   }
 }
 
