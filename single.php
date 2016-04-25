@@ -13,8 +13,8 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
-
-			<?php salient_2015_post_nav(); ?>
+			<div class="wrap">
+			  <?php salient_2015_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
@@ -22,7 +22,7 @@ get_header(); ?>
 					comments_template();
 				endif;
 			?>
-
+			</div><!--.wrap-->
 		<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->

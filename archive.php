@@ -23,21 +23,23 @@ get_header(); ?>
               </div><!--.wrap-->
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<div class="wrap flex-wrap">
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					?>
 
-			<?php endwhile; ?>
-
-			<?php salient_2015_paging_nav(); ?>
-
+				<?php endwhile; ?>
+			</div><!--.wrap-->
+			<div class="wrap">
+				<?php salient_2015_paging_nav(); ?>
+			</div><!--.wrap-->
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>

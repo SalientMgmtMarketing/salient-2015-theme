@@ -44,13 +44,13 @@ header#masthead {
       width: 100%;
     }
     .site-branding {
-      @include span-columns(2);
+      @include span-columns(3);
       @media screen and (max-width: $nav-breakpoint-value) {
         width: 90%;
         margin: 0;
       }
       @include media(min-width $nav-breakpoint-value) {
-        @include span-columns(3);
+        @include span-columns(4);
       }
       h1 {
         transition: 200ms;

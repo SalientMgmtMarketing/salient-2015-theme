@@ -21,10 +21,19 @@ Article Hero
   #breadcrumbs {
     font-size: .7em;
     padding-bottom: 1em;
+    z-index: 100;
+    position: relative;
     a {
       color: white;
       font-weight: 700;
     }
+  }
+  .category-link {
+    position: relative;
+    z-index: 100;
+    text-align: center;
+    margin-top: 6em;
+    margin-bottom: -6em;
   }
   a {
     color: $base-color-light;

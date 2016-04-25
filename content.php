@@ -5,12 +5,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <div class="wrap">
+
     <div class="thumbnail">
       <?php 
       // Get the featured image, if there is one.
       if ( has_post_thumbnail()) { 
-        echo get_the_post_thumbnail( '', 'blog-feed' ); 
+        echo '<a href="' . esc_url(get_permalink()) . '">' . get_the_post_thumbnail( '', 'blog-feed' ) . '</a>'; 
       } ?>
     </div>
 	<header class="entry-header">
@@ -43,13 +43,14 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+	<?php if (get_theme_mod('postmeta_in_feed')) { ?>
+		<footer class="entry-footer">
+			<?php if ( 'post' == get_post_type() ) : ?>
+				<div class="entry-meta">
+					<?php salient_2015_posted_on(); ?>
+				</div><!-- .entry-meta -->
+			<?php endif; ?>
+		</footer><!-- .entry-footer -->
+	<?php } ?>
 
-	<footer class="entry-footer">
-		<?php if ( 'post' == get_post_type() ) : ?>
-			<div class="entry-meta">
-				<?php salient_2015_posted_on(); ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</footer><!-- .entry-footer -->
-    </div><!--.wrap-->
 </article><!-- #post-## -->

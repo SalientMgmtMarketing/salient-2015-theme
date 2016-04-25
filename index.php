@@ -29,9 +29,9 @@ get_header(); ?>
 				?></h1>
             </div>
           </header><!--.hero-->
-          <div class="wrap">
-            <?php if ( have_posts() ) : ?>
 
+            <?php if ( have_posts() ) : ?>
+              <div class="wrap flex-wrap">
                 <?php /* Start the Loop */ ?>
                 <?php while ( have_posts() ) : the_post(); ?>
 
@@ -44,15 +44,15 @@ get_header(); ?>
                     ?>
 
                 <?php endwhile; ?>
-
+              </div><!--.wrap-->           
                 <?php salient_2015_paging_nav(); ?>
 
             <?php else : ?>
-
-                <?php get_template_part( 'content', 'none' ); ?>
-
+                <div class="wrap">
+                  <?php get_template_part( 'content', 'none' ); ?>
+                </div><!--.wrap-->
             <?php endif; ?>
-          </div><!--.wrap-->
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
