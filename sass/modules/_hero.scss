@@ -8,7 +8,6 @@ Article Hero
   color: white;
   padding: 1em 0;
 
-  
   @include media(min-width $nav-breakpoint-value) {
     padding: 5em 0 1em;
   }
@@ -18,6 +17,11 @@ Article Hero
   &.light {
     color: $base-color-dark;
   }
+  
+  section.row {
+    background: none;
+  }
+  
   #breadcrumbs {
     font-size: .7em;
     padding-bottom: 1em;
@@ -52,7 +56,7 @@ Article Hero
     line-height: 100%;
   }
   p {
-    line-height: 1.2em;
+
   }
   .cols-one .sub-section0 {
     @include two-thirds-nom;

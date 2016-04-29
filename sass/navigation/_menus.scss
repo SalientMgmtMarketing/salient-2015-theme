@@ -261,16 +261,31 @@ button.dropdown-toggle {
   width: 50%;
 }
 .secondary-navigation-container {
-	position: absolute;
-	top: 0;
-	background: white;
-	width: 100%;
-	height: 40px;
-	
-	ul {
-		float: right;
-		li {
-			float: left;
-		}
-	}
+  position: absolute;
+  top: 0;
+  background: rgba($base-accent-color,.32);
+  width: 100%;
+  height: 40px;
+  font-size: .7em;
+  
+  nav {
+    @include outer-container;
+    @include fill-parent;
+  }
+  ul {
+    float: right;
+    margin-top: .5em;
+    li {
+        float: left;
+    }
+  }
+  a {
+    padding: .3em 1em .5em;
+    color: $base-color-light;
+    font-weight: 700;
+    
+    &:hover {
+      background: darken($base-accent-color, 20);
+    }
+  }
 }

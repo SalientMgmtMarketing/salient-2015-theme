@@ -20,8 +20,15 @@
 
 
 /* Pages */
-.page article .entry-content {
+.page article { 
+  .entry-content {
 	padding: 1.5em 0;
+    margin-bottom: 1em;
+  }
+  footer {
+    @include span-columns(8);
+    @include shift(2);
+  }
 }
 
 h1.entry-title {

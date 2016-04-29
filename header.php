@@ -20,7 +20,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
+<div id="page" class="hfeed site<?php
+		if ( has_nav_menu( 'secondary' ) ) { ?> has-secondary<?php } ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'salient-2015' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">

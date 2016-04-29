@@ -12,7 +12,7 @@ header#masthead {
   @include media(min-width $nav-breakpoint-value) {
     @include transparent-background($blue,.8);
     height: 110px;
-    position: fixed;
+    position: absolute;
   }
   @include media(max-height em(479px) orientation landscape) {
     position: absolute;
@@ -154,6 +154,20 @@ header#masthead {
         }
       }
     }
+  }
+  
+}
+#page.has-secondary {
+  
+  #masthead {
+    height: 160px;
+    
+    .wrap {
+      margin-top: 40px;
+    }
+  }
+  .hero {
+    padding-top: 9em;
   }
 }
 

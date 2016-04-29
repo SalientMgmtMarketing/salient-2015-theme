@@ -32,6 +32,13 @@ h1 {
 
 h2 {
   font-size: $h2-font-size;
+  
+  &.caps {
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
 }
 
 h3 {
@@ -99,7 +106,9 @@ blockquote {
   border-left: 2px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 30px;
-  quotes: "\201C""\201D""\2018""\2019";
+  quotes: "\201C""\201D";
+  text-indent: -3em;
+  padding-left: 4em;
   &:before {
     color: #ccc;
     content: open-quote;
@@ -108,8 +117,8 @@ blockquote {
     margin-right: 0.25em;
     vertical-align: -0.4em;
   }
-  p:first-child {
-    display: inline;
+  footer {
+    padding-left: 3em;
   }
 }
 

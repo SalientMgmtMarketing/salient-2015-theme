@@ -3,8 +3,7 @@
   //CONTENT-BLOCK LAYOUT
   if(  get_row_layout() == 'content-blocks'): ?>
 
-  <section <?php if( get_sub_field( 'section_id') ) { ?> id="
-    <?php the_sub_field('section_id'); ?>"
+  <section <?php if( get_sub_field( 'section_id') ) { ?> id="<?php the_sub_field('section_id'); ?>"
       <?php } ?> class="row<?php   
 
         //adds the class for the text color
@@ -20,19 +19,23 @@
         //adds class for cards
         if( get_sub_field('cards')) { echo " cards"; }
  
-        ?>" style="<?php if (get_sub_field('background_image') && !get_sub_field('parallax_bg')) { ?> background-image:url('<?php the_sub_field('background_image'); ?>');<?php } ?>
+        ?>" style="<?php if (get_sub_field('background_image') && !get_sub_field('parallax_background')) { ?> background-image:url('<?php the_sub_field('background_image'); ?>');<?php } ?>
 
           <?php if (get_sub_field('background_color')) { ?>background-color: <?php the_sub_field('background_color'); } ?>">
-
+          
+          <?php if (get_sub_field('background_image') && get_sub_field('parallax_background')) { ?>
+            <div class="bkg" style="background-image:url('<?php the_sub_field('background_image'); ?>');"></div><!--.bkg-->
+          <?php } ?>
+    
           <?php if( get_sub_field('section_title') ): ?>
             <h2 class="section-title wrap"><?php the_sub_field('section_title'); ?></h2>
           <?php endif; ?>
 
-          <div class="wrap <?php 
+          <div class="wrap<?php 
             
             //adds the class for the selection type
             $value = get_sub_field('columns');
-            echo " cols- " . $value; 
+            echo " cols-" . $value; 
                           
             //adds class for column layout
             if( $value=='two') { echo " "; the_sub_field('2_column_layout'); }
@@ -54,15 +57,14 @@
           ?>">
 
             <?php 
-            
-            $image = get_sub_field('column_1_photo');
-            $size = 'cards-5x2';
-            $thumb = $image['sizes'][ $size ];
-            
-            if( $value=='two') { $size = 'cards-5x2'; }
-            if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
 
-            if( get_sub_field('cards')) { ?>
+            if( get_sub_field('cards')) { 
+            
+              if( $value=='two') { $size = 'cards-5x2'; }
+              if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
+
+              $image = get_sub_field('column_1_photo');
+              $thumb = $image['sizes'][ $size ]; ?>
             
               <div class="card-thumb">
                 <img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -101,14 +103,13 @@
                 ?>">
                 
                 <?php 
-                $image = get_sub_field('column_2_photo');
-                $thumb = $image['sizes'][ $size ];
-                
-                if( $value=='two') { $size = 'cards-5x2'; }
-                if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
+                if( get_sub_field('cards')) { 
+                  
+                  if( $value=='two') { $size = 'cards-5x2'; }
+                  if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
 
-
-                if( get_sub_field('cards')) { ?>
+                  $image = get_sub_field('column_2_photo');
+                  $thumb = $image['sizes'][ $size ]; ?>
                   
                   <div class="card-thumb">
                     <img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -160,15 +161,15 @@
 
               ?>">
               <?php 
-                
-              $image = get_sub_field('column_3_photo');
-              $thumb = $image['sizes'][ $size ];
-                
-              if( $value=='two') { $size = 'cards-5x2'; }
-              if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
 
+              if( get_sub_field('cards')) { 
+                
+                if( $value=='two') { $size = 'cards-5x2'; }
+                if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
 
-              if( get_sub_field('cards')) { ?>
+                $image = get_sub_field('column_3_photo');
+                $thumb = $image['sizes'][ $size ];?>
+                
                 <div class="card-thumb">
                   <img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" />
                 </div><!--.card-thumb-->
@@ -206,13 +207,14 @@
               ?>">
               
                 <?php 
-                $image = get_sub_field('column_4_photo');
-                $thumb = $image['sizes'][ $size ];
-                if( $value =='two' ) { $size = 'cards-5x2'; }
-                if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
+                if( get_sub_field('cards')) {
 
+                  if( $value =='two' ) { $size = 'cards-5x2'; }
+                  if( $value =='three' || $value == 'four' ) { $size = 'cards-4x3'; }
 
-                if( get_sub_field('cards')) { ?>
+                  $image = get_sub_field('column_4_photo');
+                  $thumb = $image['sizes'][ $size ]; ?>
+
                   <div class="card-thumb">
                     <img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" />
                   </div><!--.card-thumb-->

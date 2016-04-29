@@ -21,11 +21,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="wrap">
-		<?php if ( get_field('left_sidebar') ) { ?>
-          <aside id="left-sidebar" class="bluegraybox">
-				<?php dynamic_sidebar( 'submenu-widget-area' ); ?>
-          </aside>
-        <?php } ?>
+
 		<div class="entry-content">
 			<?php the_content(); ?>
 			<?php
@@ -35,13 +31,12 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
-        <?php if ( get_field('right_sidebar')) { ?>
-          <aside id="right-sidebar" class="bluegraybox">
-				<?php dynamic_sidebar( 'primary-widget-area' ); ?>
-          </aside>
-        <?php } ?>  
+        
+        <?php get_sidebar(); ?>
 	</div><!-- .wrap -->
-	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', 'salient-2015' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-footer -->
+	<?php if (is_admin()) { ?>
+      <footer class="entry-footer">
+          <?php edit_post_link( __( 'Edit', 'salient-2015' ), '<span class="edit-link">', '</span>' ); ?>
+      </footer><!-- .entry-footer -->
+    <?php } ?>
 </article><!-- #post-## -->

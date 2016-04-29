@@ -5,6 +5,14 @@
   }
   .sub-section1 {
     @include one-third-nom;
+    
+    @include media($medium-screen) {
+      @include omega(2n);
+    }
+    
+    @include media($large-screen) {
+      @include omega(2n);
+    }
   }
   .sub-section2 {
     @include one-third-nom;

@@ -118,13 +118,57 @@ function salient_2015_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
+	// Area 2A, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Secondary Widget Area', 'salient-2015' ),
-		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', 'salient-2015' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
+		'name' => __( 'Solutions Sidebar', 'salient-2015' ),
+		'id' => 'solutions',
+		'description' => __( 'Solutions widget area', 'salient-2015' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+  
+  	// Area 2B, located at the top of the sidebar.
+	register_sidebar( array(
+		'name' => __( 'Services Sidebar', 'salient-2015' ),
+		'id' => 'services',
+		'description' => __( 'Services widget area', 'salient-2015' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+  
+    // Area 2C, located at the top of the sidebar.
+	register_sidebar( array(
+		'name' => __( 'Technology Sidebar', 'salient-2015' ),
+		'id' => 'technology',
+		'description' => __( 'Technology widget area', 'salient-2015' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+  
+    // Area 2D, located at the top of the sidebar.
+	register_sidebar( array(
+		'name' => __( 'About Sidebar', 'salient-2015' ),
+		'id' => 'about',
+		'description' => __( 'About widget area', 'salient-2015' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	// Area 2E, located at the top of the sidebar.
+	register_sidebar( array(
+		'name' => __( 'Blog Sidebar', 'salient-2015' ),
+		'id' => 'blog',
+		'description' => __( 'Blog widget area', 'salient-2015' ),
+		'before_widget' => '',
+		'after_widget' => '',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
@@ -181,15 +225,12 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
-    wp_enqueue_style( 'salient-2015-flickity-style', get_template_directory_uri() . '/css/flickity.min.css' );   
 	wp_enqueue_script( 'jquery' );
-
-	//wp_enqueue_script( 'salient-2015-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'salient-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	
 	wp_enqueue_script( 'salient-2015-custom', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '', true );
+  	wp_enqueue_script( 'salient-2015-custom-footer', get_template_directory_uri() . '/assets/js/scripts-footer.js', array('jquery'), '', true );
 
     
 	
@@ -280,3 +321,25 @@ function acf_custom_admin_styles() {
     }
 </style>';
 }
+
+
+// Is page a parent, child or any ancestor of the page
+function is_tree($pid)
+{
+  global $post;
+  $ancestors = get_post_ancestors($post->$pid);
+  
+  $root = count($ancestors) - 1;
+  if ($root > 0) {
+    $parent = $ancestors[$root];
+  }
+ 
+  if(is_page() && (is_page($pid) || $post->post_parent == $pid || in_array($pid, $ancestors)))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+};

@@ -9,8 +9,10 @@ var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var maps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var pa11y = require('pa11y');
+var shell = require('gulp-shell');
 
-gulp.task('concatScripts', function(){
+gulp.task('concatScripts', function () {
     return gulp.src([
             './js/navigation.js',
             './js/**.js',
@@ -23,19 +25,32 @@ gulp.task('concatScripts', function(){
     .pipe(gulp.dest('./assets/js'));
 });
 
-gulp.task('minifyScripts', ['concatScripts'], function(){
+gulp.task('concatScriptsFooter', function () {
+    return gulp.src([
+            'node_modules/gsap/src/minified/TweenMax.min.js',
+            'node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+            'node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
+            'assets/js/footer.js'
+    ])
+    .pipe(maps.init())
+    .pipe(concat('scripts-footer.js'))
+    .pipe(maps.write('./'))
+    .pipe(gulp.dest('./assets/js'));
+});
+
+gulp.task('minifyScripts', ['concatScripts'], function () {
     return gulp.src('./assets/js/scripts.js')
             .pipe(uglify())
             .pipe(gulp.dest('./assets/js'));
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
     browserSync.init({
         proxy: "www.salient.dev/", notify: false
     });
 });
 
-gulp.task('compileSass', function(){
+gulp.task('compileSass', function () {
     return gulp.src('./sass/**/*.scss')
             .pipe(maps.init())
             .pipe(sass({includePaths: require('bourbon').includePaths}))
@@ -47,13 +62,18 @@ gulp.task('compileSass', function(){
 
 gulp.task('watchFiles', function(){
     gulp.watch(['./sass/**/*.scss','./scss/*.scss'],['compileSass']);
-        gulp.watch(['./js/**.js','./inc/**/*.js','./assets/**.js'], ['concatScripts']);
+        gulp.watch(['./js/**.js','./inc/**/*.js','./assets/**.js'], ['concatScripts','concatScriptsFooter']);
 });
 
-gulp.task('build', ['minifyScripts', 'compileSass']);
+
+
+
+
+
+gulp.task('build', ['concatScriptsFooter','minifyScripts', 'compileSass']);
 
 gulp.task('watch', ['watchFiles']);
 
 gulp.task('watch-sync', ['watchFiles', 'browser-sync']);
 
-gulp.task('default', ['concatScripts', 'compileSass']);
+gulp.task('default', ['concatScripts','concatScriptsFooter', 'compileSass']);

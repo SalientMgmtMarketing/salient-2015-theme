@@ -13,10 +13,16 @@ get_header('boxy'); ?>
       
         <?php 
         // Loads the header area if "Show Title" is checked. Checked by default.                       
-        if (get_field('show_title')) { ?> 
+        if (get_field('show_title')) { 
+        
+        $parallax_bg = get_sub_field('parallax_background');
+        ?> 
       
-          <header class="entry-header hero" <?php if (has_post_thumbnail) { ?>style="<?php get_template_part('/templates/featured','background-image-inline'); ?>"<?php } ?>>
+          <header class="entry-header hero" <?php if (has_post_thumbnail() && !$parallax_bg) { ?>style="<?php get_template_part('/templates/featured','background-image-inline'); ?>"<?php } ?>>
 
+            <?php if (has_post_thumbnail() && $parallax_bg) { ?>
+              <div class="bkg"style="<?php get_template_part('/templates/featured','background-image-inline'); ?>"></div>
+            <?php } ?>
             <div class="wrap">
 
               <?php 
