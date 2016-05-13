@@ -9,8 +9,6 @@ var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var maps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-var pa11y = require('pa11y');
-var shell = require('gulp-shell');
 
 gulp.task('concatScripts', function () {
     return gulp.src([

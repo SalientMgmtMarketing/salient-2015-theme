@@ -1,34 +1,39 @@
 /* Footer */
 
 footer#colophon {
-  background: $blue;
-  color: $white;
-  padding-bottom: 5em;
-  
-  .wrap {
-    padding: 0 1em;
-  }
-  a {
-    color: $white;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .footer-block.single {
-    @include one-quarter-nom;
-  }
-  .footer-block.double {
-    @include one-half-nom;
-  }
+	background: $blue;
+	color: $white;
+	padding-bottom: 5em;
+	font-size: .8em;
+	
+	.wrap {
+		padding: 0 1em;
+	}
+	a {
+		color: $white;
+		margin-bottom: 1em;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.footer-block.single {
+		@include one-quarter-nom;
+		@include media($medium-screen) {
+			@include omega(2n);
+		}
+	}
+	.footer-block.double {
+		@include one-half-nom;
+	}
 }
 
 img[src*=trackalyze] {
-  position: fixed;
+	position: fixed;
 }
 
 .widget_nav_menu ul ul {
-  margin-left: 1em;
-  li {
-    list-style-type: disc;
-  }
+	margin-left: 1em;
+	li {
+		list-style-type: disc;
+	}
 }

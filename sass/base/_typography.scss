@@ -75,7 +75,6 @@ a {
   &:active,
   &:focus {
     color: $hover-link-color;
-    outline: none;
   }
 }
 
@@ -103,12 +102,13 @@ i {
 }
 
 blockquote {
-  border-left: 2px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 30px;
   quotes: "\201C""\201D";
-  text-indent: -3em;
-  padding-left: 4em;
+  font-size: 1.5em;
+  @include media(min-width $second-breakpoint-value) {
+    margin-left: 1.8em;
+  }
   &:before {
     color: #ccc;
     content: open-quote;
@@ -116,6 +116,16 @@ blockquote {
     line-height: 0.1em;
     margin-right: 0.25em;
     vertical-align: -0.4em;
+    position: relative;
+    display: block;
+    top: 64x;
+    left: -52px;
+    z-index: 1;
+    opacity: .3;
+  }
+  p:after {
+    content: close-quote;
+    opacity: .3;
   }
   footer {
     padding-left: 3em;

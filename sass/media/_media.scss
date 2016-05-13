@@ -67,8 +67,12 @@ video {
 .collapse {
 	@include media(max-width $nav-breakpoint-value) {
 		opacity: 0;
+        height: 0;
+        overflow: hidden;
+        @include clearfix;
 		&.in {
 			opacity: 1;
+            height: auto;
 		}
 		// tr&.in    { display: table-row; }
 		// tbody&.in { display: table-row-group; }
@@ -88,7 +92,37 @@ video {
 	float: left;
 	margin-right: 1em;
 }
+.resource-group {
+  &:not(:last-child) {
+    border-bottom: 1px solid #333;
+    padding-bottom: 2em;
+  }
+  &:not(:first-child) {
+    padding-top: 2em;
+  }
+  .media {
+    @include fill-parent;
+    @include clearfix;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+  a.media-left {
+      float: left;
+      width: 150px;
+      margin-right: 1em;
+    
+    img {
+      border: 1px solid #333;
+    }
+  }
+  h2 {
+    margin-bottom: 1em;
+  }
+  h4.media-heading {
+    font-weight: 400;
+  }
 
+}
 
 /*--------------------------------------------------------------
 12.1 Captions

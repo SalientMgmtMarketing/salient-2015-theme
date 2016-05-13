@@ -7,6 +7,7 @@ Article Hero
   background-size: cover;
   color: white;
   padding: 1em 0;
+  position: relative;
 
   @include media(min-width $nav-breakpoint-value) {
     padding: 5em 0 1em;
@@ -60,5 +61,44 @@ Article Hero
   }
   .cols-one .sub-section0 {
     @include two-thirds-nom;
+  }
+  .overlay-{
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    &blue {
+      @extend .overlay-;
+      background: $blue;
+    }
+    &white {
+      @extend .overlay-;
+      background: $white;
+    }
+    &black {
+      @extend .overlay-;
+      background: $dark-gray;
+    }
+    &teal {
+      @extend .overlay-;
+      background: $teal;
+    }
+    &purple {
+      @extend .overlay-;
+      background: $purple;
+    }
+    &pink {
+      @extend .overlay-;
+      background: $pink;
+    }
+    &orange {
+      @extend .overlay-;
+      background: $orange;
+    }
   }
 }

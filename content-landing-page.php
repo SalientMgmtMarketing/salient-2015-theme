@@ -6,8 +6,11 @@
  */
 ?>
 
+
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <section class="landing-page-hero" style="<?php if ( has_post_thumbnail())  {  
+    <section class="landing-page-hero" style="<?php 
+      if (get_field('header_image')) { ?>background-image:url('<?php echo get_field('header_image') ?>');<?php }
+      elseif ( has_post_thumbnail())  {  
 			echo " background-image:url( '"; 
 			$thumb_id = get_post_thumbnail_id();
 			$thumb_url = wp_get_attachment_image_src($thumb_id,'full ', true);
@@ -232,12 +235,5 @@
           
       <?php endif; ?>
 
-
-
-
-    <footer class="entry-footer">
-      <?php edit_post_link( __( 'Edit', 'salient-2015' ), '<span class="edit-link">', '</span>' ); ?>
-    </footer>
-    <!-- .entry-footer -->
   </article>
   <!-- #post-## -->

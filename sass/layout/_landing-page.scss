@@ -2,7 +2,10 @@
 .single-event {
   header {
     &#masthead {
-      position: absolute;
+      position: relative;
+      @include media(min-width $second-breakpoint-value) {
+        position: absolute;
+      }
     }
     &.entry-header {
       text-align: left;
@@ -14,7 +17,9 @@
       @include media($small-screen) {
         padding: 2em 1em;
         h1 {
-          font-size: 1em;
+          font-size: 2em;
+          font-weight: 400;
+          margin-bottom: 0;
         }
       }
     }
@@ -23,12 +28,14 @@
     }
     h2.sub-headline {
       font-weight: 700;
-      font-size: 1.25em;
+      font-size: 1.125em;
       margin-bottom: 0;
     }
   }
   section.landing-page-hero {
     background-color: $light-blue;
+    background-size: cover;
+    background-position: center center;
   }
   .entry-content {
     @include two-thirds-nom;
@@ -37,24 +44,23 @@
     margin-bottom: 2em;
     background: rgba(0, 66, 128, 0.92);
     color: $white;
+    padding: 1em;
     border: none;
     @include media(min-width $first-breakpoint-value) {
       padding: 2em 3em;
     }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-weight: 700;
-    }
+
     a:hover {
       text-decoration: underline;
     }
     img.alignright {
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.41);
       border: 1px solid rgba(255, 255, 255, .4);
+      @include media($small-screen) {
+        width: 100%;
+        float: none;
+        margin: 0 auto;
+      }
     }
   }
 }

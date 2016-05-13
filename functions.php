@@ -84,6 +84,7 @@ function salient_2015_setup() {
 	add_image_size( 'cards-4x3', 420, 250, true );
   	add_image_size( 'portraits', 200, 300, true );
 	add_image_size( 'blog_feed', 527, 210, true, array( 'center', 'top' ) ); // Hard crop left top
+  	add_image_size( 'header', 1400, 500, true, array( 'center', 'top' ) ); // Hard crop left top
 }
 endif; // salient_2015_setup
 add_action( 'after_setup_theme', 'salient_2015_setup' );
@@ -343,3 +344,87 @@ function is_tree($pid)
     return false;
   }
 };
+
+// http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
+// this handles converting the entered value to hex for storage
+//
+// strtohex and hextostr functions lifted from here:
+// http://www.php.net/manual/en/function.hexdec.php#100578
+//
+// gform_pre_submission_filter_7 <--- 7 for FORM ID 7
+add_filter('gform_pre_submission_filter_2', 'ch_strtohex');
+function ch_strtohex($form) {
+	// input 5 is the form field I want to convert to hex
+	$x = rgpost('input_4');
+	$s='';
+	// convert the submitted string to hex
+	foreach(str_split($x) as $c)
+		$s .= sprintf('%02X',ord($c));
+	// assign the hex value to the POST field
+	$_POST['input_4'] = $s;
+	// return the form
+	return $form;
+}
+
+// retrieve hex and convert before displaying in the admin: single entry view
+add_filter('gform_entry_field_value', 'ch_hextostr_single', 10, 4);
+function ch_hextostr_single($x, $field, $lead, $form) { 
+	// run this code on form 7, field 5 only
+	// FORM ID 7, INPUT ID 5
+	if ($form['id'] == 2 && $field['id'] == 4) {
+		$s='';
+		foreach(explode("\n",trim(chunk_split($x,2))) as $h) {
+			$s .= chr(hexdec($h));
+		}
+		// prevent rendering anything that looks like HTML as HTML
+		return htmlspecialchars($s);
+	}
+	else {
+		// not (form 7 and field 5), return the original value
+		return $x;
+	}
+}
+
+// http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
+// retrieve hex and convert before displaying in the admin: entry list view
+// note the different filter name here "entries"
+add_filter('gform_entries_field_value', 'ch_hextostr_list', 10, 3);
+function ch_hextostr_list($x, $form_id, $field_id) { 
+	// run this code on form 7, field 5 only
+	// change to match your form values
+	if ($form_id == 2 && $field_id == 4) {
+		$s='';
+		foreach(explode("\n",trim(chunk_split($x,2))) as $h) {
+			$s .= chr(hexdec($h));
+		}
+		// prevent rendering anything that looks like HTML as HTML
+		return htmlspecialchars($s);
+	}
+	else {
+		// not (form 7 and field 5), return the original value
+		return $x;
+	}
+}
+
+// retrieve hex and convert before displaying in the email notification
+add_filter('gform_notification_format', 'ch_hextostr_email', 10, 2);
+function ch_hextostr_email($x, $field) { 
+	// run this code on form 7, field 5 only
+	// FORM ID 7, INPUT ID 5
+	if ($form['id'] == 2 && $field['id'] == 4) {
+		$s='';
+		foreach(explode("\n",trim(chunk_split($x,2))) as $h) {
+			$s .= chr(hexdec($h));
+		}
+		// prevent rendering anything that looks like HTML as HTML
+		return htmlspecialchars($s);
+	}
+	else {
+		// not (form 7 and field 5), return the original value
+		return $x;
+	}
+}
+
+
+// adds anchor to the form submission
+add_filter("gform_confirmation_anchor", create_function("","return true;"));

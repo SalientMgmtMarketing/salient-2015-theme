@@ -4,10 +4,10 @@
     var controller = new ScrollMagic.Controller();
 
     // get all slides
-	var slides = ["#slide1", "#slide3", "#slide4", "#slide5"];
+	var slides = ["#slide1", "#slide3", "#slide5"];
 
 	// get all headers in slides that trigger animation
-	var headers = ["#slide1 .wrap", "#slide3 .wrap", "#slide4 .wrap"];
+	var headers = ["#slide1 .wrap", "#slide3 .wrap", "#slide5 .wrap"];
 
 	// get all break up sections
 	var breakSections = ["#slide2", "#slide4", "#slide6"];
@@ -45,9 +45,6 @@
 		        triggerHook: 0.75
 		    })
 		    .setClassToggle('#'+breakID, 'is-active') // set class to active slide
-		    .on("enter", function (event) {
-			    $('nav').attr('class','is-light');
-			})
 		    .addTo(controller);
 		});
 
@@ -98,5 +95,29 @@
 	    .addTo(controller);
 
 	//}
+
+  	// Init ScrollMagic 
+    var logoController = new ScrollMagic.Controller();
+    var logoloop;
+    var logoScene = new ScrollMagic.Scene({
+        triggerElement: ('#clients-slider') 
+    })
+    .on("enter", function (event) {
+      if (logoloop != 'started') {
+        var logos = $(".logo-carousel div");
+        var logoIndex = -1;
+
+        function showNextLogo() {
+          ++logoIndex;
+          logos.eq(logoIndex % logos.length)
+            .fadeIn(1000)
+            .delay(2000)
+            .fadeOut(1000, showNextLogo);
+        }
+        showNextLogo();
+      }
+      logoloop = 'started';
+    })
+    .addTo(logoController);
 
 }(jQuery));

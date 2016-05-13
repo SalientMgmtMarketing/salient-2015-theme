@@ -32,17 +32,17 @@
 			</div><!-- .site-branding -->
 	
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="menu" aria-expanded="false" data-toggle="collapse" data-target="#site-navigation > div > ul"><span></span></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'collapse' ) ); ?>
+				<button class="menu-toggle" aria-controls="menu" aria-expanded="false" data-toggle="collapse" data-target="#site-navigation > div, .secondary-navigation-container"><span></span></button>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'collapse' ) ); ?>
 			</nav><!-- #site-navigation -->
 		</div><!--.wrap-->
-		
+	
 		<?php
 		if ( has_nav_menu( 'secondary' ) ) { ?>
 		
-			<div class="secondary-navigation-container">
-				<nav class="wrap secondary-navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'collapse' ) ); ?>
+			<div class="secondary-navigation-container collapse">
+				<nav class="wrap secondary-navigation" aria-label="secondary navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'container_class' => 'menu-wrap' ) ); ?>
 				</nav><!--.secondary-navigation-->
 			</div><!--.secondary-navigation-container-->
 		

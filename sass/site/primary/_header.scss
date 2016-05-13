@@ -9,6 +9,8 @@ header#masthead {
   box-shadow:0 0 18px rgba(68, 69, 71, 0.19);
   top: 0;
   transition: 200ms;
+  @include clearfix;
+  
   @include media(min-width $nav-breakpoint-value) {
     @include transparent-background($blue,.8);
     height: 110px;
@@ -48,6 +50,7 @@ header#masthead {
       @media screen and (max-width: $nav-breakpoint-value) {
         width: 90%;
         margin: 0;
+        height: 71px;
       }
       @include media(min-width $nav-breakpoint-value) {
         @include span-columns(4);
@@ -62,7 +65,7 @@ header#masthead {
           margin-left:.2em;
         } 
         a {
-          background-image: url("./assets/images/salient-healthcare.png");
+          //background-image: url("./assets/images/salient-healthcare.png");
           display: block;
           position: relative;
           background-repeat: no-repeat;
@@ -75,7 +78,7 @@ header#masthead {
           background-size: contain;
           background-position: left top;
           @include hidpi(2) {
-            background-image: url("./assets/images/salient-healthcare.png");
+            //background-image: url("./assets/images/salient-healthcare.png");
           }
           @include media(max-width $nav-breakpoint-value) {
             margin-top:15px;
@@ -133,8 +136,7 @@ header#masthead {
           left: -3px;
           width: 100%;
           > ul {
-            height: 0;
-            overflow: hidden;
+
           
             &.collapse.in {
               height: auto;
@@ -160,14 +162,22 @@ header#masthead {
 #page.has-secondary {
   
   #masthead {
-    height: 160px;
+
     
-    .wrap {
-      margin-top: 40px;
+    @include media(min-width $nav-breakpoint-value) {
+      height: 160px;
+    }
+    
+    div.wrap {
+      @include media(min-width $nav-breakpoint-value) {
+        margin-top: 40px;
+      }
     }
   }
   .hero {
-    padding-top: 9em;
+    @include media(min-width $nav-breakpoint-value) {
+      padding-top: 9em;
+    }
   }
 }
 

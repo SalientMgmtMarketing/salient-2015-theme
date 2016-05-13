@@ -1,7 +1,9 @@
 /* Scss Document */
 
 main section:first-child {
+  @include media(min-width $second-breakpoint-value) {
     padding-top: 110px;
+  }
 }
 
 div#content {

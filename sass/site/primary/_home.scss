@@ -1,5 +1,7 @@
 .home section.row {
-  height: 86vh;
+  @include media(min-width $second-breakpoint-value) {
+    height: 86vh;
+  }
 }
 
 section#hero {
@@ -25,6 +27,7 @@ section#hero {
     padding: 8em 0 7em;
     font-size: 1.2em;
   }
+  color: red;
 }
 
 section#value-line {

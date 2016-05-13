@@ -146,7 +146,7 @@ section.row {
     }
   }
   h3 {
-    font-size: .64em;
+    font-size: 1em;
     font-weight: 700;
     @include media(min-width 400px) {
       font-size: 1.2em;
@@ -253,7 +253,9 @@ section.row:nth-child(even) {
   z-index: 1000;
 
   .wrap {
-    margin-top: 3em;
+    @include media(min-width $second-breakpoint-value) {
+      margin-top: 3em;
+    }
   }
   .sub-section0 {
     font-size: 1.2em;
@@ -265,18 +267,32 @@ section.row:nth-child(even) {
     font-weight: 700;
     text-transform: inherit;
     letter-spacing: 0;
-    font-size: 2.4em;
+    font-size: 1.4em;
+    @include media(min-width $second-breakpoint-value) {
+      font-size: 2.4em;
+    }
+  }
+  p {
+    @include media(max-width $second-breakpoint-value) {
+      font-size: 1.1rem;
+    }
   }
 }
 
 #slide1 {
-  padding-top: 8em;
-  height: 115vh;
   background-color: $white;
+  padding-top: 4em;
 
+  @include media(min-width $nav-breakpoint-value) {
+    padding-top: 8em;
+    height: 115vh;
+  }
   .bkg {
     margin-top: 5vh;
     height: 115vh;
+    @include media(orientation portrait min-height ems(600px)) {
+      height: 72vh;
+    }
   }
   
   .wrap {
@@ -286,10 +302,15 @@ section.row:nth-child(even) {
     margin-bottom: 4em;
   }
   h3 {
-    font-size: 2.1em;
+    font-size: 1.5em;
+    @include media(min-width $second-breakpoint-value) {
+      font-size: 2.1em;
+    }
   }
   p {
-    font-size: 1.2em;
+    @include media(min-width $second-breakpoint-value) { 
+      font-size: 1.2em;
+    }
   }
 }
 
@@ -302,11 +323,17 @@ section.row:nth-child(even) {
   }
   
   h3 {
-    font-size: 2.4em;
+    font-size: 1.5em;
+    
+    @include media(min-width $second-breakpoint-value) {
+      font-size: 2.4em;
+    }
   }
   
   p {
-    font-size: 1.2em;
+    @include media(min-width $second-breakpoint-value) {
+      font-size: 1.2em;
+    }
   }
   
   &:before {
@@ -324,23 +351,42 @@ section.row:nth-child(even) {
 }
 
 #slide3 {
-  height: 110vh;
   z-index: 800;
   position: relative;
-  
-  .wrap {
-    padding-top: 8em;
-    position: relative;
-    z-index: 100;
-  }
-  .bkg {
+  @include media(min-width $second-breakpoint-value) {
     height: 110vh;
   }
+  
+  .wrap {
+    position: relative;
+    z-index: 100;
+    @include media(min-width $second-breakpoint-value) {
+      padding-top: 10vh;
+    }
+
+  }
+  .bkg {
+    height: 75vh;
+    
+    @include media(min-width 680px) {
+      height: 67vw;
+    }
+    
+    @include media(min-width $second-breakpoint-value) {
+      height: 110vh;
+    }
+  }
+
   h3 {
-    font-size: 2.4em;
+    font-size: 1.5em;
+    @include media(min-width $second-breakpoint-value) {
+      font-size: 2.4em;
+    }
   }
   p {
-    font-size: 1.3em;
+    @include media(min-width $second-breakpoint-value) {
+      font-size: 1.3em;
+    }
   }
   &:before {
     background: #000;
@@ -349,10 +395,13 @@ section.row:nth-child(even) {
 }
 
 #slide4 {
+  z-index: 801;
   .wrap {
-    margin-top: 4em;
     position: relative;
     z-index: 100;
+    @include media(min-width $second-breakpoint-value) {
+      margin-top: 4em;
+    }
   }
   &:before {
     content: '';
@@ -361,16 +410,24 @@ section.row:nth-child(even) {
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: .5;
+    opacity: .7;
     z-index: 0;
     background: #000;
     z-index: 10;
+    @include media(min-width $second-breakpoint-value) {
+      opacity: .5;
+    }
   }
   h3 {
-    font-size: 2.2em;
+    font-size: 1.5em;
+    @include media(min-width $second-breakpoint-value) {
+      font-size: 2.2em;
+    }
   }
   p {
-    font-size: 1.2em;
+    @include media(min-width $second-breakpoint-value) {
+      font-size: 1.2em;
+    }
   }
   .bkg {
     height: 100vh;
@@ -378,31 +435,54 @@ section.row:nth-child(even) {
 }
 
 #home-quote {
+  z-index: 802;
+  position: relative;
   height: auto;
-  font-size: 2em;
+  font-size: 1.2em;
+  @include media(min-width $second-breakpoint-value) {
+
+  }
   
   blockquote {
-    text-indent: -1.4em;
     border: none;
-    margin-left: 2.8em;
+    padding-left: 0;
+    font-size: 1.2em;
+    
+    @include media(min-width $second-breakpoint-value) {
+      text-indent:0;
+      font-size: 1.5em;
+    }
+
+    @include media(min-width $second-breakpoint-value) {
+      margin-left: 1.8em;
+    }
     
     &:before {
       display: block;
-      font-size: 6em;
+      font-size: 4em;
       margin: 0;
       position: relative;
-      top: 76px;
-      left: -58px;
+      top: 56px;
+      left: -48px;     
       z-index: 10;
       opacity: .3;
-      margin-top: -50px;
+      margin-top: -75px;
+      
+      @include media(min-width $second-breakpoint-value) {
+        top: 75px;
+        left: -75px;
+      }
     }
   }
 }
 
-#stories { 
+#stories {
+  z-index: 803;
+  
   .sub-section0 {
-
+    @include media($large-screen) {
+      @include span-columns(8);
+    }
     h3 {
       font-size: 2.4em;
     }
@@ -418,6 +498,9 @@ section.row:nth-child(even) {
   }
   .sub-section1 {
     margin-top: 2em;
+    @include media($large-screen) {
+      @include span-columns(8);
+    }
   }
   .customer-story {
     text-align: center;
@@ -427,6 +510,8 @@ section.row:nth-child(even) {
 }
 
 section#clients-slider {
+  z-index: 804;
+  
   background: white;
   color: #004280;
   text-align: center;

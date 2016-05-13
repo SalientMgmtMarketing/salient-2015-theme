@@ -5,10 +5,12 @@ input[type="submit"], a.btn, a.button {
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
-  white-space: nowrap;
   color: $white;
   position: relative;
-
+  text-align: center;
+  @include media(min-width $second-breakpoint-value) {
+    white-space: nowrap;
+  }
   &:visited, &:hover, &:link, &:active {
     color: $white;
   }
