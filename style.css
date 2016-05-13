@@ -1534,6 +1534,11 @@ button.dropdown-toggle {
   text-align: right;
   width: 50%; }
 
+@media screen and (min-width: 930px) and (max-width: 100em) {
+  #menu-primary-navigation > li:last-child:hover > .sub-menu {
+    left: auto;
+    right: 156px; } }
+
 #masthead .secondary-navigation-container a:visited, #masthead .secondary-navigation-container a:link, #masthead .secondary-navigation-container a:active {
   color: white; }
 
@@ -3373,8 +3378,7 @@ header#masthead {
     height: 86vh; } }
 
 section#hero {
-  padding: 0;
-  color: red; }
+  padding: 0; }
   section#hero a.button.blue {
     font-size: 1em; }
   section#hero h1 {
@@ -4046,10 +4050,12 @@ img[src*=trackalyze] {
   border: 1px solid rgba(51, 51, 51, 0.23);
   margin-top: -1em;
   position: relative; }
-
-@inlcude media(min-width $second-breakpoint-value) {
-  .page.page-template-template-internal article .entry-content, .page.page-template-default article .entry-content, .page.page-template-page-resources article .entry-content {
-    padding: 2em 4em; } }
+  @media screen and (min-width: 500px) {
+    .page.page-template-template-internal article .entry-content, .page.page-template-default article .entry-content, .page.page-template-page-resources article .entry-content {
+      padding: 2em; } }
+  @media screen and (min-width: 930px) {
+    .page.page-template-template-internal article .entry-content, .page.page-template-default article .entry-content, .page.page-template-page-resources article .entry-content {
+      padding: 2em 4em; } }
   @media screen and (max-width: 31.1875em) {
     .page.page-template-template-internal article .entry-content, .page.page-template-default article .entry-content, .page.page-template-page-resources article .entry-content {
       float: left;

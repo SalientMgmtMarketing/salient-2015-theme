@@ -260,6 +260,15 @@ button.dropdown-toggle {
   text-align: right;
   width: 50%;
 }
+
+@include media(min-width $nav-breakpoint-value max-width em(1600px)) {
+  #menu-primary-navigation > li:last-child:hover > .sub-menu {
+    left: auto;
+    right: 156px;
+  }
+}
+
+
 #masthead .secondary-navigation-container {
   a {
     &:visited, &:link, &:active {
