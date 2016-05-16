@@ -233,6 +233,48 @@
             <?php } ?>
           </div><!--.wrap-->
 
+    <?php 
+      $rows = get_sub_field('sub_slides');
+      $row_count = count($rows);
+
+      if ( have_rows('sub_slides') ): ?>
+      <div class="slides-container">
+        <?php if ( $row_count > 1 ) { ?>
+          <nav class="slides-nav" aria-label="slides navigation">
+            <ul>
+              <?php 
+                while ( have_rows('sub_slides') ) : the_row();
+              ?>
+              
+              <li><?php echo get_sub_field('slide_title'); ?></li>
+              
+              <?php endwhile; ?>
+            </ul>
+          </nav>
+        <?php } ?>
+        <?php 
+      while ( have_rows('sub_slides') ) : the_row();
+    ?>
+      <div class="sub-slide<?php if ( get_sub_field('slide-class') ) 
+          { 
+            echo " " . get_sub_field('slide_class'); 
+          } ?>" 
+          
+          <?php if ( get_sub_field('slide_background_image') ) 
+          { ?> style="background-image: url('<?php 
+  
+              echo get_sub_field('slide_background_image'); 
+                      
+              ?>');"<?php 
+          } ?>>
+          <?php echo get_sub_field('slide_content'); ?>
+      </div>
+    <?php 
+
+      endwhile; ?>
+    </div><!--.slides-container-->
+  <?php  endif; //sub_slides ?>
+
   </section>
   <!-- #intro -->
   <?php endif; ?>

@@ -1,0 +1,37 @@
+.slides-container {
+  transform: translateX(100%);
+  position: absolute;
+  background: white;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  color: #004280;
+}
+
+.sub-slide, .slides-nav {
+  @include outer-container;
+  @include fill-parent;
+}
+
+section.row {
+  transition: .8s ease-in-out;
+}
+section.row.slide1 {
+  transform: translateX(-100%);
+}
+
+section.row.slide2 {
+  transform: translateX(-200%);
+}
+
+section.row.slide3 {
+  transform: translateX(-300%);
+}
+
+section.row.slide4 {
+  transform: translateX(-400%);
+}
+
+section.row.slide5 {
+  transform: translateX(-500%);
+}
