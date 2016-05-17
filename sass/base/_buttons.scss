@@ -15,3 +15,9 @@ input[type="submit"], a.btn, a.button {
     color: $white;
   }
 }
+
+.button-row {
+  padding: 1em 0;
+  @include fill-parent;
+  @include clearfix;
+}

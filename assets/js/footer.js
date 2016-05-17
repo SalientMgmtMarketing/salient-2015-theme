@@ -120,5 +120,5 @@
       logoloop = 'started';
     })
     .addTo(logoController);
-
+  
 }(jQuery));

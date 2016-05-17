@@ -1,4 +1,4 @@
-.slides-container {
+section.row > div.slides-container {
   transform: translateX(100%);
   position: absolute;
   background: white;
@@ -6,11 +6,48 @@
   top: 0;
   height: 100%;
   color: #004280;
+  
+  &:nth-child(4) {
+    transform: translateX(200%);
+  }
+    &:nth-child(5) {
+    transform: translateX(300%);
+  }
+  &:nth-child(6) {
+    transform: translateX(400%);
+  }
+  &:nth-child(7) {
+    transform: translateX(500%);
+  }
 }
 
 .sub-slide, .slides-nav {
   @include outer-container;
   @include fill-parent;
+}
+
+.slides-container .sub-slide {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  right: 0;
+  left: 0;
+  height: 100%;
+  z-index: 900;
+  
+  &:nth-of-type(1) {
+    opacity: 1;
+    z-index: 1000;
+  }
+}
+
+.slides-container {
+  margin-top: 10em;
+  
+  &.multi .sub-slide {
+    padding-top: 4em;
+  }
 }
 
 section.row {
@@ -34,4 +71,28 @@ section.row.slide4 {
 
 section.row.slide5 {
   transform: translateX(-500%);
+}
+
+
+section nav.slides-nav {
+  padding-top: 2em;
+  z-index: 1001;
+  position: relative;
+  
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+      list-style-type: none;
+      margin-right: 2em;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0 2em 0 0;
+    }
+  }
+  a {
+    color: $blue;
+  }
 }

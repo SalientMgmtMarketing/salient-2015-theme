@@ -233,48 +233,70 @@
             <?php } ?>
           </div><!--.wrap-->
 
-    <?php 
-      $rows = get_sub_field('sub_slides');
-      $row_count = count($rows);
+    
 
-      if ( have_rows('sub_slides') ): ?>
-      <div class="slides-container">
-        <?php if ( $row_count > 1 ) { ?>
-          <nav class="slides-nav" aria-label="slides navigation">
-            <ul>
-              <?php 
-                while ( have_rows('sub_slides') ) : the_row();
-              ?>
-              
-              <li><?php echo get_sub_field('slide_title'); ?></li>
-              
-              <?php endwhile; ?>
-            </ul>
-          </nav>
-        <?php } ?>
         <?php 
-      while ( have_rows('sub_slides') ) : the_row();
-    ?>
-      <div class="sub-slide<?php if ( get_sub_field('slide-class') ) 
-          { 
-            echo " " . get_sub_field('slide_class'); 
-          } ?>" 
+          $rows = get_sub_field('panels');
+          $row_count = count($rows);
+
+          if ( have_rows('sub_slides') ): ?>
           
-          <?php if ( get_sub_field('slide_background_image') ) 
-          { ?> style="background-image: url('<?php 
-  
-              echo get_sub_field('slide_background_image'); 
-                      
-              ?>');"<?php 
-          } ?>>
-          <?php echo get_sub_field('slide_content'); ?>
-      </div>
-    <?php 
+          <?php while ( have_rows('sub_slides') ): the_row(); ?>
+    
+            <?php  if( get_row_layout() == 'sub_slide_single'): ?>
+              <div class="slides-container">
 
-      endwhile; ?>
-    </div><!--.slides-container-->
-  <?php  endif; //sub_slides ?>
+                <div class="sub-slide">
+                  <h3 class="sub-slide-title"><?php echo get_sub_field('slide_title'); ?></h3>
+                  <?php echo get_sub_field('slide_content'); ?>
+                </div><!--.sub-slide -->
 
+              </div><!--.slide-container-->
+            <?php endif; // layout = sub_slide_single ?>
+
+    
+            <?php  if( get_row_layout() == 'sub_slide_multi'): ?>
+
+              <div class="slides-container multi">
+        
+                
+                  <nav class="slides-nav" aria-label="slides navigation">
+                    <ul>
+                      <?php 
+                        while ( have_rows('panels') ) : the_row();
+                      ?>
+                      <li><a href="#sub-slide" data-panel=""><?php echo get_sub_field('panel_title'); ?></a></li>
+                      <?php endwhile; // panels ?>
+                    </ul>
+                  </nav>
+
+
+            
+            <?php 
+              while ( have_rows('panels') ) : the_row();
+            ?>
+              <div class="sub-slide<?php if ( get_sub_field('panel-class') ) 
+                { 
+                  echo " " . get_sub_field('panel_class'); 
+                } ?>" 
+
+                <?php if ( get_sub_field('panel_background_image') ) 
+                { ?> style="background-image: url('<?php 
+
+                    echo get_sub_field('panel_background_image'); 
+
+                    ?>');"<?php 
+                } ?>>
+                <?php echo get_sub_field('panel_content'); ?>
+              </div>
+          <?php 
+            endwhile; //panels ?>
+        </div><!--.slides-container-->
+      <?php endif; //sub_slide_multi ?>
+      <?php
+        endwhile; //sub_slides
+      endif; // sub_slide_parent
+    ?>
   </section>
   <!-- #intro -->
   <?php endif; ?>
