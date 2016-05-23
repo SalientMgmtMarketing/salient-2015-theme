@@ -29,7 +29,8 @@ gulp.task('concatScriptsFooter', function () {
             'node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
             'node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
             'assets/js/footer.js',
-            'assets/js/homepage-slides.js'
+            'assets/js/homepage-slides.js',
+            'assets/js/homepage-tabs.js'
     ])
     .pipe(maps.init())
     .pipe(concat('scripts-footer.js'))

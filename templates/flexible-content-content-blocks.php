@@ -236,6 +236,7 @@
     
 
         <?php 
+    
           $rows = get_sub_field('panels');
           $row_count = count($rows);
 
@@ -265,7 +266,7 @@
                       <?php 
                         while ( have_rows('panels') ) : the_row();
                       ?>
-                      <li><a href="#sub-slide" data-panel=""><?php echo get_sub_field('panel_title'); ?></a></li>
+                      <li><a href="#sub-slide" data-panel="<?php echo get_sub_field('panel_class'); ?>"><?php echo get_sub_field('panel_title'); ?></a></li>
                       <?php endwhile; // panels ?>
                     </ul>
                   </nav>
@@ -275,7 +276,7 @@
             <?php 
               while ( have_rows('panels') ) : the_row();
             ?>
-              <div class="sub-slide<?php if ( get_sub_field('panel-class') ) 
+              <div class="sub-slide<?php if ( get_sub_field('panel_class') ) 
                 { 
                   echo " " . get_sub_field('panel_class'); 
                 } ?>" 
