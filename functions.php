@@ -312,7 +312,6 @@ function add_plugin($plugin_array) {
    return $plugin_array;
 }
 
-
 add_action('admin_head', 'acf_custom_admin_styles');
 
 function acf_custom_admin_styles() {
@@ -322,6 +321,29 @@ function acf_custom_admin_styles() {
     }
 </style>';
 }
+
+
+// Add Arrow Shortcodes
+function arrow_shortcode( $atts ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'direction' => 'right',
+		),
+		$atts
+	);
+
+    return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <title>arrow</title>
+        <desc>geometric arrow</desc>
+        <g class="arrow-svg arrow-' . $atts['direction'] . '">
+          <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
+          <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
+        </g>
+      </svg>';
+}
+add_shortcode( 'arrow', 'arrow_shortcode' );
 
 
 // Is page a parent, child or any ancestor of the page

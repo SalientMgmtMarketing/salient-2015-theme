@@ -251,8 +251,9 @@
                   <h3 class="sub-slide-title"><?php echo get_sub_field('slide_title'); ?></h3>
                   <?php echo get_sub_field('slide_content'); ?>
                 </div><!--.sub-slide -->
-
+              <button class="close-btn"><span class="screen-reader-text">Return to main content</span><span class="aria-hidden" aria-hidden="true" data-slide="slide-close"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Return to Home Screen</title><g class="close-svg"><g><path d="M34.45 25l25.888 25h-20.154l-25.888-25h20.154zM34.331 75l25.888-25h-20.154l-25.888 25h20.154z" id="Combined-Shape"/></g><g><path d="M66.55 25l-25.888 25h20.154l25.888-25h-20.154zM66.669 75l-25.888-25h20.154l25.888 25h-20.154z"/></g></g></svg></span></button>
               </div><!--.slide-container-->
+
             <?php endif; // layout = sub_slide_single ?>
 
     
@@ -260,6 +261,9 @@
 
               <div class="slides-container multi">
         
+                  <?php if (get_sub_field('slide_title')) { ?>
+                    <h2 class="sub-slide-title"><?php echo get_sub_field('slide_title'); ?></h2>
+                  <?php } ?>
                 
                   <nav class="slides-nav" aria-label="slides navigation">
                     <ul>
@@ -270,6 +274,8 @@
                       <?php endwhile; // panels ?>
                     </ul>
                   </nav>
+                
+
 
 
             
@@ -292,6 +298,8 @@
               </div>
           <?php 
             endwhile; //panels ?>
+
+          <button class="close-btn" data-slide="slide-close"><span class="screen-reader-text">Return to main content</span><span class="aria-hidden" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Return to Home Screen</title><g class="close-svg"><g><path d="M34.45 25l25.888 25h-20.154l-25.888-25h20.154zM34.331 75l25.888-25h-20.154l-25.888 25h20.154z" id="Combined-Shape"/></g><g><path d="M66.55 25l-25.888 25h20.154l25.888-25h-20.154zM66.669 75l-25.888-25h20.154l25.888 25h-20.154z"/></g></g></svg></span></button>
         </div><!--.slides-container-->
       <?php endif; //sub_slide_multi ?>
       <?php
