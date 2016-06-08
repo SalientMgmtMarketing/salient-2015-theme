@@ -47,11 +47,11 @@
             
             // COLUMN ONE
             
-            //adds class for box
+            // adds class for box
             $selected = get_sub_field( 'boxed_content' );
             if( is_array($selected) && in_array( 'col-1', $selected ) ) { echo " boxed "; }
 
-            //adds class for cards
+            // adds class for cards
             if( get_sub_field( 'cards' ) ) { echo " card "; }
             
             // adds column class
@@ -72,7 +72,9 @@
               <div class="card-thumb">
                 <img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" />
               </div><!--.card-thumb-->
+
               <div class="card-content">
+
             <?php } ?>
 
                 <?php the_sub_field('column_1'); ?>
