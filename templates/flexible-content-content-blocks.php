@@ -34,12 +34,12 @@
           <div class="wrap<?php 
             
             //adds the class for the selection type
-            $value = get_sub_field('columns');
+            $value = get_sub_field( 'columns' );
             echo " cols-" . $value; 
                           
             //adds class for column layout
-            if( $value=='two') { echo " "; the_sub_field('2_column_layout'); }
-            if( $value=='three') { echo " "; the_sub_field('3_column_layout'); }
+            if( $value=='two' ) { echo " "; the_sub_field( '2_column_layout' ); }
+            if( $value=='three' ) { echo " "; the_sub_field( '3_column_layout' ); }
           ?>">
 
 
@@ -48,11 +48,14 @@
             // COLUMN ONE
             
             //adds class for box
-            $selected = get_sub_field('boxed_content');
-            if( is_array($selected) && in_array('col-1', $selected) ) { echo " boxed "; }
+            $selected = get_sub_field( 'boxed_content' );
+            if( is_array($selected) && in_array( 'col-1', $selected ) ) { echo " boxed "; }
 
             //adds class for cards
-            if( get_sub_field('cards')) { echo " card "; }
+            if( get_sub_field( 'cards' ) ) { echo " card "; }
+            
+            // adds column class
+            if( get_sub_field( 'column_1_class' ) ) { echo " " . get_sub_field( 'column_1_class' ); }
 
           ?>">
 
@@ -99,7 +102,10 @@
                  
                   //adds class for cards
                   if( get_sub_field('cards')) { echo " card "; }
-	
+
+                  // adds column class
+                  if( get_sub_field( 'column_2_class' ) ) { echo get_sub_field( 'column_2_class' ); }
+
                 ?>">
                 
                 <?php 
@@ -159,6 +165,9 @@
 
                 }
 
+                // adds column class
+                if( get_sub_field( 'column_3_class' ) ) { echo get_sub_field( 'column_3_class' ); }
+
               ?>">
               <?php 
 
@@ -203,6 +212,9 @@
 
                 //adds class for cards
                 if( get_sub_field('cards')) { echo " card "; }
+
+                // adds column class
+                if( get_sub_field( 'column_4_class' ) ) { echo get_sub_field( 'column_4_class' ); }
 
               ?>">
               
