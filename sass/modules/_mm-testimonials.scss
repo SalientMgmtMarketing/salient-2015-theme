@@ -1,0 +1,18 @@
+.mm-testimonial{
+  padding-top: 0;
+  
+  .testimonial {
+    margin: 0;
+    padding: 0;
+  }
+  
+  blockquote {
+    margin: 0;
+    padding: 0;
+    
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+}

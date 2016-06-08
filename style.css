@@ -1023,7 +1023,7 @@ blockquote {
     vertical-align: -0.4em;
     position: relative;
     display: block;
-    top: 64x;
+    top: 64px;
     left: -52px;
     z-index: 1;
     opacity: .3; }
@@ -4774,6 +4774,17 @@ section.row a.btn.arrow {
     position: absolute;
     height: 5px;
     left: 0; }
+
+.mm-testimonial {
+  padding-top: 0; }
+  .mm-testimonial .testimonial {
+    margin: 0;
+    padding: 0; }
+  .mm-testimonial blockquote {
+    margin: 0;
+    padding: 0; }
+    .mm-testimonial blockquote p:first-child {
+      margin-top: 0; }
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll

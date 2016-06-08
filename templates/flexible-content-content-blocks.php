@@ -6,6 +6,9 @@
   <section <?php if( get_sub_field( 'section_id') ) { ?> id="<?php the_sub_field('section_id'); ?>"
       <?php } ?> class="row<?php   
 
+        //adds section classes
+        if( get_sub_field( 'section_classes' ) ) { get_sub_field( 'section_classes' ); }
+
         //adds the class for the text color
         $color = get_sub_field('text_color');
         echo " " . $color;
