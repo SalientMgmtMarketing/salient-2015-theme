@@ -2725,6 +2725,28 @@ button.dropdown-toggle {
         float: none;
         margin: 0 auto; } }
 
+.page.page-template-page-landing-page section.row.boxed .boxed,
+.single-event section.row.boxed .boxed {
+  padding: 1em 2em; }
+  .page.page-template-page-landing-page section.row.boxed .boxed h3,
+  .single-event section.row.boxed .boxed h3 {
+    margin: 0; }
+
+.page.page-template-page-landing-page section.row ul,
+.single-event section.row ul {
+  margin-left: 1em;
+  margin-bottom: 1em; }
+  .page.page-template-page-landing-page section.row ul li,
+  .single-event section.row ul li {
+    list-style: disc;
+    margin-bottom: .5em; }
+    .page.page-template-page-landing-page section.row ul li li,
+    .single-event section.row ul li li {
+      list-style: none; }
+      .page.page-template-page-landing-page section.row ul li li:before,
+      .single-event section.row ul li li:before {
+        content: "–"; }
+
 .form-block {
   background: #004280;
   color: #FFF;
@@ -2775,22 +2797,6 @@ button.dropdown-toggle {
       padding: 1em 0 0; }
       .form-block .gform_wrapper .gform_footer input {
         width: 100%; }
-
-section.row.boxed .boxed {
-  padding: 1em 2em; }
-  section.row.boxed .boxed h3 {
-    margin: 0; }
-
-section.row ul {
-  margin-left: 1em;
-  margin-bottom: 1em; }
-  section.row ul li {
-    list-style: disc;
-    margin-bottom: .5em; }
-    section.row ul li li {
-      list-style: none; }
-      section.row ul li li:before {
-        content: "–"; }
 
 .single-event header#masthead {
   position: absolute; }

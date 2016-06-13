@@ -49,6 +49,7 @@
     @include media(min-width $first-breakpoint-value) {
       padding: 2em 3em;
     }
+    
 
     a:hover {
       text-decoration: underline;
@@ -60,6 +61,29 @@
         width: 100%;
         float: none;
         margin: 0 auto;
+      }
+    }
+  }
+  section.row {
+    &.boxed .boxed {
+      padding: 1em 2em;
+
+      h3 {
+        margin: 0;
+      }
+    }
+    ul {
+      margin-left: 1em;
+      margin-bottom: 1em;
+      li {
+        list-style: disc;
+        margin-bottom: .5em;
+        li {
+          list-style: none;
+          &:before {
+            content: "–";
+          }
+        }
       }
     }
   }
@@ -87,30 +111,6 @@
       input {
         width: 100%;
 
-      }
-    }
-  }
-}
-
-section.row {
-  &.boxed .boxed {
-    padding: 1em 2em;
-    
-    h3 {
-      margin: 0;
-    }
-  }
-  ul {
-    margin-left: 1em;
-    margin-bottom: 1em;
-    li {
-      list-style: disc;
-      margin-bottom: .5em;
-      li {
-        list-style: none;
-        &:before {
-          content: "–";
-        }
       }
     }
   }
