@@ -101,5 +101,13 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   li {
     list-style: none;
     margin-left: 0;
+    
+    li {
+      margin-left: 0;
+      
+      label {
+        display: inline;
+      }
+    }
   }
 }

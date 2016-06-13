@@ -1143,6 +1143,10 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   .gform_body ul li {
     list-style: none;
     margin-left: 0; }
+    .gform_body ul li li {
+      margin-left: 0; }
+      .gform_body ul li li label {
+        display: inline; }
 
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
@@ -1325,6 +1329,10 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   .gform_body ul li {
     list-style: none;
     margin-left: 0; }
+    .gform_body ul li li {
+      margin-left: 0; }
+      .gform_body ul li li label {
+        display: inline; }
 
 /*--------------------------------------------------------------
 5.0 Navigation
