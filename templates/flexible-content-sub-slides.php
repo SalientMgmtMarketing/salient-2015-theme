@@ -28,7 +28,12 @@
               </svg>
             </span>
           </button>
-
+          <nav class="sub-slide-navigation">
+          <ul>
+            <li><a href="#prev" action="prev-slide">Previous</a></li>
+            <li><a href="#next" action="next-slide">Next</a></li>
+          </ul>
+          </nav>
         </div><!--.slide-container-->
 
       <?php endif; // layout = sub_slide_single ?>
@@ -89,6 +94,12 @@
               </svg>
             </span>
           </button>
+          <nav class="sub-slide-navigation">
+            <ul>
+              <li><a href="#prev" action="prev-slide">Previous</a></li>
+              <li><a href="#next" action="next-slide">Next</a></li>
+            </ul>
+          </nav>
         </div><!--.slides-container-->
     <?php 
       endif; //sub_slide_multi 
