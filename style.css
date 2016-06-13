@@ -4786,6 +4786,12 @@ section.row a.btn.arrow {
     height: 5px;
     left: 0; }
 
+#mm-intro {
+  padding-top: 8em;
+  padding-bottom: 3em; }
+  #mm-intro h1 {
+    font-weight: 400; }
+
 section.mm-testimonial {
   padding: 5em 0; }
   section.mm-testimonial:first-child {
