@@ -4809,7 +4809,8 @@ section.row a.btn.arrow {
     font-weight: 400; }
 
 section.mm-testimonial {
-  padding: 5em 0; }
+  padding: 5em 0;
+  height: auto; }
   section.mm-testimonial:first-child {
     padding: 10em 0 5em; }
   section.mm-testimonial .testimonial {
