@@ -1141,7 +1141,8 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
 .gform_body ul {
   margin: 0; }
   .gform_body ul li {
-    list-style: none; }
+    list-style: none;
+    margin-left: 0; }
 
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
@@ -1322,7 +1323,8 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
 .gform_body ul {
   margin: 0; }
   .gform_body ul li {
-    list-style: none; }
+    list-style: none;
+    margin-left: 0; }
 
 /*--------------------------------------------------------------
 5.0 Navigation
