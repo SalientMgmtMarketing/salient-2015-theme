@@ -1,18 +1,49 @@
-.mm-testimonial{
-  padding-top: 0;
+section.mm-testimonial{
+  padding: 5em 0;
   
+  &:first-child {
+    padding: 10em 0 5em;
+  }
   .testimonial {
     margin: 0;
     padding: 0;
   }
   
   blockquote {
-    margin: 0;
-    padding: 0;
+    margin: 0 0 .5em;
+    padding: 0 4em 0 0;
+    font-size: 1.3em;
+    line-height: 1.4em;
     
     p:first-child {
       margin-top: 0;
     }
   }
+  .logo {
+    background: $white;
+    padding: 3em 5em;
+    box-shadow: 3px 3px 34px #333;
+  }
+  .bkg {
+    opacity: .2;
+  }
+}
 
+.conversion-box {
+  text-align: center;
+  .gform_body {
+    max-width: 400px;
+    margin: 2em auto 0;
+  }
+  .gform_footer {
+    max-width: 400px;
+    margin: 0 auto;
+    
+    input[type="submit"] {
+      float: left;
+    }
+  }
+  .gfield_label {
+    text-align: left;
+  }
 }

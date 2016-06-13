@@ -94,3 +94,11 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
     font-weight: 300;
   }
 }
+
+section.row .gform_body ul {
+  margin: 0;
+  
+  li {
+    list-style: none;
+  }
+}

@@ -7,7 +7,7 @@
       <?php } ?> class="row<?php   
 
         //adds section classes
-        if( get_sub_field( 'section_classes' ) ) { get_sub_field( 'section_classes' ); }
+        if( get_sub_field( 'section_classes' ) ) { echo " " . get_sub_field( 'section_classes' ); }
 
         //adds the class for the text color
         $color = get_sub_field('text_color');

@@ -1023,7 +1023,7 @@ blockquote {
     vertical-align: -0.4em;
     position: relative;
     display: block;
-    top: 64px;
+    top: 43px;
     left: -52px;
     z-index: 1;
     opacity: .3; }
@@ -1137,6 +1137,11 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
 .gform_body span label {
   font-size: .7em !important;
   font-weight: 300; }
+
+section.row .gform_body ul {
+  margin: 0; }
+  section.row .gform_body ul li {
+    list-style: none; }
 
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
@@ -1313,6 +1318,11 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
 .gform_body span label {
   font-size: .7em !important;
   font-weight: 300; }
+
+section.row .gform_body ul {
+  margin: 0; }
+  section.row .gform_body ul li {
+    list-style: none; }
 
 /*--------------------------------------------------------------
 5.0 Navigation
@@ -3440,7 +3450,8 @@ section.row {
     margin-bottom: 1em;
     font-size: 1em;
     text-transform: uppercase;
-    text-align: left; }
+    text-align: left;
+    position: relative; }
   section.row.gallery .description {
     margin-top: 1em; }
   section.row .gallery-cell {
@@ -4775,16 +4786,39 @@ section.row a.btn.arrow {
     height: 5px;
     left: 0; }
 
-.mm-testimonial {
-  padding-top: 0; }
-  .mm-testimonial .testimonial {
+section.mm-testimonial {
+  padding: 5em 0; }
+  section.mm-testimonial:first-child {
+    padding: 10em 0 5em; }
+  section.mm-testimonial .testimonial {
     margin: 0;
     padding: 0; }
-  .mm-testimonial blockquote {
-    margin: 0;
-    padding: 0; }
-    .mm-testimonial blockquote p:first-child {
+  section.mm-testimonial blockquote {
+    margin: 0 0 .5em;
+    padding: 0 4em 0 0;
+    font-size: 1.3em;
+    line-height: 1.4em; }
+    section.mm-testimonial blockquote p:first-child {
       margin-top: 0; }
+  section.mm-testimonial .logo {
+    background: #FFF;
+    padding: 3em 5em;
+    box-shadow: 3px 3px 34px #333; }
+  section.mm-testimonial .bkg {
+    opacity: .2; }
+
+.conversion-box {
+  text-align: center; }
+  .conversion-box .gform_body {
+    max-width: 400px;
+    margin: 2em auto 0; }
+  .conversion-box .gform_footer {
+    max-width: 400px;
+    margin: 0 auto; }
+    .conversion-box .gform_footer input[type="submit"] {
+      float: left; }
+  .conversion-box .gfield_label {
+    text-align: left; }
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll
