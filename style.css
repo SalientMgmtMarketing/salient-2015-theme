@@ -1138,9 +1138,9 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   font-size: .7em !important;
   font-weight: 300; }
 
-section.row .gform_body ul {
+.gform_body ul {
   margin: 0; }
-  section.row .gform_body ul li {
+  .gform_body ul li {
     list-style: none; }
 
 table {
@@ -1319,9 +1319,9 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   font-size: .7em !important;
   font-weight: 300; }
 
-section.row .gform_body ul {
+.gform_body ul {
   margin: 0; }
-  section.row .gform_body ul li {
+  .gform_body ul li {
     list-style: none; }
 
 /*--------------------------------------------------------------
