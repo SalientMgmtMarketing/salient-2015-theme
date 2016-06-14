@@ -1,8 +1,7 @@
 (function ($) {
   'use strict';
 
-  var panelLink = $('.slides-nav a'),
-    dataSlide = 0;
+  var dataSlide = 0;
 
   // Load Slider 1
   $("[data-slide='slide-1']").click(function (e) {
