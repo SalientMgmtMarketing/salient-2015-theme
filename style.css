@@ -4683,6 +4683,9 @@ section.row > div.slides-container {
     opacity: 1;
     z-index: 1000; }
 
+.slides-container:focus {
+  background: green; }
+
 section.row {
   -webkit-transition: .8s ease-in-out;
   transition: .8s ease-in-out; }
@@ -4805,6 +4808,20 @@ section.row a.btn.arrow {
     position: absolute;
     height: 5px;
     left: 0; }
+
+nav.sub-slide-navigation {
+  position: absolute;
+  bottom: 200px;
+  right: 100px;
+  z-index: 9999999;
+  width: 100px;
+  height: 100px;
+  display: block; }
+  nav.sub-slide-navigation a {
+    color: #004280; }
+
+section.row .slides-container:last-child a[data-action="next-slide"] {
+  display: none; }
 
 #mm-intro {
   padding-top: 8em;

@@ -30,8 +30,8 @@
           </button>
           <nav class="sub-slide-navigation">
           <ul>
-            <li><a href="#prev" action="prev-slide">Previous</a></li>
-            <li><a href="#next" action="next-slide">Next</a></li>
+            <li><a href="#prev" data-action="prev-slide">Previous</a></li>
+            <li><a href="#next" data-action="next-slide">Next</a></li>
           </ul>
           </nav>
         </div><!--.slide-container-->
@@ -96,8 +96,8 @@
           </button>
           <nav class="sub-slide-navigation">
             <ul>
-              <li><a href="#prev" action="prev-slide">Previous</a></li>
-              <li><a href="#next" action="next-slide">Next</a></li>
+              <li><a href="#prev" data-action="prev-slide">Previous</a></li>
+              <li><a href="#next" data-action="next-slide">Next</a></li>
             </ul>
           </nav>
         </div><!--.slides-container-->

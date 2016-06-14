@@ -54,6 +54,9 @@ section.row > div.slides-container {
       z-index: 1000;
     }
   }
+  &:focus {
+    background: green;
+  }
 }
 
 section.row {
@@ -178,4 +181,22 @@ section.row a.btn.arrow {
   height: 5px;
   left: 0;
   }
+}
+
+nav.sub-slide-navigation {
+  position: absolute;
+  bottom: 200px;
+  right: 100px;
+  z-index: 9999999;
+  width: 100px;
+  height: 100px;
+  display: block;
+  
+  a {
+    color: $base-link-color;
+  }
+}
+
+section.row .slides-container:last-child a[data-action="next-slide"] {
+    display: none;
 }
