@@ -27,6 +27,24 @@ section.row > div.slides-container {
   @include fill-parent;
 }
 
+a.next-slide {
+  position: absolute;
+  z-index: 99999;
+  bottom: 100px;
+  right: 100px;
+  width: 50px;
+  height: 50px;
+  fill: $base-color-light;
+  opacity: .6;
+  transition: ease-out 250ms;
+  
+  &:hover,
+  &:focus {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+}
+
 .slides-container .sub-slide {
   position: absolute;
   top: 0;
@@ -54,7 +72,7 @@ section.row > div.slides-container {
       z-index: 1000;
     }
   }
-  &:focus {
+  section.row > &:focus {
     background: green;
   }
 }
@@ -119,6 +137,7 @@ button.close-btn {
   transition: 250ms;
   transition-timing-function: ease-out;
   opacity: .3;
+  
   &:hover {
     opacity: 1;
   }
@@ -165,7 +184,7 @@ section.row a.btn.arrow {
 }
 
 .arrow-left {
-  transform: rotate(180deg);
+  transform: rotateY(180deg);
   transform-origin: center;
 }
 
@@ -189,11 +208,24 @@ nav.sub-slide-navigation {
   right: 100px;
   z-index: 9999999;
   width: 100px;
-  height: 100px;
+  height: 50px;
   display: block;
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    
+    li {
+      list-style: none;
+      width: 50px;
+      float: left;
+      display: block;
+    }
+  }
   
   a {
     color: $base-link-color;
+    fill: $base-link-color;
   }
 }
 

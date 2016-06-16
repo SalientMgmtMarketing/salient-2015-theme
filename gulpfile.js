@@ -8,6 +8,7 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var maps = require('gulp-sourcemaps');
+var cssnano = require('gulp-cssnano');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('concatScripts', function () {
@@ -55,6 +56,7 @@ gulp.task('compileSass', function () {
             .pipe(maps.init())
             .pipe(sass({includePaths: require('bourbon').includePaths}))
             .pipe(autoprefixer())
+            .pipe(cssnano())
             .pipe(maps.write('./'))
             .pipe(gulp.dest('./'))
             .pipe(reload({stream:true}));

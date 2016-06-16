@@ -29,10 +29,32 @@
             </span>
           </button>
           <nav class="sub-slide-navigation">
-          <ul>
-            <li><a href="#prev" data-action="prev-slide">Previous</a></li>
-            <li><a href="#next" data-action="next-slide">Next</a></li>
-          </ul>
+            <ul>
+              <li>
+                <a href="#prev" data-action="prev-slide">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="arrow-left">
+                    <title>arrow</title>
+                    <desc>geometric arrow</desc>
+                    <g class="arrow-svg">
+                      <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
+                      <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
+                    </g>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#next" data-action="next-slide">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <title>arrow</title>
+                    <desc>geometric arrow</desc>
+                    <g class="arrow-svg">
+                      <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
+                      <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
+                    </g>
+                  </svg>
+                </a>
+              </li>
+            </ul>
           </nav>
         </div><!--.slide-container-->
 
@@ -96,8 +118,30 @@
           </button>
           <nav class="sub-slide-navigation">
             <ul>
-              <li><a href="#prev" data-action="prev-slide">Previous</a></li>
-              <li><a href="#next" data-action="next-slide">Next</a></li>
+              <li>
+                <a href="#prev" data-action="prev-slide">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="arrow-left">
+                    <title>arrow</title>
+                    <desc>geometric arrow</desc>
+                    <g class="arrow-svg">
+                      <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
+                      <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
+                    </g>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#next" data-action="next-slide">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <title>arrow</title>
+                    <desc>geometric arrow</desc>
+                    <g class="arrow-svg">
+                      <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
+                      <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
+                    </g>
+                  </svg>
+                </a>
+              </li>
             </ul>
           </nav>
         </div><!--.slides-container-->
