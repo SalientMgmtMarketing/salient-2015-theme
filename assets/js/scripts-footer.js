@@ -472,7 +472,6 @@ n.s=k=g?a[j](g):a[j]()),"string"==typeof k&&(g||isNaN(k))?(n.fp=g,i=M(k,d,h||F.d
       $allTabs = $tabListItems.find('a'),
       $tabPanels = $this.find('> div');
 
-
     $tabList.attr('role', 'tablist');
     $tabListItems.attr('role', 'presentation');
 
