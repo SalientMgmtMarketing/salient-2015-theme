@@ -23,7 +23,7 @@ n.s=k=g?a[j](g):a[j]()),"string"==typeof k&&(g||isNaN(k))?(n.fp=g,i=M(k,d,h||F.d
 !function(e,n){"function"==typeof define&&define.amd?define(["ScrollMagic","TweenMax","TimelineMax"],n):"object"==typeof exports?(require("gsap"),n(require("scrollmagic"),TweenMax,TimelineMax)):n(e.ScrollMagic||e.jQuery&&e.jQuery.ScrollMagic,e.TweenMax||e.TweenLite,e.TimelineMax||e.TimelineLite)}(this,function(e,n,r){"use strict";e.Scene.addOption("tweenChanges",!1,function(e){return!!e}),e.Scene.extend(function(){var e,t=this;t.on("progress.plugin_gsap",function(){i()}),t.on("destroy.plugin_gsap",function(e){t.removeTween(e.reset)});var i=function(){if(e){var n=t.progress(),r=t.state();e.repeat&&-1===e.repeat()?"DURING"===r&&e.paused()?e.play():"DURING"===r||e.paused()||e.pause():n!=e.progress()&&(0===t.duration()?n>0?e.play():e.reverse():t.tweenChanges()&&e.tweenTo?e.tweenTo(n*e.duration()):e.progress(n).pause())}};t.setTween=function(o,a,s){var u;arguments.length>1&&(arguments.length<3&&(s=a,a=1),o=n.to(o,a,s));try{u=r?new r({smoothChildTiming:!0}).add(o):o,u.pause()}catch(e){return t}return e&&t.removeTween(),e=u,o.repeat&&-1===o.repeat()&&(e.repeat(-1),e.yoyo(o.yoyo())),i(),t},t.removeTween=function(n){return e&&(n&&e.progress(0).pause(),e.kill(),e=void 0),t}})});
 (function ($) {
   'use strict';
-  
+
   // Init ScrollMagic
   var controller = new ScrollMagic.Controller();
 
@@ -44,87 +44,101 @@ n.s=k=g?a[j](g):a[j]()),"string"==typeof k&&(g||isNaN(k))?(n.fp=g,i=M(k,d,h||F.d
   headers.forEach(function (header, index) {
 
     // number for highlighting scenes
-    var num = index+1;
+    var num = index + 1;
 
     // make scene
     var headerScene = new ScrollMagic.Scene({
-    triggerElement: header, // trigger CSS animation when header is in the middle of the viewport 
-		        offset: -195 // offset triggers the animation 95 earlier then middle of the viewport, adjust to your liking
-		    })
-		    .setClassToggle('#slide'+num, 'is-active') // set class to active slide
-		    //.addIndicators() // add indicators (requires plugin), use for debugging
-		    .addTo(controller);
-		});
+        triggerElement: header, // trigger CSS animation when header is in the middle of the viewport 
+        offset: -495 // offset triggers the animation 95 earlier then middle of the viewport, adjust to your liking
+      })
+      .setClassToggle('#slide' + num, 'is-active') // set class to active slide
+      //.addIndicators() // add indicators (requires plugin), use for debugging
+      .addTo(controller);
+  });
 
-	    // SCENE 2
-	    // change color of the nav for dark content blocks
-	    breakSections.forEach(function (breakSection, index) {
-		    
-		    // number for highlighting scenes
-			var breakID = $(breakSection).attr('id');
+  // SCENE 2
+  // change color of the nav for dark content blocks
+  breakSections.forEach(function (breakSection, index) {
 
-		    // make scene
-		    var breakScene = new ScrollMagic.Scene({
-		        triggerElement: breakSection, // trigger CSS animation when header is in the middle of the viewport 
-		        triggerHook: 0.75
-		    })
-		    .setClassToggle('#'+breakID, 'is-active') // set class to active slide
-		    .addTo(controller);
-		});
+    // number for highlighting scenes
+    var breakID = $(breakSection).attr('id');
 
-	    // SCENE 3
-	    // change color of the nav back to dark
-		slides.forEach(function (slide, index) {
+    // make scene
+    var breakScene = new ScrollMagic.Scene({
+        triggerElement: breakSection, // trigger CSS animation when header is in the middle of the viewport 
+        triggerHook: 0.75
+      })
+      .setClassToggle('#' + breakID, 'is-active') // set class to active slide
+      .addTo(controller);
+  });
 
-			var slideScene = new ScrollMagic.Scene({
-		        triggerElement: slide // trigger CSS animation when header is in the middle of the viewport
-		    })
-		    .on("enter", function (event) {
-			    //$('nav').removeAttr('class');
-			})
-		    .addTo(controller);
-	    });
+  // SCENE 3
+  // change color of the nav back to dark
+  slides.forEach(function (slide, index) {
 
-	    // SCENE 4 - parallax effect on each of the slides with bcg
-	    // move bcg container when slide gets into the view
-		slides.forEach(function (slide, index) {
+    var slideScene = new ScrollMagic.Scene({
+        triggerElement: slide // trigger CSS animation when header is in the middle of the viewport
+      })
+      .on("enter", function (event) {
+        //$('nav').removeAttr('class');
+      })
+      .addTo(controller);
+  });
 
-			var $bcg = $(slide).find('.bkg');
+  // SCENE 4 - parallax effect on each of the slides with bcg
+  // move bcg container when slide gets into the view
+  if($(window).width() > 600) {
+    slides.forEach(function (slide, index) {
 
-			var slideParallaxScene = new ScrollMagic.Scene({
-		        triggerElement: slide, 
-		        triggerHook: 1,
-		        duration: "100%"
-		    })
-		    .setTween(TweenMax.from($bcg, 1, {y: '-40%', autoAlpha: 0.3, ease:Power0.easeNone}))
-		    .addTo(controller);
-	    });
+      var $bcg = $(slide).find('.bkg');
 
-	    // SCENE 5 - parallax effect on the intro slide
-	    // move bcg container when intro gets out of the the view
+      var slideParallaxScene = new ScrollMagic.Scene({
+          triggerElement: slide,
+          triggerHook: 1,
+          duration: "100%"
+        })
+        .setTween(TweenMax.from($bcg, 1, {
+          y: '-40%',
+          autoAlpha: 0.3,
+          ease: Power0.easeNone
+        }))
+        .addTo(controller);
+    });
+  }
 
-	    var introTl = new TimelineMax();
+  // SCENE 5 - parallax effect on the intro slide
+  // move bcg container when intro gets out of the the view
 
-	    introTl
-	    	.to($('#intro .wrap'), 0.2, {autoAlpha: 0, ease:Power1.easeNone})
-	    	.to($('#intro .bkg'), 1.4, {y: '20%', ease:Power1.easeOut}, '-=0.2')
-	    	.to($('#intro'), 0.7, {autoAlpha: 1, ease:Power1.easeNone}, '-=1.4');
+  var introTl = new TimelineMax();
+  if($(window).width() > 600) {
+    introTl
+      .to($('#intro .wrap'), 0.8, {
+        autoAlpha: 0,
+        ease: Power1.easeNone
+      })
+      .to($('#intro .bkg'), 1.4, {
+        y: '20%',
+        ease: Power1.easeOut
+      }, '-=0.2')
+      .to($('#intro'), 0.7, {
+        autoAlpha: 1,
+        ease: Power1.easeNone
+      }, '-=1.4');
+  }
+  var introScene = new ScrollMagic.Scene({
+      triggerElement: '#intro',
+      triggerHook: 0,
+      duration: "100%"
+    })
+    .setTween(introTl)
+    .addTo(controller);
 
-		var introScene = new ScrollMagic.Scene({
-	        triggerElement: '#intro', 
-	        triggerHook: 0,
-	        duration: "100%"
-	    })
-	    .setTween(introTl)
-	    .addTo(controller);
 
-	//}
-
-  	// Init ScrollMagic 
-    var logoController = new ScrollMagic.Controller();
-    var logoloop;
-    var logoScene = new ScrollMagic.Scene({
-        triggerElement: ('#clients-slider') 
+  // Init ScrollMagic 
+  var logoController = new ScrollMagic.Controller();
+  var logoloop;
+  var logoScene = new ScrollMagic.Scene({
+      triggerElement: ('#clients-slider')
     })
     .on("enter", function (event) {
       if (logoloop != 'started') {
@@ -143,49 +157,151 @@ n.s=k=g?a[j](g):a[j]()),"string"==typeof k&&(g||isNaN(k))?(n.fp=g,i=M(k,d,h||F.d
       logoloop = 'started';
     })
     .addTo(logoController);
-  
+
 }(jQuery));
 (function ($) {
   'use strict';
 
-  var panelLink = $('.slides-nav a'),
-    dataSlide = 0;
+  var dataSlide = 0;
+  var sectionHeight = $('section[id]').innerHeight;
+  var subSlideHeight = $(this).closest('section[id]').children('div.slides-container').innerHeight();
+  var activeSlideHeight = $('section.is-active').eq(0).children('div').eq(0).height();
+  var activeSlide = $(this).closest('section[id]');
+  var activeSlideIndex = $('section.is-active').index();
+  var $slidenum;
+  var $originalHeight = "300";
+  var closestSection;
+  
+  function slideHeight($slidenum) {
+    var slideHeightVar = $('#slide' + $slidenum).height();
+    $('#slide' + $slidenum).height(slideHeightVar);
+  }
 
+  var slide1Height = slideHeight(1);
+  var slide2Height = slideHeight(2);
+  var slide3Height = slideHeight(3);
+  var slide4Height = slideHeight(4);
+  var slide5Height = slideHeight(5);
+  
+  
+  $(document).ready( function () {
+    $('section[id]').height(sectionHeight);
+  });
+  
+  function getOriginalHeight() {
+    var $originalHeight = $(this).closest('section[id]').height;
+  }
+  function getClosestSection() {
+    closestSection = $(this).closest('section[id]');
+  }
+  function returnToOriginalHeight() {
+    closestSection = $(this).closest('section[id]'); 
+    if($(window).width() < 930) { 
+      $(closestSection).height($originalHeight);
+    } else {
+      $(closestSection).height('');
+    }
+    console.log(closestSection);
+  }
+  
   // Load Slider 1
   $("[data-slide='slide-1']").click(function (e) {
     e.preventDefault();
     $(this).closest('section[id]').addClass('slide1');
-    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '0');
-    $(this).closest('section[id]').children('div.slides-container').eq(0).attr('tabindex','-1');
-    console.log($(this).closest('section[id]').children('div.slides-container'));
+    getOriginalHeight;
+    var subSlideHeight = $(this).closest('section[id]').find('div.sub-slide').innerHeight();
+    console.log(subSlideHeight);
+    $(this).closest('section[id]').height(subSlideHeight);
+    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+    $(this).closest('section[id]').children('div.slides-container').eq(0).attr('tabindex','0');
+
     dataSlide = 1;
+    $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+  });
+  
+  $("[data-slide='slide-1']").keydown(function (e) {
+
+    if (e.keyCode == 32 || e.keyCode == 13) {
+      e.preventDefault();
+      getOriginalHeight;
+      $(this).closest('section[id]').addClass('slide1');
+      var subSlideHeight = $(this).closest('section[id]').children('div').innerHeight();
+      $(this).closest('section[id]').height(subSlideHeight);
+      $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+      $(this).closest('section[id]').children('div.slides-container').eq(0).attr('tabindex','0');
+      $($(this).closest('section[id]')).css("height", subSlideHeight + 'px');
+      dataSlide = 1;
+
+    }
   });
 
   // Load Slide 2
   $("[data-slide='slide-2']").click(function (e) {
     e.preventDefault();
+    getOriginalHeight;
     $(this).closest('section[id]').addClass('slide2');
-    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '0');
-    $(this).closest('section[id]').children('div.slides-container').eq(1).attr('tabindex','-1');
+    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+    $(this).closest('section[id]').children('div.slides-container').eq(1).attr('tabindex','0');
     dataSlide = 2;
+    $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+  });
+  
+  $("[data-slide='slide-2']").keydown(function (e) {
+    if (e.keyCode == 32 || e.keyCode == 13) {
+      e.preventDefault();
+      getOriginalHeight;
+      $(this).closest('section[id]').addClass('slide2');
+      $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+      $(this).closest('section[id]').children('div.slides-container').eq(1).attr('tabindex','0');
+      dataSlide = 2;
+      $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+    }
   });
   
   // Load Slide 3
   $("[data-slide='slide-3']").click(function (e) {
     e.preventDefault();
+    getOriginalHeight;
     $(this).closest('section[id]').addClass('slide3');
-    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '0');
-    $(this).closest('section[id]').children('div.slides-container').eq(2).attr('tabindex','-1');
+    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+    $(this).closest('section[id]').children('div.slides-container').eq(2).attr('tabindex','0');
     dataSlide = 3;
+    $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+  });
+  
+  $("[data-slide='slide-3']").keydown(function (e) {
+    if (e.keyCode == 32 || e.keyCode == 13) {
+      e.preventDefault();
+      getOriginalHeight;
+      $(this).closest('section[id]').addClass('slide3');
+      $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+      $(this).closest('section[id]').children('div.slides-container').eq(2).attr('tabindex','0');
+      dataSlide = 3;
+      $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+    }
   });
   
   // Load Slide 4
   $("[data-slide='slide-4']").click(function (e) {
     e.preventDefault();
+    getOriginalHeight;
     $(this).closest('section[id]').addClass('slide4');
-    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '0');
-    $(this).closest('section[id]').children('div.slides-container').eq(3).attr('tabindex','-1');
+    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+    $(this).closest('section[id]').children('div.slides-container').eq(3).attr('tabindex','0');
     dataSlide = 4;
+    $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+  });
+  
+  $("[data-slide='slide-4']").keydown(function (e) {
+    if (e.keyCode == 32 || e.keyCode == 13) {
+      e.preventDefault();
+      getOriginalHeight;
+      $(this).closest('section[id]').addClass('slide4');
+      $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+      $(this).closest('section[id]').children('div.slides-container').eq(3).attr('tabindex','0');
+      dataSlide = 4;
+      $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+    }
   });
   
   // Close Slides Button
@@ -195,28 +311,113 @@ n.s=k=g?a[j](g):a[j]()),"string"==typeof k&&(g||isNaN(k))?(n.fp=g,i=M(k,d,h||F.d
     $(this).closest('section[id]').removeClass('slide2');
     $(this).closest('section[id]').removeClass('slide3');
     $(this).closest('section[id]').removeClass('slide4');
-    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '0');
+    closestSection = $(this).closest('section[id]'); 
+    if($(window).width() < 930) { 
+      $(closestSection).height($originalHeight);
+    } else {
+      $(closestSection).height('');
+    }
+    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
     $(this).closest('section[id]').attr('tabindex','-1');
     dataSlide = 0;
+  });
+  
+  $("[data-slide='slide-close']").keydown(function (e) {
+    if (e.keyCode == 32 || e.keyCode == 13) {
+      e.preventDefault();
+      getClosestSection();
+      $(this).closest('section[id]').removeClass('slide1');
+      $(this).closest('section[id]').removeClass('slide2');
+      $(this).closest('section[id]').removeClass('slide3');
+      $(this).closest('section[id]').removeClass('slide4');
+      closestSection = $(this).closest('section[id]'); 
+      if($(window).width() < 930) { 
+        $(closestSection).height($originalHeight);
+      } else {
+        $(closestSection).height('');
+      }
+      $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+      $(this).closest('section[id]').attr('tabindex','-1');
+      dataSlide = 0;
+    }
+  });
+  
+  $(document).keydown(function (e) {
+    if (e.keyCode == 27) {
+      $('section[id]').removeClass('slide1');
+      $('section[id]').removeClass('slide2');
+      $('section[id]').removeClass('slide3');
+      $('section[id]').removeClass('slide4');
+      if($(window).width() < 930) { 
+      $('section[id]').height($originalHeight); 
+      } else {
+        $('section[id]').height('');
+      }
+      $('section[id]').children('div.slides-container').attr('tabindex', '-1');
+      $('section[id]').attr('tabindex','-1');
+      dataSlide = 0;
+      $('html,body').animate({scrollTop: $(this).closest('section[id]').offset().top}, 800);
+    }
   });
   
   // Next Slide Button
   $('[data-action="next-slide"]').click(function (e) {
     e.preventDefault();
     dataSlide = (dataSlide + 1);
+    getOriginalHeight;
     $(this).closest('section[id]').addClass('slide' + dataSlide);
-    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '0');    
-    $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).attr('tabindex', '-1');
+    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');    
+    $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).attr('tabindex', '0');
+    $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+      console.log(subSlideHeight);
+    console.log($originalHeight);
+  });
+  
+  $("[data-action='next-slide']").keydown(function (e) {
+    if (e.keyCode == 32 || e.keyCode == 13) {
+      e.preventDefault();
+      dataSlide = (dataSlide + 1);
+      getOriginalHeight;
+      $(this).closest('section[id]').addClass('slide' + dataSlide);
+      $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
+      $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).attr('tabindex', '-1');
+      $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+    }
   });
   
   // Previous Slide Button
-  $('[data-action="prev-slide"]').click(function (e) {
+  $('[data-action="prev-slide"]').click(function(e) {
     e.preventDefault();
     $(this).closest('section[id]').removeClass('slide' + dataSlide);
+    closestSection = $(this).closest('section[id]'); 
+    if($(window).width() < 930) { 
+      $(closestSection).height($originalHeight);
+    } else {
+      $(closestSection).height('');
+    }  
     dataSlide = dataSlide - 1;
-    $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '0');    
-    $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).attr('tabindex', '-1');
+    $(this).closest('section[id]').children('div.slides-container').attr('tabindex','-1');    
+    $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).attr('tabindex', '0');
+    $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
   });
+  
+  $('[data-action="prev-slide"]').keydown(function(e) {
+    if (e.keyCode == 32 || e.keyCode == 13) {
+      e.preventDefault();
+      $(this).closest('section[id]').removeClass('slide' + dataSlide);
+      closestSection = $(this).closest('section[id]'); 
+      if($(window).width() < 930) { 
+        $(closestSection).height($originalHeight);
+      } else {
+        $(closestSection).height('');
+      } 
+      dataSlide = dataSlide - 1;
+      $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');    
+      $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).attr('tabindex', '0');
+      $('html,body').animate({scrollTop: $(this).closest('section[id]').children('div.slides-container').eq(dataSlide - 1).offset().top}, 800);
+    }
+  });
+
 
 }(jQuery));
 (function (document, window, $, undefined) {
@@ -373,7 +574,6 @@ n.s=k=g?a[j](g):a[j]()),"string"==typeof k&&(g||isNaN(k))?(n.fp=g,i=M(k,d,h||F.d
       $tabListItems = $tabList.find('li'),
       $allTabs = $tabListItems.find('a'),
       $tabPanels = $this.find('> div');
-
 
     $tabList.attr('role', 'tablist');
     $tabListItems.attr('role', 'presentation');

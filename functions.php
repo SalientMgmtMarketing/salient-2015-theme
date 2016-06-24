@@ -334,10 +334,10 @@ function arrow_shortcode( $atts ) {
 		$atts
 	);
 
-    return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="arrow-' . $atts['direction'] .'">
         <title>arrow</title>
         <desc>geometric arrow</desc>
-        <g class="arrow-svg arrow-' . $atts['direction'] . '">
+        <g class="arrow-svg">
           <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
           <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
         </g>

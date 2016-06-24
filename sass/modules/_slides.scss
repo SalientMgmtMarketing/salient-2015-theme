@@ -1,23 +1,44 @@
-section.row > div.slides-container {
-  transform: translateX(100%);
-  position: absolute;
-  background: white;
-  width: 100%;
-  top: 0;
-  height: 100%;
-  color: #004280;
+section.row {
+  transition: 250ms;
   transition-timing-function: ease-out;
-  &:nth-child(4) {
-    transform: translateX(200%);
-  }
-  &:nth-child(5) {
-    transform: translateX(300%);
-  }
-  &:nth-child(6) {
-    transform: translateX(400%);
-  }
-  &:nth-child(7) {
-    transform: translateX(500%);
+  
+  > div.slides-container {
+    transform: translateX(100%);
+    position: absolute;
+    background: white;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    color: #004280;
+    transition-timing-function: ease-out;
+
+    &.has-background {
+      color: $base-color-light;
+      fill: $base-color-light;
+      background-size: cover;
+      background-position: center center;
+      
+      svg {
+        fill: $base-color-light;
+      }
+    }
+    
+    a.btn {
+      color: $base-color-light;
+    }  
+    
+    &:nth-child(4) {
+      transform: translateX(200%);
+    }
+    &:nth-child(5) {
+      transform: translateX(300%);
+    }
+    &:nth-child(6) {
+      transform: translateX(400%);
+    }
+    &:nth-child(7) {
+      transform: translateX(500%);
+    }
   }
 }
 
@@ -27,24 +48,66 @@ section.row > div.slides-container {
   @include fill-parent;
 }
 
-.slides-container .sub-slide {
-  position: absolute;
-  top: 0;
-  width: 100%;
+.sub-slide {
+  padding: 4em 0;
+}
+
+a.next-slide {
+  position: relative;
+  z-index: 99999;
+  width: 50px;
+  height: 50px;
+  fill: $base-color-light;
+  opacity: .6;
+  transition: ease-out 250ms;
+  display: block;
   right: 0;
-  left: 0;
-  height: 100%;
-  z-index: 900;
-  transition: 250ms;
-  transition-timing-function: ease-out;
-  a {
-    color: $base-link-color;
+  bottom: 0;
+  float: right;
+  
+  @include media(min-width $nav-breakpoint-value) {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+  }
+  
+  
+  &:hover,
+  &:focus {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  svg {
+    width: 100%;
+    height: auto;
   }
 }
 
 .slides-container {
-  #slide3 & {
-    margin-top: 10em;
+  
+  .sub-slide {
+  position: absolute;
+    top: 0;
+    width: 100%;
+    right: 0;
+    left: 0;
+    height: 100%;
+    z-index: 900;
+    transition: 250ms;
+    transition-timing-function: ease-out;
+    padding: 2em 1.5em 6em 2em;
+    
+    a {
+      color: $base-link-color;
+    }
+  }
+}
+
+.slides-container {
+  #slide1 & {
+    @include media(min-width $second-breakpoint-value) {
+      margin-top: 10em;
+    }
   }
   &.multi .sub-slide {
     padding-top: 4em;
@@ -54,8 +117,8 @@ section.row > div.slides-container {
       z-index: 1000;
     }
   }
-  &:focus {
-    background: green;
+  section.row > &:focus {
+    outline: none;
   }
 }
 
@@ -104,14 +167,10 @@ section nav.slides-nav {
   }
 }
 
-#slide1 .slides-container {
-  margin-top: 10em;
-}
-
 button.close-btn {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 0;
+  top: 0;
   background: transparent;
   color: #004280;
   border: none;
@@ -119,6 +178,13 @@ button.close-btn {
   transition: 250ms;
   transition-timing-function: ease-out;
   opacity: .3;
+  z-index: 9999;
+  
+  @include media(min-width 650px) {
+    right: 10px;
+    top: 10px;
+  }
+  
   &:hover {
     opacity: 1;
   }
@@ -165,7 +231,7 @@ section.row a.btn.arrow {
 }
 
 .arrow-left {
-  transform: rotate(180deg);
+  transform: rotateY(180deg);
   transform-origin: center;
 }
 
@@ -185,18 +251,46 @@ section.row a.btn.arrow {
 
 nav.sub-slide-navigation {
   position: absolute;
-  bottom: 200px;
-  right: 100px;
+  bottom: 0;
+  right: 0;
   z-index: 9999999;
   width: 100px;
-  height: 100px;
+  height: 50px;
   display: block;
+  
+  @include media(min-width 650px) {
+    bottom: 200px;
+    right: 100px;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    
+    li {
+      list-style: none;
+      width: 50px;
+      float: left;
+      display: block;
+    }
+  }
   
   a {
     color: $base-link-color;
+    fill: $base-link-color;
   }
 }
 
 section.row .slides-container:last-child a[data-action="next-slide"] {
-    display: none;
+  display: none;
+}
+
+.cta-group {
+  background: rgba(23, 54, 128, 0.34);
+  padding: 1.5em 2em;
+  
+  a.btn {
+    width: 100%;
+    margin: 10px 0;
+  }
 }

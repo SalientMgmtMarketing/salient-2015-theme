@@ -153,7 +153,6 @@
       $allTabs = $tabListItems.find('a'),
       $tabPanels = $this.find('> div');
 
-
     $tabList.attr('role', 'tablist');
     $tabListItems.attr('role', 'presentation');
 
