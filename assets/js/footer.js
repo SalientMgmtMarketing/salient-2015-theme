@@ -1,6 +1,6 @@
 (function ($) {
   'use strict';
-  
+
   // Init ScrollMagic
   var controller = new ScrollMagic.Controller();
 
@@ -21,87 +21,101 @@
   headers.forEach(function (header, index) {
 
     // number for highlighting scenes
-    var num = index+1;
+    var num = index + 1;
 
     // make scene
     var headerScene = new ScrollMagic.Scene({
-    triggerElement: header, // trigger CSS animation when header is in the middle of the viewport 
-		        offset: -195 // offset triggers the animation 95 earlier then middle of the viewport, adjust to your liking
-		    })
-		    .setClassToggle('#slide'+num, 'is-active') // set class to active slide
-		    //.addIndicators() // add indicators (requires plugin), use for debugging
-		    .addTo(controller);
-		});
+        triggerElement: header, // trigger CSS animation when header is in the middle of the viewport 
+        offset: -495 // offset triggers the animation 95 earlier then middle of the viewport, adjust to your liking
+      })
+      .setClassToggle('#slide' + num, 'is-active') // set class to active slide
+      //.addIndicators() // add indicators (requires plugin), use for debugging
+      .addTo(controller);
+  });
 
-	    // SCENE 2
-	    // change color of the nav for dark content blocks
-	    breakSections.forEach(function (breakSection, index) {
-		    
-		    // number for highlighting scenes
-			var breakID = $(breakSection).attr('id');
+  // SCENE 2
+  // change color of the nav for dark content blocks
+  breakSections.forEach(function (breakSection, index) {
 
-		    // make scene
-		    var breakScene = new ScrollMagic.Scene({
-		        triggerElement: breakSection, // trigger CSS animation when header is in the middle of the viewport 
-		        triggerHook: 0.75
-		    })
-		    .setClassToggle('#'+breakID, 'is-active') // set class to active slide
-		    .addTo(controller);
-		});
+    // number for highlighting scenes
+    var breakID = $(breakSection).attr('id');
 
-	    // SCENE 3
-	    // change color of the nav back to dark
-		slides.forEach(function (slide, index) {
+    // make scene
+    var breakScene = new ScrollMagic.Scene({
+        triggerElement: breakSection, // trigger CSS animation when header is in the middle of the viewport 
+        triggerHook: 0.75
+      })
+      .setClassToggle('#' + breakID, 'is-active') // set class to active slide
+      .addTo(controller);
+  });
 
-			var slideScene = new ScrollMagic.Scene({
-		        triggerElement: slide // trigger CSS animation when header is in the middle of the viewport
-		    })
-		    .on("enter", function (event) {
-			    //$('nav').removeAttr('class');
-			})
-		    .addTo(controller);
-	    });
+  // SCENE 3
+  // change color of the nav back to dark
+  slides.forEach(function (slide, index) {
 
-	    // SCENE 4 - parallax effect on each of the slides with bcg
-	    // move bcg container when slide gets into the view
-		slides.forEach(function (slide, index) {
+    var slideScene = new ScrollMagic.Scene({
+        triggerElement: slide // trigger CSS animation when header is in the middle of the viewport
+      })
+      .on("enter", function (event) {
+        //$('nav').removeAttr('class');
+      })
+      .addTo(controller);
+  });
 
-			var $bcg = $(slide).find('.bkg');
+  // SCENE 4 - parallax effect on each of the slides with bcg
+  // move bcg container when slide gets into the view
+  if($(window).width() > 600) {
+    slides.forEach(function (slide, index) {
 
-			var slideParallaxScene = new ScrollMagic.Scene({
-		        triggerElement: slide, 
-		        triggerHook: 1,
-		        duration: "100%"
-		    })
-		    .setTween(TweenMax.from($bcg, 1, {y: '-40%', autoAlpha: 0.3, ease:Power0.easeNone}))
-		    .addTo(controller);
-	    });
+      var $bcg = $(slide).find('.bkg');
 
-	    // SCENE 5 - parallax effect on the intro slide
-	    // move bcg container when intro gets out of the the view
+      var slideParallaxScene = new ScrollMagic.Scene({
+          triggerElement: slide,
+          triggerHook: 1,
+          duration: "100%"
+        })
+        .setTween(TweenMax.from($bcg, 1, {
+          y: '-40%',
+          autoAlpha: 0.3,
+          ease: Power0.easeNone
+        }))
+        .addTo(controller);
+    });
+  }
 
-	    var introTl = new TimelineMax();
+  // SCENE 5 - parallax effect on the intro slide
+  // move bcg container when intro gets out of the the view
 
-	    introTl
-	    	.to($('#intro .wrap'), 0.2, {autoAlpha: 0, ease:Power1.easeNone})
-	    	.to($('#intro .bkg'), 1.4, {y: '20%', ease:Power1.easeOut}, '-=0.2')
-	    	.to($('#intro'), 0.7, {autoAlpha: 1, ease:Power1.easeNone}, '-=1.4');
+  var introTl = new TimelineMax();
+  if($(window).width() > 600) {
+    introTl
+      .to($('#intro .wrap'), 0.8, {
+        autoAlpha: 0,
+        ease: Power1.easeNone
+      })
+      .to($('#intro .bkg'), 1.4, {
+        y: '20%',
+        ease: Power1.easeOut
+      }, '-=0.2')
+      .to($('#intro'), 0.7, {
+        autoAlpha: 1,
+        ease: Power1.easeNone
+      }, '-=1.4');
+  }
+  var introScene = new ScrollMagic.Scene({
+      triggerElement: '#intro',
+      triggerHook: 0,
+      duration: "100%"
+    })
+    .setTween(introTl)
+    .addTo(controller);
 
-		var introScene = new ScrollMagic.Scene({
-	        triggerElement: '#intro', 
-	        triggerHook: 0,
-	        duration: "100%"
-	    })
-	    .setTween(introTl)
-	    .addTo(controller);
 
-	//}
-
-  	// Init ScrollMagic 
-    var logoController = new ScrollMagic.Controller();
-    var logoloop;
-    var logoScene = new ScrollMagic.Scene({
-        triggerElement: ('#clients-slider') 
+  // Init ScrollMagic 
+  var logoController = new ScrollMagic.Controller();
+  var logoloop;
+  var logoScene = new ScrollMagic.Scene({
+      triggerElement: ('#clients-slider')
     })
     .on("enter", function (event) {
       if (logoloop != 'started') {
@@ -120,5 +134,5 @@
       logoloop = 'started';
     })
     .addTo(logoController);
-  
+
 }(jQuery));

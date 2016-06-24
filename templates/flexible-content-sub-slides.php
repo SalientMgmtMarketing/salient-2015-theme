@@ -8,7 +8,7 @@
     <?php while ( have_rows('sub_slides') ): the_row(); ?>
     
       <?php  if( get_row_layout() == 'sub_slide_single'): ?>
-        <div class="slides-container" <?php if ( get_sub_field( 'slide_background_image' ) ) { ?>style="background-image: url('<?php echo get_sub_field( 'slide_background_image' ) ?>');"<?php } ?>>
+        <div class="slides-container<?php if ( get_sub_field( 'slide_background_image' ) ) { echo " has-background"; } ?>" <?php if ( get_sub_field( 'slide_background_image' ) ) { ?>style="background-image: url('<?php echo get_sub_field( 'slide_background_image' ) ?>');"<?php } ?>>
 
           <div class="sub-slide">
             <h3 class="sub-slide-title"><?php echo get_sub_field('slide_title'); ?></h3>
