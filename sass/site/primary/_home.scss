@@ -89,6 +89,9 @@ section#value-line {
       font-size: 1.2em;
     }
   }
+  nav.sub-slide-navigation {
+    bottom: 350px;
+  }
 }
 
 #slide2 {
@@ -168,6 +171,9 @@ section#value-line {
   &:before {
     background: #000;
     z-index: 10;
+  }
+  .sub-section1 {
+    padding: 3em;
   }
 }
 
@@ -275,6 +281,7 @@ section#value-line {
   }
   .sub-section1 {
     margin-top: 2em;
+    padding: 1em;
     @include media($large-screen) {
       @include span-columns(8);
     }

@@ -177,12 +177,6 @@ n.s=k=g?a[j](g):a[j]()),"string"==typeof k&&(g||isNaN(k))?(n.fp=g,i=M(k,d,h||F.d
     $('#slide' + $slidenum).height(slideHeightVar);
   }
 
-  var slide1Height = slideHeight(1);
-  var slide2Height = slideHeight(2);
-  var slide3Height = slideHeight(3);
-  var slide4Height = slideHeight(4);
-  var slide5Height = slideHeight(5);
-  
   
   $(document).ready( function () {
     $('section[id]').height(sectionHeight);
@@ -210,7 +204,6 @@ n.s=k=g?a[j](g):a[j]()),"string"==typeof k&&(g||isNaN(k))?(n.fp=g,i=M(k,d,h||F.d
     $(this).closest('section[id]').addClass('slide1');
     getOriginalHeight;
     var subSlideHeight = $(this).closest('section[id]').find('div.sub-slide').innerHeight();
-    console.log(subSlideHeight);
     $(this).closest('section[id]').height(subSlideHeight);
     $(this).closest('section[id]').children('div.slides-container').attr('tabindex', '-1');
     $(this).closest('section[id]').children('div.slides-container').eq(0).attr('tabindex','0');

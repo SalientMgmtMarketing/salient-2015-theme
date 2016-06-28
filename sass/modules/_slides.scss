@@ -67,7 +67,7 @@ a.next-slide {
   
   @include media(min-width $nav-breakpoint-value) {
     position: absolute;
-    bottom: 100px;
+    bottom: 50%;
     right: 100px;
   }
   
@@ -177,7 +177,7 @@ button.close-btn {
   transform: scale(.5);
   transition: 250ms;
   transition-timing-function: ease-out;
-  opacity: .3;
+  opacity: 0;
   z-index: 9999;
   
   @include media(min-width 650px) {
@@ -251,7 +251,8 @@ section.row a.btn.arrow {
 
 nav.sub-slide-navigation {
   position: absolute;
-  bottom: 0;
+  top: 40%;
+  left: 50px;
   right: 0;
   z-index: 9999999;
   width: 100px;
