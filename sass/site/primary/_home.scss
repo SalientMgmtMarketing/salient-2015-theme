@@ -6,7 +6,7 @@
     text-shadow: 1px 1px 8px rgba(0,0,0,.5);
 
     p {
-      text-shadow: 1px 1px 8px rgba(0,0,0,1);
+      text-shadow: 1px 1px 15px rgba(0,0,0,1);
     }
   }
   .fifty-fifty .sub-section1 {
@@ -14,7 +14,16 @@
   }
 }
 
-
+#intro .button {
+  background: #004280;
+  font-size: 1.2em;
+  border: 2px solid rgba(255,255,255,.8);
+  margin: 1em 0;
+  
+  &:hover {
+    background: darken(#004280, 10);
+  }
+}
 
 section#hero {
   padding: 0;
@@ -50,6 +59,27 @@ section#value-line {
   }
 }
 
+#slide1a {
+  position: relative;
+  z-index: 10;
+  @include media(min-width $nav-breakpoint-value) {
+    padding-top: 13em;
+    padding-bottom: 1em;
+    margin-bottom: -10em;
+  }
+  
+  .logo {
+    padding: 0;
+    box-shadow: none;
+  }
+  .sub-section1 {
+    text-align: center;
+    
+    .btn {
+      margin-top: 1em;
+    }
+  }
+}
 
 #slide1 {
   background-color: $white;
@@ -134,7 +164,7 @@ section#value-line {
   z-index: 800;
   position: relative;
   @include media(min-width $second-breakpoint-value) {
-    height: 110vh;
+    height: 70vh;
   }
   
   .wrap {
@@ -155,6 +185,9 @@ section#value-line {
     @include media(min-width $second-breakpoint-value) {
       height: 110vh;
     }
+    @include media(min-height 600px) {
+      height: 100vh;
+    }
   }
 
   h3 {
@@ -173,7 +206,10 @@ section#value-line {
     z-index: 10;
   }
   .sub-section1 {
-    padding: 3em;
+    padding: 0em 4em 2em 2em;
+    @include media(min-width $second-breakpoint-value) {
+      padding: 3em 12em 2em 2em;
+    }
   }
 }
 
@@ -297,8 +333,12 @@ section#clients-slider {
   z-index: 804;
   background: white;
   text-align: center;
-  font-size: 1.8em;
+  font-size: 1.2em;
   height: auto;
+  
+  p {
+    max-width: 688px;
+  }
   
   .logo-carousel div {
     display: none;

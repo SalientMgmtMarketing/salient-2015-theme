@@ -99,6 +99,10 @@ a.next-slide {
     
     a {
       color: $base-link-color;
+      
+      &.button, &.btn {
+        color: $base-color-light;
+      }
     }
   }
 }

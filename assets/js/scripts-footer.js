@@ -137,21 +137,22 @@ n.s=k=g?a[j](g):a[j]()),"string"==typeof k&&(g||isNaN(k))?(n.fp=g,i=M(k,d,h||F.d
   // Init ScrollMagic 
   var logoController = new ScrollMagic.Controller();
   var logoloop;
+  var logos = $(".logo-carousel div");
+  var logoIndex = -1;
+  
+  function showNextLogo() {
+    ++logoIndex;
+    logos.eq(logoIndex % logos.length)
+    .fadeIn(1000)
+    .delay(2000)
+    .fadeOut(1000, showNextLogo);
+  }
+  
   var logoScene = new ScrollMagic.Scene({
       triggerElement: ('#clients-slider')
     })
     .on("enter", function (event) {
       if (logoloop != 'started') {
-        var logos = $(".logo-carousel div");
-        var logoIndex = -1;
-
-        function showNextLogo() {
-          ++logoIndex;
-          logos.eq(logoIndex % logos.length)
-            .fadeIn(1000)
-            .delay(2000)
-            .fadeOut(1000, showNextLogo);
-        }
         showNextLogo();
       }
       logoloop = 'started';
