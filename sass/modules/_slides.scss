@@ -51,16 +51,6 @@ section.row {
 .sub-slide {
   padding: 4em 0;
   
-  &:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #000;
-    content: "";
-    opacity: .5;
-  }
   div, h3 {
     position: relative;
     z-index: 10;
@@ -102,7 +92,18 @@ a.next-slide {
 }
 
 .slides-container {
-  
+  @include media(max-width $nav-breakpoint-value) {
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      content: "";
+      opacity: .5;
+    }
+  }
   .sub-slide {
   position: absolute;
     top: 0;
