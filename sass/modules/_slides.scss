@@ -50,6 +50,11 @@ section.row {
 
 .sub-slide {
   padding: 4em 0;
+  
+  div, h3 {
+    position: relative;
+    z-index: 10;
+  }
 }
 
 a.next-slide {
@@ -62,12 +67,15 @@ a.next-slide {
   transition: ease-out 250ms;
   display: block;
   right: 0;
-  bottom: 0;
+  bottom: 50px;
   float: right;
+  @include media(max-width $nav-breakpoint-value) {
+    padding: 10px;
+  }
   
   @include media(min-width $nav-breakpoint-value) {
     position: absolute;
-    bottom: 100px;
+    bottom: 50%;
     right: 100px;
   }
   
@@ -84,7 +92,18 @@ a.next-slide {
 }
 
 .slides-container {
-  
+  @include media(max-width $nav-breakpoint-value) {
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      content: "";
+      opacity: .5;
+    }
+  }
   .sub-slide {
   position: absolute;
     top: 0;
@@ -99,6 +118,10 @@ a.next-slide {
     
     a {
       color: $base-link-color;
+      
+      &.button, &.btn {
+        color: $base-color-light;
+      }
     }
   }
 }
@@ -169,20 +192,24 @@ section nav.slides-nav {
 
 button.close-btn {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -19px;
+  top: -24px;
   background: transparent;
   color: #004280;
   border: none;
   transform: scale(.5);
   transition: 250ms;
   transition-timing-function: ease-out;
-  opacity: .3;
+  opacity: 1;
   z-index: 9999;
   
   @include media(min-width 650px) {
     right: 10px;
     top: 10px;
+  }
+  
+  @include media(min-width $nav-breakpoint-value) {
+    display: none;
   }
   
   &:hover {
@@ -251,12 +278,17 @@ section.row a.btn.arrow {
 
 nav.sub-slide-navigation {
   position: absolute;
-  bottom: 0;
+  top: 40%;
+  left: 50px;
   right: 0;
   z-index: 9999999;
   width: 100px;
   height: 50px;
   display: block;
+  
+  @include media(max-width $nav-breakpoint-value) {
+    display: none;
+  }
   
   @include media(min-width 650px) {
     bottom: 200px;

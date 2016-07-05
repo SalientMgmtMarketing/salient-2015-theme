@@ -32,6 +32,7 @@ section.row {
     right: 0;
     left: 0;
     background-size: cover;
+    z-index: 1;
   }
   h2.section-title {
     margin-top:0;
@@ -247,7 +248,6 @@ section.row:nth-child(even) {
     left: 0;
     opacity: .25;
     z-index: 1;
-    background: $base-color-dark;
   }
 }
 
@@ -257,6 +257,7 @@ section.row:nth-child(even) {
   .wrap {
     @include media(min-width $second-breakpoint-value) {
       margin-top: 3em;
+      z-index: 10;
     }
   }
   .sub-section0 {

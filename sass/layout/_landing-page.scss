@@ -36,6 +36,17 @@
     background-color: $light-blue;
     background-size: cover;
     background-position: center center;
+
+    &:before {
+      content: "";
+      background: #020308;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      opacity: .7;
+    }
   }
   .entry-content {
     @include two-thirds-nom;
@@ -113,6 +124,9 @@
 
       }
     }
+  }
+  form._form {
+    margin-top: 0 !important;
   }
 }
 

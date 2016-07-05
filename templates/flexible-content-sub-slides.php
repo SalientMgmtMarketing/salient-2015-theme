@@ -28,28 +28,28 @@
               </svg>
             </span>
           </button>
-          <nav class="sub-slide-navigation">
+         <nav class="sub-slide-navigation">
             <ul>
               <li>
                 <a href="#prev" data-action="prev-slide">
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="arrow-left">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="46.2" height="100" viewBox="0 0 46.2 100">
+                    <defs>
+                    </defs>
                     <title>arrow</title>
                     <desc>geometric arrow</desc>
-                    <g class="arrow-svg">
-                      <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
-                      <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
+                    <g>
+                        <path d="M46,0L20.2,50H0L25.9,0L46,0z M46.2,100L20.3,50H0.1L26,100H46.2z"/>
                     </g>
                   </svg>
                 </a>
               </li>
               <li>
                 <a href="#next" data-action="next-slide">
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <title>arrow</title>
-                    <desc>geometric arrow</desc>
-                    <g class="arrow-svg">
-                      <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
-                      <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="46.2" height="100" viewBox="0 0 46.2 100" xml:space="preserve">
+                    <defs>
+                    </defs>
+                    <g>
+                      <path d="M20.3,0l25.9,50H26L0.1,0H20.3z M20.2,100L46,50H25.9L0,100H20.2z"/>
                     </g>
                   </svg>
                 </a>
@@ -120,24 +120,24 @@
             <ul>
               <li>
                 <a href="#prev" data-action="prev-slide">
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="arrow-left">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="46.2" height="100" viewBox="0 0 46.2 100">
+                    <defs>
+                    </defs>
                     <title>arrow</title>
                     <desc>geometric arrow</desc>
-                    <g class="arrow-svg">
-                      <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
-                      <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
+                    <g>
+                        <path d="M46,0L20.2,50H0L25.9,0L46,0z M46.2,100L20.3,50H0.1L26,100H46.2z"/>
                     </g>
                   </svg>
                 </a>
               </li>
               <li>
                 <a href="#next" data-action="next-slide">
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <title>arrow</title>
-                    <desc>geometric arrow</desc>
-                    <g class="arrow-svg">
-                      <path d="M10.315 43h69.685l-.047 14h-69.953z"/>
-                      <path d="M64.45 25l25.888 25h-20.154l-25.888-25h20.154zM64.331 75l25.888-25h-20.154l-25.888 25h20.154z"/>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="46.2" height="100" viewBox="0 0 46.2 100" xml:space="preserve">
+                    <defs>
+                    </defs>
+                    <g>
+                      <path d="M20.3,0l25.9,50H26L0.1,0H20.3z M20.2,100L46,50H25.9L0,100H20.2z"/>
                     </g>
                   </svg>
                 </a>
