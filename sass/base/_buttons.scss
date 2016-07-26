@@ -1,5 +1,5 @@
 button,
-input[type="submit"], a.btn, a.button {
+input[type="submit"], a.btn, a.button, .inline-navigation-container a {
   @extend %button;
   @include appearance(none);
   cursor: pointer;
@@ -14,6 +14,7 @@ input[type="submit"], a.btn, a.button {
   &:visited, &:hover, &:link, &:active {
     color: $white;
   }
+
 }
 
 .button-row {

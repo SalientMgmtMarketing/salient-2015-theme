@@ -31,7 +31,7 @@
           <?php } ?>
     
           <?php if( get_sub_field('section_title') ): ?>
-            <h2 class="section-title wrap"><?php the_sub_field('section_title'); ?></h2>
+            <h2 class="section-title wrap<?php if( get_sub_field('title_centered') ) { echo " centered";  } ?>"><?php the_sub_field('section_title'); ?></h2>
           <?php endif; ?>
 
           <div class="wrap<?php 
@@ -248,6 +248,7 @@
 
               </div><!--.sub-section3-->
             <?php } ?>
+            
             <?php if ( get_sub_field('sub_slides') ) { ?>
               <a href="#next" class="next-slide" data-slide="slide-1">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="46.2" height="100" viewBox="0 0 46.2 100" xml:space="preserve">
@@ -260,7 +261,15 @@
               </a>
             <?php } ?>
           </div><!--.wrap-->
-
+          <?php if ( get_sub_field('menu') ) { 
+              $menu = get_sub_field('menu');
+            ?>
+              <div class="inline-navigation-container">
+				<nav class="wrap" aria-label="<?php echo $menu ?> navigation">
+					<?php wp_nav_menu( array( 'menu' => $menu, 'container_class' => 'menu-wrap' ) ); ?>
+				</nav><!--.secondary-navigation-->
+              </div><!--.secondary-navigation-container-->
+            <? } ?>
     
 
         <?php get_template_part('templates/flexible-content','sub-slides'); ?>

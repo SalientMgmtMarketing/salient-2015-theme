@@ -41,6 +41,10 @@ section.row {
     text-transform: uppercase;
     text-align: left;
     position: relative;
+    
+    &.centered {
+      text-align: center;
+    }
   }
 
   &.gallery .description {
@@ -66,7 +70,7 @@ section.row {
   .flickity-slider img {
     float: none !important;
     max-width: none !important;
-    height: 100%;
+    height: 100% !important;
     display: table-cell;
   }
   .row {

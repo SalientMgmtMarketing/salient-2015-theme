@@ -20,7 +20,13 @@ Article Hero
   }
   
   section.row {
-    background: none;
+    background: none;    
+    h2 {
+      text-transform: none;
+      font-size: 1.5em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
   
   #breadcrumbs {

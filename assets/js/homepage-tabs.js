@@ -53,8 +53,8 @@
         break;
 
         // Right/Down
-      case 39:
-      case 40:
+        case 39:
+        case 40:
         e.preventDefault();
         e.stopPropagation();
 
