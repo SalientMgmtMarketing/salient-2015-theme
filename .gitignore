@@ -1,2 +1,9 @@
+node_modules/
 .sass-cache/
 video/
+._.DS_Store
+._.gitignore
+._.sass-cache
+._config.rb
+._patternlab
+.DS_Store
