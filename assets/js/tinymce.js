@@ -51,5 +51,32 @@
       return null;
     }
   });
+  tinymce.PluginManager.add('arrowsc', tinymce.plugins.arrowsc);
+  tinymce.create('tinymce.plugins.arrowsc', {
+    init : function (ed, url) {
+      ed.addButton('arrowsc', {
+        title : 'Add an Arrow',
+        image : url + '/button-shortcode.png',
+        onclick : function () {
+
+          selected = tinyMCE.activeEditor.selection.getContent();
+
+            if( selected ){
+              //If text is selected when button is clicked
+              //Wrap shortcode around it.
+              content =  selected+'[arrow]';
+            }else{
+              content =  '[arrow]';
+            }
+
+            tinymce.execCommand('mceInsertContent', false, content);
+        }
+      });
+    },
+    createControl : function (n, cm) {
+      return null;
+    }
+  });
   tinymce.PluginManager.add('buttonlink', tinymce.plugins.buttonlink);
+  tinymce.PluginManager.add('arrowsc', tinymce.plugins.buttonlink);
 }());

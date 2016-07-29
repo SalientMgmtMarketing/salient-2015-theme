@@ -260,6 +260,15 @@ button.dropdown-toggle {
   text-align: right;
   width: 50%;
 }
+
+@include media(min-width $nav-breakpoint-value max-width em(1600px)) {
+  #menu-primary-navigation > li:last-child:hover > .sub-menu {
+    left: auto;
+    right: 156px;
+  }
+}
+
+
 #masthead .secondary-navigation-container {
   a {
     &:visited, &:link, &:active {
@@ -313,6 +322,41 @@ button.dropdown-toggle {
     }
     li {
       padding: .2em 1em;
+    }
+  }
+}
+
+
+// inline menus in the content-blocks custom field
+.inline-navigation-container {
+  position: relative;
+  z-index: 10;
+  
+  .menu-wrap {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  li {
+    list-style: none;
+    display: block;
+    margin: 1em 0;
+    
+    @include media(max-width em(600px)) {
+      a {
+        padding: 1em .5em;
+        width: 100%;
+      }
+    }
+    
+    @include media(min-width em(600px)) {
+      display: inline-block;
+      margin: 0;
+      
+      a {
+        margin: 0 0 1em .5em;
+      }
     }
   }
 }

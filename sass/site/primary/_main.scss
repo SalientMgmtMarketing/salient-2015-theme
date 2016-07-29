@@ -1,5 +1,9 @@
 /* Scss Document */
 
+main#main {
+  overflow: hidden;
+}
+
 main section:first-child {
   @include media(min-width $second-breakpoint-value) {
     padding-top: 110px;
@@ -13,8 +17,10 @@ div#content {
 }
 
 .wrap {
+  position: relative;
   @include outer-container;
   @include fill-parent;
+  height: 100%;
   
   @include media(max-width $max-width) {
     padding: 0 1em;
