@@ -1138,6 +1138,9 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   font-size: .7em !important;
   font-weight: 300; }
 
+.form-block input:not([type=submit]) {
+  color: #333; }
+
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
   -ms-font-feature-settings: "kern", "liga", "tnum";
@@ -1307,6 +1310,9 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
 .gform_body span label {
   font-size: .7em !important;
   font-weight: 300; }
+
+.form-block input:not([type=submit]) {
+  color: #333; }
 
 /*--------------------------------------------------------------
 5.0 Navigation
@@ -3373,8 +3379,7 @@ header#masthead {
     height: 86vh; } }
 
 section#hero {
-  padding: 0;
-  color: red; }
+  padding: 0; }
   section#hero a.button.blue {
     font-size: 1em; }
   section#hero h1 {

@@ -94,3 +94,7 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
     font-weight: 300;
   }
 }
+
+.form-block input:not([type=submit]) {
+  color: #333;
+}
