@@ -95,6 +95,10 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   }
 }
 
+.form-block input:not([type=submit]) {
+  color: #333;
+}
+
 .gform_body ul {
   margin: 0;
   

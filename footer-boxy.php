@@ -23,6 +23,7 @@
       })(); 
 </script>
 <?php if (is_page_template('page-landing-page.php') || is_page('contact') || is_page('contact-us') ) { ?>
+
   <script type="text/javascript">llfrmid=13443</script> 
   <script type="text/javascript" src="https://formalyzer.com/formalyze_init.js"></script>
   <script type="text/javascript" src="https://formalyzer.com/formalyze_call_secure.js"></script>

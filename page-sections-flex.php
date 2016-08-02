@@ -54,7 +54,7 @@ get_header('boxy'); ?>
 
           <?php endwhile; // end of the posts loop. ?>
 
-        </header><!-- .entry-header --> 
+        </header><!-- .entry-header -->
 
       <?php } // !front_page ?>
       
@@ -69,8 +69,6 @@ get_header('boxy'); ?>
             <?php get_template_part('templates/flexible-content','gallery'); ?>
           
             <?php get_template_part('templates/flexible-content','blockquote'); ?>
-
-            <?php get_template_part('templates/flexible-content','image'); ?>
     
           <?php endwhile; ?>
           
