@@ -6,6 +6,9 @@
   <section <?php if( get_sub_field( 'section_id') ) { ?> id="<?php the_sub_field('section_id'); ?>"
       <?php } ?> class="row<?php   
 
+        //adds section classes
+        if( get_sub_field( 'section_classes' ) ) { echo " " . get_sub_field( 'section_classes' ); }
+
         //adds the class for the text color
         $color = get_sub_field('text_color');
         echo " " . $color;
@@ -28,18 +31,18 @@
           <?php } ?>
     
           <?php if( get_sub_field('section_title') ): ?>
-            <h2 class="section-title wrap"><?php the_sub_field('section_title'); ?></h2>
+            <h2 class="section-title wrap<?php if( get_sub_field('title_centered') ) { echo " centered";  } ?>"><?php the_sub_field('section_title'); ?></h2>
           <?php endif; ?>
 
           <div class="wrap<?php 
             
             //adds the class for the selection type
-            $value = get_sub_field('columns');
+            $value = get_sub_field( 'columns' );
             echo " cols-" . $value; 
                           
             //adds class for column layout
-            if( $value=='two') { echo " "; the_sub_field('2_column_layout'); }
-            if( $value=='three') { echo " "; the_sub_field('3_column_layout'); }
+            if( $value=='two' ) { echo " "; the_sub_field( '2_column_layout' ); }
+            if( $value=='three' ) { echo " "; the_sub_field( '3_column_layout' ); }
           ?>">
 
 
@@ -47,12 +50,15 @@
             
             // COLUMN ONE
             
-            //adds class for box
-            $selected = get_sub_field('boxed_content');
-            if( is_array($selected) && in_array('col-1', $selected) ) { echo " boxed "; }
+            // adds class for box
+            $selected = get_sub_field( 'boxed_content' );
+            if( is_array($selected) && in_array( 'col-1', $selected ) ) { echo " boxed "; }
 
-            //adds class for cards
-            if( get_sub_field('cards')) { echo " card "; }
+            // adds class for cards
+            if( get_sub_field( 'cards' ) ) { echo " card "; }
+            
+            // adds column class
+            if( get_sub_field( 'column_1_class' ) ) { echo " " . get_sub_field( 'column_1_class' ); }
 
           ?>">
 
@@ -69,7 +75,9 @@
               <div class="card-thumb">
                 <img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" />
               </div><!--.card-thumb-->
+
               <div class="card-content">
+
             <?php } ?>
 
                 <?php the_sub_field('column_1'); ?>
@@ -99,7 +107,10 @@
                  
                   //adds class for cards
                   if( get_sub_field('cards')) { echo " card "; }
-	
+
+                  // adds column class
+                  if( get_sub_field( 'column_2_class' ) ) { echo get_sub_field( 'column_2_class' ); }
+
                 ?>">
                 
                 <?php 
@@ -159,6 +170,9 @@
 
                 }
 
+                // adds column class
+                if( get_sub_field( 'column_3_class' ) ) { echo get_sub_field( 'column_3_class' ); }
+
               ?>">
               <?php 
 
@@ -204,6 +218,9 @@
                 //adds class for cards
                 if( get_sub_field('cards')) { echo " card "; }
 
+                // adds column class
+                if( get_sub_field( 'column_4_class' ) ) { echo get_sub_field( 'column_4_class' ); }
+
               ?>">
               
                 <?php 
@@ -231,8 +248,31 @@
 
               </div><!--.sub-section3-->
             <?php } ?>
+            
+            <?php if ( get_sub_field('sub_slides') ) { ?>
+              <a href="#next" class="next-slide" data-slide="slide-1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="46.2" height="100" viewBox="0 0 46.2 100" xml:space="preserve">
+                  <defs>
+                  </defs>
+                  <g>
+                    <path d="M20.3,0l25.9,50H26L0.1,0H20.3z M20.2,100L46,50H25.9L0,100H20.2z"/>
+                  </g>
+                </svg>
+              </a>
+            <?php } ?>
           </div><!--.wrap-->
+          <?php if ( get_sub_field('menu') ) { 
+              $menu = get_sub_field('menu');
+            ?>
+              <div class="inline-navigation-container">
+				<nav class="wrap" aria-label="<?php echo $menu ?> navigation">
+					<?php wp_nav_menu( array( 'menu' => $menu, 'container_class' => 'menu-wrap' ) ); ?>
+				</nav><!--.secondary-navigation-->
+              </div><!--.secondary-navigation-container-->
+            <? } ?>
+    
 
+        <?php get_template_part('templates/flexible-content','sub-slides'); ?>
   </section>
   <!-- #intro -->
   <?php endif; ?>

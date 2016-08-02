@@ -36,6 +36,17 @@
     background-color: $light-blue;
     background-size: cover;
     background-position: center center;
+
+    &:before {
+      content: "";
+      background: #020308;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      opacity: .7;
+    }
   }
   .entry-content {
     @include two-thirds-nom;
@@ -49,6 +60,7 @@
     @include media(min-width $first-breakpoint-value) {
       padding: 2em 3em;
     }
+    
 
     a:hover {
       text-decoration: underline;
@@ -63,6 +75,29 @@
       }
     }
   }
+  section.row {
+    &.boxed .boxed {
+      padding: 1em 2em;
+
+      h3 {
+        margin: 0;
+      }
+    }
+    ul {
+      margin-left: 1em;
+      margin-bottom: 1em;
+      li {
+        list-style: disc;
+        margin-bottom: .5em;
+        li {
+          list-style: none;
+          &:before {
+            content: "–";
+          }
+        }
+      }
+    }
+  }
 }
 
 .form-block {
@@ -70,6 +105,9 @@
   background: $blue;
   color: $white;
   padding: 2em;
+  input:not([type=submit]) {
+    color: $base-font-color;
+  }
   h1,
   h2,
   h3,
@@ -83,32 +121,12 @@
       padding: 1em 0 0;
       input {
         width: 100%;
-      }
-    }
-  }
-}
 
-section.row {
-  &.boxed .boxed {
-    padding: 1em 2em;
-    
-    h3 {
-      margin: 0;
-    }
-  }
-  ul {
-    margin-left: 1em;
-    margin-bottom: 1em;
-    li {
-      list-style: disc;
-      margin-bottom: .5em;
-      li {
-        list-style: none;
-        &:before {
-          content: "–";
-        }
       }
     }
+  }
+  form._form {
+    margin-top: 0 !important;
   }
 }
 

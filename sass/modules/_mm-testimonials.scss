@@ -1,0 +1,78 @@
+#mm-intro {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  @include media(min-width $nav-breakpoint-value) {
+    padding-top: 8em;
+  }  
+  h1 {
+    font-weight: 400;
+  }
+}
+section.mm-testimonial{
+  padding: 5em 0;
+  
+  .home & { 
+    height: auto; 
+  }
+  
+  &:first-child {
+    padding: 10em 0 5em;
+  }
+  .testimonial {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .section-title {
+    z-index: 100;
+  }
+  
+  blockquote {
+    margin: 0 0 .5em;
+    font-size: 1.3em;
+    line-height: 1.4em;
+    
+    @include media(min-width $nav-breakpoint-value) {
+      padding: 0 4em 0 0;
+    }
+    
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+  .logo {
+    background: $white;
+    padding: 2em;
+    box-shadow: 3px 3px 34px #333;
+    
+    @include media(min-width $nav-breakpoint-value) {
+      padding: 3em 5em;
+    }
+  }
+  .bkg {
+    opacity: .2;
+  }
+}
+
+.conversion-box {
+  text-align: center;
+  .gform_body {
+    max-width: 400px;
+    margin: 2em auto 0;
+  }
+  .gform_footer {
+    max-width: 400px;
+    margin: 0 auto;
+    
+    input[type="submit"] {
+      float: left;
+    }
+  }
+  .gfield_label {
+    text-align: left;
+  }
+}
+
+section.row.light-text .gform_body input[type="text"] {
+  color: #333;
+}

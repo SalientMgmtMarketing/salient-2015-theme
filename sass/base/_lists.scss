@@ -34,14 +34,16 @@ dl {
   }
 }
 
-.entry-content ul {
-  margin-bottom: 2em;
-  li {
-    list-style-type: disc;
-    margin-left: 1em;
-    margin-bottom: .25em;
+main { 
+  ul {
+    margin-bottom: 2em;
     li {
-      margin-left: 2em;
+      list-style-type: disc;
+      margin-left: 1em;
+      margin-bottom: .25em;
+      li {
+        margin-left: 2em;
+      }
     }
   }
 }

@@ -8,6 +8,7 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var maps = require('gulp-sourcemaps');
+var cssnano = require('gulp-cssnano');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('concatScripts', function () {
@@ -28,7 +29,9 @@ gulp.task('concatScriptsFooter', function () {
             'node_modules/gsap/src/minified/TweenMax.min.js',
             'node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
             'node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
-            'assets/js/footer.js'
+            'assets/js/footer.js',
+            'assets/js/homepage-slides.js',
+            'assets/js/homepage-tabs.js'
     ])
     .pipe(maps.init())
     .pipe(concat('scripts-footer.js'))
@@ -53,6 +56,7 @@ gulp.task('compileSass', function () {
             .pipe(maps.init())
             .pipe(sass({includePaths: require('bourbon').includePaths}))
             .pipe(autoprefixer())
+            .pipe(cssnano())
             .pipe(maps.write('./'))
             .pipe(gulp.dest('./'))
             .pipe(reload({stream:true}));

@@ -88,7 +88,9 @@ hr {
 
 sup {
   vertical-align: super;
-  font-size: smaller;
+  font-size: .5em;
+  font-style: normal;
+  padding-left: 5px;
 }
 
 strong,
@@ -118,10 +120,14 @@ blockquote {
     vertical-align: -0.4em;
     position: relative;
     display: block;
-    top: 64x;
+    top: 43px;
     left: -52px;
     z-index: 1;
     opacity: .3;
+    
+    .dark-text & {
+      color: #333;
+    }
   }
   p:after {
     content: close-quote;
