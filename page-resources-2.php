@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Resource Library
+Template Name: Resources
 */
 
 get_header(); ?>
@@ -10,12 +10,12 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part('content','page-resources'); ?>
+				<?php get_template_part( 'content', 'resources' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
