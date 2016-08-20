@@ -367,6 +367,15 @@ function is_tree($pid)
   }
 };
 
+
+function remove_head_scripts() {
+  remove_action( 'wp_head', 'youtube_embed_add_to_head' );
+  add_action( 'wp_footer', 'youtube_embed_add_to_head' );
+}
+add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
+
+
+
 // http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
 // this handles converting the entered value to hex for storage
 //
