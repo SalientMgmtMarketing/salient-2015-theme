@@ -1,5 +1,5 @@
 table {
-  @include font-feature-settings("kern","liga","tnum");
+  @include font-feature-settings("kern", "liga", "tnum");
   border-collapse: collapse;
   margin: ($base-spacing / 2) 0;
   table-layout: fixed;
@@ -22,4 +22,15 @@ tr,
 td,
 th {
   vertical-align: middle;
+}
+
+
+/* Google Custom Search */
+div#___gcse_0 table,
+div#___gcse_0 td,
+div#___gcse_0 th {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
 }
