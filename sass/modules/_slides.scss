@@ -125,7 +125,12 @@ a.next-slide {
     }
   }
 }
-
+.slides-container nav.sub-slide-navigation ul li:first-child {
+  @include media(min-width $nav-breakpoint-value) {
+    margin-left: -33px;
+    position: relative;
+  }
+}
 .slides-container {
   #slide1 & {
     @include media(min-width $second-breakpoint-value) {

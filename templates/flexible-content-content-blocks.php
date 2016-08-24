@@ -1,7 +1,7 @@
 <?php 
 
   //CONTENT-BLOCK LAYOUT
-  if(  get_row_layout() == 'content-blocks'): ?>
+  if( get_row_layout() == 'content-blocks') { ?>
 
   <section <?php if( get_sub_field( 'section_id') ) { ?> id="<?php the_sub_field('section_id'); ?>"
       <?php } ?> class="row<?php   
@@ -22,17 +22,17 @@
         //adds class for cards
         if( get_sub_field('cards')) { echo " cards"; }
  
-        ?>" style="<?php if (get_sub_field('background_image') && !get_sub_field('parallax_background')) { ?> background-image:url('<?php the_sub_field('background_image'); ?>');<?php } ?>
+        ?>" style="<?php if ( get_sub_field('background_image') && !get_sub_field('parallax_background') ) { ?> background-image:url('<?php the_sub_field('background_image'); ?>');<?php } ?>
 
-          <?php if (get_sub_field('background_color')) { ?>background-color: <?php the_sub_field('background_color'); } ?>">
+          <?php if ( get_sub_field('background_color') ) { ?>background-color: <?php the_sub_field('background_color'); } ?>">
           
-          <?php if (get_sub_field('background_image') && get_sub_field('parallax_background')) { ?>
+          <?php if ( get_sub_field('background_image') && get_sub_field('parallax_background') ) { ?>
             <div class="bkg" style="background-image:url('<?php the_sub_field('background_image'); ?>');"></div><!--.bkg-->
           <?php } ?>
     
-          <?php if( get_sub_field('section_title') ): ?>
+          <?php if( get_sub_field('section_title') ) { ?>
             <h2 class="section-title wrap<?php if( get_sub_field('title_centered') ) { echo " centered";  } ?>"><?php the_sub_field('section_title'); ?></h2>
-          <?php endif; ?>
+          <?php } ?>
 
           <div class="wrap<?php 
             
@@ -80,38 +80,36 @@
 
             <?php } ?>
 
-                <?php the_sub_field('column_1'); ?>
+              <?php the_sub_field('column_1'); ?>
 
-                <?php if( get_sub_field('cards')) { ?>
-                  </div>
-                <?php } ?>
-
+            <?php if( get_sub_field('cards')) { ?>
               </div>
-              <!--.sub-section0-->
+            <?php } ?>
+
+            </div>
+            <!--.sub-section0-->
 
 
-              <?php 
-              // COLUMN TWO
-            
-              if ( get_sub_field ('columns') !== 'one') { ?>
+            <?php 
+            // COLUMN TWO
 
-                <div class="sub-section1<?php 
+            if ( get_sub_field ('columns') !== 'one') { ?>
 
-                  //adds class for box
-                  $selected = get_sub_field('boxed_content');
-                  if( is_array($selected) && in_array('col-2', $selected) ) {
+              <div class="sub-section1<?php 
 
-                    echo " boxed ";
+                //adds class for box
+                $selected = get_sub_field('boxed_content');
+                if( is_array($selected) && in_array('col-2', $selected) ) {
+                  echo " boxed ";
+                }
 
-                  }
-                 
-                  //adds class for cards
-                  if( get_sub_field('cards')) { echo " card "; }
+                //adds class for cards
+                if( get_sub_field('cards')) { echo " card "; }
 
-                  // adds column class
-                  if( get_sub_field( 'column_2_class' ) ) { echo get_sub_field( 'column_2_class' ); }
+                // adds column class
+                if( get_sub_field( 'column_2_class' ) ) { echo get_sub_field( 'column_2_class' ); }
 
-                ?>">
+              ?>">
                 
                 <?php 
                 if( get_sub_field('cards')) { 
@@ -126,7 +124,7 @@
                     <img src="<?php echo $thumb; ?>" alt="<?php echo $image['alt']; ?>" />
                   </div><!--.card-thumb-->
                 <?php  }
-                
+
                 //adds class for cards
                 if( get_sub_field('cards')) { ?>
                   <div class="card-content">
@@ -135,7 +133,7 @@
                 <?php the_sub_field('column_2'); ?>
 
                 <?php  
-                
+
                 //adds class for cards
                 if( get_sub_field('cards')) { ?>
                   </div><!--.card-content-->
@@ -157,17 +155,13 @@
 
                 //adds class for box
                 $selected = get_sub_field('boxed_content');
-                if( is_array($selected) && in_array('col-3', $selected) ) {
-                
+                if( is_array( $selected ) && in_array( 'col-3', $selected ) ) {
                   echo " boxed ";
-
                 }
 
                 //adds class for cards
                 if( get_sub_field('cards')) { 
-
-                  echo " card "; 
-
+                  echo " card ";
                 }
 
                 // adds column class
@@ -262,17 +256,16 @@
             <?php } ?>
           </div><!--.wrap-->
           <?php if ( get_sub_field('menu') ) { 
-              $menu = get_sub_field('menu');
-            ?>
-              <div class="inline-navigation-container">
-				<nav class="wrap" aria-label="<?php echo $menu ?> navigation">
-					<?php wp_nav_menu( array( 'menu' => $menu, 'container_class' => 'menu-wrap' ) ); ?>
-				</nav><!--.secondary-navigation-->
-              </div><!--.secondary-navigation-container-->
-            <? } ?>
-    
+            $menu = get_sub_field('menu');
+          ?>
+            <div class="inline-navigation-container">
+              <nav class="wrap" aria-label="<?php echo $menu ?> navigation">
+                  <?php wp_nav_menu( array( 'menu' => $menu, 'container_class' => 'menu-wrap' ) ); ?>
+              </nav><!--.secondary-navigation-->
+            </div><!--.secondary-navigation-container-->
+          <?php } ?>
 
         <?php get_template_part('templates/flexible-content','sub-slides'); ?>
   </section>
   <!-- #intro -->
-  <?php endif; ?>
+  <?php } ?>
