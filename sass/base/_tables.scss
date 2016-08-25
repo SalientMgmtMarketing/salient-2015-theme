@@ -37,8 +37,18 @@ div#___gcse_0 th {
 div#___gcse_0 table {
   table-layout: inherit;
 }
+td#gs_tti50 input {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 4px !important;
+  margin-top: 1px !important;
+}
 div#___gcse_0 table.gsc-table-result {
   padding-left: 8px !important;
   padding-right: 8px !important;
   display: table-cell;
+}
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+  box-sizing: content-box;
 }
