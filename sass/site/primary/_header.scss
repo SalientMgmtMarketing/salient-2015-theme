@@ -19,6 +19,13 @@ header#masthead {
   @include media(max-height em(479px) orientation landscape) {
     position: absolute;
   }
+  
+  a[href="https://salienthhs.com/"] {
+    @include media(min-width $nav-breakpoint-value) {
+      width: 300px !important;
+    }
+  }
+  
   &.narrow-header {
     height: 67px;
     @include media(max-width $nav-breakpoint-value) {

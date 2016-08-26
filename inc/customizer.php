@@ -91,4 +91,4 @@ function salient_2015_customizer_css() {
 	</style>
 <?php 
 }
-add_action ( 'wp_head', 'salient_2015_customizer_css' );
+add_action ( 'wp_footer', 'salient_2015_customizer_css' );
