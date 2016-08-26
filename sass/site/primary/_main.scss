@@ -16,7 +16,7 @@ div#content {
   @include media(min-width $first-breakpoint-value) {}
 }
 
-.wrap {
+div.wrap {
   position: relative;
   @include outer-container;
   @include fill-parent;
