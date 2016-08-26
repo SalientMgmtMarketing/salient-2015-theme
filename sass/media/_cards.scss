@@ -4,6 +4,10 @@ section.row.cards {
     display: flex;
     flex-wrap: wrap;
   }
+  h2.section-title.wrap {
+    text-align: center;
+    text-transform: initial;
+  }
   .card {
     background: darken($base-background-color, 70);
     border: 1px solid darken($base-background-color, 30);
