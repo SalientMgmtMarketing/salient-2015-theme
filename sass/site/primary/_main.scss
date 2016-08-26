@@ -2,6 +2,12 @@
 
 main#main {
   overflow: hidden;
+  
+  section {
+    @include media(max-width $nav-breakpoint-value) {
+      padding-top: 1em;
+    }
+  }
 }
 
 main section:first-child {
@@ -21,10 +27,7 @@ div.wrap {
   @include outer-container;
   @include fill-parent;
   height: 100%;
-  
-  @include media(max-width $max-width) {
-    padding: 0 1em;
-  }
+  @include clearfix;
 }
 
 .fixed {

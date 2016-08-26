@@ -15,6 +15,10 @@
   overflow: hidden;
   position: relative;
   line-height: .7em;
+  
+  @include media(max-width $first-breakpoint-value) {
+    width: 48%;
+  }
 }
 
 .gallery-columns-1 .gallery-item {
@@ -98,13 +102,15 @@
   line-height: 1.5;
   margin: 0;
   max-height: 50%;
-  opacity: 0;
   padding: 6px 8px;
   position: absolute;
   bottom: 0;
   left: 0;
   text-align: left;
   width: 100%;
+  @inlcude media(min-width $nav-breakpoint-value) {
+    opacity: 0;
+  }
 }
 
 .gallery-caption:before {

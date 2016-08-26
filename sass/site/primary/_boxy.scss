@@ -37,7 +37,7 @@ section.row {
   h2.section-title {
     margin-top:0;
     margin-bottom:1em;
-    font-size: 1em;
+    font-size: 1.25em;
     text-transform: uppercase;
     text-align: left;
     position: relative;
@@ -196,8 +196,11 @@ section.row {
     }
   }
   .sub-section0, .sub-section1, .sub-section2, .sub-section3 {
-    padding: 1em 0;
+    padding: 1em;
     position: relative;
+    @include media(min-width $second-breakpoint-value) {
+      padding: 1em 0;
+    }
   }
 }
 section.row .left-block {

@@ -55,6 +55,10 @@ html.pl body {
 .wrap {
   @include outer-container;
   @include fill-parent;
+
+  @include media(max-width $max-width) {
+    padding: 0 1em;
+  }
 }
 
 .full-width {
