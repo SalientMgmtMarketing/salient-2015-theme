@@ -47,7 +47,7 @@ gulp.task('minifyScripts', ['concatScripts'], function () {
 
 gulp.task('browser-sync', function () {
     browserSync.init({
-        proxy: "salient.dev/", notify: false
+        proxy: "salient-aco-2016.dev/", notify: false
     });
 });
 
