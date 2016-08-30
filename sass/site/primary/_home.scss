@@ -127,7 +127,6 @@ section#value-line {
 
 #slide2 {
   z-index: 1000;
-  transition: 250ms;
   
   @include media(min-width $nav-breakpoint-value) {
     padding: 5em 0;
