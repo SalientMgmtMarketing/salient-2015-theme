@@ -19,6 +19,7 @@ header#masthead {
   @include media(max-height em(479px) orientation landscape) {
     position: absolute;
   }
+  
   &.narrow-header {
     height: 67px;
     @include media(max-width $nav-breakpoint-value) {
@@ -54,6 +55,11 @@ header#masthead {
       }
       @include media(min-width $nav-breakpoint-value) {
         @include span-columns(4);
+      }
+      a[href*="salienthhs"] {
+        @include media(min-width $nav-breakpoint-value) {
+          width: 300px !important;
+        }
       }
       h1 {
         transition: 200ms;

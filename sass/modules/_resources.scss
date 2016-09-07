@@ -1,0 +1,50 @@
+.resource-group {
+  @include fill-parent;
+  @include clearfix;
+
+  .resource {
+    margin-bottom: 2em;
+    padding: 2em;
+    @include clearfix;
+    
+    &:nth-of-type(even) {
+      background: lighten($base-background-color, 3);
+    }
+    .resource-title {
+      margin-top: 0;
+    }
+    a.btn {
+      color: $white;
+    }
+  }
+}
+.resource-description {
+  font-size: .9em;
+  @include media($small-screen) {
+    @include span-columns(2);
+  }
+  @include media($medium-screen) {
+    @include span-columns(4);
+  }
+  @include media($large-screen) {
+    @include span-columns(5);
+  }
+  @include media($xl-screen) {
+    @include span-columns(10);
+  }
+}
+.resource-image {
+  @include media($small-screen) {
+    @include span-columns(2);
+  }
+  @include media($medium-screen) {
+    @include span-columns(4);
+  }
+  @include media($large-screen) {
+    @include span-columns(3);
+  }
+  @include media($xl-screen) {
+    @include span-columns(2);
+  }
+  @include omega;
+}

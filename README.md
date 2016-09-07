@@ -1,4 +1,4 @@
-Salient Healthcare WordPress Theme
+Salient WordPress Theme
 ===
 
 This is a WordPress Theme based from the `_s starter theme`([http://underscores.me](http://underscores.me)).
@@ -18,6 +18,17 @@ More info on using patterns can be found in [their documentation](http://pattern
 
 Compiling Sass & More
 ---
-1. From the root of the theme folder, run `gulp watch`. This watches changes in SCSS and JS files and runs Browsersync on port:3000
-2. If you save with an error in your Sass, you'll have to rereun `gulp watch`
+###Commands:
+
+Run these commands from the root of your theme folder.
+
+`gulp`: default — compiles Sass with sourcemaps, autoprefixer and cssnano, concatenates scripts
+
+`gulp watch`: watches for changes in Sass files or javaScript files and recompiles
+
+`gulp watch-sync`: Same as `gulp watch`, but also launches browsersync.
+
+**Notes:**  
+- If you save with an error in your Sass, you'll have to rereun `gulp`
+- If you make a new Sass file, `gulp watch` won't recognize that change without rerunning the command.
 

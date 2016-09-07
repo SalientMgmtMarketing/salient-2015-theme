@@ -1,4 +1,4 @@
-.home section.row {
+.home.page-template-page-sections-parallax section.row {
   @include media(min-width $second-breakpoint-value) {
     height: 86vh;
   }
@@ -48,12 +48,12 @@ section#hero {
     padding: 8em 0 7em;
     font-size: 1.2em;
   }
+
 }
 
 section#value-line {
   padding: 3em 0 0;
   text-align: center;
-  height: auto;
   
   .sub-section0 {
     padding: 0;
@@ -128,6 +128,10 @@ section#value-line {
 #slide2 {
   z-index: 1000;
   
+  @include media(min-width $nav-breakpoint-value) {
+    padding: 5em 0;
+  }
+  
   .wrap {
     position: relative;
     z-index: 100;
@@ -172,7 +176,8 @@ section#value-line {
     position: relative;
     z-index: 100;
     @include media(min-width $second-breakpoint-value) {
-      padding-top: 10vh;
+      padding-top: 6vh;
+      padding-bottom: 4vh;
     }
 
   }
@@ -210,6 +215,7 @@ section#value-line {
     padding: 0em 4em 2em 2em;
     @include media(min-width $second-breakpoint-value) {
       padding: 3em 12em 2em 2em;
+      margin-right: 0;
     }
   }
 }

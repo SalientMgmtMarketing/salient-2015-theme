@@ -1,8 +1,12 @@
 section.row.cards {
-  .wrap {
+  div.wrap {
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
+  }
+  h2.section-title.wrap {
+    text-align: center;
+    text-transform: initial;
   }
   .card {
     background: darken($base-background-color, 70);
