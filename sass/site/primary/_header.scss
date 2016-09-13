@@ -56,7 +56,7 @@ header#masthead {
       @include media(min-width $nav-breakpoint-value) {
         @include span-columns(4);
       }
-      a[href*="salienthhs"] {
+      a[href*="salienthhs"], a[href*="salient-aco"] {
         @include media(min-width $nav-breakpoint-value) {
           width: 300px !important;
         }
