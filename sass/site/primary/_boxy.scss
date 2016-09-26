@@ -9,6 +9,7 @@ section.row {
   @include clearfix;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 50% 50%;
   padding: 3.5em 0;
   color: $base-color-light;
 
@@ -44,6 +45,16 @@ section.row {
     
     &.centered {
       text-align: center;
+    }
+  }
+  
+  @include media(min-width $second-breakpoint-value) {
+    #content &.hasLeftImage .sub-section1 {
+      padding-left: 4em;
+    }
+
+    #content &.hasRightImage .sub-section0 {
+      padding-right: 4em;
     }
   }
 
