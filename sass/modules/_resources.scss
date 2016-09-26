@@ -1,5 +1,7 @@
 .resource-group {
+  @include fill-parent;
   @include clearfix;
+
   .resource {
     margin-bottom: 2em;
     padding: 2em;
