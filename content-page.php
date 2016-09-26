@@ -31,7 +31,7 @@
             function my_password_form() {
                 global $post;
                 $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-                $o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
+                $o = '<form action="' . esc_url( site_url( 'wp-pass.php?action=postpass', 'login_post' ) ) . '" method="post">
                 ' . __( "To access this page, please contact support for the password.
                  <br>Email: <a href=\"mailto:support@salient.com\">support@salient.com</a>
                  <br>Tel: 607-739-5228 x206<br>

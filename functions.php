@@ -460,3 +460,5 @@ function ch_hextostr_email($x, $field) {
 
 // adds anchor to the form submission
 add_filter("gform_confirmation_anchor", create_function("","return true;"));
+
+add_filter( 'gform_akismet_enabled_2', '__return_false' );
