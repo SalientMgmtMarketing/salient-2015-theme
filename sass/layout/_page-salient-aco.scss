@@ -1,11 +1,10 @@
 #saco- {
   &hcc-scores {
     background-position: 50% 50%;
-    
     .wrap {
       @include media(min-width $second-breakpoint-value) {
-      padding-bottom: 25em;
-      padding-top: 2em;
+        padding-bottom: 25em;
+        padding-top: 2em;
       }
     }
     .sub-section0 {
@@ -19,10 +18,44 @@
   }
   &evaluate {
     background-position: 50% 81%;
-    
     .wrap {
       padding-bottom: 20em;
       padding-top: 4em;
     }
+  }
+}
+
+#aco-quality-awv {
+  padding: 2em 0 2em 1em;
+}
+
+#aco-tech-built-to-scale {
+  @include media(min-width 801px) {
+    padding: 2em 0 9em;
+    background-position: 50% 10%;
+  }
+  @include media(min-width 1500px) {
+    padding: 2em 0 17em;
+  }
+  @include media(max-width 800px) {
+    background-image: none !important;
+  }
+}
+
+#aco-tech-speed {
+  padding: 5em 0 10em;
+  @include media(min-width 1500px) {
+    padding: 9em 0 14em;
+  }
+}
+
+#aco-tech-security {
+  padding: 6em 0;
+}
+
+section#aco-tech-hosted-solution {
+  padding: 3em 0 12em;
+  @include media(min-width 1500px) {
+    padding: 5em 0 20em;
   }
 }

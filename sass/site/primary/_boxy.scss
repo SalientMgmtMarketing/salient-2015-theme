@@ -9,6 +9,7 @@ section.row {
   @include clearfix;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 50% 50%;
   padding: 3.5em 0;
   color: $base-color-light;
 
@@ -24,6 +25,14 @@ section.row {
   }
   &.dark-text {
     color: $base-color-dark;
+    
+    a {
+      color: $base-color-dark;
+      
+      &.button {
+        color: $base-color-light;
+      }
+    }
   }
   .bkg {
     position: absolute;
@@ -44,6 +53,16 @@ section.row {
     
     &.centered {
       text-align: center;
+    }
+  }
+  
+  @include media(min-width $second-breakpoint-value) {
+    #content &.hasLeftImage .sub-section1 {
+      padding-left: 4em;
+    }
+
+    #content &.hasRightImage .sub-section0 {
+      padding-right: 4em;
     }
   }
 
@@ -154,11 +173,8 @@ section.row {
   h3 {
     font-size: 1em;
     font-weight: 700;
-    @include media(min-width 400px) {
+    @include media(min-width 400px max-width 480px) {
       font-size: 1.2em;
-    }
-    @include media(min-width 480px) {
-      font-size: 1.8em;
     }
   }
   p {

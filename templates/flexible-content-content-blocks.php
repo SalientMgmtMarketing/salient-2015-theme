@@ -21,7 +21,10 @@
 
         //adds class for cards
         if( get_sub_field('cards')) { echo " cards"; }
- 
+
+        if ( get_sub_field('left_side_image') ) { echo " hasLeftImage"; }
+        if ( get_sub_field('right_side_image') ) { echo " hasRightImage"; }
+
         ?>" style="<?php if ( get_sub_field('background_image') && !get_sub_field('parallax_background') ) { ?> background-image:url('<?php the_sub_field('background_image'); ?>');<?php } ?>
 
           <?php if ( get_sub_field('background_color') ) { ?>background-color: <?php the_sub_field('background_color'); } ?>">
@@ -34,6 +37,7 @@
             <h2 class="section-title wrap<?php if( get_sub_field('title_centered') ) { echo " centered";  } ?>"><?php the_sub_field('section_title'); ?></h2>
           <?php } ?>
 
+          <!-- div.wrap -->
           <div class="wrap<?php 
             
             //adds the class for the selection type
@@ -255,6 +259,36 @@
               </a>
             <?php } ?>
           </div><!--.wrap-->
+    
+    
+          <?php 
+          // LEFT SIDE IMAGE - Used as an image to fill the right side of the section while not restricted by the width of the grid
+          if ( get_sub_field('left_side_image') ) { 
+            $image = get_sub_field('left_side_image');
+            $img_src = wp_get_attachment_image_url( $image['id'], 'full' );
+            $img_srcset = wp_get_attachment_image_srcset( $image['id'], 'full' );   
+          ?>
+          
+            <div class="left-image" <?php sideImageAsBackgroundLeft(); ?>>
+              <?php /* <img src="<?php echo esc_url( $img_src ); ?>"
+                width = "<?php echo $image['sizes']['full']; ?>"
+                height = "<?php echo $image['sizes']['full']; ?>"
+                srcset="<?php echo esc_attr( $img_srcset ); ?>"
+                sizes="(max-width: 100vw) 480px" alt="<?php echo $image['alt']; ?>" /> */ ?>
+            </div><!--.left-image-->
+          <?php } ?>
+    
+          <?php 
+          // RIGHT SIDE IMAGE - Used as an image to fill the right side of the section while not restricted by the width of the grid
+          if ( get_sub_field('right_side_image') ) { 
+            $image = get_sub_field('right_side_image');
+            $img_src = wp_get_attachment_image_url( $image['id'], 'full' );
+            $img_srcset = wp_get_attachment_image_srcset( $image['id'], 'full' ); ?>
+
+            <div class="right-image" <?php sideImageAsBackgroundRight(); ?>>
+            </div><!--.right-image-->
+          <?php } ?>
+    
           <?php if ( get_sub_field('menu') ) { 
             $menu = get_sub_field('menu');
           ?>
