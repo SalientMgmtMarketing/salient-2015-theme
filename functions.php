@@ -385,6 +385,12 @@ function sideImageAsBackgroundRight() {
 }
 
 
+// Header Image Color Overloay
+function headerColorOverlay() {
+  if ( get_field('color_overlay') ) { 
+    echo ' has-overlay ' . get_field('color_overlay_color'); 
+  }
+}
 
 // http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
 // this handles converting the entered value to hex for storage

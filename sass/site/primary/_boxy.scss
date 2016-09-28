@@ -25,6 +25,14 @@ section.row {
   }
   &.dark-text {
     color: $base-color-dark;
+    
+    a {
+      color: $base-color-dark;
+      
+      &.button {
+        color: $base-color-light;
+      }
+    }
   }
   .bkg {
     position: absolute;
@@ -165,11 +173,8 @@ section.row {
   h3 {
     font-size: 1em;
     font-weight: 700;
-    @include media(min-width 400px) {
+    @include media(min-width 400px max-width 480px) {
       font-size: 1.2em;
-    }
-    @include media(min-width 480px) {
-      font-size: 1.8em;
     }
   }
   p {

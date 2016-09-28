@@ -263,4 +263,21 @@ ACO Home
       text-shadow: 1px 1px 3px rgba(0,0,0,.5);
     }
   }
+  &#video {
+    .sub-section0 {
+      padding-top: 3em;
+    }
+    .boxed {
+      background: rgba(29, 17, 0, 0.54);
+      
+      blockquote {
+      }
+    }
+    blockquote {
+      font-size: 1em;
+    }
+  }
+}
+#content section.row:nth-child(even) ._form_30 ._submit {
+    background: $base-color-dark !important;
 }

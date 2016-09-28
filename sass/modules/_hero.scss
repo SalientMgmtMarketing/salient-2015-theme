@@ -8,7 +8,8 @@ Article Hero
   color: white;
   padding: 1em 0;
   position: relative;
-
+  background-position: 50% 50%;
+  
   @include media(min-width $nav-breakpoint-value) {
     padding: 5em 0 1em;
   }
@@ -17,6 +18,41 @@ Article Hero
   }
   &.light {
     color: $base-color-dark;
+  }
+  &.has-overlay {
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      content: '';
+    }
+    &.purple:before {
+      background-color: rgba($purple,.8);
+    }
+    &.blue:before {
+      background-color: rgba($blue,.8);
+    }
+    &.pink:before {
+      background-color: rgba($pink,.8);
+    }
+    &.teal:before {
+      background-color: rgba($teal,.8);
+    }
+    &.black:before {
+      background-color: rgba($black,.7);
+    }
+    &.white {
+      color: $blue;
+      p, h1,h2, h3, h4, #breadcrumbs a {
+        color: $blue;
+      }
+      &:before {
+        background-color: rgba($white,.9);
+      }
+    }
   }
   
   section.row {
