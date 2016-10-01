@@ -276,7 +276,9 @@ section.row:nth-child(even) {
 
 #intro {
   z-index: 1000;
-
+  @include media(min-width $nav-breakpoint-value) {
+    height: 86vh;
+  }
   .wrap {
     @include media(min-width $second-breakpoint-value) {
       margin-top: 3em;
