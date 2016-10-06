@@ -129,7 +129,7 @@ blockquote {
       color: #333;
     }
   }
-  p:after {
+  p:last-child:after {
     content: close-quote;
     opacity: .3;
   }

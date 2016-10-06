@@ -84,6 +84,7 @@ function salient_2015_setup() {
 	add_image_size( 'cards-4x3', 420, 250, true );
   	add_image_size( 'portraits', 200, 300, true );
 	add_image_size( 'blog_feed', 527, 210, true, array( 'center', 'top' ) ); // Hard crop left top
+    add_image_size( 'side_image', 900, 600, true, true ); // Hard crop left top
   	add_image_size( 'header', 1400, 500, true, array( 'center', 'top' ) ); // Hard crop left top
 }
 endif; // salient_2015_setup
@@ -375,7 +376,21 @@ if (function_exists('youtube_embed_add_to_head')) {
   add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
 }
 
+// Loads the side image as the background image
+function sideImageAsBackgroundLeft() {
+  echo 'style="background-image:url(\'' . wp_get_attachment_image_url( get_sub_field('left_side_image')['id'], 'side_image' ) . '\')"';  
+}
+function sideImageAsBackgroundRight() {
+  echo 'style="background-image:url(\'' . wp_get_attachment_image_url( get_sub_field('right_side_image')['id'], 'side_image' ) . '\')"';  
+}
 
+
+// Header Image Color Overloay
+function headerColorOverlay() {
+  if ( get_field('color_overlay') ) { 
+    echo ' has-overlay ' . get_field('color_overlay_color'); 
+  }
+}
 
 // http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
 // this handles converting the entered value to hex for storage
@@ -460,3 +475,5 @@ function ch_hextostr_email($x, $field) {
 
 // adds anchor to the form submission
 add_filter("gform_confirmation_anchor", create_function("","return true;"));
+
+add_filter( 'gform_akismet_enabled_2', '__return_false' );
