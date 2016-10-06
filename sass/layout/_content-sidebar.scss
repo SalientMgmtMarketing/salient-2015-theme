@@ -1,4 +1,4 @@
-.page.page-template-template-internal, .page.page-template-default, .page.page-template-page-resources,  .page.page-template-page-fullwidth, .page-template-page-resources-library, .error404 { 
+.page.page-template-template-internal, .page.page-template-default, .page.page-template-page-resources,  .page.page-template-page-fullwidth, .page-template-page-resources-library, .error404, .search{ 
   article {
     .entry-content {
       background: white;
@@ -23,7 +23,7 @@
     }
   }
 }
-.page.page-template-page-resources, .page.page-template-page-fullwidth, .page-template-page-resources-library, .error404  {
+.page.page-template-page-resources, .page.page-template-page-fullwidth, .page-template-page-resources-library, .error404, .search  {
   article .entry-content {
     @include full-width;
   }

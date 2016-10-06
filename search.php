@@ -11,11 +11,14 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'salient-2015' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+            <article class="search-results">
+               
+			<header class="page-header hero">
+                 <div class="wrap">
+                     <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'salient-2015' ), '<span>' . get_search_query() . '</span>' ); ?></h1></div>
 			</header><!-- .page-header -->
-
+                <div class="wrap">
+                <div class="entry-content">    
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -37,9 +40,12 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
-
+                    </div>
+                    <?php get_sidebar(); ?>
+                </div>
+            </article>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
