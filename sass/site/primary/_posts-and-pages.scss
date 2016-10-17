@@ -2,7 +2,6 @@
   display: block;
 }
 
-
 .byline,
 .updated:not(.published) {
   display: none;
@@ -20,6 +19,7 @@
 
 
 /* Pages */
+
 .page article {
   header.entry-header {
     color: $base-font-color-light;
@@ -29,7 +29,6 @@
   }
   .entry-content {
     margin-bottom: 1em;
-    
     h2 {
       margin-top: 1em;
     }
@@ -46,24 +45,33 @@ h1.entry-title {
   font-size: 2.5em;
 }
 
-.longbios{
+.longbios {
   max-width: 1000px;
 }
+
 
 /*
 Section Rows
 */
 
 .page section {
-  @include media(min-width $second-breakpoint-value) { 
-    padding: 2em 0; 
+  @include media(min-width $second-breakpoint-value) {
+    padding: 2em 0;
   }
   &[class*="section-"] .wrap {}
 }
 
 
 /* Blog Feed */
-.blog, .archive {
+
+#page .above-posts {
+  width: 100%;
+  display: block;
+  padding: 0 0 1em 0;
+}
+
+.blog,
+.archive {
   main > .wrap {
     margin-top: 2em;
     &.flex-wrap {
@@ -75,7 +83,6 @@ Section Rows
     @include outer-container;
     @include fill-parent;
     margin: 1em auto;
-    
     .nav-previous {
       float: left;
     }
@@ -88,33 +95,37 @@ Section Rows
     font-weight: 700;
     color: #333;
   }
-  article {
-    float: left;
-    @include one-half;
-    font-size: 1em;
-    border: 1px solid #000;
-    padding: 2em;
-    margin-top: .5em;
-    margin-bottom: .5em;
-    background: $white;
+  .list-of-posts {
+    display: flex;
+    flex-wrap: wrap;
     
-    /*&:nth-child(even) {
-      background: lighten($base-background-color, 5);
-      border-bottom: 1px solid darken($base-background-color,10);
-      border-top: 1px solid darken($base-background-color,10);
-    } */
-    h1 {
-      font-size: 1.5em;
-      margin-top: 0;
-	}
-    
-    .entry-footer {
-      font-size: .75em;
+    article {
+      float: left;
+      @include one-half;
+      font-size: 1em;
+      border: 1px solid #000;
+      padding: 2em;
+      margin-top: .5em;
+      margin-bottom: .5em;
+      background: $white;
+      /*&:nth-child(even) {
+        background: lighten($base-background-color, 5);
+        border-bottom: 1px solid darken($base-background-color,10);
+        border-top: 1px solid darken($base-background-color,10);
+      } */
+      h1 {
+        font-size: 1.5em;
+        margin-top: 0;
+      }
+      .entry-footer {
+        font-size: .75em;
+      }
     }
   }
 }
-
-
+nav.navigation.paging-navigation {
+  width: 100%;
+}
 
 
 
@@ -131,15 +142,12 @@ Single Post
     background-position: center 20%;
     width: 100%;
     height: 87vh;
-    
     @include media(min-height ems(800px)) {
       height: 60vh;
     }
-    
     h1 {
       padding: 2em 0 .75em;
     }
-    
     &:after {
       content: "";
       position: absolute;
@@ -149,7 +157,6 @@ Single Post
       right: 0;
       background: rgba(0, 66, 128, 0.68);
       height: 87vh;
-    
       @include media(min-height ems(800px)) {
         height: 60vh;
       }
@@ -162,7 +169,6 @@ Single Post
   .featured-image {
     margin-bottom: 2em;
   }
-
   .post-navigation,
   #comments {
     @include span-columns(8);
@@ -186,7 +192,6 @@ Single Post
     .image-block {
       display: table;
       @include span-columns(12);
-      
       img {
         width: 100%;
       }
@@ -195,7 +200,8 @@ Single Post
         vertical-align: center;
       }
     }
-    .entry-title, .byline {
+    .entry-title,
+    .byline {
       text-align: center;
     }
   }
@@ -228,8 +234,6 @@ footer.entry-footer {
 }
 
 
-
-
 /*
 ACO Home
 */
@@ -237,7 +241,6 @@ ACO Home
 .page section.aco-home {
   padding: 4.5em 0 4.5em;
   overflow: hidden;
-  
   &#intro {
     position: relative;
     background-position: 50% 50%;
@@ -250,17 +253,20 @@ ACO Home
       height: 100%;
       z-index: 1;
       content: "";
-      background-image: linear-gradient(119deg,rgba(0,0,0,.85),rgba(0, 0, 0, 0.06) 126%); 
+      background-image: linear-gradient(119deg, rgba(0, 0, 0, .85), rgba(0, 0, 0, 0.06) 126%);
     }
-    div, a, p {
+    div,
+    a,
+    p {
       z-index: 999;
       position: relative;
     }
     h1 {
       font-size: 1.75em;
     }
-    h1, p {
-      text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+    h1,
+    p {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
     }
   }
   &#video {
@@ -269,15 +275,14 @@ ACO Home
     }
     .boxed {
       background: rgba(29, 17, 0, 0.54);
-      
-      blockquote {
-      }
+      blockquote {}
     }
     blockquote {
       font-size: 1em;
     }
   }
 }
+
 #content section.row:nth-child(even) ._form_30 ._submit {
-    background: $base-color-dark !important;
+  background: $base-color-dark !important;
 }

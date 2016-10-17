@@ -24,6 +24,7 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<div class="wrap flex-wrap">
+                <div class="list-of-posts">
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -36,6 +37,7 @@ get_header(); ?>
 					?>
 
 				<?php endwhile; ?>
+              </div><!--.list-of-posts-->
 			</div><!--.wrap-->
 			<div class="wrap">
 				<?php salient_2015_paging_nav(); ?>

@@ -30,10 +30,30 @@ get_header(); ?>
             </div>
           </header><!--.hero-->
 
+          <?php 
+            if ( is_home() ) {
+              global $post;
+
+              $post = get_option('page_for_posts');
+              setup_postdata(get_page($post));
+            }
+          ?>
             <?php if ( have_posts() ) : ?>
               <div class="wrap flex-wrap">
+
+                <?php
+                if ( get_field('above_posts_list') ) { ?>
+
+                  <section class="above-posts">
+                    <?php echo get_field('above_posts_list'); ?>
+                  </section>
+                  <?php rewind_posts();
+
+                } ?>
+                <section class="list-of-posts">
                 <?php /* Start the Loop */ ?>
                 <?php while ( have_posts() ) : the_post(); ?>
+
 
                     <?php
                         /* Include the Post-Format-specific template for the content.
@@ -44,8 +64,10 @@ get_header(); ?>
                     ?>
 
                 <?php endwhile; ?>
-              </div><!--.wrap-->           
+                </section><!--.list-of-posts-->
                 <?php salient_2015_paging_nav(); ?>
+              </div><!--.wrap-->           
+
 
             <?php else : ?>
                 <div class="wrap">
