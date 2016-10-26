@@ -48,6 +48,10 @@ section.mm-testimonial{
     @include media(min-width $nav-breakpoint-value) {
       padding: 3em 5em;
     }
+    
+    .logo img {
+      width: 100%;
+    }
   }
   .bkg {
     opacity: .2;

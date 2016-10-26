@@ -14,6 +14,7 @@ var autoprefixer = require('gulp-autoprefixer');
 gulp.task('concatScripts', function () {
     return gulp.src([
             './js/navigation.js',
+            './node_modules/js-cookie/src/js.cookie.js',      
             './js/**.js',
             './inc/**.js',
             '!./js/customizer.js'

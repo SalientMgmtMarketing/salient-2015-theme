@@ -11,7 +11,9 @@
 	</div><!-- #content -->
 
 	
-<?php wp_footer(); ?>
+<?php wp_footer();
+
+/*?>
 
 <!-- LeadLander Code -->
 <script type="text/javascript" language="javascript"> 
@@ -28,6 +30,6 @@
   <script type="text/javascript" src="https://formalyzer.com/formalyze_init.js"></script>
   <script type="text/javascript" src="https://formalyzer.com/formalyze_call_secure.js"></script>
   <script>jQuery('.gform_button').on('click',function(){formalyzer_call_onclick(13443);});</script>
-<?php } ?>
+<?php } */ ?>
 </body>
 </html>
