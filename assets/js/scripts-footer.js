@@ -337,7 +337,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
   });
   
   $(document).keydown(function (e) {
-    if (e.keyCode == 27) {
+    if (e.keyCode == 27 && ( document.querySelector('div.slides-container') !== null )) {
       $('section[id]').removeClass('slide1');
       $('section[id]').removeClass('slide2');
       $('section[id]').removeClass('slide3');
@@ -350,7 +350,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
       $('section[id]').children('div.slides-container').attr('tabindex', '-1');
       $('section[id]').attr('tabindex','-1');
       dataSlide = 0;
-      $('html,body').animate({scrollTop: $(this).closest('section[id]').offset().top}, 800);
+      $('html,body').animate({scrollTop: $('.is-active').closest('section[id]').offset.top}, 800);
     }
   });
   
