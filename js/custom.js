@@ -23,7 +23,7 @@
       });
     }
   });
-  if (typeof(password) !== 'undefined') {
+  if (document.protectedform !== undefined) {
     function checkCookie() {
       if ( Cookies.get('client-resources') ) {
         document.getElementById('hiddenContent').style.display = "block";
