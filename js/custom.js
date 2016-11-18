@@ -14,24 +14,25 @@
         }
       }
     });
-    
-    // Adds Flickity Slider to any .main-gallery
-    $('.main-gallery').flickity({
-      // options
-      imagesLoaded: true,
-      pageDots: false
-    });
-  });
-  
-  function checkCookie() {
-    if ( Cookies.get('client-resources') ) {
-      document.getElementById('hiddenContent').style.display = "block";
-      document.getElementById('password-gate').style.display = "none";  
+    if (typeof flicky == 'function') { 
+      // Adds Flickity Slider to any .main-gallery
+      $('.main-gallery').flickity({
+        // options
+        imagesLoaded: true,
+        pageDots: false
+      });
     }
-  }
-  checkCookie();
-  
-  var $form = document.protectedform, 
+  });
+  if (typeof(password) !== 'undefined') {
+    function checkCookie() {
+      if ( Cookies.get('client-resources') ) {
+        document.getElementById('hiddenContent').style.display = "block";
+        document.getElementById('password-gate').style.display = "none";  
+      }
+    }
+    checkCookie();
+
+    var $form = document.protectedform, 
         $passwordField = $form.password, 
         $password = $passwordField.value;
     $passwordField.onfocus = function () {
@@ -63,5 +64,6 @@
       checkPassword();
       return false;
     }
+  }
   
 })(jQuery);
