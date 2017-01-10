@@ -1,28 +1,24 @@
 (function($) {
-
-  $(function() {
-    // Uses jQuery to smooth scroll any anchored link
-    $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
+  // Uses jQuery to smooth scroll any anchored link
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
       }
-    });
-    if (typeof flicky == 'function') { 
-      // Adds Flickity Slider to any .main-gallery
-      $('.main-gallery').flickity({
-        // options
-        imagesLoaded: true,
-        pageDots: false
-      });
     }
   });
+  // Adds Flickity Slider to any .main-gallery
+  jQuery('.main-gallery').flickity({
+    // options
+    imagesLoaded: true,
+    pageDots: false
+  });
+
   if (document.protectedform !== undefined) {
     function checkCookie() {
       if ( Cookies.get('client-resources') ) {
