@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
@@ -14,7 +13,8 @@ var autoprefixer = require('gulp-autoprefixer');
 gulp.task('concatScripts', function () {
     return gulp.src([
             './js/navigation.js',
-            './node_modules/js-cookie/src/js.cookie.js',      
+            './node_modules/js-cookie/src/js.cookie.js',
+            './js/flickity.pkgd.min.js',
             './js/**.js',
             './inc/**.js',
             '!./js/customizer.js'
