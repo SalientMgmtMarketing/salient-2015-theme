@@ -35,7 +35,6 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
-        
         <?php get_sidebar(); ?>
 	</div><!-- .wrap -->
 	<?php if (is_admin()) { ?>

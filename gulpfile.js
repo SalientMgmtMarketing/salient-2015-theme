@@ -12,11 +12,13 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('concatScripts', function () {
     return gulp.src([
+            '!./assets/js/scripts.js',
             './js/navigation.js',
             './node_modules/js-cookie/src/js.cookie.js',
             './js/flickity.pkgd.min.js',
-            './js/**.js',
-            './inc/**.js',
+            './js/fancybox/**/*.js',
+            './js/**/*.js',
+            './inc/**/*.js',
             '!./js/customizer.js'
     ])
     .pipe(maps.init())

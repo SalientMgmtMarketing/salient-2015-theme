@@ -224,3 +224,17 @@ video {
 --------------------------------------------------------------*/
 
 @import "flickity";
+
+/*--------------------------------------------------------------
+12.5 Fancybox Modals
+--------------------------------------------------------------*/
+
+body .fancybox-wrap .fancybox-skin {
+  padding: 1em !important;
+  background: $base-color-dark;
+  color: $base-color-light;
+  
+  #_form_589513F0645F5_ {
+    margin-top: 0;
+  }
+}
