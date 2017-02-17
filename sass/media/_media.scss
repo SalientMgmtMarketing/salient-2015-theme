@@ -81,7 +81,7 @@ video {
       background: none;
       margin-top: 1em;
       
-      h2, h3, p, div, a {
+      h2, h3, p, div, a, ul li {
         position: relative;
         z-index: 10;
       }
@@ -236,5 +236,9 @@ body .fancybox-wrap .fancybox-skin {
   
   #_form_589513F0645F5_ {
     margin-top: 0;
+  }
+  
+  input:not([type=submit]) {
+    color: $base-font-color;
   }
 }

@@ -36,7 +36,7 @@
       });
     }
 
-    if ( ( document.querySelector('a.privatelink') !== null ) && (window.location.search.indexOf('utm_medium=email') > -1) ) {
+    if ( ( document.querySelector('a.privatelink') !== null ) && ((window.location.search.indexOf('utm_medium=email') > -1) ) || (window.location.search.indexOf('utm_medium=form') > -1)) {
       jQuery('a.privatelink').each( function() {
         var privLink = jQuery(this).attr('data-privlink');
         var convertCta = jQuery(this).attr('data-convertedcta');

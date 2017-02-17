@@ -286,3 +286,8 @@ ACO Home
 #content section.row:nth-child(even) ._form_30 ._submit {
   background: $base-color-dark !important;
 }
+
+
+.page.page-template-default article .entry-content {
+  z-index: 99;
+}
