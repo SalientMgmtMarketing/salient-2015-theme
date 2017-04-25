@@ -20,6 +20,16 @@ header#masthead {
     position: absolute;
   }
   
+  &.has-header-banner {
+    @include media(min-width 1001px) {
+      transform: translateY(90px);
+    }
+    
+    @include media(min-width 930px max-width 1000px) {
+      transform: translateY(190px);
+    }
+  }
+  
   &.narrow-header {
     height: 67px;
     @include media(max-width $nav-breakpoint-value) {
@@ -194,5 +204,103 @@ header#masthead {
 body.admin-bar header#masthead {
   @include media(min-width $nav-breakpoint-value){
     top: 28px;
+    
+    &.has-header-banner {
+      top: 0;
+    }
+  }
+}
+
+.header-banner {
+  clear: both;
+  height: 90px;
+  display: block;
+  position: relative;
+  
+  @include media(max-width 1000px) {
+    background-size: cover;
+    height: 190px;
+  }
+  
+  .idea-con-logo {
+    position: absolute;
+    left: 1em;
+    top: 8px;
+    max-width: 564px;
+    
+    @include media(max-width 1400px) {
+      top: 18px;
+      max-width: 400px;
+    }
+    @include media(max-width 1200px) {
+      max-width: 300px;
+    }
+    @include media(max-width 1000px) {
+      left: auto;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+  }
+  
+  .idea-con-date {
+    color: white;
+    position: absolute;
+    left: 39%;
+    font-size: 1.75em;
+    font-weight: 700;
+    top: 29px;
+    
+    @include media(max-width 1600px) {
+      font-size: 1.25em;
+      left: 43%;
+    }
+    @include media(max-width 1400px) {
+      left: 37%;
+    }
+    @include media(max-width 1275px) {
+      top: 32px;
+    }
+    @include media(max-width 1200px) {
+      left: 33%;
+      top: 27px;
+    }
+    @include media(max-width 1000px) {
+      left: auto;
+      text-align: center;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  .idea-con-register a {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    padding: .35em 2em;
+    background-color: rgba(0, 185, 235, 0.47);
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    
+    @include media(max-width 1275px) {
+      font-size: 1.25em;
+      padding: .35em 1em;
+    }
+    
+    @include media(max-width 1000px) {
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+      right: auto;
+      display: block;
+      max-width: 258px;
+      top: 40px;
+    }
   }
 }
