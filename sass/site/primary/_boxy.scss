@@ -105,9 +105,10 @@ section.row {
   }
   a {
     color: $white;
-    font-weight: 700;
+    text-decoration: underline;
     &:hover {
       text-decoration: underline;
+      color: darken($white, 3);
     }
   }
   header {
