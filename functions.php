@@ -226,7 +226,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  * Enqueue scripts and styles.
  */
 
-$theme_version = '1.2.7';
+$theme_version = '1.2.8';
 
 function salient_2015_scripts() {
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri() ,'' , $theme_version);

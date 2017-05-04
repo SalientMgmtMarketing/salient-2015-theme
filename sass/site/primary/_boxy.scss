@@ -110,7 +110,7 @@ section.row {
       text-decoration: underline;
       color: darken($white, 3);
     }
-    &.button {
+    &.button, &.btn {
       text-decoration: none;
     }
   }
