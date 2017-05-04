@@ -110,6 +110,9 @@ section.row {
       text-decoration: underline;
       color: darken($white, 3);
     }
+    &.button {
+      text-decoration: none;
+    }
   }
   header {
     text-align: center;
