@@ -110,9 +110,12 @@ section.row {
       text-decoration: underline;
       color: darken($white, 3);
     }
-    &.button, &.btn, .inline-navigation-container & {
+    &.button, &.btn  {
       text-decoration: none;
     }
+  }
+  .inline-navigation-container a {
+    text-decoration: none;
   }
   header {
     text-align: center;
