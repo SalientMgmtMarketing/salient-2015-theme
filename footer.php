@@ -15,25 +15,18 @@
 		<?php get_sidebar( 'footer' ); ?>
       </div>
 	</footer>
-	
-<?php wp_footer();
 
-/* ?>
-
-<!-- LeadLander Code -->
-<script type="text/javascript" language="javascript"> 
-      var sf14gv = 13443; 
-      (function() { 
-      var sf14g = document.createElement('script'); sf14g.type = 'text/javascript'; sf14g.async = true; 
-      sf14g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 't.sf14g.com/sf14g.js'; 
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sf14g, s); 
-      })(); 
+<?php wp_footer(); ?>
+<script>
+window.addEventListener('load',function(){
+  var setint_thanku = setInterval(function(){
+    if(jQuery('._form-thank-you:contains("Thank You! A link to the case study has been delivered to the email address that was provided.")').is(":visible"))
+    {
+        __gaTracker('send','event','form','submit','download case study');
+        clearInterval(setint_thanku);
+    }
+  },500);
+})
 </script>
-<?php if (is_page_template('page-landing-page.php') || is_page('contact') || is_page('conact-us')) { ?>
-  <script type="text/javascript">llfrmid=13443</script> 
-  <script type="text/javascript" src="https://formalyzer.com/formalyze_init.js"></script>
-  <script type="text/javascript" src="https://formalyzer.com/formalyze_call_secure.js"></script>
-  <script>jQuery('.gform_button').on('click',function(){formalyzer_call_onclick(13443);});</script>
-<?php } */ ?>
 </body>
 </html>

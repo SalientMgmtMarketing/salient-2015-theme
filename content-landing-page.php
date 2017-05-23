@@ -39,6 +39,7 @@
             <?php the_field('form_box'); ?>
           </div><!-- .form-block -->
           <?php endif; ?>
+          <?php get_sidebar(); ?>
       </div>
       <!-- .wrap -->
     </section>
