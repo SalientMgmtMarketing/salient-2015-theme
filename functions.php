@@ -226,8 +226,8 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-  $theme_version = '1.2.9';
-  
+  $theme_version = '1.2.11';
+
   wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri() ,'' , $theme_version);
   wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
   wp_enqueue_script( 'jquery' );
@@ -235,7 +235,7 @@ function salient_2015_scripts() {
   wp_enqueue_script( 'salient-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
   wp_enqueue_script( 'salient-2015-custom', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), $theme_version, true );
   wp_enqueue_script( 'salient-2015-custom-footer', get_template_directory_uri() . '/assets/js/scripts-footer.js', array('jquery'), $theme_version, true );
-  
+
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
   }
@@ -351,12 +351,12 @@ add_shortcode( 'arrow', 'arrow_shortcode' );
 function is_tree($pid) {
   global $post;
   $ancestors = get_post_ancestors($post->$pid);
-  
+
   $root = count($ancestors) - 1;
   if ($root > 0) {
     $parent = $ancestors[$root];
   }
- 
+
   if(is_page() && (is_page($pid) || $post->post_parent == $pid || in_array($pid, $ancestors))) {
     return true;
   }
@@ -377,16 +377,16 @@ if (function_exists('youtube_embed_add_to_head')) {
 
 // Loads the side image as the background image
 function sideImageAsBackgroundLeft() {
-  echo 'style="background-image:url(\'' . wp_get_attachment_image_url( get_sub_field('left_side_image')['id'], 'side_image' ) . '\')"';  
+  echo 'style="background-image:url(\'' . wp_get_attachment_image_url( get_sub_field('left_side_image')['id'], 'side_image' ) . '\')"';
 }
 function sideImageAsBackgroundRight() {
-  echo 'style="background-image:url(\'' . wp_get_attachment_image_url( get_sub_field('right_side_image')['id'], 'side_image' ) . '\')"';  
+  echo 'style="background-image:url(\'' . wp_get_attachment_image_url( get_sub_field('right_side_image')['id'], 'side_image' ) . '\')"';
 }
 
 // Header Image Color Overloay
 function headerColorOverlay() {
-  if ( get_field('color_overlay') ) { 
-    echo ' has-overlay ' . get_field('color_overlay_color'); 
+  if ( get_field('color_overlay') ) {
+    echo ' has-overlay ' . get_field('color_overlay_color');
   }
 }
 
@@ -413,7 +413,7 @@ function ch_strtohex($form) {
 
 // retrieve hex and convert before displaying in the admin: single entry view
 add_filter('gform_entry_field_value', 'ch_hextostr_single', 10, 4);
-function ch_hextostr_single($x, $field, $lead, $form) { 
+function ch_hextostr_single($x, $field, $lead, $form) {
   // run this code on form 7, field 5 only
   // FORM ID 7, INPUT ID 5
   if ($form['id'] == 2 && $field['id'] == 4) {
@@ -434,7 +434,7 @@ function ch_hextostr_single($x, $field, $lead, $form) {
 // retrieve hex and convert before displaying in the admin: entry list view
 // note the different filter name here "entries"
 add_filter('gform_entries_field_value', 'ch_hextostr_list', 10, 3);
-function ch_hextostr_list($x, $form_id, $field_id) { 
+function ch_hextostr_list($x, $form_id, $field_id) {
   // run this code on form 7, field 5 only
   // change to match your form values
   if ($form_id == 2 && $field_id == 4) {
@@ -453,7 +453,7 @@ function ch_hextostr_list($x, $form_id, $field_id) {
 
 // retrieve hex and convert before displaying in the email notification
 add_filter('gform_notification_format', 'ch_hextostr_email', 10, 2);
-function ch_hextostr_email($x, $field) { 
+function ch_hextostr_email($x, $field) {
   // run this code on form 7, field 5 only
   // FORM ID 7, INPUT ID 5
   if ($form['id'] == 2 && $field['id'] == 4) {
