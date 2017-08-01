@@ -23,6 +23,11 @@
       pageDots: false
     });
 
+    jQuery(".testimonials .slides").flickity({
+      autoPlay: 10000,
+      wrapAround: true
+    });
+
     jQuery(".sidebar-cta a").fancybox();
     // Checks to see if the page has a link with the class of privatelink AND has a Cookie with name of Converted and a value of true
     if ( ( document.querySelector('a.privatelink') !== null ) && ( Cookies.get('converted') == 'true') ) {

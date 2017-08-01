@@ -19,7 +19,7 @@
   font-size: 1.2em;
   border: 2px solid rgba(255,255,255,.8);
   margin: 1em 0;
-  
+
   &:hover {
     background: darken(#004280, 10);
   }
@@ -27,23 +27,23 @@
 
 section#hero {
   padding: 0;
-  
+
   a.button.blue {
     font-size: 1em;
   }
-  
+
   h1 {
     font-size: 1.35em;
   }
-  
+
   @media screen and (min-width: $first-breakpoint-value) {
     padding: 1em 0 1em;
   }
-  
+
   @media screen and (min-width: $second-breakpoint-value) {
     padding: 5em 0 2em;
   }
-  
+
   @media screen and (min-width: $third-breakpoint-value) {
     padding: 8em 0 7em;
     font-size: 1.2em;
@@ -54,7 +54,7 @@ section#hero {
 section#value-line {
   padding: 3em 0 0;
   text-align: center;
-  
+
   .sub-section0 {
     padding: 0;
   }
@@ -68,14 +68,14 @@ section#value-line {
     padding-bottom: 1em;
     margin-bottom: -10em;
   }
-  
+
   .logo {
     padding: 0;
     box-shadow: none;
   }
   .sub-section1 {
     text-align: center;
-    
+
     .btn {
       margin-top: 1em;
     }
@@ -86,7 +86,7 @@ section#value-line {
   background-color: $white;
   @include media(min-width $second-breakpoint-value) {
     padding-top: 4em;
-    
+
     .wrap {
       margin-top: 4em;
     }
@@ -116,7 +116,7 @@ section#value-line {
     }
   }
   p {
-    @include media(min-width $second-breakpoint-value) { 
+    @include media(min-width $second-breakpoint-value) {
       font-size: 1.2em;
     }
   }
@@ -127,30 +127,30 @@ section#value-line {
 
 #slide2 {
   z-index: 1000;
-  
+
   @include media(min-width $nav-breakpoint-value) {
     padding: 5em 0;
   }
-  
+
   .wrap {
     position: relative;
     z-index: 100;
   }
-  
+
   h3 {
     font-size: 1.5em;
-    
+
     @include media(min-width $second-breakpoint-value) {
       font-size: 2.4em;
     }
   }
-  
+
   p {
     @include media(min-width $second-breakpoint-value) {
       font-size: 1.2em;
     }
   }
-  
+
   &:before {
     content: '';
     position: absolute;
@@ -171,7 +171,7 @@ section#value-line {
   @include media(min-width $second-breakpoint-value) {
     height: 70vh;
   }
-  
+
   .wrap {
     position: relative;
     z-index: 100;
@@ -183,11 +183,11 @@ section#value-line {
   }
   .bkg {
     height: 100vh;
-    
+
     @include media(min-width 680px) {
       height: 67vw;
     }
-    
+
     @include media(min-width $second-breakpoint-value) {
       height: 110vh;
     }
@@ -268,12 +268,12 @@ section#value-line {
   @include media(min-width $second-breakpoint-value) {
 
   }
-  
+
   blockquote {
     border: none;
     padding-left: 0;
     font-size: 1.2em;
-    
+
     @include media(min-width $second-breakpoint-value) {
       text-indent:0;
       font-size: 1.5em;
@@ -282,18 +282,18 @@ section#value-line {
     @include media(min-width $second-breakpoint-value) {
       margin-left: 1.8em;
     }
-    
+
     &:before {
       display: block;
       font-size: 4em;
       margin: 0;
       position: relative;
       top: 56px;
-      left: -48px;     
+      left: -48px;
       z-index: 10;
       opacity: .3;
       margin-top: -75px;
-      
+
       @include media(min-width $second-breakpoint-value) {
         top: 75px;
         left: -75px;
@@ -304,7 +304,7 @@ section#value-line {
 
 #stories {
   z-index: 803;
-  
+
   .sub-section0 {
     @include media($large-screen) {
       @include span-columns(8);
@@ -312,7 +312,7 @@ section#value-line {
     h3 {
       font-size: 2.4em;
     }
-    
+
     p {
       font-size: 1.2em;
     }
@@ -342,12 +342,135 @@ section#clients-slider {
   text-align: center;
   font-size: 1.2em;
   height: auto;
-  
+
   p {
     max-width: 688px;
   }
-  
+
   .logo-carousel div {
     display: none;
+  }
+}
+
+.page-template-page-sections-flex-home main section.row.intro-2017 {
+  @include media($medium-screen) {
+    padding: 0 0 1em 0;
+    font-size: 1.5em;
+
+    .sub-section0, .sub-section1, .sub-section2, .sub-section3 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+section.how-we-do-this {
+  h3 {
+    margin-bottom: 0;
+  }
+  h3 + p {
+    margin-top: 0;
+  }
+  .page-template-page-sections-flex-home main & p {
+    font-size: 1.35em;
+  }
+}
+
+section.row.testimonials {
+	.flickity-slider .slide {
+		width: 100%;
+		display: block;
+	}
+  h2 {
+    margin-left: 10.3rem;
+    @include media($large-screen) {
+      margin-left: 4rem;
+    }
+    @include media($medium-screen) {
+      margin-left: 0;
+    }
+    @include media($small-screen) {
+      margin-left: 0;
+    }
+  }
+  h3 {
+    margin-left: 10.3rem;
+    margin-bottom: 0;
+    @include media($large-screen) {
+      margin-left: 4rem;
+    }
+    @include media($medium-screen) {
+      margin-left: 5rem;
+    }
+    @include media($small-screen) {
+      margin-left: 1rem;
+    }
+  }
+	figure {
+		margin: 0;
+    @include media($xl-screen) {
+      padding: 0 4em;
+      line-height: 1.45;
+    }
+	}
+	blockquote {
+		margin-bottom: 0;
+    margin-top: 0;
+    padding: .5em 4rem .5em 1rem;
+
+    @include media($medium-screen) {
+      padding: .5em 4rem;
+    }
+    @include media($small-screen) {
+      padding: .5em 1em;
+      font-size: 1em;
+      margin-left: 0;
+      margin-right: 0;
+
+      &:before {
+        left: -26px;
+        top: 32px;
+      }
+    }
+	}
+	figcaption {
+		margin-left: 5.6rem;
+		margin-bottom: 2rem;
+    @include media($large-screen) {
+      margin-left: 5.5rem;
+    }
+    @include media($medium-screen) {
+      margin-left: 5rem;
+    }
+    @include media($small-screen) {
+      margin-left: 1rem;
+    }
+	}
+	.flickity-slider .testimonial-logo {
+		margin-left: 11.3rem;
+    max-width: 300px;
+    background: $base-color-light;
+    padding: 1em;
+    @include media($large-screen) {
+      margin-left: 5rem;
+    }
+    @include media($medium-screen) {
+      margin-left: 5rem;
+    }
+    @include media($small-screen) {
+      margin-left: 1rem;
+    }
+	}
+  .testimonial-logo img {
+    width: 100%;
+    height: auto;
+  }
+	.flickity-prev-next-button .arrow {
+    fill: #dedede;
+	}
+  .flickity-prev-next-button {
+    @include media($small-screen) {
+      display: none;
+    }
   }
 }

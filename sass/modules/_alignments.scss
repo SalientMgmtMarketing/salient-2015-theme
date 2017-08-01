@@ -15,21 +15,17 @@
 }
 
 #main {
-	
-	
 	.one-wide {
 		@include one-column;
 	}
-	
 	.two-wide {
 		@include one-half;
 	}
-	
 	.three-wide {
-		@include one-quarter;
+		@include one-third;
 	}
 	.four-wide {
-		@include one-third;
+		@include one-quarter;
 	}
 	.two-thirds {
 		@include two-thirds-nom;

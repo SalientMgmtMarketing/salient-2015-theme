@@ -25,10 +25,10 @@ section.row {
   }
   &.dark-text {
     color: $base-color-dark;
-    
+
     a {
       color: $base-color-dark;
-      
+
       &.button, &.btn {
         color: $base-color-light;
       }
@@ -50,12 +50,12 @@ section.row {
     text-transform: uppercase;
     text-align: left;
     position: relative;
-    
+
     &.centered {
       text-align: center;
     }
   }
-  
+
   @include media(min-width $second-breakpoint-value) {
     #content &.hasLeftImage .sub-section1 {
       padding-left: 4em;
@@ -86,7 +86,7 @@ section.row {
   .flickity-prev-next-button svg {
     position: absolute;
   }
-  .flickity-slider img {
+  .flickity-slider .gallery-cell img {
     float: none !important;
     max-width: none !important;
     height: 100% !important;
@@ -263,7 +263,7 @@ section.row:nth-child(even) {
   background-color: $light-blue;
   a.btn, a.button {
     background: $blue;
-      
+
     &:hover {
       background: shade($light-blue,20);
     }
