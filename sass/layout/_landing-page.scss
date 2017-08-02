@@ -10,7 +10,7 @@
     &.entry-header {
       text-align: left;
       background: none;
-      padding: 135px 0 14px;
+      padding: 45px 0 14px;
       &:before {
         background-image: none;
       }
@@ -108,6 +108,7 @@
   input:not([type=submit]) {
     color: $base-font-color;
   }
+  /*
   h1,
   h2,
   h3,
@@ -115,6 +116,7 @@
   h5 {
     margin-top: 1em;
   }
+  */
   h3 {
     font-size: 1.25em;
   }
