@@ -15,17 +15,17 @@
         position: relative;
         float: left;
       }
-      
+
       @include media(min-width $nav-breakpoint-value) {
         float: left;
       }
-      
+
       ul {
         left: -999em;
         top: 0;
       }
 
-      li { 
+      li {
         @include media(min-width $nav-breakpoint-value) {
           &:hover > ul {
             left: 100%;
@@ -76,7 +76,7 @@
       width: 100%;
       clear: both;
       font-weight: 700;
-      a { 
+      a {
         padding: 1em 4em 1em 1em;
       }
       li {
@@ -143,15 +143,15 @@ button.dropdown-toggle {
   @include media(min-width $nav-breakpoint-value) {
     display: none;
   }
-  
+
    &:before {
     content:'+';
     width: 1em;
     display: block;
     font-size: 1.5em;
-    
+
     @include media(min-width $nav-breakpoint-value) {
-      content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17.1" height="9.2" viewBox="0 0 17.1 9.2"><path class="st0" d="M8.5 9.2L0 0h17.1"/></svg>'); 
+      content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17.1" height="9.2" viewBox="0 0 17.1 9.2"><path class="st0" d="M8.5 9.2L0 0h17.1"/></svg>');
     }
   }
   &.toggle-on:before {
@@ -172,7 +172,7 @@ button.dropdown-toggle {
   #site-navigation .nav-menu {
     display: block;
   }
-  
+
   #site-naviatigon > div ul {
     overflow: hidden;
   }
@@ -193,7 +193,7 @@ button.dropdown-toggle {
     cursor: pointer;
     padding: 16px 34px 21px 10px;
     background: none;
-    border:none;    
+    border:none;
   }
   .menu-toggle span,
   .menu-toggle span:before,
@@ -290,7 +290,7 @@ button.dropdown-toggle {
     }
     ul {
       float: right;
-      margin-top: .5em;
+      margin-top: .35em;
       li {
           float: left;
       }
@@ -304,6 +304,28 @@ button.dropdown-toggle {
         background: darken($base-accent-color, 20);
       }
     }
+    #menu-secondary {
+      .sub-menu {
+        display: none;
+        position: absolute;
+        width: 150px;
+        top: 33px;
+        li > a {
+          display: block;
+          width: 150px;
+          background: $base-color-dark;
+          &:hover {
+            background: $base-accent-color;
+          }
+        }
+      }
+      & > li:last-child .sub-menu {
+        right: 0;
+      }
+      & > li:hover > .sub-menu {
+        display: block;
+      }
+    }
   }
 }
 @include media(max-width $nav-breakpoint-value) {
@@ -315,7 +337,7 @@ button.dropdown-toggle {
       display: block;
     }
     .menu-wrap {
-      padding: 1em 0; 
+      padding: 1em 0;
     }
     &.collapsing a {
       opacity: 0;
@@ -331,18 +353,18 @@ button.dropdown-toggle {
 .inline-navigation-container {
   position: relative;
   z-index: 10;
-  
+
   .menu-wrap {
     width: auto;
     margin: 0 auto;
     text-align: center;
   }
-  
+
   li {
     list-style: none;
     display: block;
     margin: 1em 0;
-    
+
     @include media(max-width em(600px)) {
       a {
         padding: 1em .5em;
@@ -350,11 +372,11 @@ button.dropdown-toggle {
         text-decoration: none;
       }
     }
-    
+
     @include media(min-width em(600px)) {
       display: inline-block;
       margin: 0;
-      
+
       a {
         margin: 0 0 1em .5em;
       }

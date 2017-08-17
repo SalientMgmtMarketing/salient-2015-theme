@@ -104,14 +104,33 @@ section.row {
     }
   }
   a {
-    color: $white;
-    text-decoration: underline;
-    &:hover {
-      text-decoration: underline;
-      color: darken($white, 3);
-    }
+    color: $base-color-light;
+    text-decoration: none;
+
     &.button, &.btn  {
       text-decoration: none;
+    }
+  }
+  p a {
+    position: relative;
+    &:not(.btn):after, &:not(.button):after {
+      content: '';
+      position: absolute;
+      bottom: 7%;
+      background: rgba(255, 255, 255, 0.45);
+      height: 1px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      transition: 250ms;
+      z-index: -1;
+    }
+    &:not(.btn):not(.button):hover {
+      color: $base-color-dark;
+      &:after {
+        height: 100%;
+        background: rgba(255, 255, 255, 0.71);
+      }
     }
   }
   .inline-navigation-container a {
