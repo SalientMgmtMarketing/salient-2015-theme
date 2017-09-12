@@ -226,7 +226,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-  $theme_version = '1.3.6';
+  $theme_version = '1.3.7';
 
   wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri() ,'' , $theme_version);
   wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
