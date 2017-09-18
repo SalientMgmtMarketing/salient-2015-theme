@@ -31,6 +31,10 @@ function salient_2015_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	if ( has_nav_menu('secondary') ) {
+		$classes[] = 'has-secondary-nav';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'salient_2015_body_classes' );
