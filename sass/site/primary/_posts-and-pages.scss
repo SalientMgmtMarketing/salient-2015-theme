@@ -58,6 +58,9 @@ Section Rows
   @include media(min-width $second-breakpoint-value) {
     padding: 2em 0;
   }
+  &.logo-scroller {
+    padding: 0; 
+  }
   &[class*="section-"] .wrap {}
 }
 
