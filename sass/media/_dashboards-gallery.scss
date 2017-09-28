@@ -12,24 +12,23 @@
 }
 
 .dashboard > div img {
-  display: flex;
-  width: 200px;
+  width: 100%;
+  height: auto;
   transition: 0.1s transform;
   transform: translateZ(0);
   /* hack */
 }
 
-.dashboard > div:hover {
-  z-index: 1;
+.carousel.dashboard.cf {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  padding: 0;
 }
 
-.dashboard > div:hover img {
-  transform: scale(1.25);
-  transition: 0.3s transform;
-}
-
-.cf {
-  padding: 150px;
+.cf div.carousel-cell {
+  width: 300px;
+  margin-right: 3em;
 }
 
 .flickity-viewport {
@@ -40,6 +39,6 @@
 }
 
 .dashboard.cf {
-  width: 110%;
-  height: 450px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }

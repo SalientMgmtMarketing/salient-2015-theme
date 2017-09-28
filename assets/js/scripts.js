@@ -3160,6 +3160,13 @@ if (typeof jQuery === 'undefined') {
       imagesLoaded: true,
       pageDots: false
     });
+    jQuery('.db-gallery .carousel').flickity({
+      // options
+      imagesLoaded: true,
+      pageDots: false,
+      groupCells: true,
+      wrapAround: true
+    });
 
     jQuery(".testimonials .slides").flickity({
       autoPlay: 10000,
