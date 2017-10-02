@@ -2,7 +2,7 @@
 /**
  * Salient 2015 functions and definitions
  *
- * @package Salient 2015
+ * @package Salient
  */
 
 /**
@@ -304,8 +304,8 @@ function add_button() {
 
 // Registers the button shortcode button
 function register_button($buttons) {
-	array_push($buttons, "buttonlink");
-	return $buttons;
+    array_push($buttons, "buttonlink");
+    return $buttons;
 }
 function add_plugin($plugin_array) {
   $plugin_array['buttonlink'] = get_bloginfo('template_url').'/assets/js/tinymce.js';

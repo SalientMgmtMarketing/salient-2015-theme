@@ -4,17 +4,17 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package Salient 2015
+ * @package Salient
  */
 ?>
 
-	</div><!-- #content -->
+    </div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+    <footer id="colophon" class="site-footer" role="contentinfo">
       <div class="site-info wrap">
-		<?php get_sidebar( 'footer' ); ?>
+        <?php get_sidebar( 'footer' ); ?>
       </div>
-	</footer>
+    </footer>
 
 <?php wp_footer(); ?>
 <script>

@@ -4,11 +4,21 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package Salient 2015
+ * PHP Version 5
+ *
+ * @category Custom
+ *
+ * @package Salient
+ *
+ * @author Paul Stonier <pstonier@salient.com>
+ *
+ * @license All Rights Reserved https://en.wikipedia.org/wiki/All_rights_reserved
+ *
+ * @link https://pstonier@source.salient.com/scm/mwp/salient-brand.git
  */
 ?>
 
-	</div><!-- #content -->
+    </div><!-- #content -->
 
 
 <?php wp_footer(); ?>
