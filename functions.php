@@ -8,11 +8,11 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) ) {
+if (! isset($content_width)) {
   $content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'salient_2015_setup' ) ) :
+if (! function_exists( 'salient_2015_setup')) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -28,17 +28,17 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
      * If you're building a theme based on Salient 2015, use a find and replace
      * to change 'salient-2015' to the name of your theme in all the template files
      */
-    load_theme_textdomain( 'salient-2015', get_template_directory() . '/languages' );
+    load_theme_textdomain('salient-2015', get_template_directory() . '/languages');
 
     // Add default posts and comments RSS feed links to head.
-    add_theme_support( 'automatic-feed-links' );
+    add_theme_support('automatic-feed-links');
 
     /*
      * Enable support for Post Thumbnails on posts and pages.
      *
      * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
      */
-    add_theme_support( 'post-thumbnails' );
+    add_theme_support('post-thumbnails');
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
@@ -226,7 +226,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-  $theme_version = '1.4.1';
+  $theme_version = '1.4.2';
 
   wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri() ,'' , $theme_version);
   wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
