@@ -2,104 +2,128 @@
 /**
  * Salient 2015 functions and definitions
  *
+ * PHP Version 5
+ *
+ * @category Custom
+ *
  * @package Salient
+ *
+ * @author Paul Stonier <pstonier@salient.com>
+ *
+ * @license All Rights Reserved https://en.wikipedia.org/wiki/All_rights_reserved
+ *
+ * @link https://pstonier@source.salient.com/scm/mwp/salient-brand.git
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
+ /**
+  * Set the content width based on the theme's design and stylesheet.
+  */
 if (! isset($content_width)) {
-  $content_width = 640; /* pixels */
+    $content_width = 640; /* pixels */
 }
 
-if (! function_exists( 'salient_2015_setup')) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-  function salient_2015_setup() {
-
-    /*
-     * Make theme available for translation.
-     * Translations can be filed in the /languages/ directory.
-     * If you're building a theme based on Salient 2015, use a find and replace
-     * to change 'salient-2015' to the name of your theme in all the template files
-     */
-    load_theme_textdomain('salient-2015', get_template_directory() . '/languages');
-
-    // Add default posts and comments RSS feed links to head.
-    add_theme_support('automatic-feed-links');
-
-    /*
-     * Enable support for Post Thumbnails on posts and pages.
-     *
-     * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-     */
-    add_theme_support('post-thumbnails');
-
-    // This theme uses wp_nav_menu() in one location.
-    register_nav_menus( array(
-      'primary' => __( 'Primary Menu', 'salient-2015' ),
-      'secondary' => __( 'Secondary Menu', 'salient-2015' ),
-    ) );
-
-    /*
-     * Switch default core markup for search form, comment form, and comments
-     * to output valid HTML5.
-     */
-    add_theme_support( 'html5', array(
-      'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-    ) );
-
-    /*
-     * Enable support for Post Formats.
-     * See http://codex.wordpress.org/Post_Formats
-     */
-    add_theme_support( 'post-formats', array(
-      'aside', 'image', 'video', 'quote', 'link',
-    ) );
-    add_action( 'init', 'cd_add_editor_styles' );
+if (! function_exists('Salient_2015_setup')) :
     /**
-     * Apply theme's stylesheet to the visual editor.
+     * Sets up theme defaults and registers support for various WordPress features.
      *
-     * @uses add_editor_style() Links a stylesheet to visual editor
-     * @uses get_stylesheet_uri() Returns URI of theme stylesheet
+     * Note that this function is hooked into the after_setup_theme hook, which
+     * runs before the init hook. The init hook is too late for some features, such
+     * as indicating support for post thumbnails.
      */
-    function cd_add_editor_styles() {
-      add_editor_style( get_stylesheet_uri() );
+    function Salient_2015_setup()
+    {
+
+        /*
+        * Make theme available for translation.
+        * Translations can be filed in the /languages/ directory.
+        * If you're building a theme based on Salient 2015, use a find and replace
+        * to change 'salient-2015' to the name of your theme in all the template files
+        */
+        load_theme_textdomain('salient-2015', get_template_directory() . '/languages');
+
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support('automatic-feed-links');
+
+        /*
+        * Enable support for Post Thumbnails on posts and pages.
+        *
+        * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+        */
+        add_theme_support('post-thumbnails');
+
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus(
+            array(
+              'primary' => __('Primary Menu', 'salient-2015'),
+              'secondary' => __('Secondary Menu', 'salient-2015'),
+            )
+        );
+
+        /*
+        * Switch default core markup for search form, comment form, and comments
+        * to output valid HTML5.
+        */
+        add_theme_support(
+            'html5', array(
+                'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+            )
+        );
+
+        /*
+        * Enable support for Post Formats.
+        * See http://codex.wordpress.org/Post_Formats
+        */
+        add_theme_support(
+            'post-formats', array(
+                'aside', 'image', 'video', 'quote', 'link',
+            )
+        );
+        add_action('init', 'Cd_Add_Editor_styles');
+        /**
+         * Apply theme's stylesheet to the visual editor.
+         *
+         * @uses add_editor_style() Links a stylesheet to visual editor
+         * @uses get_stylesheet_uri() Returns URI of theme stylesheet
+         */
+        function Cd_Add_Editor_styles()
+        {
+            add_editor_style(get_stylesheet_uri());
+        }
+        // Set up the WordPress core custom background feature.
+        add_theme_support(
+            'custom-background', apply_filters(
+                'salient_2015_custom_background_args', array(
+                    'default-color' => 'ffffff',
+                    'default-image' => '',
+                )
+            )
+        );
+
+        // Custom Image Sizes
+        add_image_size('cards-5x2', 624, 250, true);
+        add_image_size('cards-4x3', 420, 250, true);
+        add_image_size('portraits', 200, 300, true);
+        add_image_size('blog_feed', 527, 210, true, array('center', 'top')); // Hard crop left top
+        add_image_size('side_image', 900, 600, true, true); // Hard crop left top
+        add_image_size('header', 1400, 500, true, array('center', 'top')); // Hard crop left top
+
     }
-    // Set up the WordPress core custom background feature.
-    add_theme_support( 'custom-background', apply_filters( 'salient_2015_custom_background_args', array(
-      'default-color' => 'ffffff',
-      'default-image' => '',
-    ) ) );
-
-    // Custom Image Sizes
-    add_image_size( 'cards-5x2', 624, 250, true );
-    add_image_size( 'cards-4x3', 420, 250, true );
-    add_image_size( 'portraits', 200, 300, true );
-    add_image_size( 'blog_feed', 527, 210, true, array( 'center', 'top' ) ); // Hard crop left top
-    add_image_size( 'side_image', 900, 600, true, true ); // Hard crop left top
-    add_image_size( 'header', 1400, 500, true, array( 'center', 'top' ) ); // Hard crop left top
-
-  }
-endif; // salient_2015_setup
-add_action( 'after_setup_theme', 'salient_2015_setup' );
+endif;  // Salient_2015_setup
+add_action('after_setup_theme', 'Salient_2015_setup');
 
 
 /**
  * Filter the except length to 20 characters.
  *
  * @param int $length Excerpt length.
+ *
  * @return int (Maybe) modified excerpt length.
  */
-function wpdocs_custom_excerpt_length( $length ) {
-  return 20;
+function WP_Custom_Excerpt_length($length)
+{
+    return 20;
 }
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'WP_Custom_Excerpt_length', 999);
 
 
 /**
@@ -107,145 +131,168 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function salient_2015_widgets_init() {
-  // Area 1, located at the top of the sidebar.
-  register_sidebar( array(
-    'name' => __( 'Primary Widget Area', 'salient-2015' ),
-    'id' => 'primary-widget-area',
-    'description' => __( 'The primary widget area', 'salient-2015' ),
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+function Salient_2015_Widgets_init()
+{
+    // Area 1, located at the top of the sidebar.
+    register_sidebar(
+        array(
+          'name' => __('Primary Widget Area', 'salient-2015'),
+          'id' => 'primary-widget-area',
+          'description' => __('The primary widget area', 'salient-2015'),
+          'before_widget' => '',
+          'after_widget' => '',
+          'before_title' => '<h3 class="widget-title">',
+          'after_title' => '</h3>',
+        )
+    );
 
-  // Area 2A, located at the top of the sidebar.
-  register_sidebar( array(
-    'name' => __( 'Solutions Sidebar', 'salient-2015' ),
-    'id' => 'solutions',
-    'description' => __( 'Solutions widget area', 'salient-2015' ),
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+    // Area 2A, located at the top of the sidebar.
+    register_sidebar(
+        array(
+          'name' => __('Solutions Sidebar', 'salient-2015'),
+          'id' => 'solutions',
+          'description' => __('Solutions widget area', 'salient-2015'),
+          'before_widget' => '',
+          'after_widget' => '',
+          'before_title' => '<h3 class="widget-title">',
+          'after_title' => '</h3>',
+        )
+    );
 
-  // Area 2B, located at the top of the sidebar.
-  register_sidebar( array(
-    'name' => __( 'Services Sidebar', 'salient-2015' ),
-    'id' => 'services',
-    'description' => __( 'Services widget area', 'salient-2015' ),
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+    // Area 2B, located at the top of the sidebar.
+    register_sidebar(
+        array(
+            'name' => __('Services Sidebar', 'salient-2015'),
+            'id' => 'services',
+            'description' => __('Services widget area', 'salient-2015'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        )
+    );
 
-  // Area 2C, located at the top of the sidebar.
-  register_sidebar( array(
-    'name' => __( 'Technology Sidebar', 'salient-2015' ),
-    'id' => 'technology',
-    'description' => __( 'Technology widget area', 'salient-2015' ),
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+    // Area 2C, located at the top of the sidebar.
+    register_sidebar(
+        array(
+          'name' => __('Technology Sidebar', 'salient-2015'),
+          'id' => 'technology',
+          'description' => __('Technology widget area', 'salient-2015'),
+          'before_widget' => '',
+          'after_widget' => '',
+          'before_title' => '<h3 class="widget-title">',
+          'after_title' => '</h3>',
+        )
+    );
 
-  // Area 2D, located at the top of the sidebar.
-  register_sidebar( array(
-    'name' => __( 'About Sidebar', 'salient-2015' ),
-    'id' => 'about',
-    'description' => __( 'About widget area', 'salient-2015' ),
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+    // Area 2D, located at the top of the sidebar.
+    register_sidebar(
+        array(
+            'name' => __('About Sidebar', 'salient-2015'),
+            'id' => 'about',
+            'description' => __('About widget area', 'salient-2015'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        )
+    );
 
-  // Area 2E, located at the top of the sidebar.
-  register_sidebar( array(
-    'name' => __( 'Blog Sidebar', 'salient-2015' ),
-    'id' => 'blog',
-    'description' => __( 'Blog widget area', 'salient-2015' ),
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+    // Area 2E, located at the top of the sidebar.
+    register_sidebar(
+        array(
+            'name' => __('Blog Sidebar', 'salient-2015'),
+            'id' => 'blog',
+            'description' => __('Blog widget area', 'salient-2015'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        )
+    );
 
-  // Area 3, located in the footer. Empty by default.
-  register_sidebar( array(
-    'name' => __( 'First Footer Widget Area', 'salient-2015' ),
-    'id' => 'first-footer-widget-area',
-    'description' => __( 'The first footer widget area', 'salient-2015' ),
-    'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+    // Area 3, located in the footer. Empty by default.
+    register_sidebar(
+        array(
+            'name' => __('First Footer Widget Area', 'salient-2015'),
+            'id' => 'first-footer-widget-area',
+            'description' => __('The first footer widget area', 'salient-2015'),
+            'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        )
+    );
 
-  // Area 4, located in the footer. Empty by default.
-  register_sidebar( array(
-    'name' => __( 'Second Footer Widget Area', 'salient-2015' ),
-    'id' => 'second-footer-widget-area',
-    'description' => __( 'The second footer widget area', 'salient-2015' ),
-    'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+    // Area 4, located in the footer. Empty by default.
+    register_sidebar(
+        array(
+            'name' => __('Second Footer Widget Area', 'salient-2015'),
+            'id' => 'second-footer-widget-area',
+            'description' => __('The second footer widget area', 'salient-2015'),
+            'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        )
+    );
 
-  // Area 5, located in the footer. Empty by default.
-  register_sidebar( array(
-    'name' => __( 'Third Footer Widget Area', 'salient-2015' ),
-    'id' => 'third-footer-widget-area',
-    'description' => __( 'The third footer widget area', 'salient-2015' ),
-    'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+    // Area 5, located in the footer. Empty by default.
+    register_sidebar(
+        array(
+            'name' => __('Third Footer Widget Area', 'salient-2015'),
+            'id' => 'third-footer-widget-area',
+            'description' => __('The third footer widget area', 'salient-2015'),
+            'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        )
+    );
 
-  // Area 6, located in the footer. Empty by default.
-  register_sidebar( array(
-    'name' => __( 'Fourth Footer Widget Area', 'salient-2015' ),
-    'id' => 'fourth-footer-widget-area',
-    'description' => __( 'The fourth footer widget area', 'salient-2015' ),
-    'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
-  ) );
+    // Area 6, located in the footer. Empty by default.
+    register_sidebar(
+        array(
+            'name' => __('Fourth Footer Widget Area', 'salient-2015'),
+            'id' => 'fourth-footer-widget-area',
+            'description' => __('The fourth footer widget area', 'salient-2015'),
+            'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        )
+    );
 }
-add_action( 'widgets_init', 'salient_2015_widgets_init' );
+add_action('widgets_init', 'Salient_2015_Widgets_init');
 
 
 /**
  * Enqueue scripts and styles.
  */
-function salient_2015_scripts() {
+function Salient_2015_scripts()
+{
+    $theme_version = '1.4.2';
 
-  $theme_version = '1.4.2';
+    wp_enqueue_style('salient-2015-style', get_stylesheet_uri(), '', $theme_version);
+    wp_enqueue_style('salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css');
+    wp_enqueue_script('jquery');
 
-  wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri() ,'' , $theme_version);
-  wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
-  wp_enqueue_script( 'jquery' );
+    wp_enqueue_script('salient-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true);
+    wp_enqueue_script('salient-2015-custom', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), $theme_version, true);
+    wp_enqueue_script('salient-2015-custom-footer', get_template_directory_uri() . '/assets/js/scripts-footer.js', array('jquery'), $theme_version, true);
 
-  wp_enqueue_script( 'salient-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-  wp_enqueue_script( 'salient-2015-custom', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), $theme_version, true );
-  wp_enqueue_script( 'salient-2015-custom-footer', get_template_directory_uri() . '/assets/js/scripts-footer.js', array('jquery'), $theme_version, true );
-
-  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-    wp_enqueue_script( 'comment-reply' );
-  }
-  wp_localize_script( 'salient-2015-custom', 'screenReaderText', array(
-    'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'salient-2015' ) . '</span>',
-    'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'salient-2015' ) . '</span>',
-  ) );
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
+    wp_localize_script(
+        'salient-2015-custom', 'screenReaderText', array(
+            'expand'   => '<span class="screen-reader-text">' . __('expand child menu', 'salient-2015') . '</span>',
+            'collapse' => '<span class="screen-reader-text">' . __('collapse child menu', 'salient-2015') . '</span>',
+        )
+    );
 
 }
-add_action( 'wp_enqueue_scripts', 'salient_2015_scripts' );
+add_action('wp_enqueue_scripts', 'Salient_2015_scripts');
 
 /**
  * Implement the Custom Header feature.
@@ -275,35 +322,45 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 
-// Add Shortcode
-function buttonSC( $atts , $content = null ) {
+/**
+ * Add Shortcode
+ */
+function buttonSC($atts , $content = null)
+{
 
-  // Attributes
-  extract( shortcode_atts(
-    array(
-      'color' => 'lt-blue',
-      'href' => '#'
-    ), $atts )
-  );
-  return '<a href="'.$href.'" class="button '.$color.'">'.$content.'</a>';
+    // Attributes
+    extract(
+        shortcode_atts(
+            array(
+              'color' => 'lt-blue',
+              'href' => '#'
+            ), $atts
+        )
+    );
+    return '<a href="'.$href.'" class="button '.$color.'">'.$content.'</a>';
 }
-add_shortcode( 'button', 'buttonSC' );
+add_shortcode('button', 'buttonSC');
 
 
 
 // Hooks button shortcode into TinyMCE
-add_action('init', 'add_button');
+add_action('init', 'Add_button');
 
-// Checks if user has appropriate rights
-function add_button() {
- if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') ) {
-   add_filter('mce_external_plugins', 'add_plugin');
-   add_filter('mce_buttons', 'register_button');
- }
+/**
+ * Checks if user has appropriate rights
+ */
+function Add_button()
+{
+    if (current_user_can('edit_posts') &&  current_user_can('edit_pages')) {
+        add_filter('mce_external_plugins', 'add_plugin');
+        add_filter('mce_buttons', 'Register_button');
+    }
 }
 
-// Registers the button shortcode button
-function register_button($buttons) {
+/**
+ * Registers the button shortcode button
+ */
+function Register_button($buttons) {
     array_push($buttons, "buttonlink");
     return $buttons;
 }
@@ -325,15 +382,15 @@ function acf_custom_admin_styles() {
 
 
 // Add Shortcodes to display an arrow on the page as SVG
-function arrow_shortcode( $atts ) {
+function arrow_shortcode($atts) {
 
   // Attributes
   $atts = shortcode_atts(
     array(
       'direction' => 'right',
-    ),
+   ),
     $atts
-  );
+ );
 
   return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="arrow-' . $atts['direction'] .'">
     <title>arrow</title>
@@ -344,7 +401,7 @@ function arrow_shortcode( $atts ) {
     </g>
     </svg>';
 }
-add_shortcode( 'arrow', 'arrow_shortcode' );
+add_shortcode('arrow', 'arrow_shortcode');
 
 
 // Is page a parent, child or any ancestor of the page. Returns boolean.
@@ -369,23 +426,23 @@ function is_tree($pid) {
 // Moves YouTube embed scripts from the footer to the head.
 if (function_exists('youtube_embed_add_to_head')) {
   function remove_head_scripts() {
-    remove_action( 'wp_head', 'youtube_embed_add_to_head' );
-    add_action( 'wp_footer', 'youtube_embed_add_to_head' );
+    remove_action('wp_head', 'youtube_embed_add_to_head');
+    add_action('wp_footer', 'youtube_embed_add_to_head');
   }
-  add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
+  add_action('wp_enqueue_scripts', 'remove_head_scripts');
 }
 
 // Loads the side image as the background image
 function sideImageAsBackgroundLeft() {
-  echo 'style="background-image:url(\'' . wp_get_attachment_image_url( get_sub_field('left_side_image')['id'], 'side_image' ) . '\')"';
+  echo 'style="background-image:url(\'' . wp_get_attachment_image_url(get_sub_field('left_side_image')['id'], 'side_image') . '\')"';
 }
 function sideImageAsBackgroundRight() {
-  echo 'style="background-image:url(\'' . wp_get_attachment_image_url( get_sub_field('right_side_image')['id'], 'side_image' ) . '\')"';
+  echo 'style="background-image:url(\'' . wp_get_attachment_image_url(get_sub_field('right_side_image')['id'], 'side_image') . '\')"';
 }
 
 // Header Image Color Overloay
 function headerColorOverlay() {
-  if ( get_field('color_overlay') ) {
+  if (get_field('color_overlay')) {
     echo ' has-overlay ' . get_field('color_overlay_color');
   }
 }
@@ -474,7 +531,7 @@ function ch_hextostr_email($x, $field) {
 // adds anchor to the form submission
 add_filter("gform_confirmation_anchor", create_function("","return true;"));
 
-add_filter( 'gform_akismet_enabled_2', '__return_false' );
+add_filter('gform_akismet_enabled_2', '__return_false');
 
 
 
@@ -494,13 +551,13 @@ class GW_Email_Domain_Validator {
 
   function __construct($args) {
 
-    $this->_args = wp_parse_args( $args, array(
+    $this->_args = wp_parse_args($args, array(
       'form_id' => false,
       'field_id' => false,
       'domains' => false,
-      'validation_message' => __( 'Sorry, <strong>%s</strong> email accounts are not eligible for this form.' ),
+      'validation_message' => __('Sorry, <strong>%s</strong> email accounts are not eligible for this form.'),
       'mode' => 'ban' // also accepts "limit"
-    ) );
+   ));
 
     // convert field ID to an array for consistency, it can be passed as an array or a single ID
     if($this->_args['field_id'] && !is_array($this->_args['field_id']))
@@ -526,12 +583,12 @@ class GW_Email_Domain_Validator {
       if($this->_args['field_id'] && !in_array($field['id'], $this->_args['field_id']))
           continue;
 
-      $page_number = GFFormDisplay::get_source_page( $form['id'] );
-      if( $page_number > 0 && $field->pageNumber != $page_number ) {
+      $page_number = GFFormDisplay::get_source_page($form['id']);
+      if($page_number > 0 && $field->pageNumber != $page_number) {
           continue;
       }
 
-      if( GFFormsModel::is_field_hidden( $form, $field, array() ) ) {
+      if(GFFormsModel::is_field_hidden($form, $field, array())) {
           continue;
       }
 
@@ -551,27 +608,27 @@ class GW_Email_Domain_Validator {
     return $validation_result;
   }
 
-  function get_email_domain( $field ) {
-    $email = explode( '@', rgpost( "input_{$field['id']}" ) );
-    return trim( rgar( $email, 1 ) );
+  function get_email_domain($field) {
+    $email = explode('@', rgpost("input_{$field['id']}"));
+    return trim(rgar($email, 1));
   }
 
-  function is_domain_valid( $domain ) {
+  function is_domain_valid($domain) {
 
     $mode   = $this->_args['mode'];
-    $domain = strtolower( $domain );
+    $domain = strtolower($domain);
 
-    foreach( $this->_args['domains'] as $_domain ) {
+    foreach($this->_args['domains'] as $_domain) {
 
-      $_domain = strtolower( $_domain );
+      $_domain = strtolower($_domain);
 
       $full_match   = $domain == $_domain;
-      $suffix_match = strpos( $_domain, '.' ) === 0 && $this->str_ends_with( $domain, $_domain );
+      $suffix_match = strpos($_domain, '.') === 0 && $this->str_ends_with($domain, $_domain);
       $has_match    = $full_match || $suffix_match;
 
-      if( $mode == 'ban' && $has_match ) {
+      if($mode == 'ban' && $has_match) {
           return false;
-      } else if( $mode == 'limit' && $has_match ) {
+      } else if($mode == 'limit' && $has_match) {
           return true;
       }
 
@@ -580,16 +637,16 @@ class GW_Email_Domain_Validator {
     return $mode == 'limit' ? false : true;
   }
 
-  function str_ends_with( $string, $text ) {
+  function str_ends_with($string, $text) {
 
-    $length      = strlen( $string );
-    $text_length = strlen( $text );
+    $length      = strlen($string);
+    $text_length = strlen($text);
 
-    if( $text_length > $length ) {
+    if($text_length > $length) {
       return false;
     }
 
-    return substr_compare( $string, $text, $length - $text_length, $text_length ) === 0;
+    return substr_compare($string, $text, $length - $text_length, $text_length) === 0;
   }
 
 }
@@ -597,8 +654,8 @@ class GW_Email_Domain_Validator {
 class GWEmailDomainControl extends GW_Email_Domain_Validator { }
 
 # Configuration
-new GW_Email_Domain_Validator( array(
-    'domains' => array( 'gmail.com', 'hotmail.com', 'yahoo.com', 'aol.com' ),
-    'validation_message' => __( 'Please use a valid work email address' ),
+new GW_Email_Domain_Validator(array(
+    'domains' => array('gmail.com', 'hotmail.com', 'yahoo.com', 'aol.com'),
+    'validation_message' => __('Please use a valid work email address'),
     'mode' => 'ban'
-) );
+));
