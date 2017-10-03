@@ -2,33 +2,47 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Salient 2015
+ * PHP Version 5
+ *
+ * @category Custom
+ *
+ * @package Salient
+ *
+ * @author Paul Stonier <pstonier@salient.com>
+ *
+ * @license All Rights Reserved https://en.wikipedia.org/wiki/All_rights_reserved
+ *
+ * @link https://pstonier@source.salient.com/scm/mwp/salient-brand.git
  */
 ?>
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <section class="landing-page-hero" style="<?php if ( has_post_thumbnail())  {  
-			echo " background-image:url( '"; 
-			$thumb_id = get_post_thumbnail_id();
-			$thumb_url = wp_get_attachment_image_src($thumb_id,'full ', true);
-			echo $thumb_url[0]; 
-			echo "') ";}
-		?>">
+    <section class="landing-page-hero" style="<?php
+    if (has_post_thumbnail()) {
+        echo " background-image:url( '";
+        $thumb_id = get_post_thumbnail_id();
+        $thumb_url = wp_get_attachment_image_src($thumb_id, 'full ', true);
+        echo $thumb_url[0];
+        echo "') ";
+    }
+        ?>">
       <div class="wrap">
         <header class="entry-header has-sub-headline">
           <h2 class="sub-headline">Webinar</h2>
-          <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
         </header>
         <!-- .entry-header -->
 
         <div class="entry-content">
-          <?php the_content(); ?>
+            <?php the_content(); ?>
             <?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'salient-2015' ),
-					'after'  => '</div>',
-				) );
-			?>
+                  wp_link_pages(
+                      array(
+                        'before' => '<div class="page-links">' . __('Pages:', 'salient-2015'),
+                        'after'  => '</div>',
+                      )
+                  );
+            ?>
         </div>
         <!-- .entry-content -->
       </div>
@@ -39,38 +53,51 @@
 
 
 
-      <?php if( have_rows('sections-flex') ): ?>
+        <?php if(have_rows('sections-flex')) : ?>
 
         <?php while( have_rows('sections-flex') ): the_row(); ?>
-        
-        <?php 
 
-          //CONTENT-BLOCK LAYOUT
-          if(  get_row_layout() == 'content-blocks'): ?>
-    
-            <section <?php if( get_sub_field( 'section_id') ) { ?> id="
-              <?php the_sub_field('section_id'); ?>"
-              <?php } ?> class="row
+        <?php
 
-              <?php   
+        //CONTENT-BLOCK LAYOUT
+        if (get_row_layout() == 'content-blocks') : ?>
+
+            <section <?php
+            if (get_sub_field('section_id')) {
+                ?> id="<?php the_sub_field('section_id'); ?>" <?php
+            } ?> class="row
+
+                <?php
 
                 //adds the class for the selection type
                 $value = get_sub_field('columns');
                 echo "cols-" . $value;
 
                 //adds class for background-attachment:fixed
-                if( get_sub_field('fixed') ) { echo " fixed"; }
+                if (get_sub_field('fixed')) {
+                    echo " fixed";
+                }
 
                 //adds class for box
-                if( get_sub_field('boxed_content')) { echo " boxed"; }
+                if (get_sub_field('boxed_content')) {
+                    echo " boxed";
+                }
 
                 //adds class for column layout
-                if( get_sub_field( '2_column_layout' )) { echo " "; the_sub_field('2_column_layout'); }
-                if( get_sub_field( '3_column_layout' )) { echo " "; the_sub_field('3_column_layout'); }
+                if (get_sub_field('2_column_layout')) {
+                    echo " "; the_sub_field('2_column_layout');
+                }
+                if (get_sub_field('3_column_layout')) {
+                    echo " "; the_sub_field('3_column_layout');
+                } ?>" style="<?php
+                if (get_sub_field('background_image')) { ?>
+                    background-image:url('<?php the_sub_field('background_image'); ?>');
+                <?php
+                }
 
-              ?>" style="<?php if (get_sub_field('background_image')) { ?> background-image:url('<?php the_sub_field('background_image'); ?>'); <?php } ?>
-
-              <?php if (get_sub_field('background_color')) { ?>background-color:<?php the_sub_field('background_color'); } ?>
+                if (get_sub_field('background_color')) {
+                    ?>background-color:<?php the_sub_field('background_color');
+                } ?>
             ">
 
 
@@ -80,7 +107,7 @@
                 <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
               <?php endif; ?>
 
-              <div class="sub-section0<?php 
+              <div class="sub-section0<?php
 
                   //adds class for box
                   $selected = get_sub_field('boxed_content');
@@ -163,18 +190,17 @@
                   <div class="description">
                     <?php the_sub_field('description'); ?>
                   </div>
-                  <!--.description-->  
-                
+                  <!--.description-->
+
                 </div>
                 <!--.wrap-->
 
             </section>
             <!-- #intro -->
-            
-    
+
           <?php endif; ?>
-    
-          <?php 
+
+          <?php
 
            //BLOCKQUOTE LAYOUT
             if(  get_row_layout() == 'blockquote'): ?>
@@ -182,11 +208,11 @@
               <?php the_sub_field('section_id'); ?>"
               <?php } ?> class="row blockquote" style="<?php if (get_sub_field('background_color')) { ?>background-color:<?php the_sub_field('background_color'); } ?>">
                 <div class="wrap above-fixed">
-                  
+
                   <?php if( get_sub_field('title') ): ?>
                     <h2 class="section-title"><?php the_sub_field('title'); ?></h2>
                   <?php endif; ?>
-                  
+
                   <figure class="quote">
                     <blockquote>
                       <?php the_sub_field('quote'); ?>
@@ -198,8 +224,8 @@
 
             </section>
             <!-- #intro -->
-    
-            <?php 
+
+            <?php
 
            //IMAGE LAYOUT
             if(  get_row_layout() == 'image_row'): ?>
@@ -212,21 +238,19 @@
                   <?php if( get_sub_field('title') ): ?>
                     <h2 class="section-title"><?php the_sub_field('title'); ?></h2>
                   <?php endif; ?>
-                    
+
                 </div>
                 <!--.wrap-->
 
             </section>
             <!-- #intro -->
-            
-    
+
           <?php endif; ?>
-            
-    
+
           <?php endif; ?>
-    
+
         <?php endwhile; ?>
-          
+
       <?php endif; ?>
 
 

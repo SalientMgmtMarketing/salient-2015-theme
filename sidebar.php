@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package Salient 2015
+ * @package Salient
  */
 
 // Checks to see if there is any content before even loading the aside tag
@@ -15,7 +15,7 @@ if ( ! is_active_sidebar( 'primary-widget-area' )
   && ! get_field('sidebar_image')
   && ! have_rows('sidebar_cta')
    ) {
-	return;
+    return;
 }
 ?>
 

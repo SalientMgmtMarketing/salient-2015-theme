@@ -8,25 +8,25 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Salient 2015
+ * @package Salient
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
           <header class="hero">
             <div class="wrap">
               
               <h1><?php 
-				if( is_home() && get_option( 'page_for_posts' ) ) {
-				$posts_page = get_post( get_option( 'page_for_posts' ) ); 
-				echo apply_filters( 'the_title', $posts_page->post_title );
-				}
-				else {
-					the_title();
-				}
-				?></h1>
+                if( is_home() && get_option( 'page_for_posts' ) ) {
+                $posts_page = get_post( get_option( 'page_for_posts' ) ); 
+                echo apply_filters( 'the_title', $posts_page->post_title );
+                }
+                else {
+                    the_title();
+                }
+                ?></h1>
             </div>
           </header><!--.hero-->
 
@@ -75,8 +75,8 @@ get_header(); ?>
                 </div><!--.wrap-->
             <?php endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

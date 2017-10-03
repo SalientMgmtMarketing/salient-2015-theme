@@ -2,21 +2,34 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Salient 2015
+ * PHP Version 5
+ *
+ * @category Custom
+ *
+ * @package Salient
+ *
+ * @author Paul Stonier <pstonier@salient.com>
+ *
+ * @license All Rights Reserved https://en.wikipedia.org/wiki/All_rights_reserved
+ *
+ * @link https://pstonier@source.salient.com/scm/mwp/salient-brand.git
  */
 ?>
 
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <section class="landing-page-hero" style="<?php 
-      if (get_field('header_image')) { ?>background-image:url('<?php echo get_field('header_image') ?>');<?php }
-      elseif ( has_post_thumbnail())  {  
-			echo " background-image:url( '"; 
-			$thumb_id = get_post_thumbnail_id();
-			$thumb_url = wp_get_attachment_image_src($thumb_id,'full ', true);
-			echo $thumb_url[0]; 
-			echo "') ";}
-		?>">
+    <section class="landing-page-hero" style="<?php
+    if (get_field('header_image')) {
+        ?>background-image:url('<?php echo get_field('header_image') ?>');<?php
+    }
+    elseif (has_post_thumbnail()) {
+        echo " background-image:url( '";
+        $thumb_id = get_post_thumbnail_id();
+        $thumb_url = wp_get_attachment_image_src($thumb_id,'full ', true);
+        echo $thumb_url[0];
+        echo "') ";
+    }
+        ?>">
       <div class="wrap">
         <header class="entry-header <?php if ( get_field('sub-headline') ) { echo "has-sub-headline"; } ?>">
           <?php if ( get_field('sub-headline') ) { ?><h2 class="sub-headline"><?php the_field('sub-headline'); ?></h2><?php } ?>
@@ -27,11 +40,11 @@
         <div class="entry-content">
           <?php the_content(); ?>
             <?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'salient-2015' ),
-					'after'  => '</div>',
-				) );
-			?>
+                wp_link_pages( array(
+                    'before' => '<div class="page-links">' . __( 'Pages:', 'salient-2015' ),
+                    'after'  => '</div>',
+                ) );
+            ?>
         </div>
         <!-- .entry-content -->
         <?php if ( get_field('form_box')): ?>

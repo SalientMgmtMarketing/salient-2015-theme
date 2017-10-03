@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package Salient 2015
+ * @package Salient
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -23,14 +23,14 @@
 <body <?php body_class(); ?>>
 <?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'salient-2015' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'salient-2015' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="wrap">
-			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			</div><!-- .site-branding -->
-		</div><!--.wrap-->
-	</header><!-- #masthead -->
+    <header id="masthead" class="site-header" role="banner">
+        <div class="wrap">
+            <div class="site-branding">
+                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            </div><!-- .site-branding -->
+        </div><!--.wrap-->
+    </header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+    <div id="content" class="site-content">

@@ -121,7 +121,7 @@ Section Rows
       float: left;
       @include one-half;
       font-size: 1em;
-      border: 1px solid #000;
+      box-shadow: 1px 1px 6px rgba(51, 51, 51, 0.2);
       padding: 2em;
       margin-top: .5em;
       margin-bottom: .5em;
@@ -154,6 +154,12 @@ Single Post
 .single-post {
   .entry-content {
     padding: 2em 0;
+  }
+  .entry-content .text-block {
+    background: white;
+    padding: 2em 3em;
+    color: #000;
+    box-shadow: 1px 1px 6px rgba(51, 51, 51, 0.2);
   }
   .hero {
     background-size: cover;
