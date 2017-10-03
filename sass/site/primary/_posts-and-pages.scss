@@ -58,7 +58,25 @@ Section Rows
   @include media(min-width $second-breakpoint-value) {
     padding: 2em 0;
   }
+  &.logo-scroller {
+    padding: 0;
+  }
   &[class*="section-"] .wrap {}
+}
+
+.logo_footer_MM {
+  max-width: 150px;
+
+  @include media(min-width $first-breakpoint-value) {
+    max-width: 350px;
+  }
+
+  @include media(min-width $second-breakpoint-value) {
+    max-width: 500px;
+  }
+  @include media(min-width $third-breakpoint-value) {
+    max-width: 800px;
+  }
 }
 
 
