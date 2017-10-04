@@ -193,10 +193,12 @@ Single Post
     .featured-image,
     .social-share,
     footer {
-      @include span-columns(8);
-      @include shift(2);
-      @include omega;
-      @include clearfix;
+      @include media(min-width $second-breakpoint-value) {
+        @include span-columns(8);
+        @include shift(2);
+        @include omega;
+        @include clearfix;
+      }
     }
     .image-block {
       display: table;
