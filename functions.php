@@ -239,7 +239,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.4.1';
+	$theme_version = '1.4.2';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri() ,'' , $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
@@ -561,7 +561,7 @@ class GW_Email_Domain_Validator {
 		) );
 
 		// convert field ID to an array for consistency, it can be passed as an array or a single ID.
-		if ( $this->_args['field_id'] && !is_array( $this->_args['field_id'] ) ) {
+		if ( $this->_args['field_id'] && ! is_array( $this->_args['field_id'] ) ) {
 			$this->_args['field_id'] = array( $this->_args['field_id'] );
 		}
 		$form_filter = $this->_args['form_id'] ? "_{$this->_args['form_id']}" : '';
@@ -584,9 +584,9 @@ class GW_Email_Domain_Validator {
 			}
 
 			// if field ID was passed and current field is not in that array, skip
-			if ( $this->_args['field_id'] && !in_array( $field['id'], $this->_args['field_id'], true ) )
+			if ( $this->_args['field_id'] && ! in_array( $field['id'], $this->_args['field_id'], true ) ) {
 				continue;
-
+			}
 			$page_number = GFFormDisplay::get_source_page( $form['id'] );
 			if ( $page_number > 0 && $field->pageNumber !== $page_number ) {
 				continue;
