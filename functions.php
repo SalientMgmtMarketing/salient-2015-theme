@@ -301,7 +301,7 @@ function buttonsc( $atts, $content = null ) {
 			'href' => '#',
 		), $atts
 	);
-	return '<a href="' . $href . '" class="button ' . $color . '">' . $content . '</a>';
+	return '<a href="' . $atts['href'] . '" class="button ' . $atts['color'] . '">' . $content . '</a>';
 }
 add_shortcode( 'button', 'buttonsc' );
 
