@@ -18,19 +18,25 @@ li.comment {
   padding: 1em;
   margin: .5em;
   box-shadow: 0px 0px 8px rgba(51, 51, 51, 0.25882352941176473);
+  overflow: hidden;
+
+  &:first-child {
+    margin: 1em 0;
+  }
 }
 
 .comment-author.vcard img {
   float: left;
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
+  margin-top: .25em;
   margin-right: 1em;
 }
 
 .comment-content {
   float: left;
-  width: calc(100% - 64px - 1em);
-  margin-left: calc(64px + 1em);
+  width: calc(100% - 32px - 1em);
+  margin-left: calc(32px + 1em);
 }
 
 footer.comment-meta {
