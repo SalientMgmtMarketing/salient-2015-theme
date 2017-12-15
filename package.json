@@ -18,20 +18,20 @@
   "license": "ISC",
   "homepage": "https://pstonier@bitbucket.org/pstonier/salient-brand.git#readme",
   "devDependencies": {
-    "bourbon": "^4.2.7",
-    "bourbon-neat": "^1.8.0",
-    "browser-sync": "^2.18.5",
-    "gsap": "^1.19.0",
+    "bourbon": "^4.3.4",
+    "bourbon-neat": "^1.9.0",
+    "browser-sync": "^2.18.13",
+    "gsap": "^1.20.3",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
-    "gulp-sass": "^3.0.0",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
     "scrollmagic": "^2.0.5"
   },
   "dependencies": {
-    "js-cookie": "^2.1.3"
+    "js-cookie": "^2.2.0"
   }
 }
