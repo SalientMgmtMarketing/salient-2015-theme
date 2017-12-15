@@ -51,3 +51,7 @@ footer.comment-meta {
   justify-content: space-between;
   flex-direction: row-reverse;
 }
+
+#commentform input {
+  max-width: 500px;
+}
