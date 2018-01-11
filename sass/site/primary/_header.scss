@@ -304,3 +304,12 @@ body.admin-bar header#masthead {
     }
   }
 }
+
+p.tagline {
+  text-indent: 0;
+  position: absolute;
+  top: 75px;
+  left: 50px;
+  color: white;
+  font-size: .75em;
+}

@@ -50,7 +50,7 @@ gulp.task('minifyScripts', ['concatScripts'], function () {
 
 gulp.task('browser-sync', function () {
   browserSync.init({
-    proxy: 'salient.dev/', notify: false
+    proxy: 'https://2018.salient.dev/', notify: false
   });
 });
 

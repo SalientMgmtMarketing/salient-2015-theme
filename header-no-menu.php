@@ -29,6 +29,7 @@
         <div class="wrap">
             <div class="site-branding">
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <p class="tagline">Value Based Management Systems<p>
             </div><!-- .site-branding -->
         </div><!--.wrap-->
     </header><!-- #masthead -->
