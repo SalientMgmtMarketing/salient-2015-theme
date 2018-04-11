@@ -19,17 +19,23 @@
 
 .page-template-page-sections-flex-home main section.row.believe-better-way {
   font-size: 2rem;
-  padding: .5em 0 0 0;
+  padding: 0;
+  p {
+    margin: 0;
+  }
 }
 
 .page-template-page-sections-flex-home main section.row.salient-solution {
+  h2.section-title {
+    margin-bottom: 0;
+  }
   h3 {
     margin-top: .5em;
     margin-bottom: 0;
     font-size: 1.2em;
 
     &:first-child {
-      margin-top: 0;
+      margin-top: 1em;
     }
   }
   p {
