@@ -6,7 +6,7 @@
 
   h1 {
     font-size: 3rem;
-    max-width: 650px;
+    max-width: 807px;
     margin-bottom: 1em;
     font-family: Adobe Garamond Pro, Garamond, serif;
     font-weight: 400;
@@ -17,50 +17,28 @@
   }
 }
 
-.page-template-page-sections-flex-home main section.row.managers-see {
-  padding-bottom: 9em;
-  font-size: 1.25em;
-  background-position: 50% 69%;
-
-  h3 {
-    margin-top: 0;
-  }
-
-
+.page-template-page-sections-flex-home main section.row.believe-better-way {
+  font-size: 2rem;
+  padding: .5em 0 0 0;
 }
 
-.page-template-page-sections-flex-home main section.row.managers-see-r1 {
-  padding-bottom: 9em;
-  font-size: 1.3em;
-  background-position: 50% 35%;
-
-  h3 {
-    margin-top: 0;
-  }
-
-  .support-point {
-    font-size: .8em;
-    max-width: 411px;
-  }
-}
-
-.page-template-page-sections-flex-home main section.row.wondering-how {
+.page-template-page-sections-flex-home main section.row.salient-solution {
   h3 {
     margin-top: .5em;
+    margin-bottom: 0;
+    font-size: 1.2em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1.2em;
   }
 }
 
-.page-template-page-sections-flex-home main section.row.second-part {
-  font-size: 1.35em;
-  padding-bottom: 10em;
-}
-
-.serif {
-  font-family: Adobe Garamond Pro, Garamond, serif;
-}
-.page-template-page-sections-flex-home main section.row .light-weight {
-  font-weight: 400;
-}
 
 body #content .boxed .boxed {
   padding: 2em;
