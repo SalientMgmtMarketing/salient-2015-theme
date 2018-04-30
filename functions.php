@@ -239,9 +239,9 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-$theme_version = '1.5.0';
+	$theme_version = '1.5.2';
 
-	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri() ,'' , $theme_version );
+	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
 	wp_enqueue_script( 'jquery' );
 
@@ -290,7 +290,11 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 /**
- * Adds Button Shortcode.
+ * Adds shortcode for button into TinyMCE
+ *
+ * @param arra $atts attributes of the shortcode.
+ * @param string $content content of the message in the link.
+ * @return void
  */
 function buttonsc( $atts, $content = null ) {
 

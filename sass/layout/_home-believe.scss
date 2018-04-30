@@ -5,11 +5,17 @@
   background-size: cover;
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.3rem;
     max-width: 807px;
     margin-bottom: 1em;
     font-family: Adobe Garamond Pro, Garamond, serif;
     font-weight: 400;
+
+    @include media(min-width 350px) {
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: .5em;
+    }
   }
 
   h2 {
@@ -18,8 +24,11 @@
 }
 
 .page-template-page-sections-flex-home main section.row.believe-better-way {
-  font-size: 2rem;
+  font-size: 1.2rem;
   padding: 0;
+  @include media(min-width 370px) {
+    font-size: 2rem;
+  }
   p {
     margin: 0;
   }
