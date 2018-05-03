@@ -143,10 +143,13 @@ Single Post
   .entry-content .text-block {
     background: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 2em 3em;
+    padding: 1em 1.5em;
     color: #000;
     box-shadow: 1px 1px 6px rgba(51, 51, 51, 0.2);
     line-height: 1.5;
+    @include media(min-width 450px) {
+      padding: 2em 3em;
+    }
   }
   .hero {
     background-size: cover;
@@ -157,7 +160,12 @@ Single Post
       height: 60vh;
     }
     h1 {
-      padding: 2em 0 .75em;
+      padding: 3.5em 0 .75em;
+      font-size: 1.7em;
+      @include media(min-width 400px) {
+        padding: 2em 0 .75em;
+        font-size: 2.5em;
+      }
     }
     &:after {
       content: "";

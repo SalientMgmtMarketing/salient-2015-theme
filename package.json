@@ -18,7 +18,7 @@
   "license": "ISC",
   "homepage": "https://pstonier@bitbucket.org/pstonier/salient-brand.git#readme",
   "devDependencies": {
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.9.0",
     "bourbon": "^5.0.0",
     "bourbon-neat": "^1.9.0",
     "browser-sync": "^2.23.6",
