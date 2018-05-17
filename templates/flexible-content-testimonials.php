@@ -2,8 +2,9 @@
 
 					 //TESTIMONIALS LAYOUT
 						if(  get_row_layout() == 'rotating_testimonials'): ?>
-						<section <?php if( get_sub_field( 'section_id') ) { ?> id="
-							<?php the_sub_field('section_id'); ?>"
+						<section <?php if ( get_sub_field( 'section_id' ) ) { ?> id="<?php
+							the_sub_field( 'section_id' );
+						?>"
 							<?php } ?> class="row testimonials">
 								<div class="wrap above-fixed">
 									<?php if( get_sub_field('section_title') ): ?>
