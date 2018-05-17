@@ -1,0 +1,46 @@
+.posts-block {
+  .sub-section0 {
+    @include two-thirds-nom();
+  }
+  .sub-section1 {
+    @include one-third-nom;
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      list-style-type: none;
+      padding: 1em;
+      font-size: .8em;
+      margin-left: 0;
+      margin-bottom: 2em;
+      p {
+        font-size: .8em;
+      }
+    }
+  }
+  .featured-post {
+    .post-content {
+      padding: 1em;
+    }
+  }
+  h2.section-title.wrap {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: .5em;
+  }
+  .article {
+    background: $base-color-light;
+    color: $base-color-dark;
+    transition: 500ms;
+    box-shadow: 1px 1px 6px rgba(51, 51, 51, 0.2);
+
+    &:hover h2 {
+      color: $base-accent-color;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $base-color-dark;
+      margin-top: 0;
+    }
+  }
+}
