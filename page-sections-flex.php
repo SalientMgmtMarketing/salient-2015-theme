@@ -53,9 +53,10 @@ get_header( 'boxy' ); ?>
 							while ( have_rows( 'sections-flex-header' ) ) :
 								the_row();
 
-								get_template_part( 'templates/flexible-content','content-blocks' );
-								get_template_part( 'templates/flexible-content','gallery' );
-								get_template_part( 'templates/flexible-content','blockquote' );
+								get_template_part( 'templates/flexible-content', 'content-blocks' );
+								get_template_part( 'templates/flexible-content', 'posts' );
+								get_template_part( 'templates/flexible-content', 'gallery' );
+								get_template_part( 'templates/flexible-content', 'blockquote' );
 
 								endwhile; // have_rows('sections-flex-header').
 							endif; // have_rows('sections-flex-header').
@@ -76,6 +77,7 @@ get_header( 'boxy' ); ?>
 						the_row();
 
 						get_template_part( 'templates/flexible-content','content-blocks' );
+						get_template_part( 'templates/flexible-content', 'posts' );
 						get_template_part( 'templates/flexible-content','gallery' );
 						get_template_part( 'templates/flexible-content','blockquote' );
 

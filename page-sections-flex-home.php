@@ -16,6 +16,8 @@ get_header('boxy'); ?>
 
             <?php get_template_part('templates/flexible-content','content-blocks'); ?>
 
+            <?php get_template_part('templates/flexible-content','posts'); ?>
+
             <?php get_template_part('templates/flexible-content','gallery'); ?>
 
             <?php get_template_part('templates/flexible-content','blockquote'); ?>
