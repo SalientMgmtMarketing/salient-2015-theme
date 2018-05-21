@@ -67,7 +67,7 @@ gulp.task('compileSass', function () {
 
 gulp.task('watchFiles', function(){
   gulp.watch(['./sass/**/*.scss','./scss/*.scss'],['compileSass']);
-  gulp.watch(['./js/**.js','./inc/**/*.js','./assets/**.js'], ['concatScripts','concatScriptsFooter']);
+  gulp.watch(['./js/**.js','./inc/**/*.js','./assets/**.js'], ['concatScripts']);
 });
 
 
@@ -75,10 +75,10 @@ gulp.task('watchFiles', function(){
 
 
 
-gulp.task('build', ['concatScripts','concatScriptsFooter','minifyScripts', 'compileSass']);
+gulp.task('build', ['concatScripts','minifyScripts', 'compileSass']);
 
 gulp.task('watch', ['watchFiles']);
 
 gulp.task('watch-sync', ['watchFiles', 'browser-sync']);
 
-gulp.task('default', ['concatScripts','concatScriptsFooter', 'compileSass']);
+gulp.task('default', ['concatScripts', 'compileSass']);
