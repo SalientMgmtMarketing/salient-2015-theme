@@ -10,7 +10,7 @@ Article Hero
   padding: 1em 0;
   position: relative;
   background-position: 50% 50%;
-  
+
   @include media(min-width $nav-breakpoint-value) {
     padding: 5em 0 1em;
   }
@@ -55,9 +55,9 @@ Article Hero
       }
     }
   }
-  
+
   section.row {
-    background: none;    
+    background: none;
     h2 {
       text-transform: none;
       font-size: 1.5em;
@@ -65,7 +65,7 @@ Article Hero
       margin-bottom: 0;
     }
   }
-  
+
   #breadcrumbs {
     font-size: .7em;
     padding-bottom: 1em;
@@ -80,15 +80,21 @@ Article Hero
     position: relative;
     z-index: 100;
     text-align: center;
-    margin-top: 6em;
+    margin-top: 0;
     margin-bottom: -6em;
+    @include media(min-width 700px) {
+      margin-top: 3em;
+    }
+    @include media(min-width 1000px) {
+      margin-top: 6em;
+    }
   }
   a {
     color: $base-color-light;
   }
   .block {
     @include one-half;
-    
+
     &.boxed {
       background: rgba($base-font-color, .7);
       padding: 2em;
@@ -99,9 +105,7 @@ Article Hero
     font-size: 1.8em;
     line-height: 100%;
   }
-  p {
 
-  }
   .cols-one .sub-section0 {
     @include two-thirds-nom;
   }
@@ -114,7 +118,7 @@ Article Hero
     bottom: 0;
     left: 0;
     right: 0;
-    
+
     &blue {
       @extend .overlay-;
       background: $blue;

@@ -7,7 +7,7 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
-  
+
   @include media(screen and min-width $first-breakpoint-value) {
     font-size: ($base-font-size * 1.2);
   }
@@ -32,7 +32,7 @@ h1 {
 
 h2 {
   font-size: $h2-font-size;
-  
+
   &.caps {
     font-size: 1em;
     text-transform: uppercase;
@@ -124,7 +124,7 @@ blockquote {
     left: -52px;
     z-index: 1;
     opacity: .3;
-    
+
     .dark-text & {
       color: #333;
     }

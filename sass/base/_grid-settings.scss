@@ -11,7 +11,7 @@ $first-breakpoint-value: 500px;
 $second-breakpoint-value: 930px;
 $third-breakpoint-value: 1100px;
 $fourth-breakpoint-value: 1800px;
-$nav-breakpoint-value: 930px;
+$nav-breakpoint-value: 1006px;
 
 $small-screen: new-breakpoint(max-width em($first-breakpoint-value - 1) 2);
 $medium-screen: new-breakpoint(min-width em($first-breakpoint-value) max-width em($second-breakpoint-value) 4);

@@ -10,7 +10,7 @@ header#masthead {
   top: 0;
   transition: 200ms;
   @include clearfix;
-  
+
   @include media(min-width $nav-breakpoint-value) {
     @include transparent-background($blue,.8);
     height: 110px;
@@ -19,21 +19,19 @@ header#masthead {
   @include media(max-height em(479px) orientation landscape) {
     position: absolute;
   }
-  
+
   &.has-header-banner {
     @include media(min-width 1001px) {
       transform: translateY(90px);
     }
-    
     @include media(min-width 930px max-width 1000px) {
       transform: translateY(190px);
     }
   }
-  
+
   &.narrow-header {
     height: 67px;
     @include media(max-width $nav-breakpoint-value) {
- 
       #site-navigation button.menu-toggle {
         transform: translateY(-13px);
       }
@@ -61,7 +59,10 @@ header#masthead {
       @media screen and (max-width: $nav-breakpoint-value) {
         width: 90%;
         margin: 0;
-        height: 71px;
+        height: 60px;
+      }
+      @include media(min-width $second-breakpoint-value) {
+        height: 70px;
       }
       @include media(min-width $nav-breakpoint-value) {
         @include span-columns(4);
@@ -79,7 +80,7 @@ header#masthead {
         }
         @include media(min-width 900px max-width 1275px) {
           margin-left:.2em;
-        } 
+        }
         a {
           //background-image: url("./assets/images/salient-healthcare.png");
           display: block;
@@ -129,11 +130,10 @@ header#masthead {
     }
     nav#site-navigation {
       @include omega();
-      
+
       @include media(min-width $nav-breakpoint-value) {
         float: right;
       }
-
       @include media(max-width $nav-breakpoint-value) {
         position: relative;
         left: -3px;
@@ -141,7 +141,6 @@ header#masthead {
         width: 100%;
         height: 2px;
       }
-      
       > div {
         @include media(min-width $nav-breakpoint-value) {
           float: right;
@@ -152,8 +151,6 @@ header#masthead {
           left: -3px;
           width: 100%;
           > ul {
-
-          
             &.collapse.in {
               height: auto;
             }
@@ -162,7 +159,7 @@ header#masthead {
         @include media(max-width $nav-breakpoint-value) {
           float: none;
           position: relative;
-          top: 0;
+          top: 10px;
           left: 0;
           display: inline-block;
           width: 100%;
@@ -173,17 +170,13 @@ header#masthead {
       }
     }
   }
-  
+
 }
 #page.has-secondary {
-  
   #masthead {
-
-    
     @include media(min-width $nav-breakpoint-value) {
       height: 160px;
     }
-    
     div.wrap {
       @include media(min-width $nav-breakpoint-value) {
         margin-top: 40px;
@@ -204,7 +197,6 @@ header#masthead {
 body.admin-bar header#masthead {
   @include media(min-width $nav-breakpoint-value){
     top: 28px;
-    
     &.has-header-banner {
       top: 0;
     }
@@ -216,18 +208,18 @@ body.admin-bar header#masthead {
   height: 90px;
   display: block;
   position: relative;
-  
+
   @include media(max-width 1000px) {
     background-size: cover;
     height: 190px;
   }
-  
+
   .idea-con-logo {
     position: absolute;
     left: 1em;
     top: 8px;
     max-width: 564px;
-    
+
     @include media(max-width 1400px) {
       top: 18px;
       max-width: 400px;
@@ -240,9 +232,8 @@ body.admin-bar header#masthead {
       margin: 0 auto;
       position: relative;
     }
-    
   }
-  
+
   .idea-con-date {
     color: white;
     position: absolute;
@@ -250,7 +241,7 @@ body.admin-bar header#masthead {
     font-size: 1.75em;
     font-weight: 700;
     top: 29px;
-    
+
     @include media(max-width 1600px) {
       font-size: 1.25em;
       left: 43%;
@@ -271,13 +262,11 @@ body.admin-bar header#masthead {
       margin: 0 auto;
       position: relative;
     }
-    
     p {
       margin: 0;
       padding: 0;
     }
   }
-  
   .idea-con-register a {
     position: absolute;
     right: 10px;
@@ -287,12 +276,10 @@ body.admin-bar header#masthead {
     font-size: 1.5em;
     font-weight: 700;
     color: white;
-    
     @include media(max-width 1275px) {
       font-size: 1.25em;
       padding: .35em 1em;
     }
-    
     @include media(max-width 1000px) {
       margin: 0 auto;
       position: relative;
@@ -302,5 +289,52 @@ body.admin-bar header#masthead {
       max-width: 258px;
       top: 40px;
     }
+  }
+}
+
+p.tagline {
+  text-indent: 0;
+  position: absolute;
+  top: 44px;
+  left: 40px;
+  color: white;
+  font-size: .75em;
+
+  @include media(min-width 375px) {
+    top: 48px;
+    left: 50px;
+  }
+  @include media(min-width 400px) {
+    left: 53px;
+  }
+  @include media(min-width 530px) {
+    top: 52px;
+    left: 60px;
+  }
+  @include media(min-width 560px) {
+    left: 65px;
+  }
+  @include media(min-width 750px) {
+    top: 58px;
+    left: 63px;
+  }
+  @include media(min-width 900px) {
+    top: 57px;
+    left: 76px;
+  }
+  @include media(min-width 1000px) {
+    top: 74px;
+    left: 49px;
+  }
+  @include media(min-width 1000px) {
+    top: 76px;
+    left: 53px;
+  }
+  @include media(min-width $nav-breakpoint-value) {
+    top: 75px;
+    left: 50px;
+  }
+  @include media(max-width 285px) {
+    display: none;
   }
 }
