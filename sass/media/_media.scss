@@ -131,10 +131,21 @@ video {
 	transition-property: height;
 }
 
-.attachment.page .entry-content .attachment {
+.attachment-template-default .entry-content {
+  margin-top: 2em;
+}
+.attachment-template-default .entry-content .attachment {
 	float: left;
 	margin-right: 1em;
 }
+.attachment-template-default .entry-content p:not(:first-child) {
+  margin: 0 2em;
+  display: block;
+}
+body.attachment-template-default .wrap .entry-content > p.attachment > a {
+  background-image: none;
+}
+
 .resource-group {
   &:not(:last-child) {
     border-bottom: 1px solid #333;
