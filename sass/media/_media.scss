@@ -135,6 +135,21 @@ video {
 	float: left;
 	margin-right: 1em;
 }
+
+.attachment .entry-content {
+  margin-top: 2em;
+}
+
+.attachment .entry-content .attachment {
+	float: left;
+	margin-right: 1em;
+}
+
+.attachment .entry-content p:not(:first-child) {
+  margin: 0 2em;
+  display: block;
+}
+
 .resource-group {
   &:not(:last-child) {
     border-bottom: 1px solid #333;

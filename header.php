@@ -40,7 +40,6 @@ if ( has_nav_menu( 'secondary' ) ) { ?> has-secondary<?php } ?>">
 		<div class="wrap">
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<p class="tagline">Value Based Management Systems<p>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">

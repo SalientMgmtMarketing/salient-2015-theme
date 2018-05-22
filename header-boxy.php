@@ -37,7 +37,6 @@
         <div class="wrap">
             <div class="site-branding">
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a></h1>
-                <p class="tagline">Value Based Management Systems<p>
             </div><!-- .site-branding -->
             <nav id="site-navigation" class="main-navigation" role="navigation">
                 <button class="menu-toggle" aria-controls="menu" aria-expanded="false" data-toggle="collapse" data-target="#site-navigation > div, .secondary-navigation-container"><span></span></button>
