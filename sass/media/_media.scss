@@ -144,6 +144,10 @@ video {
 }
 body.attachment-template-default .wrap .entry-content > p.attachment > a {
   background-image: none;
+
+  &:hover {
+    background-image: none;
+  }
 }
 
 .resource-group {
