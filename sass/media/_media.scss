@@ -142,6 +142,9 @@ video {
   margin: 0 2em;
   display: block;
 }
+.attachment-template-default .entry-footer {
+  display: none;
+}
 body.attachment-template-default .wrap .entry-content p.attachment > a {
   background-image: none;
 
