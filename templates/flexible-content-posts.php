@@ -1,5 +1,4 @@
 <?php
-  echo 'swoopity';
   //CONTENT-BLOCK LAYOUT
   if( get_row_layout() == 'posts-block') { ?>
 
