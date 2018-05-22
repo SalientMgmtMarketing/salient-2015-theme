@@ -123,8 +123,20 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
 }
 
 
-
-
 .form-block input:not([type=submit]) {
-  color: #333;
+  color: $dark-gray;
+}
+
+.form-block a {
+  color: $base-color-light;
+  text-decoration: underline;
+  &:hover {
+    color: #d4d4d4;
+  }
+}
+
+.gfield {
+    .gfield_description, .gsection_description {
+      font-size: .8em;
+    }
 }

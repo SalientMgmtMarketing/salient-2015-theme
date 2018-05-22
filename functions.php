@@ -239,7 +239,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.0';
+	$theme_version = '1.6.1.5';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
@@ -247,7 +247,6 @@ function salient_2015_scripts() {
 
 	wp_enqueue_script( 'salient-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	wp_enqueue_script( 'salient-2015-custom', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), $theme_version, true );
-	wp_enqueue_script( 'salient-2015-custom-footer', get_template_directory_uri() . '/assets/js/scripts-footer.js', array( 'jquery' ), $theme_version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -530,11 +529,13 @@ function ch_hextostr_email( $x, $field ) {
 
 
 // adds anchor to the form submission.
-//add_filter( 'gform_confirmation_anchor', create_function( '','return true;' ) );
+// add_filter( 'gform_confirmation_anchor', create_function( '','return true;' ) );
 
 add_filter( 'gform_akismet_enabled_2', '__return_false' );
 
 
+// Gravity Forms stops recording IP addresses.
+add_filter( 'gform_ip_address', '__return_empty_string' );
 
 /**
  * Gravity Wiz // Gravity Forms // Email Domain Validator

@@ -31,7 +31,6 @@ div, h2 {
     position: relative;
     @include outer-container;
     @include fill-parent;
-    height: 100%;
     @include clearfix;
 
     @media screen and (max-width: $max-width) {
