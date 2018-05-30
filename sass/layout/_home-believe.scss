@@ -1,3 +1,63 @@
+.page-template-page-sections-flex-home main section.row.believe-intro {
+  font-size: 1em;
+  padding-top: 200px;
+  background: #1b2e40;
+  background-size: cover;
+
+  h1 {
+    font-size: 3rem;
+    max-width: 807px;
+    margin-bottom: 1em;
+    font-family: Adobe Garamond Pro, Garamond, serif;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.page-template-page-sections-flex-home main section.row.believe-better-way {
+  font-size: 2rem;
+  padding: 0;
+  p {
+    margin: 0;
+  }
+}
+
+.page-template-page-sections-flex-home main section.row.salient-solution {
+  h2.section-title {
+    margin-bottom: 0;
+  }
+  h3 {
+    margin-top: .5em;
+    margin-bottom: 0;
+    font-size: 1.2em;
+
+    &:first-child {
+      margin-top: 1em;
+    }
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+  }
+}
+
+
+body #content .boxed .boxed {
+  padding: 2em;
+  border-radius: 1em;
+  background-color: rgba(3,3,3,.5);
+}
+
+#content .boxed .boxed > *:first-child {
+  margin-top: 0;
+}
+#content .boxed .boxed > *:last-child {
+  margin-bottom: 0;
+}
 .page-template-page-sections-flex-home main section.row.radical-believe-intro {
   font-size: 1em;
   padding-top: 200px;
