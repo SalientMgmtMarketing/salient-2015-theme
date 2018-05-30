@@ -1,4 +1,4 @@
-.page-template-page-sections-flex-home main section.row.believe-intro {
+.page-template-page-sections-flex-home main section.row.radical-believe-intro {
   font-size: 1em;
   padding-top: 200px;
   background: #1b2e40;
@@ -18,12 +18,30 @@
     }
   }
 
+  p {
+    max-width: 807px;
+    margin-left: 0;
+  }
+
   h2 {
     font-size: 1.75rem;
   }
 }
+.page-template-page-sections-flex-home main section.row.radical-managers-see {
+  font-size: 1.1em;
+  padding-bottom: 5em;
+  ul li {
+    font-size: .8em;
+  }
+}
+.page-template-page-sections-flex-home main section.row.radical-wondering-how {
+  padding-bottom: 19em;
 
-.page-template-page-sections-flex-home main section.row.believe-better-way {
+  &.second-part {
+    padding-bottom: 15em;
+  }
+}
+.page-template-page-sections-flex-home main section.row.radical-believe-better-way {
   font-size: 1.2rem;
   padding: 0;
   @include media(min-width 370px) {
@@ -34,7 +52,7 @@
   }
 }
 
-.page-template-page-sections-flex-home main section.row.salient-solution {
+.page-template-page-sections-flex-home main section.row.radical-salient-solution {
   h2.section-title {
     margin-bottom: 0;
   }
@@ -67,7 +85,7 @@
 body #content .boxed .boxed {
   padding: 2em;
   border-radius: 1em;
-  background-color: rgba(3,3,3,.5);
+  background-color: rgba(3,3,3,.7);
 }
 
 #content .boxed .boxed > *:first-child {
@@ -75,4 +93,31 @@ body #content .boxed .boxed {
 }
 #content .boxed .boxed > *:last-child {
   margin-bottom: 0;
+}
+section.row.radical-wondering-how.light-text.boxed ul li {
+  font-size: 1.2em;
+  margin-top: .5em;
+}
+section.row.radical-most-deployable-practice.light-text h3 {
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+section.row.radical-most-deployable-practice {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+section.row.radical-most-deployable-practice.light-text p {
+  font-size: 1.1em;
+}
+.page-template-page-sections-flex-home main section.row.radical-deployable-results {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#deployable-testimonials-slider {
+  padding-top: 0;
+  margin-top: 0;
+  background: #004280;
 }
