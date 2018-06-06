@@ -1,44 +1,46 @@
-.gallery {
-  width: 640px;
-  margin: 0 auto;
-  padding: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
-}
+.db-gallery {
+  .gallery {
+    width: 640px;
+    margin: 0 auto;
+    padding: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  }
 
-.dashboard > div {
-  position: relative;
-  float: left;
-  padding: 5px;
-}
+  .dashboard > div {
+    position: relative;
+    float: left;
+    padding: 5px;
+  }
 
-.dashboard > div img {
-  width: 100%;
-  height: auto;
-  transition: 0.1s transform;
-  transform: translateZ(0);
-  /* hack */
-}
+  .dashboard > div img {
+    width: 100%;
+    height: auto;
+    transition: 0.1s transform;
+    transform: translateZ(0);
+    /* hack */
+  }
 
-.carousel.dashboard.cf {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1280px;
-  padding: 0;
-}
+  .carousel.dashboard.cf {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1280px;
+    padding: 0;
+  }
 
-.cf div.carousel-cell {
-  width: 300px;
-  margin-right: 3em;
-}
+  .cf div.carousel-cell {
+    width: 300px;
+    margin-right: 3em;
+  }
 
-.flickity-viewport {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  margin-left: 0;
-}
+  .flickity-viewport {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+  }
 
-.dashboard.cf {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  .dashboard.cf {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
 }
