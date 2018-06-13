@@ -239,7 +239,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.5';
+	$theme_version = '1.6.6';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
@@ -433,6 +433,33 @@ function header_color_overlay() {
 		echo ' has-overlay ' . esc_attr( sanitize_text_field( get_field( 'color_overlay_color' ) ) );
 	}
 }
+
+/**
+ * Page Modal Content
+ *
+ * @return string
+ */
+function page_modal() {
+	ob_start();
+	if ( get_field( 'page_modal_cta' ) ) {
+	?>
+		<div class="modal-cta">
+			<a class="page-modal-link button" href="#page-modal-cta-box">
+				<?php echo esc_html( get_field( 'page_modal_cta' ) ); ?>
+			</a>
+		</div>
+
+		<?php if ( get_field( 'page_modal_content' ) ) { ?>
+			<div id="page-modal-cta-box" style="display: none;">
+				<?php the_field( 'page_modal_content' ); ?>
+			</div>
+		<?php } ?>
+
+		<?php
+	}
+	return ob_get_clean();
+}
+add_shortcode( 'page_modal', 'page_modal' );
 
 // http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
 // this handles converting the entered value to hex for storage

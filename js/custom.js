@@ -32,7 +32,7 @@ function checkPassword() {
 
 (function($) {
   // Uses jQuery to smooth scroll any anchored link
-  $('a[href*="#"]:not([href="#"]):not([href^="#modal"])').click(function() {
+  $('a[href*="#"]:not([href="#"]):not([href^="#modal"]):not([href="#page-modal-cta-box"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -66,6 +66,10 @@ function checkPassword() {
     });
 
     jQuery('.sidebar-cta a').fancybox(
+      {
+        maxWidth : 900,
+      });
+    jQuery('a.page-modal-link').fancybox(
       {
         maxWidth : 900,
       });
