@@ -18,10 +18,9 @@
   "license": "ISC",
   "homepage": "https://pstonier@bitbucket.org/pstonier/salient-brand.git#readme",
   "devDependencies": {
-    "node-sass": "^4.9.0",
     "bourbon": "^5.0.0",
     "bourbon-neat": "^1.9.0",
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.24.4",
     "gsap": "^1.20.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
@@ -30,6 +29,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
+    "node-sass": "^4.9.0",
     "scrollmagic": "^2.0.5"
   },
   "dependencies": {
