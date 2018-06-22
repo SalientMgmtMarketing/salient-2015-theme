@@ -127,7 +127,7 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
   color: $dark-gray;
 }
 
-.form-block a {
+.form-block a:not(.button) {
   color: $base-color-light;
   text-decoration: underline;
   &:hover {

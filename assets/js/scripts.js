@@ -3170,7 +3170,7 @@ function checkPassword() {
 
 (function($) {
   // Uses jQuery to smooth scroll any anchored link
-  $('a[href*="#"]:not([href="#"]):not([href^="#modal"])').click(function() {
+  $('a[href*="#"]:not([href="#"]):not([href^="#modal"]):not([href="#page-modal-cta-box"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -3203,7 +3203,14 @@ function checkPassword() {
       wrapAround: true
     });
 
-    jQuery('.sidebar-cta a').fancybox();
+    jQuery('.sidebar-cta a').fancybox(
+      {
+        maxWidth : 900,
+      });
+    jQuery('a.page-modal-link').fancybox(
+      {
+        maxWidth : 900,
+      });
     // Checks to see if the page has a link with the class of privatelink AND has a Cookie with name of Converted and a value of true
     if ( ( document.querySelector('a.privatelink') !== null ) && ( Cookies.get('converted') == 'true') ) {
 
