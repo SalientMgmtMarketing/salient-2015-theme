@@ -184,20 +184,40 @@ section.row.radical-most-deployable-practice.light-text p {
 
 
 .page-template-page-sections-flex-home main section.row.june-ab-changing-nature {
-  font-size: 1em;
+  font-size: 1.51rem;
   padding-top: 7em;
   padding-bottom: 5em;
   h1 {
     margin-top: 1em;
   }
   p {
-    max-width: 688px;
+    max-width: 766px;
     margin-left: 0;
   }
 }
 
 .page-template-page-sections-flex-home main section.row.june-ab-beaten-latency {
-  font-size: 1em;
+  font-size: 1.5rem;
   padding-bottom: 2em;
   padding-top: 2em;
+}
+
+.page-template-page-sections-flex-home main section.row {
+  &.june-ab-changing-nature,
+  &.june-ab-beaten-latency,
+  &.june-ab-biggest-problem,
+  &.june-ab-what-happens,
+   {
+    font-size: 1.51rem;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.55rem;
+    }
+  }
 }
