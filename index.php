@@ -66,17 +66,19 @@ get_header(); ?>
                 <?php endwhile; ?>
                 </section><!--.list-of-posts-->
                 <?php salient_2015_paging_nav(); ?>
+                <?php get_sidebar(); ?>
               </div><!--.wrap-->           
 
 
             <?php else : ?>
                 <div class="wrap">
                   <?php get_template_part( 'content', 'none' ); ?>
+                  <?php get_sidebar(); ?>
                 </div><!--.wrap-->
             <?php endif; ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
