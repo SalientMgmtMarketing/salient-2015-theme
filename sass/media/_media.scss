@@ -253,6 +253,11 @@ body .fancybox-wrap .fancybox-skin {
   background: $base-color-dark;
   color: $base-color-light;
 
+  a {
+    color: $base-color-light;
+    text-decoration: underline;
+  }
+
   #_form_589513F0645F5_ {
     margin-top: 0;
   }
