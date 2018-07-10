@@ -267,7 +267,7 @@ section.row a.btn.arrow {
   transform-origin: center;
 }
 
-.tab-widget__link--active {
+li:not(.salient-tab) > .tab-widget__link--active {
   position: relative;
   
   &:after {

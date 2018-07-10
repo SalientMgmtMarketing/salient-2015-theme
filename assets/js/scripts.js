@@ -3170,7 +3170,7 @@ function checkPassword() {
 
 (function($) {
   // Uses jQuery to smooth scroll any anchored link
-  $('a[href*="#"]:not([href="#"]):not([href^="#modal"]):not([href="#page-modal-cta-box"])').click(function() {
+  $('a[href*="#"]:not([href="#"]):not([href^="#modal"]):not([href="#page-modal-cta-box"]):not([class*="salient-tab-label"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
