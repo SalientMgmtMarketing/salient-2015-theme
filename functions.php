@@ -239,7 +239,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.6';
+	$theme_version = '1.6.11';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
@@ -708,3 +708,17 @@ new GW_Email_Domain_Validator(
 		'mode' => 'ban',
 	)
 );
+/**
+ * Header Image. Used to set the background image for the tabbed library template.
+ *
+ * @return void
+ */
+function hero_header_image() {
+	if ( get_field( 'header_image' ) ) {
+		echo "background-image:url('" . get_field( 'header_image' ) . "');";
+	} elseif ( has_post_thumbnail() ) {
+		$thumb_id  = get_post_thumbnail_id();
+		$thumb_url = wp_get_attachment_image_src( $thumb_id, 'full', true );
+		echo "background-image:url( '" . esc_url( $thumb_url[0] ) . "') ";
+	}
+}
