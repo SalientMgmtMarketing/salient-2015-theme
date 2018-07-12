@@ -221,3 +221,35 @@ section.row.radical-most-deployable-practice.light-text p {
     }
   }
 }
+.page-template-page-sections-flex-home main section.row {
+  &.ab-july-18-information-is,
+  &.ab-july-18-information-traditional-bi,
+  &.ab-july-18-information-barriers,
+  &.ab-july-18-information-ordinary,
+   {
+    font-size: 1.51rem;
+    }
+    h1{
+      font-family: Adobe Garamond Pro, Garamond, serif;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-top: 0px;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.55rem;
+    }
+  }
+
+
+section.row.ab-july-18-information-barrers.light-text.boxed {
+    padding-bottom: 9em;
+    padding-top: 5em;
+}
+
+section.row.ab-july-18-information-is.light-text.boxed {
+    padding-top: 9em;
+}

@@ -22,7 +22,6 @@
     "bourbon-neat": "^1.9.0",
     "browser-sync": "^2.24.4",
     "gsap": "^1.20.3",
-    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
@@ -33,6 +32,11 @@
     "scrollmagic": "^2.0.5"
   },
   "dependencies": {
-    "js-cookie": "^2.2.0"
+    "gulp": "^3.9.1",
+    "js-cookie": "^2.2.0",
+    "json-stable-stringify": "^1.0.1",
+    "pumpify": "^1.5.1",
+    "through2-filter": "^3.0.0",
+    "undertaker": "^1.2.0"
   }
 }
