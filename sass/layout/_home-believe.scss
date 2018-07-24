@@ -235,9 +235,11 @@ section.row.radical-most-deployable-practice.light-text p {
     h2 {
       font-size: 2.5rem;
       margin-top: 0px;
+      font-weight: 200;
     }
     h3 {
       font-size: 2rem;
+      margin-top: 0px;
     }
     p {
       font-size: 1.55rem;
@@ -246,10 +248,18 @@ section.row.radical-most-deployable-practice.light-text p {
 
 
 section.row.ab-july-18-information-barrers.light-text.boxed {
-    padding-bottom: 9em;
-    padding-top: 5em;
+    padding-bottom: 2em;
 }
 
 section.row.ab-july-18-information-is.light-text.boxed {
     padding-top: 9em;
+    @include media(max-width 1006px) {
+      font-size: 1.5rem;
+    }
+}
+#content .ab-july-18-information-is.boxed .boxed:after {
+background: none;
+}
+#content .ab-july-18-information-barriers.boxed .boxed:after {
+background: none;
 }
