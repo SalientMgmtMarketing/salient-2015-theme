@@ -134,3 +134,19 @@
     margin-top: 0 !important;
   }
 }
+.page.page-template-page-tabbed-library {
+  &.has-secondary-nav main section:first-child {
+    padding-top: 180px;
+  }
+  .landing-page-hero {
+    background-size: cover;
+    background-repeat-y: no-repeat;
+    background-attachment: fixed;
+  }
+  #breadcrumbs {
+    color: $base-color-light;
+    a {
+      color: $base-color-light;
+    }
+  }
+}

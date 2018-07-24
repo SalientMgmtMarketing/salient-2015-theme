@@ -708,3 +708,17 @@ new GW_Email_Domain_Validator(
 		'mode' => 'ban',
 	)
 );
+/**
+ * Header Image. Used to set the background image for the tabbed library template.
+ *
+ * @return void
+ */
+function hero_header_image() {
+	if ( get_field( 'header_image' ) ) {
+		echo "background-image:url('" . get_field( 'header_image' ) . "');";
+	} elseif ( has_post_thumbnail() ) {
+		$thumb_id  = get_post_thumbnail_id();
+		$thumb_url = wp_get_attachment_image_src( $thumb_id, 'full', true );
+		echo "background-image:url( '" . esc_url( $thumb_url[0] ) . "') ";
+	}
+}
