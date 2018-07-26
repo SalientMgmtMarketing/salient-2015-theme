@@ -247,12 +247,13 @@ section.row.radical-most-deployable-practice.light-text p {
   }
 
 
-section.row.ab-july-18-information-barrers.light-text.boxed {
+section.row.ab-july-18-information-barriers.light-text {
     padding-bottom: 2em;
+    padding-top: 2em;
 }
 
-section.row.ab-july-18-information-is.light-text.boxed {
-    padding-top: 9em;
+section.row.ab-july-18-information-is.light-text {
+    padding-top: 7em;
     @include media(max-width 1006px) {
       font-size: 1.5rem;
     }
