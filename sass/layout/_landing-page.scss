@@ -57,6 +57,11 @@
     color: $white;
     padding: 1em;
     border: none;
+
+    input:not([type=submit]) {
+      color: $dark-gray;
+    }
+
     @include media(min-width $first-breakpoint-value) {
       padding: 2em 3em;
     }
@@ -149,4 +154,8 @@
       color: $base-color-light;
     }
   }
+}
+.page-template-page-landing-page .entry-content .gform_body a {
+  color: white;
+  text-decoration: underline;
 }

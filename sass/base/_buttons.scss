@@ -19,15 +19,24 @@ input[type="submit"], a.btn, a.button, .inline-navigation-container a {
   &.lt-blue {
     background-color: $light-blue;
     border:1px solid tint($light-blue,40);
+    &:hover {
+      background-color: $base-color-dark;
+    }
   }
   &.dk-gray {
     background-color: $dark-gray;
     border:1px solid tint($dark-gray,40);
+    &:hover {
+      color: $dark-gray;
+      background-color: $light-gray;
+    }
   }
   &.lt-gray {
     background-color: $light-gray;
-    border:1px solid tint($light-gray,40);
+    border:1px solid shade($light-gray,20);
+    color: $dark-gray;
     &:hover {
+      color: $base-color-light;
       background-color: $dark-gray;
     }
   }
@@ -41,18 +50,35 @@ input[type="submit"], a.btn, a.button, .inline-navigation-container a {
   }
   &.lt-orange {
     background-color: $light-orange;
+    border:1px solid shade($orange,20);
+    text-shadow: 1px 1px 2px shade($orange, 40);
+    &:hover {
+      background-color: $orange;
+    }
   }
   &.dk-orange {
     background-color: $dark-orange;
-  }
-  &.dk-orange {
-    background-color: $dark-orange;
+    border:1px solid shade($orange,20);
+    text-shadow: 1px 1px 2px shade($orange, 40);
+    &:hover {
+      background-color: $light-orange;
+    }
   }
   &.purple {
     background-color: $purple;
+    border:1px solid shade($purple,20);
+    text-shadow: 1px 1px 2px shade($purple, 40);
+    &:hover {
+      background-color: shade($purple, 20);
+    }
   }
   &.pink {
     background-color: $pink;
+    border:1px solid shade($pink,20);
+    text-shadow: 1px 1px 2px shade($pink, 40);
+    &:hover {
+      background-color: shade($pink, 20);
+    }
   }
 
 }

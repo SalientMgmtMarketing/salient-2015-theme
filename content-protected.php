@@ -40,7 +40,6 @@
 		<!-- .entry-header -->
 		<div class="wrap">
 			<div class="entry-content">
-				<!--
 				<div id="password-gate">
 					<p>To access this page, please contact support for the password.
 						<br>Email: <a href="mailto:support@salient.com">support@salient.com</a>
@@ -57,11 +56,7 @@
 				</div>
 
 				<div id="hiddenContent" style="display:none;">
-				-->
 						<?php
-						if ( have_rows( 'toc_section' ) ) {
-							echo do_shortcode( ' [salient_toc] ' );
-						}
 
 						the_content();
 

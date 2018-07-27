@@ -239,7 +239,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.11';
+	$theme_version = '1.6.16';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
@@ -439,18 +439,33 @@ function header_color_overlay() {
  *
  * @return string
  */
-function page_modal() {
+function page_modal( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'type' => '',
+		), $atts
+	);
+	/**
+	 * Is Video: Checks to see if the type === video
+	 *
+	 * @return void
+	 */
+	function is_video() {
+		if ( 'video' === $atts['type'] ) {
+			echo ' video';
+		}
+	}
 	ob_start();
 	if ( get_field( 'page_modal_cta' ) ) {
 	?>
 		<div class="modal-cta">
-			<a class="page-modal-link button" href="#page-modal-cta-box">
+			<a class="page-modal-link button<?php is_video(); ?>" href="#page-modal-cta-box">
 				<?php echo esc_html( get_field( 'page_modal_cta' ) ); ?>
 			</a>
 		</div>
 
 		<?php if ( get_field( 'page_modal_content' ) ) { ?>
-			<div id="page-modal-cta-box" style="display: none;">
+			<div id="page-modal-cta-box<?php is_video(); ?>" style="display: none;">
 				<?php the_field( 'page_modal_content' ); ?>
 			</div>
 		<?php } ?>
@@ -460,6 +475,7 @@ function page_modal() {
 	return ob_get_clean();
 }
 add_shortcode( 'page_modal', 'page_modal' );
+
 
 // http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
 // this handles converting the entered value to hex for storage

@@ -15,7 +15,7 @@ p a:focus {
   outline: none;
   background-color: lighten($hover-link-color, 30);
 }
-.entry-content p a:not(.btn):not(.button):not([class*="slide"]), .entry-content li:not(.menu-item) a:not(.btn):not(.button):not([class*="slide"]):not(.salient-tab-label) {
+.entry-content p a:not(.btn):not(.button):not([class*="slide"]):not(.salient-tab-label), .entry-content li:not(.menu-item) a:not(.btn):not(.button):not([class*="slide"]):not(.salient-tab-label) {
 	position: relative;
 	background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
   background-repeat: repeat-x;
