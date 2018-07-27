@@ -266,3 +266,19 @@ body .fancybox-wrap .fancybox-skin {
     color: $base-font-color;
   }
 }
+
+div#page-modal-cta-box.video {
+  width: 300px;
+  @media screen and (min-width: 600px) {
+    width: 500px;
+  }
+  @media screen and (min-width: 800px) {
+    width: 600px;
+  }
+  @media screen and (min-width: 1000px ) {
+    width: 800px;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 1200px;
+  }
+}

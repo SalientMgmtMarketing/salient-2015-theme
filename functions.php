@@ -446,27 +446,17 @@ function page_modal( $atts ) {
 		),
 		$atts
 	);
-	/**
-	 * Is Video: Checks to see if the type === video
-	 *
-	 * @return void
-	 */
-	function is_video( $atts ) {
-		if ( 'video' === $atts['type'] ) {
-			echo ' video';
-		}
-	}
 	ob_start();
 	if ( get_field( 'page_modal_cta' ) ) {
 	?>
 		<div class="modal-cta">
-			<a class="page-modal-link button<?php is_video(); ?>" href="#page-modal-cta-box">
+			<a class="page-modal-link button <?php echo esc_html( $atts['type'] ); ?>" href="#page-modal-cta-box">
 				<?php echo esc_html( get_field( 'page_modal_cta' ) ); ?>
 			</a>
 		</div>
 
 		<?php if ( get_field( 'page_modal_content' ) ) { ?>
-			<div id="page-modal-cta-box<?php is_video(); ?>" style="display: none;">
+			<div id="page-modal-cta-box" class="<?php echo esc_html( $atts['type'] ); ?>" style="display: none;">
 				<?php the_field( 'page_modal_content' ); ?>
 			</div>
 		<?php } ?>

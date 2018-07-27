@@ -69,9 +69,13 @@ function checkPassword() {
       {
         maxWidth : 900,
       });
-    jQuery('a.page-modal-link').fancybox(
+    jQuery('a.page-modal-link:not(.video)').fancybox(
       {
         maxWidth : 900,
+      });
+    jQuery('a.page-modal-link.video').fancybox(
+      {
+        maxWidth : 1800,
       });
     jQuery('.salient-toc-wrapper a.button').fancybox(
       {
