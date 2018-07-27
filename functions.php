@@ -239,11 +239,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-<<<<<<< HEAD
 	$theme_version = '1.6.16';
-=======
-	$theme_version = '1.6.12';
->>>>>>> 4bb6753db8c06066b549797185081ce845a6bd40
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
@@ -447,14 +443,15 @@ function page_modal( $atts ) {
 	$atts = shortcode_atts(
 		array(
 			'type' => '',
-		), $atts
+		),
+		$atts
 	);
 	/**
 	 * Is Video: Checks to see if the type === video
 	 *
 	 * @return void
 	 */
-	function is_video() {
+	function is_video( $atts ) {
 		if ( 'video' === $atts['type'] ) {
 			echo ' video';
 		}
