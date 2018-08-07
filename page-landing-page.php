@@ -3,7 +3,7 @@
 Template Name: Landing Page
 */
 
-get_header('no-menu'); ?>
+get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
