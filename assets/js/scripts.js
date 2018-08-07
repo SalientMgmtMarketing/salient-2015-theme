@@ -3170,7 +3170,7 @@ function checkPassword() {
 
 (function($) {
   // Uses jQuery to smooth scroll any anchored link
-  $('a[href*="#"]:not([href="#"]):not([href^="#modal"]):not([href="#page-modal-cta-box"])').click(function() {
+  $('a[href*="#"]:not([href="#"]):not([href^="#modal"]):not([href="#page-modal-cta-box"]):not([class*="salient-tab-label"]):not([href="#upgrade"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -3207,7 +3207,15 @@ function checkPassword() {
       {
         maxWidth : 900,
       });
-    jQuery('a.page-modal-link').fancybox(
+    jQuery('a.page-modal-link:not(.video)').fancybox(
+      {
+        maxWidth : 900,
+      });
+    jQuery('a.page-modal-link.video').fancybox(
+      {
+        maxWidth : 1800,
+      });
+    jQuery('.salient-toc-wrapper a.button').fancybox(
       {
         maxWidth : 900,
       });

@@ -42,7 +42,7 @@ gulp.task('concatScriptsFooter', function () {
     .pipe(gulp.dest('./assets/js'));
 });
 
-gulp.task('minifyScripts', ['concatScripts'], function () {
+gulp.task('minifyScripts', gulp.parallel( 'concatScripts' ), function () {
   return gulp.src('./assets/js/scripts.js')
     .pipe(uglify())
     .pipe(gulp.dest('./assets/js'));
@@ -75,10 +75,10 @@ gulp.task('watchFiles', function(){
 
 
 
-gulp.task('build', ['concatScripts','minifyScripts', 'compileSass']);
+gulp.task('build', gulp.parallel( 'concatScripts','minifyScripts', 'compileSass') );
 
-gulp.task('watch', ['watchFiles']);
+gulp.task('watch', gulp.parallel( 'watchFiles') );
 
-gulp.task('watch-sync', ['watchFiles', 'browser-sync']);
+gulp.task('watch-sync', gulp.parallel( 'watchFiles', 'browser-sync') );
 
-gulp.task('default', ['concatScripts', 'compileSass']);
+gulp.task('default', gulp.parallel( 'concatScripts', 'compileSass' ) );
