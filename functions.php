@@ -239,7 +239,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.6';
+	$theme_version = '1.6.19';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
@@ -307,7 +307,6 @@ function buttonsc( $atts, $content = null ) {
 	return '<a href="' . $atts['href'] . '" class="button ' . $atts['color'] . '">' . $content . '</a>';
 }
 add_shortcode( 'button', 'buttonsc' );
-
 
 
 // Hooks button shortcode into TinyMCE.
@@ -439,18 +438,37 @@ function header_color_overlay() {
  *
  * @return string
  */
-function page_modal() {
+function page_modal( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'type'       => '',
+			'image'      => '',
+			'style'      => 'button',
+			'image_size' => 'full',
+		),
+		$atts
+	);
+	if ( '' !== $atts['image'] ) {
+		$img = wp_get_attachment_image( $atts['image'] );
+	}
 	ob_start();
 	if ( get_field( 'page_modal_cta' ) ) {
 	?>
 		<div class="modal-cta">
-			<a class="page-modal-link button" href="#page-modal-cta-box">
-				<?php echo esc_html( get_field( 'page_modal_cta' ) ); ?>
+			<a class="page-modal-link <?php echo esc_html( $atts['style'] ); ?> <?php echo esc_html( $atts['type'] ); ?>" href="#page-modal-cta-box">
+				<?php
+				if ( '' !== $atts['image'] ) {
+					print( wp_get_attachment_image( $atts['image'], $atts['image_size'] ) );
+				}
+				if ( 'no-title' !== $atts['style'] ) {
+				?>
+					<p><?php echo esc_html( get_field( 'page_modal_cta' ) ); ?></p>
+				<?php } ?>
 			</a>
 		</div>
 
 		<?php if ( get_field( 'page_modal_content' ) ) { ?>
-			<div id="page-modal-cta-box" style="display: none;">
+			<div id="page-modal-cta-box" class="<?php echo esc_html( $atts['type'] ); ?>" style="display: none;">
 				<?php the_field( 'page_modal_content' ); ?>
 			</div>
 		<?php } ?>
@@ -460,6 +478,9 @@ function page_modal() {
 	return ob_get_clean();
 }
 add_shortcode( 'page_modal', 'page_modal' );
+
+add_filter( 'widget_text', 'do_shortcode' );
+
 
 // http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
 // this handles converting the entered value to hex for storage
@@ -708,3 +729,17 @@ new GW_Email_Domain_Validator(
 		'mode' => 'ban',
 	)
 );
+/**
+ * Header Image. Used to set the background image for the tabbed library template.
+ *
+ * @return void
+ */
+function hero_header_image() {
+	if ( get_field( 'header_image' ) ) {
+		echo "background-image:url('" . get_field( 'header_image' ) . "');";
+	} elseif ( has_post_thumbnail() ) {
+		$thumb_id  = get_post_thumbnail_id();
+		$thumb_url = wp_get_attachment_image_src( $thumb_id, 'full', true );
+		echo "background-image:url( '" . esc_url( $thumb_url[0] ) . "') ";
+	}
+}

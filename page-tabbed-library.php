@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Landing Page
+Template Name: Tabbeb Library
 */
 
 get_header(); ?>
@@ -10,7 +10,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'landing-page' ); ?>
+				<?php get_template_part( 'content', 'tabbed-library' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 

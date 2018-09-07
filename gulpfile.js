@@ -50,7 +50,7 @@ gulp.task('minifyScripts', gulp.series( 'concatScripts' , function () {
 
 gulp.task('browser-sync', function () {
   browserSync.init({
-    proxy: 'https://2018.salient.dev/', notify: false
+    proxy: 'https://marginminder.dev/', notify: false
   });
 });
 

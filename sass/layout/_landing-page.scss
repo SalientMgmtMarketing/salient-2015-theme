@@ -57,6 +57,11 @@
     color: $white;
     padding: 1em;
     border: none;
+
+    input:not([type=submit]) {
+      color: $dark-gray;
+    }
+
     @include media(min-width $first-breakpoint-value) {
       padding: 2em 3em;
     }
@@ -133,4 +138,24 @@
   form._form {
     margin-top: 0 !important;
   }
+}
+.page.page-template-page-tabbed-library {
+  &.has-secondary-nav main section:first-child {
+    padding-top: 180px;
+  }
+  .landing-page-hero {
+    background-size: cover;
+    background-repeat-y: no-repeat;
+    background-attachment: fixed;
+  }
+  #breadcrumbs {
+    color: $base-color-light;
+    a {
+      color: $base-color-light;
+    }
+  }
+}
+.page-template-page-landing-page .entry-content .gform_body a {
+  color: white;
+  text-decoration: underline;
 }

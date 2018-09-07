@@ -266,3 +266,99 @@ body .fancybox-wrap .fancybox-skin {
     color: $base-font-color;
   }
 }
+
+div#page-modal-cta-box.video {
+  width: 300px;
+  @media screen and (min-width: 600px) {
+    width: 500px;
+  }
+  @media screen and (min-width: 800px) {
+    width: 600px;
+  }
+  @media screen and (min-width: 1000px ) {
+    width: 800px;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 1200px;
+  }
+}
+.page-modal-link.card {
+  display: inline-block;
+  text-align: center;
+  color: #004280;
+  font-weight: 700;
+  background: white;
+  box-shadow: 2px 2px 3px rgba(51, 51, 51, 0.6);
+  overflow: hidden;
+  &:hover {
+    text-decoration: underline;
+  }
+  img {
+    margin: 0 auto;
+    display: block;
+    background: #999;
+    width: 100%;
+  }
+  &.video p {
+      margin: .5em 1em;
+  }
+}
+.page-modal-link p {
+  margin-bottom: 0;
+}
+.page-modal-link.image-block {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+  line-height: 0;
+  width: 100%;
+  background: #999;
+  @media screen and (min-width: 400px) {
+    min-width: 300px;
+  }
+  img {
+    max-width: 100%;
+    width: inherit;
+    transition: all 750ms ease;
+    &:hover {
+      -ms-transform: scale(1.04);
+      transform: scale(1.04);
+    }
+  }
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #000;
+    background: rgba(0, 66, 128, 0.93);
+    padding: 1em;
+  }
+}
+.page-modal-link.no-title {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+  line-height: 0;
+  width: 100%;
+  background: #999;
+  @media screen and (min-width: 400px) {
+    min-width: 300px;
+  }
+  img {
+    max-width: 100%;
+    width: inherit;
+    transition: all 750ms ease;
+    &:hover {
+      -ms-transform: scale(1.04);
+      transform: scale(1.04);
+    }
+  }
+  p {
+    display: none;
+  }
+}
