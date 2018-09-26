@@ -21,7 +21,7 @@
     "@ryancavanaugh/jquery.prettyphoto": "^3.1.14-alpha",
     "bourbon": "^5.0.0",
     "bourbon-neat": "^2.1.0",
-    "browser-sync": "^2.24.4",
+    "browser-sync": "^2.24.7",
     "gsap": "^1.20.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^4.1.0",
@@ -30,7 +30,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.3",
     "scrollmagic": "^2.0.5"
   },
   "dependencies": {
