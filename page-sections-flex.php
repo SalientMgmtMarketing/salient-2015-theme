@@ -75,9 +75,10 @@ get_header( 'boxy' ); ?>
 					while ( have_rows( 'sections-flex' ) ) :
 						the_row();
 
-						get_template_part( 'templates/flexible-content','content-blocks' );
-						get_template_part( 'templates/flexible-content','gallery' );
-						get_template_part( 'templates/flexible-content','blockquote' );
+						get_template_part( 'templates/flexible-content', 'content-blocks' );
+						get_template_part( 'templates/flexible-content', 'gallery' );
+						get_template_part( 'templates/flexible-content', 'blockquote' );
+						get_template_part( 'templates/flexible-content', 'testimonials' );
 
 					endwhile;
 				endif; // has_rows('sections-flex').
