@@ -21,7 +21,7 @@
     "@ryancavanaugh/jquery.prettyphoto": "^3.1.14-alpha",
     "bourbon": "^5.0.0",
     "bourbon-neat": "^2.1.0",
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.3",
     "gsap": "^1.20.3",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.1.0",

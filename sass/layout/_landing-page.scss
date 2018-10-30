@@ -76,9 +76,11 @@
       padding: 2em 3em;
     }
 
-
-    a:hover {
-      text-decoration: underline;
+    a {
+      color: $base-color-light;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     img.alignright {
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.41);
