@@ -18,9 +18,9 @@
 
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <section class="landing-page-hero" style="<?php
-    if (get_field('header_image')) {
-        ?>background-image:url('<?php echo get_field('header_image') ?>');<?php
+    <section class="landing-page-hero<?php if ( get_field( 'logan_style' ) ) { echo ' logan-style'; } ?>" style="<?php
+    if (get_field( 'header_image' ) ) {
+        ?>background-image:url(' <?php echo get_field( 'header_image' ) ?> ');<?php
     }
     elseif (has_post_thumbnail()) {
         echo " background-image:url( '";
@@ -31,13 +31,21 @@
     }
         ?>">
       <div class="wrap">
+        <?php if ( ! get_field( 'logan_style' ) ) { ?>
+            <header class="entry-header <?php if ( get_field('sub-headline') ) { echo "has-sub-headline"; } ?>">
+              <?php if ( get_field('sub-headline') ) { ?><h2 class="sub-headline"><?php the_field('sub-headline'); ?></h2><?php } ?>
+              <?php if ( ! get_field( 'logan_style' ) ) { ?><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?><?php } ?>
+            </header>
+            <!-- .entry-header -->
+        <?php } ?>
+        <div class="entry-content">
+        <?php if ( get_field( 'logan_style' ) ) { ?>
         <header class="entry-header <?php if ( get_field('sub-headline') ) { echo "has-sub-headline"; } ?>">
           <?php if ( get_field('sub-headline') ) { ?><h2 class="sub-headline"><?php the_field('sub-headline'); ?></h2><?php } ?>
           <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         </header>
         <!-- .entry-header -->
-
-        <div class="entry-content">
+        <?php } ?>
           <?php the_content(); ?>
             <?php
                 wp_link_pages( array(
@@ -238,11 +246,8 @@
 
             </section>
             <!-- #intro -->
-            
-    
           <?php endif; ?>
-            
-    
+
           <?php endif; ?>
     
         <?php endwhile; ?>
