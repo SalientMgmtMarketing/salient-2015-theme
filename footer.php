@@ -8,13 +8,16 @@
  */
 ?>
 
-    </div><!-- #content -->
+</div><!-- #content -->
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
-      <div class="site-info wrap">
-        <?php get_sidebar( 'footer' ); ?>
-      </div>
-    </footer>
+<footer id="colophon" class="site-footer" role="contentinfo">
+	<div class="site-info wrap">
+		<?php get_sidebar( 'footer' ); ?>
+	</div>
+</footer>
+<?php if ( get_field( 'gdpr_cookies_message', 'option' ) ) { ?>
+	<div class="gdpr-cookie-banner gdpr-hide"><?php the_field( 'gdpr_cookies_message', 'option' ); ?></div>
+<?php } ?>
 
 <?php wp_footer(); ?>
 <script>

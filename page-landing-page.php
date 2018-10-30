@@ -13,6 +13,10 @@ get_header(); ?>
 				<?php get_template_part( 'content', 'landing-page' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
+			<?php $email_address = htmlspecialchars( wp_unslash( $_GET['email'] ) ); ?>
+			<?php if ( $email_address ) { ?>
+				<iframe src="https://www.msgapp.com/cs.aspx?ea=<?php echo $email_address ?>&rurl=https://<?php echo $_SERVER['SERVER_NAME']; ?>" style=”display:none;” width=”0” height=”0” tabindex=”-1”></iframe>
+			<?php } ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
