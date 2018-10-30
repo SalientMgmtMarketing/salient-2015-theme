@@ -76,7 +76,9 @@
       padding: 2em 3em;
     }
 
-
+    a {
+      color: $base-color-light;
+    }
     a:hover {
       text-decoration: underline;
     }
