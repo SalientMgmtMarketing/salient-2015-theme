@@ -56,6 +56,7 @@ header#masthead {
     }
     .site-branding {
       @include span-columns(3);
+      
       @media screen and (max-width: $nav-breakpoint-value) {
         width: 90%;
         margin: 0;
