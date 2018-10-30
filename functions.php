@@ -127,15 +127,25 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
 			'link',
 		) );
 
+		add_action( 'init', 'salient_add_editor_styles' );
 		/**
-		 * Adds Theme CSS for Blocks to the Editor
+		 * Adds Theme CSS for Blocks to the Classic Editor
+		 *
+		 * @return void
+		 */
+		function salient_add_editor_styles() {
+			add_editor_style( get_stylesheet_uri() );
+		}
+
+		add_action( 'enqueue_block_editor_assets', 'salient_2015_blocks_styles' );
+		/**
+		 * Adds Theme CSS for Blocks to the GutenbergEditor
 		 *
 		 * @return void
 		 */
 		function salient_2015_editor_styles() {
 			wp_enqueue_style( 'salient-2015-blocks-style', get_template_directory_uri() . '/blocks/blocks.css' );
 		}
-		add_action( 'enqueue_block_editor_assets', 'salient_2015_editor_styles' );
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'salient_2015_custom_background_args', array(
 			'default-color' => 'ffffff',
