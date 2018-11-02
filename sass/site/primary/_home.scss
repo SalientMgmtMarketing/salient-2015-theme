@@ -409,6 +409,10 @@ section.row.testimonials {
 	figure.quote {
     margin: 0 3em;
     background: none;
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      padding: 1em;
+    }
     @include media($xl-screen) {
       padding: 0 4em;
       line-height: 1.45;
