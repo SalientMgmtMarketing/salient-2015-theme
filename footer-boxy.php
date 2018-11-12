@@ -22,6 +22,15 @@
 
 
 <?php wp_footer(); ?>
+<?php if ( get_field( 'gdpr_cookies_message', 'option' ) ) { ?>
+	<div class="gdpr-cookie-banner gdpr-hide">
+		<?php the_field( 'gdpr_cookies_message', 'option' ); ?>
+		<button class="close-banner">
+			<?php echo '<img src="' . esc_attr( get_template_directory_uri() ) . '/assets/images/close-X-icon.svg" />'; ?>
+			<span class="screen-reader-text">Close Message Window</span>
+		</button>
+	</div>
+<?php } ?>
 <script>
 window.addEventListener('load',function(){
   var setint_thanku = setInterval(function(){
