@@ -9,7 +9,7 @@ get_header('boxy'); ?>
     <main id="main" class="site-main" role="main">
 
       <?php while ( have_posts() ) : the_post(); ?>
-
+        <?php the_content(); ?>
         <?php if( have_rows('sections-flex') ): ?>
 
           <?php while( have_rows('sections-flex') ): the_row(); ?>
