@@ -41,8 +41,9 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'editor-styles' );
 		add_theme_support( 'align-wide' );
+		add_theme_support( 'align-full' );
 		add_theme_support( 'wp-block-styles' );
-		add_theme_support( 'dark-editor-style' );
+		// add_theme_support( 'dark-editor-style' );
 
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(

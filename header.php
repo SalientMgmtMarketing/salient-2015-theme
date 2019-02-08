@@ -26,17 +26,11 @@
 if ( has_nav_menu( 'secondary' ) ) { ?> has-secondary<?php } ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'salient-2015' ); ?></a>
 
-	<?php if ( get_field( 'header_banner_content' ) ) { ?>
-		<div class="header-banner" <?php if ( get_field( 'header_banner_background_image' ) ) { ?>style="background-image:url('<?php echo get_field( 'header_banner_background_image' )['url']; ?>');"<?php } ?>><?php the_field('header_banner_content'); ?></div>
-
-	<?php } ?>
-
-	<header id="masthead" class="site-header<?php if (get_field('header_banner_content')) { echo ' has-header-banner'; } ?>" role="banner">
+	<header id="masthead" class="site-header" role="banner">
 
 		<div class="wrap">
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<p class="tagline">Value Based Management Systems<p>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">

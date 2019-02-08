@@ -28,16 +28,10 @@
     <?php if ( get_field( 'gdpr_cookies_message', 'option' ) ) { ?>
 		<div class="gdpr-cookie-banner gdpr-hide"><?php the_field( 'gdpr_cookies_message', 'option' ); ?></div>
 	<?php } ?>
-
-	<?php if ( get_field( 'header_banner_content' ) ) { ?>
-		<div class="header-banner" <?php if ( get_field( 'header_banner_background_image' ) ) { ?>style="background-image:url('<?php echo get_field( 'header_banner_background_image' )['url']; ?>');"<?php } ?>><?php the_field('header_banner_content'); ?></div>
-
-	<?php } ?>
-    <header id="masthead" class="site-header<?php if (get_field('header_banner_content')) { echo ' has-header-banner'; } ?>" role="banner">
+    <header id="masthead" class="site-header" role="banner">
         <div class="wrap">
             <div class="site-branding">
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a></h1>
-                <p class="tagline">Value Based Management Systems<p>
             </div><!-- .site-branding -->
             <nav id="site-navigation" class="main-navigation" role="navigation">
                 <button class="menu-toggle" aria-controls="menu" aria-expanded="false" data-toggle="collapse" data-target="#site-navigation > div, .secondary-navigation-container"><span></span></button>

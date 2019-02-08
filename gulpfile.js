@@ -66,8 +66,8 @@ gulp.task('compileSass', function () {
 });
 
 gulp.task('watchFiles', function(){
-  gulp.watch(['./sass/**/*.scss','./scss/*.scss'],['compileSass']);
-  gulp.watch(['./js/**.js','./inc/**/*.js','./assets/**.js'], ['concatScripts']);
+  gulp.watch( ['./sass/**/*.scss','./scss/*.scss'],gulp.series( ['compileSass'] ) );
+  gulp.watch( ['./js/**.js','./inc/**/*.js','./assets/**.js'], gulp.series( ['concatScripts'] ) );
 });
 
 

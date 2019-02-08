@@ -1,7 +1,7 @@
 <?php
-/*
-Template Name: Landing Page
-*/
+/**
+ * Template Name: Landing Page
+ */
 
 get_header(); ?>
 
@@ -20,6 +20,5 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 
 <?php get_footer(); ?>
