@@ -393,6 +393,15 @@ body #primary {
   text-decoration: underline;
 }
 
+.wp-block-columns.opex-columns {
+  @media screen and (min-width: 1050px) {
+    flex-wrap: nowrap;
+  }
+  > div {
+    flex-basis: 100%;
+  }
+}
+
 .opex-columns > div.editor-inner-blocks > .editor-block-list__layout > div {
   background: white;
   padding: 2em 4em !important;

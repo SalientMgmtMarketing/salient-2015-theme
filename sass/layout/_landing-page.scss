@@ -151,7 +151,7 @@
     }
   }
 }
-.page.page-template-page-tabbed-library {
+.page.page-template-page-tabbed-library, .page.page-template-page-tabbed-library-protected {
   main section:first-child {
     padding-top: 133px;
   }
@@ -180,6 +180,10 @@
       font-weight: 700;
       text-decoration: none;
     }
+  }
+  #password-gate {
+    background: white;
+    padding: 1em;
   }
 }
 .page-template-page-landing-page .entry-content .gform_body a {

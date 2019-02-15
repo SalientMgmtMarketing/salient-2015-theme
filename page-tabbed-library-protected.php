@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Tabbed Library
+Template Name: Tabbed Library - Protected
 */
 
 get_header(); ?>
@@ -10,7 +10,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'tabbed-library' ); ?>
+				<?php get_template_part( 'content', 'tabbed-library-protected' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 

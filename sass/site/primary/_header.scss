@@ -131,10 +131,10 @@ header#masthead {
     nav#site-navigation {
       @include omega();
 
-      @include media(min-width $nav-breakpoint-value) {
+      @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
         float: right;
       }
-      @include media(max-width $nav-breakpoint-value) {
+      @include media(max-width $nav-breakpoint-value ) {
         position: relative;
         left: -3px;
         top: 0;
@@ -142,10 +142,10 @@ header#masthead {
         height: 2px;
       }
       > div {
-        @include media(min-width $nav-breakpoint-value) {
+        @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
           float: right;
         }
-        @include media(max-width $nav-breakpoint-value) {
+        @include media(max-width $nav-breakpoint-value ) {
           position: relative;
           top: 0;
           left: -3px;
@@ -174,17 +174,17 @@ header#masthead {
 }
 #page.has-secondary {
   #masthead {
-    @include media(min-width $nav-breakpoint-value) {
+    @include media(min-width ( $nav-breakpoint-value - 1 ) ) {
       height: 160px;
     }
     div.wrap {
-      @include media(min-width $nav-breakpoint-value) {
+      @include media(min-width  ( $nav-breakpoint-value - 1 ) ) {
         margin-top: 40px;
       }
     }
   }
   .hero {
-    @include media(min-width $nav-breakpoint-value) {
+    @include media(min-width  ( $nav-breakpoint-value - 1 ) ) {
       padding-top: 9em;
     }
   }
@@ -195,7 +195,7 @@ header#masthead {
 }
 
 body.admin-bar header#masthead {
-  @include media(min-width $nav-breakpoint-value){
+  @include media(min-width ($nav-breakpoint-value - 1 ) ) {
     top: 28px;
     &.has-header-banner {
       top: 0;
