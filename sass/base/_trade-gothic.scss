@@ -1,4 +1,34 @@
-@include font-face('Trade Gothic W01', salient-2015/inc/fonts/tg-lt, 200, normal);
-@include font-face('Trade Gothic W01', salient-2015/inc/fonts/tg-lt-ital, 200, italic);
-@include font-face('Trade Gothic W01', salient-2015/inc/fonts/tg-bld, 800, normal);
-@include font-face('Trade Gothic W01', salient-2015/inc/fonts/tg-bld-ital, 800, italic);
+@font-face {
+	font-family: Trade Gothic W01;
+  font-weight: 200;
+  font-display: auto;
+	font-style: normal;
+	src: url('/wp-content/themes/salient-2015/inc/fonts/tg-lt.eot');
+	src: url('/wp-content/themes/salient-2015/inc/fonts/tg-lt.eot?#iefix') format("embedded-opentype"), url('/wp-content/themes/salient-2015/inc/fonts/tg-lt.woff') format("woff"), url('/wp-content/themes/salient-2015/inc/fonts/tg-lt.ttf') format("truetype"), url('/wp-content/themes/salient-2015/inc/fonts/tg-lt.svg#Trade Gothic W01') format("svg")
+}
+@font-face {
+	font-family: Trade Gothic W01;
+  font-weight: 200;
+  font-display: auto;
+	font-style: italic;
+	src: url('/wp-content/themes/salient-2015/inc/fonts/tg-lt-ital.eot');
+	src: url('/wp-content/themes/salient-2015/inc/fonts/tg-lt-ital.eot?#iefix') format("embedded-opentype"), url('/wp-content/themes/salient-2015/inc/fonts/tg-lt-ital.woff') format("woff"), url('/wp-content/themes/salient-2015/inc/fonts/tg-lt-ital.ttf') format("truetype"), url('/wp-content/themes/salient-2015/inc/fonts/tg-lt-ital.svg#Trade Gothic W01') format("svg")
+}
+
+@font-face {
+	font-family: Trade Gothic W01;
+  font-weight: 800;
+  font-display: auto;
+	font-style: normal;
+	src: url('/wp-content/themes/salient-2015/inc/fonts/tg-bld.eot');
+	src: url('/wp-content/themes/salient-2015/inc/fonts/tg-bld.eot?#iefix') format("embedded-opentype"), url('/wp-content/themes/salient-2015/inc/fonts/tg-bld.woff') format("woff"), url('/wp-content/themes/salient-2015/inc/fonts/tg-bld.ttf') format("truetype"), url('/wp-content/themes/salient-2015/inc/fonts/tg-bld.svg#Trade Gothic W01') format("svg")
+}
+
+@font-face {
+	font-family: Trade Gothic W01;
+  font-weight: 800;
+  font-display: auto;
+	font-style: italic;
+	src: url('/wp-content/themes/salient-2015/inc/fonts/tg-bld-ital.eot');
+	src: url('/wp-content/themes/salient-2015/inc/fonts/tg-bld-ital.eot?#iefix') format("embedded-opentype"), url('/wp-content/themes/salient-2015/inc/fonts/tg-bld-ital.woff') format("woff"), url('/wp-content/themes/salient-2015/inc/fonts/tg-bld-ital.ttf') format("truetype"), url('/wp-content/themes/salient-2015/inc/fonts/tg-bld-ital.svg#Trade Gothic W01') format("svg")
+}

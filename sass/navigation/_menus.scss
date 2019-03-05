@@ -16,7 +16,7 @@
         float: left;
       }
 
-      @include media(min-width $nav-breakpoint-value) {
+      @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
         float: left;
       }
 
@@ -26,7 +26,7 @@
       }
 
       li {
-        @include media(min-width $nav-breakpoint-value) {
+        @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
           &:hover > ul {
             left: 100%;
             margin-left: -2px;
@@ -50,7 +50,7 @@
         font-size: .7em;
         background: lighten($base-color-dark, 20);
         color: $base-color-light;
-        @include media(min-width $nav-breakpoint-value) {
+        @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
           width: 250px;
           padding: 10px;
           background: $base-color-light;
@@ -58,7 +58,7 @@
         }
       }
     }
-    @include media(min-width $nav-breakpoint-value) {
+    @include media( min-width ( $nav-breakpoint-value + 1 ) ) {
       li:hover > ul, li.focus > ul {
         left: 50%;
         text-align: center;
@@ -69,7 +69,7 @@
   li {
     position: relative;
     font-size: 1.15em;
-    @include media(min-width $nav-breakpoint-value) {
+    @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
       float: left;
     }
     @include media(max-width $nav-breakpoint-value) {
@@ -96,11 +96,11 @@
         color:$base-color-light;
         background: lighten($base-color-dark,5);
       }
-      @include media(min-width $nav-breakpoint-value) {
+      @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
         text-align: center;
       }
     }
-    @include media(min-width $nav-breakpoint-value){
+    @include media(min-width ( $nav-breakpoint-value + 1 ) ){
       &:hover > a {
         background: $base-accent-color;
         color: $base-color-light;
@@ -123,7 +123,7 @@
   .current_page_item > a,
   .current-menu-item > a,
   .current_page_ancestor > a {
-    @include media(min-width $nav-breakpoint-value) {
+    @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
       background: #EFEFEF;
       color: $blue;
     }
@@ -140,7 +140,7 @@ button.dropdown-toggle {
   color: $base-color-light;
   border: none;
 
-  @include media(min-width $nav-breakpoint-value) {
+  @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
     display: none;
   }
 
@@ -150,7 +150,7 @@ button.dropdown-toggle {
     display: block;
     font-size: 1.5em;
 
-    @include media(min-width $nav-breakpoint-value) {
+    @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
       content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17.1" height="9.2" viewBox="0 0 17.1 9.2"><path class="st0" d="M8.5 9.2L0 0h17.1"/></svg>');
     }
   }

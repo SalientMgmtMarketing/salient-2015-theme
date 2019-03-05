@@ -28,18 +28,34 @@
 		<!-- .entry-header -->
 
 		<div class="entry-content">
-	
-			<?php
+		<div id="password-gate">
+					<p>To access this page, please contact support for the password.
+						<br>Email: <a href="mailto:support@salient.com">support@salient.com</a>
+						<br>Tel: 607-739-5228 x206
+						<br> or via the chat button in the bottom right.</p>
 
-			the_content();
+					<form id="protected-form" class="protected-form" name="protectedform" action="#" method="POST">
+						<span id="formerror" class="error"></span>
+						<label for="password">Password</label>
+						<input type="password" name="password" required placeholder />
+						<button type="submit" name="submit" value="submit" class="protected-submit">Submit</button>
+					</form>
 
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'salient-2015' ),
-					'after'  => '</div>',
-				)
-			);
-			?>
+				</div>
+
+				<div id="hiddenContent" style="display:none;">
+						<?php
+
+						the_content();
+
+						wp_link_pages(
+							array(
+								'before' => '<div class="page-links">' . __( 'Pages:', 'salient-2015' ),
+								'after'  => '</div>',
+							)
+						);
+						?>
+				</div>
 		</div>
 		<!-- .entry-content -->
 		<?php if ( get_field('form_box')): ?>

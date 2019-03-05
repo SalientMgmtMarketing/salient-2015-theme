@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Tabbeb Library
+Template Name: Tabbed Library
 */
 
 get_header(); ?>
