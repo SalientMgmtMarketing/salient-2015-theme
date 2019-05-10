@@ -95,7 +95,7 @@ div .wrap, h2 .wrap {
   margin-right: auto;
   width: 100%;
   content: "";
-  display: table;
+  display: block !important;
 }
 
 .entry-content .wp-block {
@@ -463,4 +463,8 @@ body #primary {
 }
 .wp-block-shortcode, .editor-block-toolbar {
   --ugb-text-color: #000;
+}
+.components-popover__content button:hover {
+  background-color: #efefef;
+  color: #333;
 }

@@ -32,6 +32,7 @@ div, h2 {
     @include outer-container;
     @include fill-parent;
     @include clearfix;
+    display: block;
 
     @media screen and (max-width: $max-width) {
       margin: 0 1em;
