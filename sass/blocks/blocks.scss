@@ -94,8 +94,12 @@ div .wrap, h2 .wrap {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  content: "";
   display: block !important;
+  content: "";
+}
+
+div.wrap.hide-if-js {
+  display: none !important;
 }
 
 .entry-content .wp-block {
