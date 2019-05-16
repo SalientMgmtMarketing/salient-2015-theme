@@ -445,7 +445,7 @@ section.row.testimonials {
 		margin-left: 1em;
 		margin-bottom: 2rem;
     @include media($large-screen) {
-      margin-left: 5.5rem;
+      margin-left: 0;
     }
     @include media($medium-screen) {
       margin-left: 5rem;

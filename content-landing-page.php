@@ -14,15 +14,20 @@
  *
  * @link https://pstonier@source.salient.com/scm/mwp/salient-brand.git
  */
+
 ?>
 
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <section class="landing-page-hero<?php if ( get_field( 'logan_style' ) ) { echo ' logan-style'; } ?>" style="<?php
+    <section class="landing-page-hero<?php 
+      if ( get_field( 'logan_style' ) ) {
+        echo ' logan-style'; 
+      }
+    ?>" style="<?php
     if (get_field( 'header_image' ) ) {
         ?>background-image:url(' <?php echo get_field( 'header_image' ) ?> ');<?php
     }
-    elseif (has_post_thumbnail()) {
+    elseif ( has_post_thumbnail( ) ) {
         echo " background-image:url( '";
         $thumb_id = get_post_thumbnail_id();
         $thumb_url = wp_get_attachment_image_src($thumb_id,'full ', true);

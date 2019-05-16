@@ -1,4 +1,4 @@
-<?php 
+<?php
 
            //GALLERY LAYOUT
             if(  get_row_layout() == 'gallery'): ?>
@@ -11,8 +11,8 @@
                     <h2 class="section-title wrap"><?php the_sub_field('title'); ?></h2>
                   <?php endif; ?>
 
-                  <?php 
-                    
+                  <?php
+
                   $image_ids = get_sub_field('gallery', false, false);
 
                   $shortcode = '[gallery ids="' . implode(',', $image_ids) . '" . captiontag="figcaption" . columns="0" size="portraits"]';

@@ -64,6 +64,21 @@ Section Rows
   &[class*="section-"] .wrap {}
 }
 
+.logo_footer_MM {
+  max-width: 150px;
+
+  @include media(min-width $first-breakpoint-value) {
+    max-width: 350px;
+  }
+
+  @include media(min-width $second-breakpoint-value) {
+    max-width: 500px;
+  }
+  @include media(min-width $third-breakpoint-value) {
+    max-width: 800px;
+  }
+}
+
 
 /* Blog Feed */
 

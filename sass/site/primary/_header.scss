@@ -206,8 +206,14 @@ body.admin-bar header#masthead {
 .header-banner {
   clear: both;
   height: 90px;
-  display: block;
+  display: flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 
   @include media(max-width 1000px) {
     background-size: cover;

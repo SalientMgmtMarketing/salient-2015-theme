@@ -303,7 +303,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.24';
+	$theme_version = '1.6.26';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
@@ -545,106 +545,106 @@ add_shortcode( 'page_modal', 'page_modal' );
 
 add_filter( 'widget_text', 'do_shortcode' );
 
+if ( 'www.salient.com' === $_SERVER['SERVER_NAME'] ) {
+	// http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
+	// this handles converting the entered value to hex for storage
 
-// http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
-// this handles converting the entered value to hex for storage
-//
-// strtohex and hextostr functions lifted from here:
-// http://www.php.net/manual/en/function.hexdec.php#100578
-//
-// gform_pre_submission_filter_7 <--- 7 for FORM ID 7.
-add_filter( 'gform_pre_submission_filter_2', 'ch_strtohex' );
+	// strtohex and hextostr functions lifted from here:
+	// http://www.php.net/manual/en/function.hexdec.php#100578
 
-/**
- * Converts string to hexidecimnal for the 4th field of the form specified.
- */
-function ch_strtohex( $form ) {
-	// input 5 is the form field I want to convert to hex.
-	$x = rgpost( 'input_4' );
-	$s = '';
-	// convert the submitted string to hex.
-	foreach ( str_split( $x ) as $c ) {
-			$s .= sprintf( '%02X',ord( $c ) );
-	}
-	// assign the hex value to the POST field.
-	$_POST['input_4'] = $s;
-	// return the form.
-	return $form;
-}
+	// gform_pre_submission_filter_7 <--- 7 for FORM ID 7.
+	add_filter( 'gform_pre_submission_filter_2', 'ch_strtohex' );
 
-// retrieve hex and convert before displaying in the admin: single entry view.
-add_filter( 'gform_entry_field_value', 'ch_hextostr_single', 10, 4 );
-
-/**
- * Converts Hexidecimal to String for Gravity Form.
- */
-function ch_hextostr_single( $x, $field, $lead, $form ) {
-	// run this code on form 7, field 5 only.
-	// FORM ID 7, INPUT ID 5.
-	if ( 2 === $form['id'] && 4 === $field['id'] ) {
+	/**
+	 * Converts string to hexidecimnal for the 4th field of the form specified.
+	 */
+	function ch_strtohex( $form ) {
+		// input 5 is the form field I want to convert to hex.
+		$x = rgpost( 'input_4' );
 		$s = '';
-		foreach ( explode( "\n",trim( chunk_split( $x,2 ) ) ) as $h ) {
-			$s .= chr( hexdec( $h ) );
+		// convert the submitted string to hex.
+		foreach ( str_split( $x ) as $c ) {
+				$s .= sprintf( '%02X',ord( $c ) );
 		}
-		// prevent rendering anything that looks like HTML as HTML.
-		return htmlspecialchars( $s );
-	} else {
-		// not (form 7 and field 5), return the original value.
-		return $x;
+		// assign the hex value to the POST field.
+		$_POST['input_4'] = $s;
+		// return the form.
+		return $form;
 	}
-}
 
-// http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
-// retrieve hex and convert before displaying in the admin: entry list view.
-// note the different filter name here "entries".
-add_filter( 'gform_entries_field_value', 'ch_hextostr_list', 10, 3 );
+	// retrieve hex and convert before displaying in the admin: single entry view.
+	add_filter( 'gform_entry_field_value', 'ch_hextostr_single', 10, 4 );
 
-/**
- * Converts hexidecimal to string in a list.
- */
-function ch_hextostr_list( $x, $form_id, $field_id ) {
-	// run this code on form 7, field 5 only.
-	// change to match your form values.
-	if ( 2 === $form_id && 4 === $field_id ) {
-		$s = '';
-		foreach ( explode( "\n",trim( chunk_split( $x,2 ) ) ) as $h ) {
-			$s .= chr( hexdec( $h ) );
+	/**
+	 * Converts Hexidecimal to String for Gravity Form.
+	 */
+	function ch_hextostr_single( $x, $field, $lead, $form ) {
+		// run this code on form 7, field 5 only.
+		// FORM ID 7, INPUT ID 5.
+		if ( 2 === $form['id'] && 4 === $field['id'] ) {
+			$s = '';
+			foreach ( explode( "\n",trim( chunk_split( $x,2 ) ) ) as $h ) {
+				$s .= chr( hexdec( $h ) );
+			}
+			// prevent rendering anything that looks like HTML as HTML.
+			return htmlspecialchars( $s );
+		} else {
+			// not (form 7 and field 5), return the original value.
+			return $x;
 		}
-		// prevent rendering anything that looks like HTML as HTML.
-		return htmlspecialchars( $s );
-	} else {
-		// not (form 7 and field 5), return the original value.
-		return $x;
 	}
-}
 
-// retrieve hex and convert before displaying in the email notification.
-add_filter( 'gform_notification_format', 'ch_hextostr_email', 10, 2 );
-/**
- * Converts input from hexidecimal to string for email notifications.
- */
-function ch_hextostr_email( $x, $field ) {
-	// run this code on form 7, field 5 only.
-	// FORM ID 7, INPUT ID 5.
-	if ( 2 === $form['id'] && 4 === $field['id'] ) {
-		$s = '';
-		foreach ( explode( "\n",trim( chunk_split( $x,2 ) ) ) as $h ) {
-			$s .= chr( hexdec( $h ) );
+	// http://www.gravityhelp.com/forums/topic/input-on-single-line-text-is-cut-off-after
+	// retrieve hex and convert before displaying in the admin: entry list view.
+	// note the different filter name here "entries".
+	add_filter( 'gform_entries_field_value', 'ch_hextostr_list', 10, 3 );
+
+	/**
+	 * Converts hexidecimal to string in a list.
+	 */
+	function ch_hextostr_list( $x, $form_id, $field_id ) {
+		// run this code on form 7, field 5 only.
+		// change to match your form values.
+		if ( 2 === $form_id && 4 === $field_id ) {
+			$s = '';
+			foreach ( explode( "\n",trim( chunk_split( $x,2 ) ) ) as $h ) {
+				$s .= chr( hexdec( $h ) );
+			}
+			// prevent rendering anything that looks like HTML as HTML.
+			return htmlspecialchars( $s );
+		} else {
+			// not (form 7 and field 5), return the original value.
+			return $x;
 		}
-		// prevent rendering anything that looks like HTML as HTML.
-		return htmlspecialchars( $s );
-	} else {
-		// not (form 7 and field 5), return the original value.
-		return $x;
 	}
+
+	// retrieve hex and convert before displaying in the email notification.
+	add_filter( 'gform_notification_format', 'ch_hextostr_email', 10, 2 );
+	/**
+	 * Converts input from hexidecimal to string for email notifications.
+	 */
+	function ch_hextostr_email( $x, $field ) {
+		// run this code on form 7, field 5 only.
+		// FORM ID 7, INPUT ID 5.
+		if ( 2 === $form['id'] && 4 === $field['id'] ) {
+			$s = '';
+			foreach ( explode( "\n",trim( chunk_split( $x,2 ) ) ) as $h ) {
+				$s .= chr( hexdec( $h ) );
+			}
+			// prevent rendering anything that looks like HTML as HTML.
+			return htmlspecialchars( $s );
+		} else {
+			// not (form 7 and field 5), return the original value.
+			return $x;
+		}
+	}
+
+
+	// adds anchor to the form submission.
+	// add_filter( 'gform_confirmation_anchor', create_function( '','return true;' ) );
+
+	add_filter( 'gform_akismet_enabled_2', '__return_false' );
 }
-
-
-// adds anchor to the form submission.
-// add_filter( 'gform_confirmation_anchor', create_function( '','return true;' ) );
-
-add_filter( 'gform_akismet_enabled_2', '__return_false' );
-
 
 // Gravity Forms stops recording IP addresses.
 add_filter( 'gform_ip_address', '__return_empty_string' );
