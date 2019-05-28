@@ -34,13 +34,14 @@ dl {
   }
 }
 
-main, .mce-content-body { 
+main, .mce-content-body {
   ul {
     margin-bottom: 2em;
     li {
       list-style-type: disc;
+      line-height: 1.2;
       margin-left: 1em;
-      margin-bottom: .25em;
+      margin-bottom: .75em;
       li {
         margin-left: 2em;
       }
