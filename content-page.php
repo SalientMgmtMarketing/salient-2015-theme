@@ -25,7 +25,7 @@
             echo "')";}
         ?>">
         <div class="wrap">
-            <?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
+            <?php if ( function_exists('yoast_breadcrumb') && ! is_front_page() ) { yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); } ?>
             <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         </div>
       <?php if ( get_field( 'color_overlay' ) ) { ?>
