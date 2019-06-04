@@ -10,13 +10,25 @@
 		&:before, &:after {
 			content: none;
 		}
-		.site-title a {
-			background-color: #000;
-			padding: 2em;
+		.wrap .site-branding {
+			width: 100%;
+		}
+		.wrap .site-title a {
+			font-size: 24px !important;
+			text-indent: 0;
+			width: 100%;
+			background-image: none !important;
 		}
 	}
 	#site-navigation {
 		display: none;
+	}
+	.secondary-navigation-container {
+		display: none;
+	}
+	.wp-block-ugb-container {
+		--ugb-text-color: #000 !important;
+		color: #000;
 	}
 	main#main {
 		header.entry-header {
@@ -34,10 +46,32 @@
 			margin: 0 auto;
 		}
 	}
+	.flickity-viewport {
+		overflow: visible !important;
+		height: auto !important;
+		.flickity-slider {
+			position: static !important;
+			margin: 0 auto;
+			transform: none !important;
+		}
+		li.slide-item {
+			position: initial !important;
+			float: left;
+		}
+	}
+	#respond, .akismet_comment_form_privacy_notice {
+		display: none;
+	}
+	.post-navigation {
+		display: none !important;
+	}
 	footer#colophon {
 		display: none;
 	}
 	.entry-content p a:not(.btn):not(.button):not([class*="slide"]):not(.salient-tab-label), .entry-content li:not(.menu-item) a:not(.btn):not(.button):not([class*="slide"]):not(.salient-tab-label):not(.wp-block-button__link):not(.salient-button ) {
 		text-decoration: underline solid;
+	}
+	#drift-widget {
+		display: none !important;
 	}
   }

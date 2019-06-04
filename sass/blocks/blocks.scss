@@ -126,6 +126,14 @@ div.wrap.hide-if-js {
   margin-bottom: 0;
 }
 
+.wp-block-quote {
+  border-left: none;
+
+  cite {
+    font-size: .6em;
+  }
+}
+
 ul.wp-block-latest-posts.alignwide,
 ul.wp-block-latest-posts.alignfull,
 ul.wp-block-latest-posts.is-grid.alignwide,

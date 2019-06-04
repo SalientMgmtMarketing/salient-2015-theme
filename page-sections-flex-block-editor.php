@@ -33,8 +33,8 @@
 
 						<?php endwhile; ?>
 
-					<?php endif; //has_rows( 'sections-flex' ) ?>
-				</div>
+					<?php endif; //has_rows( 'sections-flex' ). ?>
+
 
 			<?php endwhile; // end of the loop. ?>
 
