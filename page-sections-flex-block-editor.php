@@ -33,7 +33,7 @@
 
 						<?php endwhile; ?>
 
-					<?php endif; //has_rows( 'sections-flex' ). ?>
+					<?php endif; // has_rows( 'sections-flex' ). ?>
 
 
 			<?php endwhile; // end of the loop. ?>
