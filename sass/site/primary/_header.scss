@@ -217,7 +217,9 @@ body.admin-bar header#masthead {
 
   @include media(max-width 1000px) {
     background-size: cover;
-    height: 190px;
+    height: auto;
+    padding: 1em;
+    text-align: center;
   }
 
   .idea-con-logo {
