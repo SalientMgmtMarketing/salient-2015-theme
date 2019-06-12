@@ -24,9 +24,6 @@ header#masthead {
     @include media(min-width 1001px) {
       transform: translateY(90px);
     }
-    @include media(min-width 930px max-width 1000px) {
-      transform: translateY(190px);
-    }
   }
 
   &.narrow-header {
