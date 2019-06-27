@@ -15,9 +15,13 @@ header#masthead {
     @include transparent-background($blue,.8);
     height: 110px;
     position: absolute;
+
+    .dark-header & {
+      background: rgba(21,21,21,.75);
+    }
   }
   @include media(max-height em(479px) orientation landscape) {
-    position: absolute;
+    //position: absolute;
   }
 
   &.has-header-banner {

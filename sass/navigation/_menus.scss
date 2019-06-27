@@ -104,6 +104,9 @@
       &:hover > a {
         background: $base-accent-color;
         color: $base-color-light;
+        .dark-header & {
+          background: #565656;
+        }
       }
     }
   }
@@ -289,6 +292,9 @@ button.dropdown-toggle {
     width: 100%;
     height: 40px;
     font-size: .7em;
+    .dark-header & {
+      background: rgba( 97,97,97,.32 );
+    }
 
     nav {
       @include outer-container;

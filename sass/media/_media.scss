@@ -362,3 +362,70 @@ div#page-modal-cta-box.video {
     display: none;
   }
 }
+
+/** Animations **/
+
+$animation-duration: 1000ms;
+@media screen and (min-width: 800px) {
+  .animate-up, .animate-down, .animate-left, .animate-right {
+    opacity: 0;
+  }
+  .animate-up {
+    transition-duration: $animation-duration;
+    transition-timing-function: ease-out;
+    &.hidden {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-down {
+    transition-duration: $animation-duration;
+    transition-timing-function: ease-out;
+    &.hidden {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-right {
+    transition-duration: $animation-duration;
+    transition-timing-function: ease-out;
+    &.hidden {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-left {
+    transition-duration: $animation-duration;
+    transition-timing-function: ease-out;
+    &.hidden {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in {
+    transition-duration: $animation-duration;
+    transition-timing-function: ease-out;
+    &.hidden {
+      opacity: 0;
+    }
+    &.visible {
+      opacity: 1;
+    }
+  }
+}

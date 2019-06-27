@@ -25,9 +25,9 @@
 
     // make scene
     var headerScene = new ScrollMagic.Scene({
-        triggerElement: header, // trigger CSS animation when header is in the middle of the viewport 
-        offset: -495 // offset triggers the animation 95 earlier then middle of the viewport, adjust to your liking
-      })
+      triggerElement: header, // trigger CSS animation when header is in the middle of the viewport 
+      offset: -495 // offset triggers the animation 95 earlier then middle of the viewport, adjust to your liking
+    })
       .setClassToggle('#slide' + num, 'is-active') // set class to active slide
       //.addIndicators() // add indicators (requires plugin), use for debugging
       .addTo(controller);
@@ -42,9 +42,9 @@
 
     // make scene
     var breakScene = new ScrollMagic.Scene({
-        triggerElement: breakSection, // trigger CSS animation when header is in the middle of the viewport 
-        triggerHook: 0.75
-      })
+      triggerElement: breakSection, // trigger CSS animation when header is in the middle of the viewport 
+      triggerHook: 0.75
+    })
       .setClassToggle('#' + breakID, 'is-active') // set class to active slide
       .addTo(controller);
   });
@@ -54,8 +54,8 @@
   slides.forEach(function (slide, index) {
 
     var slideScene = new ScrollMagic.Scene({
-        triggerElement: slide // trigger CSS animation when header is in the middle of the viewport
-      })
+      triggerElement: slide // trigger CSS animation when header is in the middle of the viewport
+    })
       .on("enter", function (event) {
         //$('nav').removeAttr('class');
       })
@@ -70,10 +70,10 @@
       var $bcg = $(slide).find('.bkg');
 
       var slideParallaxScene = new ScrollMagic.Scene({
-          triggerElement: slide,
-          triggerHook: 1,
-          duration: "100%"
-        })
+        triggerElement: slide,
+        triggerHook: 1,
+        duration: "100%"
+      })
         .setTween(TweenMax.from($bcg, 1, {
           y: '-40%',
           autoAlpha: 0.3,
@@ -103,10 +103,10 @@
       }, '-=1.4');
   }
   var introScene = new ScrollMagic.Scene({
-      triggerElement: '#intro',
-      triggerHook: 0,
-      duration: "100%"
-    })
+    triggerElement: '#intro',
+    triggerHook: 0,
+    duration: "100%"
+  })
     .setTween(introTl)
     .addTo(controller);
 
@@ -120,14 +120,14 @@
   function showNextLogo() {
     ++logoIndex;
     logos.eq(logoIndex % logos.length)
-    .fadeIn(1000)
-    .delay(2000)
-    .fadeOut(1000, showNextLogo);
+      .fadeIn(1000)
+      .delay(2000)
+      .fadeOut(1000, showNextLogo);
   }
   
   var logoScene = new ScrollMagic.Scene({
-      triggerElement: ('#clients-slider')
-    })
+    triggerElement: ('#clients-slider')
+  })
     .on("enter", function (event) {
       if (logoloop != 'started') {
         showNextLogo();
@@ -137,3 +137,4 @@
     .addTo(logoController);
 
 }(jQuery));
+

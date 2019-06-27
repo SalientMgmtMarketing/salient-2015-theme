@@ -303,7 +303,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.29';
+	$theme_version = '1.6.34';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
@@ -496,6 +496,24 @@ function header_color_overlay() {
 		echo ' has-overlay ' . esc_attr( sanitize_text_field( get_field( 'color_overlay_color' ) ) );
 	}
 }
+
+/**
+ * Black Header Color
+ */
+add_filter( 'body_class', 'dark_header_body_class' );
+/**
+ * Dark Header Body Class
+ *
+ * @param array $classes list of classes on the body.
+ * @return array
+ */
+function dark_header_body_class( $classes ) {
+	if ( get_field( 'dark_header' ) ) {
+		$classes[] = 'dark-header';
+	}
+	return $classes;
+}
+
 
 /**
  * Page Modal Content
@@ -800,7 +818,7 @@ new GW_Email_Domain_Validator(
  */
 function hero_header_image() {
 	if ( get_field( 'header_image' ) ) {
-		echo "background-image:url('" . get_field( 'header_image' ) . "');";
+		echo "background-image:url('" . esc_url( get_field( 'header_image' ) ) . "');";
 	} elseif ( has_post_thumbnail() ) {
 		$thumb_id  = get_post_thumbnail_id();
 		$thumb_url = wp_get_attachment_image_src( $thumb_id, 'full', true );

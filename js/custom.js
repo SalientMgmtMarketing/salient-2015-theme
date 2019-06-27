@@ -143,3 +143,63 @@ function checkPassword() {
   }
 
 })(jQuery);
+
+/**
+ * Is Element Visible? Check
+ * @param {*} el
+ */
+function isElementInViewport( el ) {
+  var rect = el.getBoundingClientRect();
+  console.log(rect);
+  console.log( 'window height is ' + window.innerHeight );
+  return (
+    rect.top >= 0 &&
+    ( rect.bottom - 100 ) <= (window.innerHeight || document.documentElement.clientHeight) /*or $(window).height() */
+  );
+}
+/**
+ * On Visibility Change
+ * @param { * } el
+ * @param { * } callback
+ */
+function onVisibilityChange( el, callback ) {
+  var old_visible;
+  return function () {
+    var visible = isElementInViewport( el );
+
+    if ( visible != old_visible ) {
+      old_visible = visible;
+      if ( typeof callback == 'function' ) {
+        callback();
+      }
+    }
+  };
+}
+
+var allAnimateObjects = document.querySelectorAll( '.animate-up, .animate-down, .animate-left, .animate-right' );
+console.log(allAnimateObjects);
+
+allAnimateObjects.forEach( function(el) {
+  el.classList.add( 'hidden' );
+  var handler = onVisibilityChange( el, function() {
+
+    if ( isElementInViewport( el ) ) {
+
+      el.classList.add( 'visible' );
+      el.classList.remove( 'hidden' );
+    }
+    // eslint-disable-next-line no-console
+    console.log( el );
+  });
+  if ( window.addEventListener ) {
+    addEventListener('DOMContentLoaded', handler, false);
+    addEventListener('load', handler, false);
+    addEventListener('scroll', handler, false);
+    addEventListener('resize', handler, false);
+  } else if (window.attachEvent)  {
+    attachEvent( 'onDOMContentLoaded', handler ); // IE9+ :(
+    attachEvent( 'onload', handler );
+    attachEvent( 'onscroll', handler );
+    attachEvent( 'onresize', handler );
+  }
+} );

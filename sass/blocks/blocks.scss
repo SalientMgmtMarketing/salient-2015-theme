@@ -82,9 +82,16 @@
   max-width: 100%;
 }
 
-main#main > div.wp-block-ugb-container:first-child {
+main#main > div.wp-block-ugb-container:first-child, main#main #hiddenContent > div.wp-block-ugb-container:first-child {
   @media screen and (min-width: 1005px) {
     padding-top: 155px;
+
+    .has-secondary-nav & {
+      padding-top: 180px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    padding-top: 10px;
   }
 }
 
@@ -198,6 +205,10 @@ body .edit-post-layout__content .edit-post-visual-editor {
   }
 }
 
+.editor-inner-blocks .block-editor-block-list__breadcrumb, .editor-block-mover, .components-placeholder__fieldset button.is-button {
+  --ugb-text-color: #000;
+}
+
 .wp-block-columns.has-2-columns {
   @media screen and ( max-width: 900px ) {
     display: block;
@@ -205,6 +216,10 @@ body .edit-post-layout__content .edit-post-visual-editor {
     .wp-block-column {
       margin: 0;
       text-align: center;
+
+      blockquote {
+        text-align: left;
+      }
     }
     .wp-block-button.alignright, .wp-block-button.alignleft {
       text-align: center;
@@ -429,8 +444,29 @@ body #primary {
   }
 }
 
+.wp-block-columns.mobile-flex-column-reverse {
+  @media screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
 .ugb-container__content-wrapper a:not(.wp-block-button__link) {
-  text-decoration: underline;
+  text-decoration: underline dotted;
+
+  &:hover {
+    text-decoration: underline solid;
+  }
+}
+
+.ugb-container__content-wrapper .wp-block-salient-block-salient-icon-list a:hover {
+  text-decoration: none;
+}
+
+form.block-library-button__inline-link {
+  --ugb-text-color: #333;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wp-block-columns.opex-columns {
@@ -473,7 +509,7 @@ body #primary {
     margin-bottom: .75em;
   }
 }
-.wp-block-shortcode, .editor-block-toolbar {
+.wp-block-shortcode, .editor-block-toolbar, textarea, .editor-block-mover, .block-list-appender, .block-editor-inserter__toggle {
   --ugb-text-color: #000;
 }
 .components-popover__content button:hover {

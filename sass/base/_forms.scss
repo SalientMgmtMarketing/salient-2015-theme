@@ -8,9 +8,13 @@ fieldset {
 input,
 label,
 select {
-  display: block;
+  //display: block;
   font-family: $form-font-family;
   font-size: $form-font-size;
+}
+
+.block-editor input[type=checkbox], .components-modal__frame input[type=checkbox] {
+  display: block;
 }
 
 label {
