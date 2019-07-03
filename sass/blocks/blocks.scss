@@ -509,8 +509,18 @@ form.block-library-button__inline-link {
     margin-bottom: .75em;
   }
 }
-.wp-block-shortcode, .editor-block-toolbar, textarea, .editor-block-mover, .block-list-appender, .block-editor-inserter__toggle {
+.wp-block-shortcode,
+.editor-block-toolbar,
+textarea,
+.editor-block-mover,
+.block-list-appender,
+.block-editor-inserter__toggle,
+.ugb-url-input-control__wrapper,
+.editor-warning.block-editor-warning {
   --ugb-text-color: #000;
+}
+.components-button.is-primary {
+  --ugb-text-color: #FFF;
 }
 .components-popover__content button:hover {
   background-color: #efefef;
