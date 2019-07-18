@@ -37,7 +37,7 @@
 
         <div class="entry-content">
             <?php the_content(); ?>
-            <?php get_template_part('templates/resource-library', 'resource-groups'); ?>
+            <?php get_template_part( 'templates/resource-library', 'resource-groups' ); ?>
             <?php
                 wp_link_pages( array(
                     'before' => '<div class="page-links">' . __( 'Pages:', 'salient-2015' ),
@@ -45,12 +45,12 @@
                 ) );
             ?>
         </div><!-- .entry-content -->
-        
+
         <?php get_sidebar(); ?>
     </div><!-- .wrap -->
     <?php if (is_admin()) { ?>
-      <footer class="entry-footer">
-          <?php edit_post_link( __( 'Edit', 'salient-2015' ), '<span class="edit-link">', '</span>' ); ?>
-      </footer><!-- .entry-footer -->
+        <footer class="entry-footer">
+            <?php edit_post_link( __( 'Edit', 'salient-2015' ), '<span class="edit-link">', '</span>' ); ?>
+        </footer><!-- .entry-footer -->
     <?php } ?>
 </article><!-- #post-## -->

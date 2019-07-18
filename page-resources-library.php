@@ -30,7 +30,7 @@ get_header(); ?>
 
             <div class="wrap">
               <div class="entry-content">
-
+                <?php the_content(); ?>
                 <?php get_template_part( 'templates/resource-library-resource-groups' ); ?>
 
                 </div><!-- .entry-content -->
