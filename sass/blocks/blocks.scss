@@ -514,7 +514,9 @@ textarea,
 .block-editor-inserter__toggle,
 .ugb-url-input-control__wrapper,
 .editor-warning.block-editor-warning
-.reusable-block-edit-panel {
+.reusable-block-edit-panel,
+.components-base-control__field input,
+form.reusable-block-edit-panel {
   --ugb-text-color: #000;
 }
 .components-button.is-primary {

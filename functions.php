@@ -145,7 +145,7 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
 		 * @return void
 		 */
 		function salient_2015_blocks_styles() {
-			wp_enqueue_style( 'salient-2015-blocks-style', get_template_directory_uri() . '/blocks/blocks.css', '',  '1.6.40' );
+			wp_enqueue_style( 'salient-2015-blocks-style', get_template_directory_uri() . '/blocks/blocks.css', '', '1.6.41' );
 		}
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'salient_2015_custom_background_args', array(
@@ -303,10 +303,10 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.40';
+	$theme_version = '1.6.41';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
-	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css' );
+	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css', '', $theme_version );
 	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_script( 'salient-2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -315,10 +315,14 @@ function salient_2015_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	wp_localize_script( 'salient-2015-custom', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'salient-2015' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'salient-2015' ) . '</span>',
-	) );
+	wp_localize_script(
+		'salient-2015-custom',
+		'screenReaderText',
+		array(
+			'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'salient-2015' ) . '</span>',
+			'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'salient-2015' ) . '</span>',
+		)
+	);
 
 }
 add_action( 'wp_enqueue_scripts', 'salient_2015_scripts' );
