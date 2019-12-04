@@ -145,7 +145,7 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
 		 * @return void
 		 */
 		function salient_2015_blocks_styles() {
-			wp_enqueue_style( 'salient-2015-blocks-style', get_template_directory_uri() . '/blocks/blocks.css', '', '1.6.44' );
+			wp_enqueue_style( 'salient-2015-blocks-style', get_template_directory_uri() . '/blocks/blocks.css', '', '1.6.45' );
 		}
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'salient_2015_custom_background_args', array(
@@ -303,7 +303,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.44';
+	$theme_version = '1.6.45';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css', '', $theme_version );

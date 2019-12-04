@@ -43,6 +43,7 @@
     background-color: $light-blue;
     background-size: cover;
     background-position: center center;
+    overflow: hidden;
 
     &:before {
       content: "";
