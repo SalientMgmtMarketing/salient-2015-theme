@@ -117,10 +117,10 @@ blockquote {
   margin: 0;
   padding: 0;
   quotes: "\201C""\201D";
-  font-size: 1.25em;
+  font-size: 1em;
   @include media(min-width $second-breakpoint-value) {
     //margin-left: 1.8em;
-    font-size: 1.5em;
+    font-size: 1em;
   }
   &.wp-block-quote {
     margin-left: -.5em;

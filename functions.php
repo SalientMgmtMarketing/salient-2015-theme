@@ -43,56 +43,59 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'align-full' );
 		add_theme_support( 'wp-block-styles' );
-		// add_theme_support( 'dark-editor-style' );
+		// add_theme_support( 'dark-editor-style' );.
 
 		// Add support for custom color scheme.
-		add_theme_support( 'editor-color-palette', array(
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => __( 'Blue #1', 'salient-2015' ),
-				'slug'  => 'blue-1',
-				'color' => '#004280',
-			),
-			array(
-				'name'  => __( 'Blue #2', 'salient-2015' ),
-				'slug'  => 'blue-2',
-				'color' => '#00588f',
-			),
-			array(
-				'name'  => __( 'Blue #3', 'salient-2015' ),
-				'slug'  => 'blue-3',
-				'color' => '#1268b2',
-			),
-			array(
-				'name'  => __( 'Gray 85', 'salient-2015' ),
-				'slug'  => 'gray-85',
-				'color' => '#4d4d4f',
-			),
-			array(
-				'name'  => __( 'Gray Mid', 'salient-2015' ),
-				'slug'  => 'gray-mid',
-				'color' => '#989789',
-			),
-			array(
-				'name'  => __( 'Gray 20', 'salient-2015' ),
-				'slug'  => 'gray-20',
-				'color' => '#d1d3d4',
-			),
-			array(
-				'name'  => __( 'Gray 95', 'salient-2015' ),
-				'slug'  => 'gray-95',
-				'color' => '#282829',
-			),
-			array(
-				'name'  => __( 'Gray 50', 'salient-2015' ),
-				'slug'  => 'gray-50',
-				'color' => '#939597',
-			),
-			array(
-				'name'  => __( 'White', 'salient-2015' ),
-				'slug'  => 'white',
-				'color' => '#FFF',
-			),
-		) );
+				array(
+					'name'  => __( 'Blue #1', 'salient-2015' ),
+					'slug'  => 'blue-1',
+					'color' => '#004280',
+				),
+				array(
+					'name'  => __( 'Blue #2', 'salient-2015' ),
+					'slug'  => 'blue-2',
+					'color' => '#00588f',
+				),
+				array(
+					'name'  => __( 'Blue #3', 'salient-2015' ),
+					'slug'  => 'blue-3',
+					'color' => '#1268b2',
+				),
+				array(
+					'name'  => __( 'Gray 85', 'salient-2015' ),
+					'slug'  => 'gray-85',
+					'color' => '#4d4d4f',
+				),
+				array(
+					'name'  => __( 'Gray Mid', 'salient-2015' ),
+					'slug'  => 'gray-mid',
+					'color' => '#989789',
+				),
+				array(
+					'name'  => __( 'Gray 20', 'salient-2015' ),
+					'slug'  => 'gray-20',
+					'color' => '#d1d3d4',
+				),
+				array(
+					'name'  => __( 'Gray 95', 'salient-2015' ),
+					'slug'  => 'gray-95',
+					'color' => '#282829',
+				),
+				array(
+					'name'  => __( 'Gray 50', 'salient-2015' ),
+					'slug'  => 'gray-50',
+					'color' => '#939597',
+				),
+				array(
+					'name'  => __( 'White', 'salient-2015' ),
+					'slug'  => 'white',
+					'color' => '#FFF',
+				),
+			)
+		);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -106,7 +109,8 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5',
+		add_theme_support(
+			'html5',
 			array(
 				'search-form',
 				'comment-form',
@@ -120,13 +124,16 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
 		 * Enable support for Post Formats.
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-		) );
+		add_theme_support(
+			'post-formats',
+			array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+			)
+		);
 
 		add_action( 'init', 'salient_add_editor_styles' );
 		/**
@@ -145,13 +152,19 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
 		 * @return void
 		 */
 		function salient_2015_blocks_styles() {
-			wp_enqueue_style( 'salient-2015-blocks-style', get_template_directory_uri() . '/blocks/blocks.css', '', '1.6.45' );
+			wp_enqueue_style( 'salient-2015-blocks-style', get_template_directory_uri() . '/blocks/blocks.css', '', '1.6.46' );
 		}
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'salient_2015_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'salient_2015_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Custom Image Sizes.
 		add_image_size( 'cards-5x2', 624, 250, true );
@@ -303,7 +316,7 @@ add_action( 'widgets_init', 'salient_2015_widgets_init' );
  */
 function salient_2015_scripts() {
 
-	$theme_version = '1.6.45';
+	$theme_version = '1.6.46';
 
 	wp_enqueue_style( 'salient-2015-style', get_stylesheet_uri(), '', $theme_version );
 	wp_enqueue_style( 'salient-2015-fancybox-style', get_template_directory_uri() . '/js/fancybox/jquery.fancybox.css', '', $theme_version );

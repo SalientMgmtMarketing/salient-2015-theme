@@ -68,16 +68,10 @@ gulp.task('compileSass', function () {
     .pipe(gulp.dest('./'))
     .pipe(reload({stream:true}));
 });
-
 gulp.task('watchFiles', function(){
   gulp.watch( ['./sass/**/*.scss','./scss/*.scss'],gulp.series( ['compileSass'] ) );
   gulp.watch( ['./js/**.js','./inc/**/*.js','./assets/**.js'], gulp.series( ['concatScripts'] ) );
 });
-
-
-
-
-
 
 gulp.task('build', gulp.series( 'concatScripts','minifyScripts', 'compileSass') );
 
