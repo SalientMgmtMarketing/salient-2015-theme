@@ -1,1 +1,0 @@
-{"version":3,"sources":["modules/admin.scss"],"names":[],"mappings":"AAAA,cACI,kBAAmB","file":"admin.css","sourcesContent":[".column-block {\n    display: table-cell;\n}"]}

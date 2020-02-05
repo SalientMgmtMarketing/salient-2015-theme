@@ -137,50 +137,51 @@
   .cta-button:hover > a {
     background: #1a6ebd;
   }
-}
-
-button.dropdown-toggle {
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,.3);
-  color: $base-color-light;
-  border: none;
-
-  @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
+  button.dropdown-toggle {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.3);
+    color: $base-color-light;
+    border: none;
+  
+    @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
+      display: none;
+    }
+  
+     &:before {
+      content:'+';
+      width: 1em;
+      display: block;
+      font-size: 1.5em;
+  
+      @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
+        content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17.1" height="9.2" viewBox="0 0 17.1 9.2"><path class="st0" d="M8.5 9.2L0 0h17.1"/></svg>');
+      }
+    }
+    &.toggle-on:before {
+      @include media(max-width $nav-breakpoint-value) {
+        content:'-';
+      }
+    }
+  }
+  .menu-toggle {
     display: none;
   }
-
-   &:before {
-    content:'+';
-    width: 1em;
-    display: block;
-    font-size: 1.5em;
-
-    @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
-      content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17.1" height="9.2" viewBox="0 0 17.1 9.2"><path class="st0" d="M8.5 9.2L0 0h17.1"/></svg>');
+  @media screen and (max-width: $nav-breakpoint-value) {
+    .menu-toggle,
+    #site-navigation .nav-menu {
+      display: block;
     }
-  }
-  &.toggle-on:before {
-    @include media(max-width $nav-breakpoint-value) {
-      content:'-';
-    }
-  }
 }
+
+
 
 /* Small menu */
 
-.menu-toggle {
-  display: none;
-}
 
-@media screen and (max-width: $nav-breakpoint-value) {
-  .menu-toggle,
-  #site-navigation .nav-menu {
-    display: block;
-  }
 
   #site-naviatigon > div ul {
     overflow: hidden;

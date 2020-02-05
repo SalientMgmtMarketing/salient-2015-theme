@@ -37,7 +37,7 @@
 @import "../base/base";
 @import "../mixins/mixins-master";
 
-.edit-post-visual-editor {
+.edit-post-visual-editor, body .editor-styles-wrapper {
   font-family: $base-font-family;
 
   .editor-block-list__block {
@@ -505,6 +505,12 @@ form.block-library-button__inline-link {
     font-size: .8em;
     margin-bottom: .75em;
   }
+}
+.wp-block {
+  //max-width: 100%;
+}
+.wp-block[data-align=center] {
+  max-width: 580px;
 }
 .wp-block-shortcode,
 .editor-block-toolbar,

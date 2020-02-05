@@ -266,8 +266,11 @@ body .fancybox-wrap .fancybox-skin {
     color: $base-font-color;
   }
 }
-
+div#page-modal-cta-box {
+  padding: 1em;
+}
 div#page-modal-cta-box.video {
+  padding: 0;
   width: 300px;
   @media screen and (min-width: 600px) {
     width: 500px;
@@ -282,6 +285,7 @@ div#page-modal-cta-box.video {
     width: 1200px;
   }
 }
+
 .page-modal-link.card {
   display: inline-block;
   text-align: center;

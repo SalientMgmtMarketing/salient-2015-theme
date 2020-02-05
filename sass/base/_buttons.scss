@@ -14,7 +14,6 @@ input[type="submit"], a.btn, a.button, .inline-navigation-container a {
   &:visited, &:hover, &:link, &:active {
     color: $white;
   }
-
   /** Colors **/
   &.lt-blue {
     background-color: $light-blue;
@@ -80,7 +79,6 @@ input[type="submit"], a.btn, a.button, .inline-navigation-container a {
       background-color: shade($pink, 20);
     }
   }
-
 }
 
 .button-row {
