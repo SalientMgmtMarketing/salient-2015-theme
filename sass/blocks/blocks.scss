@@ -67,10 +67,37 @@
   color: #333;
 }
 
+.block-editor-rich-text__editable a {
+  color: inherit;
+}
+
+.has-regular-font-size {
+  font-size: 16px;
+}
+
 .alignwide, body .ugb-container .ugb-container__content-wrapper {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
+}
+
+wp-block-ugb-container .ugb-main-block--inner-full .wp-block {
+  max-width: 1280px;
+}
+
+/* Main column width */
+.wp-block {
+  max-width: 720px;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+  max-width: 1080px;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+  max-width: none;
 }
 
 .alignfull {
@@ -78,16 +105,19 @@
   max-width: 100%;
 }
 
-main#main > div.wp-block-ugb-container:first-child, main#main #hiddenContent > div.wp-block-ugb-container:first-child {
+main#main > div.wp-block-ugb-container:first-child,
+main#main #hiddenContent > div.wp-block-ugb-container:first-child,
+main#main > div.wp-block-salient-block-salient-container:first-child,
+main#main #hiddenContent > div.wp-block-salient-block-salient-container:first-child {
   @media screen and (min-width: 1005px) {
-    padding-top: 155px;
+    padding-top: 155px !important;
 
     .has-secondary-nav & {
-      padding-top: 180px;
+      padding-top: 180px !important;
     }
   }
   @media screen and (max-width: 600px) {
-    padding-top: 10px;
+    padding-top: 10px !important;
   }
 }
 
@@ -531,6 +561,7 @@ form.reusable-block-edit-panel {
 .components-popover__content button:hover {
   background-color: #efefef;
   color: #333;
+  box-shadow: 0 0 3px #333;
 }
 button.components-color-palette__item {
   padding: 0;
@@ -566,4 +597,7 @@ button.components-color-palette__item {
       }
     }
   }
+}
+.components-button.has-icon {
+  min-width: auto;
 }

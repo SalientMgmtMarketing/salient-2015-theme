@@ -73,15 +73,20 @@ p {
 
 a {
   @include transition(color 0.1s linear);
-  color: $base-link-color;
+  color: inherit;
   text-decoration: none;
   &:hover {
-    color: $hover-link-color;
+    color: inherit;
   }
   &:active,
-  &:focus {
-    color: $hover-link-color;
+  &:focus,
+  &:visited {
+    color: inherit;
   }
+  #secondary & {
+    text-decoration: underline;
+  }
+  
 }
 
 hr {
