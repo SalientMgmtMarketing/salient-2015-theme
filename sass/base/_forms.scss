@@ -133,7 +133,12 @@ body .gform_wrapper .gform_body .gform_fields li.field_sublabel_below {
 
 .form-block a:not(.button) {
   color: $base-color-light;
-  text-decoration: underline;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor,currentColor);
+  background-size: 100% 1px;
+  background-position: center bottom 29%;
+  background-repeat: no-repeat;
+  padding: 0.75em 0;
   &:hover {
     color: #d4d4d4;
   }

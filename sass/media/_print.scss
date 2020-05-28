@@ -69,7 +69,12 @@
 		display: none;
 	}
 	.entry-content p a:not(.btn):not(.button):not([class*="slide"]):not(.salient-tab-label), .entry-content li:not(.menu-item) a:not(.btn):not(.button):not([class*="slide"]):not(.salient-tab-label):not(.wp-block-button__link):not(.salient-button ) {
-		text-decoration: underline solid;
+		text-decoration: none;
+		background-image: linear-gradient(currentColor,currentColor);
+		background-size: 100% 1px;
+		background-position: center bottom 29%;
+		background-repeat: no-repeat;
+		padding: 0.75em 0;
 	}
 	#drift-widget {
 		display: none !important;

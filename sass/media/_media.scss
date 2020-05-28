@@ -255,7 +255,12 @@ body .fancybox-wrap .fancybox-skin {
 
   a {
     color: $base-color-light;
-    text-decoration: underline;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor,currentColor);
+    background-size: 100% 1px;
+    background-position: center bottom 29%;
+    background-repeat: no-repeat;
+    padding: 0.75em 0;
   }
 
   #_form_589513F0645F5_ {
@@ -295,7 +300,12 @@ div#page-modal-cta-box.video {
   box-shadow: 2px 2px 3px rgba(51, 51, 51, 0.6);
   overflow: hidden;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor,currentColor);
+    background-size: 100% 1px;
+    background-position: center bottom 29%;
+    background-repeat: no-repeat;
+    padding: 0.75em 0;
   }
   img {
     margin: 0 auto;

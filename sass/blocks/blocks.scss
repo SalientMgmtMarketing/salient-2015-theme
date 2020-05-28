@@ -53,6 +53,9 @@
 
 .edit-post-sidebar, .components-notice-list {
   font-size: 16px;
+  input[type=checkbox], input[type=radio] {
+    display: inline-block;
+  }
 }
 .edit-post-sidebar label {
   font-weight: normal;
@@ -479,10 +482,28 @@ body #primary {
 }
 
 .ugb-container__content-wrapper a:not(.wp-block-button__link) {
-  text-decoration: underline dotted;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor,currentColor);
+  background-size: 100% 1px;
+  background-position: center bottom 29%;
+  background-repeat: no-repeat;
+  padding: 0.75em 0;
 
   &:hover {
-    text-decoration: underline solid;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor,currentColor);
+    background-size: 100% 1px;
+    background-position: center bottom 29%;
+    background-repeat: no-repeat;
+    padding: 0.75em 0;
+  }
+}
+.ugb-container__content-wrapper a.btn {
+  text-decoration: none;
+  background-image: none;
+  &:hover {
+    text-decoration: none;
+    background-image: none;
   }
 }
 

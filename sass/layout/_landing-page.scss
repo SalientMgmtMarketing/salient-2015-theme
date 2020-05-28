@@ -79,7 +79,12 @@
       a {
         color: $base-color-light;
         &:hover {
-          text-decoration: underline;
+          text-decoration: none;
+          background-image: linear-gradient(currentColor,currentColor);
+          background-size: 100% 1px;
+          background-position: center bottom 29%;
+          background-repeat: no-repeat;
+          padding: 0.75em 0;
         }
       }
       img.alignright {
@@ -189,5 +194,10 @@
 }
 .page-template-page-landing-page .entry-content .gform_body a {
   color: white;
-  text-decoration: underline;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor,currentColor);
+  background-size: 100% 1px;
+  background-position: center bottom 29%;
+  background-repeat: no-repeat;
+  padding: 0.75em 0;
 }

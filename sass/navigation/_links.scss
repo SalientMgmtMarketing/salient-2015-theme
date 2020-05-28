@@ -10,15 +10,26 @@ a {
 	&:active {
 		color: $hover-link-color;
 	}
+	&:focus {
+		outline: 3px dotted orange;
+		z-index: 999;
+		position: relative;
+	}
 }
 p a:focus {
   outline: none;
   background-color: lighten($hover-link-color, 30);
 }
 .entry-content p a:not(.btn):not(.button):not([class*="slide"]):not(.salient-tab-label), .entry-content li:not(.menu-item) a:not(.btn):not(.button):not([class*="slide"]):not(.salient-tab-label):not(.wp-block-button__link):not(.salient-button ) {
-	text-decoration: underline dotted;
+	text-decoration: none;
+	background-image: linear-gradient(currentColor,currentColor);
+	background-size: 100% 1px;
+	background-position: center bottom 29%;
+	background-repeat: no-repeat;
+	padding: 0.75em 0;
 
 	&:hover {
-		text-decoration: underline solid;
+		text-decoration: none;
+		background-size: 100% 2px;
 	}
 }

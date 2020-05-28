@@ -27,7 +27,8 @@
 
       li {
         @include media(min-width ( $nav-breakpoint-value + 1 ) ) {
-          &:hover > ul {
+          &:hover > ul,
+          &.focus > ul {
             left: 100%;
             margin-left: -2px;
           }
@@ -59,7 +60,8 @@
       }
     }
     @include media( min-width ( $nav-breakpoint-value + 1 ) ) {
-      li:hover > ul, li.focus > ul {
+      li:hover > ul,
+      li.focus > ul {
         left: 50%;
         text-align: center;
         margin-left: -125px;
