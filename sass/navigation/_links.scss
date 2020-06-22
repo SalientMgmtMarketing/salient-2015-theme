@@ -11,7 +11,6 @@ a {
 		color: $hover-link-color;
 	}
 	&:focus {
-		outline: 3px dotted orange;
 		z-index: 999;
 		position: relative;
 	}
