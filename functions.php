@@ -167,6 +167,8 @@ if ( ! function_exists( 'salient_2015_setup' ) ) :
 			)
 		);
 
+		remove_theme_support( 'widgets-block-editor' );
+
 		// Custom Image Sizes.
 		add_image_size( 'cards-5x2', 624, 250, true );
 		add_image_size( 'cards-4x3', 420, 250, true );
