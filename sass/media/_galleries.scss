@@ -108,7 +108,7 @@
   left: 0;
   text-align: left;
   width: 100%;
-  @inlcude media(min-width $nav-breakpoint-value) {
+  @include media(min-width $nav-breakpoint-value) {
     opacity: 0;
   }
 }

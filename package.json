@@ -19,22 +19,22 @@
   "homepage": "https://pstonier@bitbucket.org/pstonier/salient-brand.git#readme",
   "devDependencies": {
     "@ryancavanaugh/jquery.prettyphoto": "^3.1.14-alpha",
-    "autoprefixer": "^9.8.0",
-    "bourbon": "^5.1.0",
-    "bourbon-neat": "^2.1.0",
-    "browser-sync": "^2.26.7",
-    "cssnano": "^4.1.10",
+    "autoprefixer": "^10.2.5",
+    "bourbon": "7.0.0",
+    "bourbon-neat": "4.0.0",
+    "browser-sync": "^2.26.14",
+    "cssnano": "^5.0.0",
     "gsap": "^3.6.1",
     "gulp": "^4.0.2",
-    "gulp-cli": "^2.2.0",
+    "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-copy": "^4.0.1",
-    "gulp-postcss": "^8.0.0",
+    "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^4.14.1",
-    "scrollmagic": "^2.0.7"
+    "node-sass": "^5.0.0",
+    "scrollmagic": "^2.0.8"
   },
   "dependencies": {
     "js-cookie": "^2.2.1"
