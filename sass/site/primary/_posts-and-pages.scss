@@ -131,6 +131,14 @@ Section Rows
         border-bottom: 1px solid darken($base-background-color,10);
         border-top: 1px solid darken($base-background-color,10);
       } */
+      &.sticky {
+        background: #eef2f9;
+        box-shadow: 3px 3px 6px rgba(0, 66, 128, .42);
+
+        .thumbnail:before {
+          content: "FEATURED";
+        }
+      }
       h1 {
         font-size: 1.5em;
         margin-top: 0;
