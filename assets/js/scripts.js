@@ -3153,7 +3153,7 @@ function checkCookie() {
 
 // Checks the password to see if the password is correct
 function checkPassword() {
-  if (($passwordField.value !== 'salientuxt') && ($passwordField.value !== 'Per4mance101')) {
+  if (($passwordField.value !== 'salientuxt') && ($passwordField.value !== 'Per4mance101') && ($passwordField.value !== 'riverwalk')) {
 
     // Displays the message if the password is incorrect "the password you enter - (the password that was typed) - is incorrect
     document.getElementById('formerror').innerHTML = 'The password you entered — ' + document.protectedform.password.value + ' — is incorrect.';
