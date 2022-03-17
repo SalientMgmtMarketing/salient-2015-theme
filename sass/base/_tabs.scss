@@ -1,0 +1,13 @@
+li.uagb-tab {
+    list-style-type: none;
+}
+li.uagb-tabs__active::after {
+    content: '';
+    width: 77%;
+    background: currentColor;
+    height: 3px;
+    display: block;
+    margin-top: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
