@@ -36,7 +36,9 @@ if ( has_nav_menu( 'secondary' ) ) { ?> has-secondary<?php } ?>">
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="menu" aria-expanded="false" data-toggle="collapse" data-target="#site-navigation > div, .secondary-navigation-container"><span></span></button>
+				<?php if ( ! max_mega_menu_is_enabled() ) { ?>
+					<button class="menu-toggle" aria-controls="menu" aria-expanded="false" data-toggle="collapse" data-target="#site-navigation > div, .secondary-navigation-container"><span></span></button>
+				<?php } ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'collapse' ) ); ?>
 			</nav><!-- #site-navigation -->
 		</div><!--.wrap-->
